@@ -49,3 +49,39 @@ a:hover{
     }
 
 }
+
+
+/*FOOTER*/  
+
+.responsive-footer {
+    width: 100%;
+    background-color: #212529;
+    color: #fff;
+    text-align: left;
+    padding-bottom: 30px;
+}
+
+.foothead {
+    font-weight: bold;
+}
+
+.footlist {
+    list-style-type: none;
+    padding: 0;
+    text-decoration: none;
+    color: whitesmoke;
+    
+}
+
+.footlist li {
+    margin-bottom: 10px;
+}
+
+.footlist li a {
+    color:whitesmoke !important;
+    text-decoration: none;
+}
+
+.footlist li a:hover {
+    opacity: 0.6;
+}
