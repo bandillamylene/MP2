@@ -85,3 +85,12 @@ a:hover{
 .footlist li a:hover {
     opacity: 0.6;
 }
+
+
+/*About Us*/
+
+.carousel-item img {
+    min-height: auto;
+    width: 100%;
+    height: auto;
+}
