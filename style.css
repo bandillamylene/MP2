@@ -101,42 +101,75 @@ a:hover{
 }
 
 .Est {
-    padding-left: 20px;
-    padding-right: 20px;
-}
-
-.EstText{
-    border: none;
-    border-radius: 10px;
-    box-shadow: 4px 4px 10px gray;
-}
-
-.blank{
-    box-sizing: border-box;
-    box-shadow: 2px 2px 10px gray;
-}
-
-@media (min-width: 992px) {
-    .Est {
-        padding-left: 40px;
-        padding-right: 40px;
-    }
-}
-
-
-.twisttext {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    border: 2px solid goldenrod;
-    border-radius: 10px;
-    box-shadow: 4px 4px 10px gray;
+    
 }
 
-.twisttext p {
+.EstText {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    border: none;
+    box-shadow: 4px 4px 10px gray;
+
+}
+
+.EstText .blank {
+    width: 100%;
+    border-top: 4px solid goldenrod;
     margin-bottom: 20px;
 }
 
+.EstText .blank:nth-child(2),
+.EstText .blank:nth-child(4) {
+    width: 70%;
+}
 
+.twisttext .content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.twisttext .blank {
+    width: 100%;
+    border-top: 4px solid goldenrod;
+    margin-bottom: 20px;
+}
+
+.twisttext .blank:nth-child(2),
+.twisttext .blank:nth-child(4) {
+    width: 70%;
+}
+
+#mystory{
+    font-weight: bold;
+}
+
+.content{
+    border: none;
+    box-shadow: 4px 4px 10px gray;
+    padding: 20px;
+}
+
+.mission {
+    background-image: url('./images/track3.jpg');
+    /* Additional styles for background */
+    background-size: cover;
+    background-position: center;
+    height: 300px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.hero-text {
+   color: black;
+}
