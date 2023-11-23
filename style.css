@@ -125,20 +125,18 @@ a:hover{
 
 
 .twisttext {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     border: 2px solid goldenrod;
     border-radius: 10px;
-    box-sizing: border-box;
     box-shadow: 4px 4px 10px gray;
-    padding: 20px;
 }
 
 .twisttext p {
-    margin-bottom: 20px; /* Add spacing between paragraphs */
+    margin-bottom: 20px;
 }
 
-/* Adjust the width at different breakpoints */
-@media (min-width: 576px) {
-    .twisttext .col {
-        max-width: 50%; /* Set the maximum width for columns */
-    }
-}
+
