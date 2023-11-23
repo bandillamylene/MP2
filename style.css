@@ -1,5 +1,7 @@
 *{
     font-family: Verdana, Tahoma, sans-serif;
+
+    
 }
 
 .navbar_content{
@@ -158,11 +160,13 @@ a:hover{
 }
 
 .twisttext{
-    padding: 20px;
+    padding: 10px;
 }
 .mission{
     border: none;
     box-shadow: 4px 4px 10px gray;
+    background-color: black;
+    color: whitesmoke;
 }
    
    @media (max-width: 768px) {
@@ -192,19 +196,14 @@ a:hover{
         padding: 2px; 
     }
 }
-
+.tiretrack{
+    border: 2px solid black;
+}
 
 
 /*WHY CHOOSE US?*/
- .card-title {
-    font-size: 1.5rem; 
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-}
-.card-text {
-    font-size: 1.1rem; /* Text font size */
-}
-.card{
-    background-color: whitesmoke;
-}
 
+*{
+    margin: 0;
+    padding: 0;
+}
