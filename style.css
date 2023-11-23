@@ -210,13 +210,17 @@ a:hover{
 /*visit us*/
 
 .VisitUs{
-    background-color: rgba(180, 177, 177, 0.384);
+    background-color: black;
     padding: 50px;
     margin-top: 200px;
     margin-bottom: 150px;
+    color: whitesmoke;
+
 }
 .visit{
     font-weight: bolder;
+    color: rgb(189, 157, 48) ;
+    
 }
 
 
