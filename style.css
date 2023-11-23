@@ -219,6 +219,22 @@ a:hover{
 }
 
 
+/*PROMO*/
+.banner {
+    background-image: url('./images/yamaha.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 400px;
+}
+.revUp{
+    font-weight: bolder;
+    text-shadow: 4px 2px 10px black;
+    color: goldenrod;
+}
+.revUptxt{
+    font-weight: 550;
+    text-shadow: 2px 2px 10px black;
+}
 
 
 
