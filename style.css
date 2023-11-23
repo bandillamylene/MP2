@@ -3,6 +3,13 @@
 
     
 }
+body{
+    background-color: rgba(245, 245, 245, 0.842);
+}
+.navbar-nav .nav-item .active-link {
+    text-decoration: underline;
+    text-decoration-color: goldenrod;
+}
 
 .navbar_content{
 
@@ -88,7 +95,7 @@ a:hover{
     min-height: auto;
     width: 100%;
     height: auto;
-    border: 2px solid black;
+    border: none;
     border-radius: 10px;
     
 }
@@ -130,7 +137,10 @@ a:hover{
 .EstText .blank:nth-child(4) {
     width: 70%;
 }
-
+.StoryCont{
+    margin-top: 200px;
+    margin-bottom: 150px;
+}
 .OurStory2{
     background-color: whitesmoke;
     margin-top: 20px;
@@ -189,6 +199,7 @@ a:hover{
 }
 .WhyChooseUs{
     font-weight: bold;
+    margin-top: 200px;
 }
 .card{
     border: none;
@@ -198,11 +209,14 @@ a:hover{
 /*visit us*/
 
 .VisitUs{
-    background-color:black;
-    color: whitesmoke;
+    background-color: rgba(180, 177, 177, 0.384);
     padding: 50px;
+    margin-top: 200px;
+    margin-bottom: 150px;
 }
-
+.visit{
+    font-weight: bolder;
+}
 
 
 
