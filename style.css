@@ -159,17 +159,12 @@ a:hover{
 
 .mission {
     background-image: url('./images/track3.jpg');
-    /* Additional styles for background */
     background-size: cover;
     background-position: center;
-    height: 300px; 
+    min-height: 600px; /* Changed height to min-height */
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
     text-align: center;
-}
-
-.hero-text {
-   color: black;
+    padding: 0 20px; /* Added padding to mission container */
 }
