@@ -7,6 +7,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
@@ -182,47 +185,100 @@
             </div>
         </div>
         <div class="col-md-6 col-sm-12 text-center d-flex justify-content-center">
-            <img src="./images/tiretracks.jpg" class="img-fluid w-75 m-5" alt="Tire Tracks Image">
+            <img src="./images/tiretracks.jpg" class="tiretrack img-fluid w-75 m-5" alt="Tire Tracks Image">
         </div>
 </div>
 </div>
 
-<!--WHY CHOOSE US-->
-<div class="container-fluid mt-5 d-flex justify-content-center text-center">
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-        <div class="col">
-            <div class="card h-100">
+
+
+<!-- MODALS -->
+<div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="modal1Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modal1Label">Diverse Inventory</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>From cruiser to sports bikes, adventure tourers to classic rides, we offer a wide selection to suit your every rider's style and preference.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="modal2Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modal2Label">Service Excellence</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Our service center is staffed with skilled technicians who ensure that your bike receives the care it deserves.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modal3" tabindex="-1" role="dialog" aria-labelledby="modal3Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modal3Label">Customer-Centric Approach</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Your satisfaction is our priority. We listen, understand your needs, and strive to exceed your expectations.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container-fluid mt-5">
+    <div class="row justify-content-center text-center">
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="card mb-4" data-toggle="modal" data-target="#modal1">
                 <div class="card-header">
-                    <img src="./images/CB1000Hornet.png" alt="hondaCB" class="hondaCB img-fluid" alt="Responsive image">
+                    <img src="./images/CB1000Hornet.png" alt="hondaCB" class="hondaCB img-fluid">
                 </div>
                 <div class="card-body">
                     <h5 class="card-title">Diverse inventory</h5>
-                    <p class="card-text">From cruiser to sports bikes, adventure tourers to classic rides, we offer a wide selection to suit your every rider's style and preference.</p>
                 </div>
             </div>
         </div>
         
-      <div class="col">
-        <div class="card h-100">
-            <div class="card-header">
-                <img src="./images/" alt="hondaCB" class="hondaCB img-fluid" alt="Responsive image">
-            </div>
-            <div class="card-body">
-                <h5 class="card-title">Service excellence</h5>
-                <p class="card-text">Our service center is staffed with skilled technicians who ensure that your bike receives the care it deserves.</p>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="card mb-4" data-toggle="modal" data-target="#modal2">
+                <div class="card-header">
+                    <img src="./images/mechanic.png" alt="mechanic" class="hondaCB img-fluid">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Service excellence</h5>
+                </div>
             </div>
         </div>
-      </div>
-      <div class="col">
-        <div class="card h-100">
-          <div class="card-body">
-            <h5 class="card-title">Customer centric Approach</h5>
-            <p class="card-text">Your satisfaction is our priority.We listen, understand your needs, and strive to exceed your expectations.</p>
-          </div>
+        
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="card mb-4" data-toggle="modal" data-target="#modal3">
+                <div class="card-header">
+                    <img src="./images/customer interaction.jpg" alt="customer" class="hondaCB img-fluid">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Customer centric Approach</h5>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
+</div>
+
 
 
 
@@ -338,6 +394,11 @@
 
 
 
-
+<script>
+    $(document).ready(function(){
+        // Initialize Bootstrap modal
+        $('.modal').modal();
+    });
+    </script>
 </body>
 </html>
