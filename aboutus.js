@@ -7,3 +7,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
   
+
+  // Initialize the custom carousel
+$('#customCarousel').carousel();
