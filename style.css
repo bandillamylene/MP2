@@ -88,7 +88,7 @@ a:hover{
     min-height: auto;
     width: 100%;
     height: auto;
-    border: 2px solid goldenrod;
+    border: 2px solid black;
     border-radius: 10px;
     
 }
@@ -131,43 +131,25 @@ a:hover{
     width: 70%;
 }
 
-.twisttext .content {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
+.OurStory2{
+    background-color: whitesmoke;
+    margin-top: 20px;
+    padding-top: 30px;
+    border: none;
+    box-shadow: 4px 4px 10px gray;
 }
-
-.twisttext .blank {
-    width: 100%;
-    border-top: 4px solid goldenrod;
-    margin-bottom: 20px;
+.OurMission{
+    background-color: black;
+    color: whitesmoke;
+    margin-top: 20px;
+    padding-top: 30px;
+    border: none;
+    box-shadow: 4px 4px 10px gray;
 }
-
-.twisttext .blank:nth-child(2),
-.twisttext .blank:nth-child(4) {
-    width: 70%;
-}
-
-#mystory{
+.MStory{
     font-weight: bold;
 }
 
-.story{
-    border: none;
-    box-shadow: 4px 4px 10px gray;
-}
-
-.twisttext{
-    padding: 10px;
-}
-.mission{
-    border: none;
-    box-shadow: 4px 4px 10px gray;
-    background-color: black;
-    color: whitesmoke;
-}
    
    @media (max-width: 768px) {
    
@@ -196,12 +178,39 @@ a:hover{
         padding: 2px; 
     }
 }
-.tiretrack{
-    border: 2px solid black;
-}
+
 
 
 /*WHY CHOOSE US?*/
+
+
+.card-title{
+    font-weight: 800;
+}
+.WhyChooseUs{
+    font-weight: bold;
+}
+.card{
+    border: none;
+    box-shadow: 4px 4px 10px gray;
+}
+
+/*visit us*/
+
+.VisitUs{
+    background-color:black;
+    color: whitesmoke;
+    padding: 50px;
+}
+
+
+
+
+
+
+
+
+
 
 *{
     margin: 0;
