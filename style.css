@@ -97,8 +97,8 @@ body{
 
 .responsive-footer {
     width: 100%;
-    background-color: black;
-    color: #fff;
+    background-color: rgb(33, 37, 41);
+    color: whitesmoke;
     text-align: left;
    
 }
@@ -188,7 +188,7 @@ body{
     color: rgb(33, 37, 41);
 }
 .OurMission{
-    background-color: black;
+    background-color: rgb(33, 37, 41);
     color: whitesmoke;
     margin-top: 20px;
     padding-top: 30px;
@@ -273,7 +273,7 @@ body{
 /*visit us*/
 
 .VisitUs{
-    background-color: black;
+    background-color: whitesmoke;
     padding: 50px;
     margin-top: 200px;
     margin-bottom: 0;
