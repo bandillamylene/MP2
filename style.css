@@ -11,17 +11,12 @@ body{
     text-decoration-color: rgb(189, 157, 48);
 }
 
-.navbar_content{
-    background-color: rgb(33, 37, 41);
-    box-shadow: 1px 1px 5px rgb(189, 157, 48);
-
-}
 .dropdown-menu{
     border: 2px solid rgb(189, 157, 48);
     box-shadow: 2px 2px 5px gray;
     max-width: 50%;
 }
-a:hover{
+.navbar_content a:hover{
     opacity: 0.7;
 }
 
@@ -86,11 +81,23 @@ a:hover{
     transform: translate(-50%, -50%);
 }
 
+.mc_brands img:hover{
+    transition: 0.5s ease;
+    transform: scale(1.3);
+}
+
+/*Featured MC*/
+
+.mc_container a:hover{
+    opacity: 0.7;
+}
+
+
 /*FOOTER*/  
 
 .responsive-footer {
     width: 100%;
-    background-color: rgb(33, 37, 41);
+    background-color: black;
     color: #fff;
     text-align: left;
    
@@ -137,7 +144,7 @@ a:hover{
 
 .welcome{
     font-weight: bolder;
-    text-shadow: 1px 1px 5px gray;
+   
 }
 
 .Est {
@@ -181,7 +188,7 @@ a:hover{
     color: rgb(33, 37, 41);
 }
 .OurMission{
-    background-color: rgb(33, 37, 41);
+    background-color: black;
     color: whitesmoke;
     margin-top: 20px;
     padding-top: 30px;
@@ -266,7 +273,7 @@ a:hover{
 /*visit us*/
 
 .VisitUs{
-    background-color: whitesmoke;
+    background-color: black;
     padding: 50px;
     margin-top: 200px;
     margin-bottom: 0;

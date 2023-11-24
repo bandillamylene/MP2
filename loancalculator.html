@@ -10,12 +10,12 @@
     <title>Loan Calculator</title>
 </head>
 <body>
-   
-<!--NAVIGATION BAR-->
+
+   <!--NAVIGATION BAR-->
 <nav class="navbar_content navbar navbar-expand-lg sticky-top">
     <div class="container-fluid">
 
-        <a class="navbar-brand text-white" href="#">
+        <a class="navbar-brand text-white" href="./index.html">
             <img src="./images/throttlelogo.png" class="logo ">
         </a>
 
@@ -28,7 +28,7 @@
                       Motorcycles
                     </a>
                         <ul class="dropdown-menu bg-white" aria-labelledby="motorcyclesDropdown">
-                            <li><a class="dropdown-item" href="#">Honda</a></li>
+                            <li><a class="dropdown-item" href="honda.html">Honda</a></li>
                             <li><a class="dropdown-item" href="#">Kawasaki</a></li>
                             <li><a class="dropdown-item" href="#">Yamaha</a></li>
                             <li><a class="dropdown-item" href="#">Motorstar</a></li>
@@ -41,9 +41,8 @@
                       Services
                     </a>
                         <ul class="dropdown-menu bg-white" aria-labelledby="motorcyclesDropdown">
-                            <li><a class="dropdown-item" href="#">New</a></li>
-                            <li><a class="dropdown-item" href="#">Option 2</a></li>
-                            <li><a class="dropdown-item" href="#">Option 3</a></li>
+                            <li><a class="dropdown-item" href="#">Service Inquiry</a></li>
+                            <li><a class="dropdown-item" href="loancalculator.html">Loan Calculator</a></li>
                         </ul>
                   </li>
 
@@ -59,7 +58,7 @@
                   </li>
 
                 <li class="nav-item pe-4">
-                    <a class="nav-link text-white" href="#">About Us</a>
+                    <a class="nav-link text-white" href="./aboutUs.html">About Us</a>
 
 
                 </li>
@@ -98,6 +97,7 @@
     </div>
 </nav>
 
+
     <!--Calculator Tool-->
     <div class="container p-5">
         <h4 class="h3 text-black text-center"><b>Loan Calculator</b></h4>
@@ -109,28 +109,41 @@
 <div class="col-md-6">
 
 <form>
-<label class="form-label text-white">Motorcycle SRP:</label>
+<label class="form-label">Motorcycle SRP:</label>
 <input type="number" value="60000" class="form-control" id="srp">
 
-<label class="form-label text-white pt-3">Downpayment</label>
+<label class="form-label pt-3">Downpayment</label>
 <input type="number" value="20000" class="form-control" id="downpayment">
 
-<label class="form-label text-white pt-3">Registration</label>
+<label class="form-label pt-3">Registration</label>
 <input type="number" class="form-control" id="reg" value="1500" disabled>
 
-<label class="form-label text-white pt-3">Doc Stamp</label>
+<label class="form-label pt-3">Doc Stamp</label>
 <input type="number" class="form-control" id="doc_stamp" value="600" disabled>
 
 </form>
 
-<div class="row pt-4 text-white text-center">
+<div class="row pt-4 text-center">
+    <div class="total_cashout col-md-6">
+    <h6 class="h6">Total Cash Out:</h6>
+    
+    </div>
+    
+    <div class="total_amount col-md-6 ">
+        <h6 class="h6" id="result">0</h6>
+        
+        </div>
+    
+    </div>
+
+<div class="row text-center">
 <div class="total_cashout col-md-6">
-<h6 class="h6">Total Cash Out:</h6>
+<h6 class="h6">Approvable Loan Amount:</h6>
 
 </div>
 
-<div class="total_amount col-md-6 text-white">
-    <h6 class="h6" id="result">0</h6>
+<div class="total_amount col-md-6 ">
+    <h6 class="h6" id="result1">0</h6>
     
     </div>
 
@@ -138,18 +151,18 @@
 
 <div class="row">
 <div class="calculate col-md-12 pt-4">
-    <button class="btn btn-light" type="button" onclick="totalNum()">Calculate</button>
+    <button class="btn btn-dark" type="button" onclick="totalNum()">Calculate</button>
 </div>
 
 </div>
 
 </div>
 
-<div class="monthly_contents col-md-6 text-center">
+<div class="monthly_contents col-md-6 text-center pt-4">
 
-    <h5 class="h5 text-white p-4">Estimated Monthly Payments:</h5>
+    <h5 class="h5 p-4">Estimated Monthly Payments:</h5>
 
-<div class="row p-2 text-white">
+<div class="row p-2 ">
 <div class="col-md-6">
     <h6 class="h6">12 Months: </h6>
 </div>
@@ -161,7 +174,7 @@
 
 </div>
 
-<div class="row p-2 text-white">
+<div class="row p-2 ">
     <div class="col-md-6">
         <h5 class="h6">18 Months: </h5>
     </div>
@@ -173,7 +186,7 @@
     
     </div>
 
-    <div class="row p-2 text-white">
+    <div class="row p-2 ">
         <div class="col-md-6">
             <h5 class="h6">24 Months:</h5>
         </div>
@@ -185,7 +198,7 @@
         
         </div>
 
-        <div class="row p-2 text-white">
+        <div class="row p-2 ">
             <div class="col-md-6">
                 <h5 class="h6">30 Months:</h5>
             </div>
@@ -197,7 +210,7 @@
             
             </div>
 
-            <div class="row p-2 text-white">
+            <div class="row p-2 ">
                 <div class="col-md-6">
                     <h5 class="h6">36 Months:</h5>
                 </div>
@@ -221,76 +234,79 @@
 
 
 
-<!--Footer Nav-->
-<footer class="responsive-footer container-fluid mt-5 pt-5 bg-dark">
-    <div class="row mx-3">
-        <div class="col">
-            <p class="foothead">Motorcycles</p>
-            <ul class="footlist" id="aboutuslist">
-                <li><a href="#">Honda</a></li>
-                <li><a href="#">Kawasaki</a></li>
-                <li><a href="#">Yamaha</a></li>
-                <li><a href="#">Motorstar</a></li>
-                <li><a href="#">CFMoto</a></li>
-            </ul>
-        </div>
+<!--Footer-->
+    <footer class="responsive-footer container-fluid mt-5 pt-5">
+        <div class="container-md">
+        <div class="row mx-3">
+            <div class="col">
+                <p class="foothead">Motorcycles</p>
+                <ul class="footlist" id="aboutuslist">
+                    <li><a href="honda.html">Honda</a></li>
+                    <li><a href="#">Kawasaki</a></li>
+                    <li><a href="#">Yamaha</a></li>
+                    <li><a href="#">Motorstar</a></li>
+                    <li><a href="#">CFMoto</a></li>
+                </ul>
+            </div>
 
 
-        <div class="col">
-            <p class="foothead">Services</p>
-            <ul class="footlist" id="srvcslist">
-                <li><a href="#">Service Inquiry Form</a></li>
-                <li><a href="#">Loan Calculator</a></li>
-            </ul>
-        </div>
+            <div class="col">
+                <p class="foothead">Services</p>
+                <ul class="footlist" id="srvcslist">
+                    <li><a href="#">Service Inquiry Form</a></li>
+                    <li><a href="loancalculator.html">Loan Calculator</a></li>
+                </ul>
+            </div>
 
-        <div class="col">
-            <p class="foothead">Connect To Us</p>
-            <ul class="footlist" id="srvcslist">
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Contact Us</a></li>
-            </ul>
-        </div>
+            <div class="col">
+                <p class="foothead">Connect To Us</p>
+                <ul class="footlist" id="srvcslist">
+                    <li><a href="aboutUs.html">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
 
-        <div class="col">
-            <p class="foothead">Social Media Links</p>
-            <ul class="footlist" id="srvcslist">
-                <li><a href="#">Facebook</a></li>
-                <li><a href="#">Instagram</a></li>
-                <li><a href="#">Youtube</a></li>
-                <li><a href="#">Tiktok</a></li>
-            </ul>
-        </div>
+            <div class="col">
+                <p class="foothead">Social Media Links</p>
+                <ul class="footlist" id="srvcslist">
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Youtube</a></li>
+                    <li><a href="#">Tiktok</a></li>
+                </ul>
+            </div>
 
-        <div class="col">
-            <p class="foothead">Location</p>
-            <ul class="footlist">
-                <li>Brgy. New Valencia, Tugbok District</li>
-                <li>Davao City, 8000, Philippines</li>
-            </ul>
-        </div>
+            <div class="col">
+                <p class="foothead">Location</p>
+                <ul class="footlist">
+                    <li>Brgy. New Valencia, Tugbok District</li>
+                    <li>Davao City, 8000, Philippines</li>
+                </ul>
+            </div>
 
-        
-    </div>
-
-    <hr>
-    <div class="row align-items-center">
-        <div class="col-md-6 ">
-            <p class="copy text-center mt-4">© 2023 Throttle Twist
-                <br>
-                <a class="footlist" href="#">Terms and Conditions</a>
-            </p>
             
         </div>
-        <div class="col-md-6 text-center">
-            <a class="footerLogo" href="#">
-                <img src="./images/throttlelogo.png" class="logo">
-            </a>
-        </div>
     </div>
-    
-  
-</footer>
+
+
+        <hr>
+        <div class="row align-items-center">
+            <div class="col-md-6 ">
+                <p class="copy text-center mt-4">© 2023 Throttle Twist
+                    <br>
+                    <a class="footlist" href="#">Terms and Conditions</a>
+                </p>
+                
+            </div>
+            <div class="col-md-6 text-center">
+                <a class="footerLogo" href="#">
+                    <img src="./images/throttlelogo.png" class="logo">
+                </a>
+            </div>
+        </div>
+        
+      
+    </footer>
 
 <script src="loancalculator.js"></script>
 
