@@ -344,6 +344,13 @@ body{
     border-radius: 5px;
 }
 
+@media (max-width: 576px) {
+    
+    .promocards{
+        margin-top: 20px;
+    }
+}
+
 .promocards img {
     width: 100%;
     height: auto;
@@ -360,16 +367,19 @@ body{
     right: 10px;
     background-color: #ffc107;
     color: #333;
-    font-size: 12px;
+    font-size: 18px;
     padding: 4px 8px;
     border-radius: 4px;
+    box-shadow: 1px 1px 5px rgb(236, 237, 238);
     font-weight: bold;
     z-index: 1;
 }
 
 .inquire {
-    background: rgb(189, 157, 48);
+    background:  #ffc107;
     font-weight: bolder;
+    border: none;
+    box-shadow: 2px 2px 5px rgb(221, 234, 247);
 }
 
 
