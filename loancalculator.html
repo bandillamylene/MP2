@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="loancalculator.css">
+    <title>Loan Calculator</title>
+</head>
+<body>
+   
+<!--NAVIGATION BAR-->
+<nav class="navbar_content navbar navbar-expand-lg sticky-top">
+    <div class="container-fluid">
+
+        <a class="navbar-brand text-white" href="#">
+            <img src="./images/throttlelogo.png" class="logo ">
+        </a>
+
+        <div class="collapse navbar-collapse justify-content-lg-around justify-content-md-around" id="navbar">
+
+            <ul class="navbar-nav">
+
+                <li class="nav-item dropdown pe-4">
+                    <a class="nav-link dropdown-toggle text-white" href="#" id="motorcyclesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Motorcycles
+                    </a>
+                        <ul class="dropdown-menu bg-white" aria-labelledby="motorcyclesDropdown">
+                            <li><a class="dropdown-item" href="#">Honda</a></li>
+                            <li><a class="dropdown-item" href="#">Kawasaki</a></li>
+                            <li><a class="dropdown-item" href="#">Yamaha</a></li>
+                            <li><a class="dropdown-item" href="#">Motorstar</a></li>
+                            <li><a class="dropdown-item" href="#">CFMoto</a></li>
+                        </ul>
+                  </li>
+
+                  <li class="nav-item dropdown pe-4">
+                    <a class="nav-link dropdown-toggle text-white" href="#" id="services" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Services
+                    </a>
+                        <ul class="dropdown-menu bg-white" aria-labelledby="motorcyclesDropdown">
+                            <li><a class="dropdown-item" href="#">New</a></li>
+                            <li><a class="dropdown-item" href="#">Option 2</a></li>
+                            <li><a class="dropdown-item" href="#">Option 3</a></li>
+                        </ul>
+                  </li>
+
+                  <li class="nav-item dropdown pe-4">
+                    <a class="nav-link dropdown-toggle text-white" href="#" id="Promos" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Promos
+                    </a>
+                        <ul class="dropdown-menu bg-white" aria-labelledby="motorcyclesDropdown">
+                            <li><a class="dropdown-item" href="#">New</a></li>
+                            <li><a class="dropdown-item" href="#">Option 2</a></li>
+                            <li><a class="dropdown-item" href="#">Option 3</a></li>
+                        </ul>
+                  </li>
+
+                <li class="nav-item pe-4">
+                    <a class="nav-link text-white" href="#">About Us</a>
+
+
+                </li>
+
+                <li class="nav-item pe-4">
+                    <a class="nav-link text-white" href="#">Contact Us</a>
+
+
+                </li>
+
+            </ul>
+         
+            <form class="s-bar d-flex justify-content-lg-end justify-content-end align-items-end" role="search">
+                <input class="form-control me-2 rounded-5" type="search" placeholder="Search" id="search">
+                <button class="s-button btn btn-outline-light btn-sm" type="submit">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+
+        </div>
+
+<br><br><br>
+
+
+        <div class="d-lg-block d-flex justify-content-end">
+            <a href="#" class="login text-white mx-3 btn btn-md">Login</a>
+        
+
+            <button class="navbar-toggler bg-white ms-auto me-3" type="button" data-bs-target="#navbar" data-bs-toggle="collapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+        
+
+
+    </div>
+</nav>
+
+    <!--Calculator Tool-->
+    <div class="container p-5">
+        <h4 class="h3 text-black text-center"><b>Loan Calculator</b></h4>
+        <p class="text-center">The calculator will help you determine the estimated monthly payments for your desired motorcycle loan.
+            Please visit our branch to get a final computation.</p>
+<div class="content container-md">
+<div class="row">
+
+<div class="col-md-6">
+
+<form>
+<label class="form-label text-white">Motorcycle SRP:</label>
+<input type="number" value="60000" class="form-control" id="srp">
+
+<label class="form-label text-white pt-3">Downpayment</label>
+<input type="number" value="20000" class="form-control" id="downpayment">
+
+<label class="form-label text-white pt-3">Registration</label>
+<input type="number" class="form-control" id="reg" value="1500" disabled>
+
+<label class="form-label text-white pt-3">Doc Stamp</label>
+<input type="number" class="form-control" id="doc_stamp" value="600" disabled>
+
+</form>
+
+<div class="row pt-4 text-white text-center">
+<div class="total_cashout col-md-6">
+<h6 class="h6">Total Cash Out:</h6>
+
+</div>
+
+<div class="total_amount col-md-6 text-white">
+    <h6 class="h6" id="result">0</h6>
+    
+    </div>
+
+</div>
+
+<div class="row">
+<div class="calculate col-md-12 pt-4">
+    <button class="btn btn-light" type="button" onclick="totalNum()">Calculate</button>
+</div>
+
+</div>
+
+</div>
+
+<div class="monthly_contents col-md-6 text-center">
+
+    <h5 class="h5 text-white p-4">Estimated Monthly Payments:</h5>
+
+<div class="row p-2 text-white">
+<div class="col-md-6">
+    <h6 class="h6">12 Months: </h6>
+</div>
+
+<div class="col-md-6">
+    <h6 class="h6" id="twelveM">0</h6>
+</div>
+
+
+</div>
+
+<div class="row p-2 text-white">
+    <div class="col-md-6">
+        <h5 class="h6">18 Months: </h5>
+    </div>
+    
+    <div class="col-md-6">
+        <h5 class="h6" id="eighteenM">0</h5>
+    </div>
+    
+    
+    </div>
+
+    <div class="row p-2 text-white">
+        <div class="col-md-6">
+            <h5 class="h6">24 Months:</h5>
+        </div>
+        
+        <div class="col-md-6">
+            <h5 class="h6" id="twentyF">0</h5>
+        </div>
+        
+        
+        </div>
+
+        <div class="row p-2 text-white">
+            <div class="col-md-6">
+                <h5 class="h6">30 Months:</h5>
+            </div>
+            
+            <div class="col-md-6">
+                <h5 class="h6" id="thirty">0</h5>
+            </div>
+            
+            
+            </div>
+
+            <div class="row p-2 text-white">
+                <div class="col-md-6">
+                    <h5 class="h6">36 Months:</h5>
+                </div>
+                
+                <div class="col-md-6">
+                    <h5 class="h6" id="thirty_six">0</h5>
+                </div>
+                
+                
+                </div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+
+
+
+<!--Footer Nav-->
+<footer class="responsive-footer container-fluid mt-5 pt-5 bg-dark">
+    <div class="row mx-3">
+        <div class="col">
+            <p class="foothead">Motorcycles</p>
+            <ul class="footlist" id="aboutuslist">
+                <li><a href="#">Honda</a></li>
+                <li><a href="#">Kawasaki</a></li>
+                <li><a href="#">Yamaha</a></li>
+                <li><a href="#">Motorstar</a></li>
+                <li><a href="#">CFMoto</a></li>
+            </ul>
+        </div>
+
+
+        <div class="col">
+            <p class="foothead">Services</p>
+            <ul class="footlist" id="srvcslist">
+                <li><a href="#">Service Inquiry Form</a></li>
+                <li><a href="#">Loan Calculator</a></li>
+            </ul>
+        </div>
+
+        <div class="col">
+            <p class="foothead">Connect To Us</p>
+            <ul class="footlist" id="srvcslist">
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+
+        <div class="col">
+            <p class="foothead">Social Media Links</p>
+            <ul class="footlist" id="srvcslist">
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">Youtube</a></li>
+                <li><a href="#">Tiktok</a></li>
+            </ul>
+        </div>
+
+        <div class="col">
+            <p class="foothead">Location</p>
+            <ul class="footlist">
+                <li>Brgy. New Valencia, Tugbok District</li>
+                <li>Davao City, 8000, Philippines</li>
+            </ul>
+        </div>
+
+        
+    </div>
+
+    <hr>
+    <div class="row align-items-center">
+        <div class="col-md-6 ">
+            <p class="copy text-center mt-4">© 2023 Throttle Twist
+                <br>
+                <a class="footlist" href="#">Terms and Conditions</a>
+            </p>
+            
+        </div>
+        <div class="col-md-6 text-center">
+            <a class="footerLogo" href="#">
+                <img src="./images/throttlelogo.png" class="logo">
+            </a>
+        </div>
+    </div>
+    
+  
+</footer>
+
+<script src="loancalculator.js"></script>
+
+</body>
+</html>

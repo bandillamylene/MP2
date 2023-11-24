@@ -53,6 +53,39 @@ a:hover{
 
 }
 
+.carousel1_btn{
+
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.featured_text{
+    background-color: #212529;
+}
+
+.services_content{
+    position: relative;
+}
+
+.button_services{
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.services_financing{
+    position: relative;
+}
+
+.button_financing{
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 
 /*FOOTER*/  
 
