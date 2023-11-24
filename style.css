@@ -12,8 +12,7 @@ body{
 }
 
 .navbar_content{
-
-    background-color: black;
+    background-color: rgb(33, 37, 41);
     box-shadow: 1px 1px 5px rgb(189, 157, 48);
 
 }
@@ -91,7 +90,7 @@ a:hover{
 
 .responsive-footer {
     width: 100%;
-    background-color: black;
+    background-color: rgb(33, 37, 41);
     color: #fff;
     text-align: left;
    
@@ -130,11 +129,9 @@ a:hover{
     width: 100%;
     height: auto;
     border: none;
-    border-radius: 10px;
     
 }
 .mycarousel{
-    border-radius: 10px;
     box-shadow: 4px 4px 10px gray;
 }
 
@@ -181,9 +178,10 @@ a:hover{
     padding-top: 30px;
     border: none;
     box-shadow: 4px 4px 10px gray;
+    color: rgb(33, 37, 41);
 }
 .OurMission{
-    background-color: black;
+    background-color: rgb(33, 37, 41);
     color: whitesmoke;
     margin-top: 20px;
     padding-top: 30px;
@@ -228,36 +226,68 @@ a:hover{
 /*WHY CHOOSE US?*/
 
 
-.card-title{
+.card-title {
     font-weight: 800;
 }
-.WhyChooseUs{
-    font-weight: bold;
-    margin-top: 200px;
+
+.WhyChooseUs {
+    font-weight: bolder;
+    margin-top: 20px; /* Adjust margin-top for spacing */
+    background-color: rgb(189, 157, 48);
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
-.card{
+
+.card {
     border: none;
     box-shadow: 4px 4px 10px gray;
+    background-color: rgb(33, 37, 41);
+    color: whitesmoke;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
+
+.card-img-top {
+    height: 100%; 
+    width: 100%; 
+    object-fit: cover; 
+}
+
+.equal-cards .card {
+    height: 100%;
+}
+
+.equal-cards .card-body {
+    flex-grow: 1;
+}
+
 
 /*visit us*/
 
 .VisitUs{
-    background-color: black;
+    background-color: whitesmoke;
     padding: 50px;
     margin-top: 200px;
-    margin-bottom: 150px;
-    color: whitesmoke;
+    margin-bottom: 0;
+    color: rgb(33, 37, 41);
+    border: none;
+    box-shadow: 4px 4px 10px rgb(33, 37, 41);
 
 }
 .visit{
     font-weight: bolder;
-    color: rgb(189, 157, 48) ;
+    color: rgb(33, 37, 41);
+    background-color: rgb(189, 157, 48);
+    padding: 10px;
+    width: 100%;
+    box-shadow: 2px 2px 10px  rgb(33, 37, 41);
     
 }
 
 
 /*PROMO*/
+
 .banner {
     background-image: url('./images/yamaha.jpg');
     background-size: cover;
@@ -280,23 +310,23 @@ a:hover{
 
 .limited{
     font-weight: bolder;
-    text-shadow: 6px 6px 10px black;
-    color: black;
+    text-shadow: 4px 4px 10px whitesmoke;
+    color: rgb(33, 37, 41);
 }
 .explore{
     font-weight: bold;
     text-shadow: 4px 4px 10px whitesmoke;
-    color: black;
+    color: rgb(33, 37, 41);
 }
 .promocards{
-    background-color: black;
+    background-color: rgb(33, 37, 41);
     color: whitesmoke;
 }
 
 /*carousel2*/
 
 .caro2{
-    background-color: rgba(0, 0, 0);
+    background-color: rgb(33, 37, 41);
     background-size: cover;
     background-position: center;
     min-height: 400px;
