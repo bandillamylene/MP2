@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Throttle Twist</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    
+
+<!--NAVIGATION BAR-->
+<nav class="navbar_content navbar navbar-expand-lg sticky-top">
+    <div class="container-fluid">
+
+        <a class="navbar-brand text-white" href="./index.html">
+            <img src="./images/throttlelogo.png" class="logo ">
+        </a>
+
+        <div class="collapse navbar-collapse justify-content-lg-around justify-content-md-around" id="navbar">
+
+            <ul class="navbar-nav">
+
+                <li class="nav-item dropdown pe-4">
+                    <a class="nav-link dropdown-toggle text-white" href="#" id="motorcyclesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Motorcycles
+                    </a>
+                        <ul class="dropdown-menu bg-white" aria-labelledby="motorcyclesDropdown">
+                            <li><a class="dropdown-item" href="#">Honda</a></li>
+                            <li><a class="dropdown-item" href="#">Kawasaki</a></li>
+                            <li><a class="dropdown-item" href="#">Yamaha</a></li>
+                            <li><a class="dropdown-item" href="#">Motorstar</a></li>
+                            <li><a class="dropdown-item" href="#">CFMoto</a></li>
+                        </ul>
+                  </li>
+
+                  <li class="nav-item dropdown pe-4">
+                    <a class="nav-link dropdown-toggle text-white" href="#" id="services" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Services
+                    </a>
+                        <ul class="dropdown-menu bg-white" aria-labelledby="motorcyclesDropdown">
+                            <li><a class="dropdown-item" href="#">New</a></li>
+                            <li><a class="dropdown-item" href="#">Option 2</a></li>
+                            <li><a class="dropdown-item" href="#">Option 3</a></li>
+                        </ul>
+                  </li>
+
+                  <li class="nav-item dropdown pe-4">
+                    <a class="nav-link dropdown-toggle text-white" href="./promos.html" id="Promos" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Promos
+                    </a>
+                        <ul class="dropdown-menu bg-white" aria-labelledby="motorcyclesDropdown">
+                            <li><a class="dropdown-item" href="./promos.html">New</a></li>
+                            <li><a class="dropdown-item" href="#">Option 2</a></li>
+                            <li><a class="dropdown-item" href="#">Option 3</a></li>
+                        </ul>
+                  </li>
+
+                <li class="nav-item pe-4">
+                    <a class="nav-link text-white active-link" href="./aboutUs.html">About Us</a>
+                </li>
+
+
+                <li class="nav-item pe-4">
+                    <a class="nav-link text-white" href="#">Contact Us</a>
+
+
+                </li>
+
+            </ul>
+         
+            <form class="s-bar d-flex justify-content-lg-end justify-content-end align-items-end" role="search">
+                <input class="form-control me-2 rounded-5" type="search" placeholder="Search" id="search">
+                <button class="s-button btn btn-outline-light btn-sm" type="submit">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+
+        </div>
+
+<br><br><br>
+
+
+        <div class="d-lg-block d-flex justify-content-end">
+            <a href="#" class="login text-white mx-3 btn btn-md">Login</a>
+        
+
+            <button class="navbar-toggler bg-white ms-auto me-3" type="button" data-bs-target="#navbar" data-bs-toggle="collapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+        
+
+
+    </div>
+</nav>
+
+
+<!--WELCOME-->
+
+<div class="container-fluid text-center">
+    
+    <div class="row my-5">
+        <div class="col">
+            <h1 class="welcome ">Welcome to Throttle Twist!</h1>
+        </div>
+    </div>
+    
+    <div class="row justify-content-center">
+        <div class="col-lg-5 col-md-8 col-sm-10 my-5">
+            <!-- Carousel -->
+            <div id="caro" class="carousel slide pl-lg-5 mx-lg-5 " data-bs-ride="carousel">
+                <!-- Indicators -->
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#caro" data-bs-slide-to="0" class="active"></button>
+                    <button type="button" data-bs-target="#caro" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#caro" data-bs-slide-to="2"></button>
+                </div>
+                <!-- carousel -->
+                <div class="mycarousel carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="./images/Bike Picking.jpg" alt="dp1" class="d-block w-100">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./images/Closed Deal.jpg" alt="DP2" class="d-block w-100">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./images/Closed deal2.jpg" alt="DP3" class="d-block w-100">
+                    </div>
+                </div>
+                <!-- controls -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#caro" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#caro" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
+        </div>
+
+        <div class="Est col-lg-6 col-md-8 col-sm-10 d-flex flex-column justify-content-left align-items-center m-0">
+        
+            <div class="EstText col-lg-6 col-md-8 col-sm-12 px-5 py-5 mx-5">
+                <div class="blank" style="width: 100%; border-top: 4px solid black;"></div>
+                <div class="blank" style="width: 70%; border-top: 4px solid black;"></div>
+
+                    <p class="my-5">At <b><i>Throttle Twist,</i></b> we live and breathe motorcycles. Established in 2011, we have been a passionate advocate for riders, offering a wide range of premium motorcycles and top-notch services to fuel your two-wheeled adventures.</p>
+
+                <div class="blank" style="width: 70%; border-top: 4px solid black;"></div>
+                <div class="blank" style="width: 100%; border-top: 4px solid black;"></div>
+            </div>
+           
+        </div>
+        
+        
+
+    </div>
+</div>
+
+<div class="StoryCont container-fluid px-5">
+    <div class="row my-5">
+        <div class="col-lg-6 col-md-6 col-sm-12  d-flex justify-content-center text-center my-5">
+            <div class="OurStory2 px-4">
+                <h1 class="MStory">Our Story</h1>
+                <p>
+                    <b>Throttle Twist</b> began as a dream among a group of dedicated riders who saw a need for a dealership that wasn't just about selling bikes but fostering a community. Our founders envisioned a place where riders could find not just their next motorcycle, but also guidance, support, and a shared passion for the open road.
+                </p>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12  d-flex justify-content-center text-center my-5">
+            <div class="OurMission px-4">
+                <h1 class="MStory">Our Mission</h1>
+                <p>We are dedicated to curating an unparalleled selection of motorcycles, gears, and services tailored to the diverse needs and aspirations of riders.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container-fluid my-lg-5">
+
+<!-- MODALS -->
+<div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="modal1Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modal1Label">Diverse Inventory</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>From cruiser to sports bikes, adventure tourers to classic rides, we offer a wide selection to suit your every rider's style and preference.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="modal2Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modal2Label">Service Excellence</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Our service center is staffed with skilled technicians who ensure that your bike receives the care it deserves.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modal3" tabindex="-1" role="dialog" aria-labelledby="modal3Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modal3Label">Customer-Centric Approach</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Your satisfaction is our priority. We listen, understand your needs, and strive to exceed your expectations.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--WHY CHOOSE US-->
+<div class="container-fluid mt-5 my-lg-5">
+    <div class="row text-center my-lg-5 my-5"><h1 class="WhyChooseUs my-5"> Why Choose Us?</h1></div>
+
+    <div class="row justify-content-center text-center my-lg-5">
+        <div class="col-lg-4 col-md-6 col-sm-12 my-lg-5">
+            <div class="card mb-4" data-toggle="modal" data-target="#modal1">
+                <div class="card-header">
+                    <img src="./images/cbbike.jpg" alt="hondaCB" class="hondaCB img-fluid">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Diverse Inventory</h5>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6 col-sm-12 my-lg-5">
+            <div class="card mb-4" data-toggle="modal" data-target="#modal2">
+                <div class="card-header">
+                    <img src="./images/Mechanic.jpg" alt="mechanic" class="hondaCB img-fluid">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Service Excellence</h5>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6 col-sm-12 my-lg-5">
+            <div class="card mb-4" data-toggle="modal" data-target="#modal3">
+                <div class="card-header">
+                    <img src="./images/customer.jpg" alt="customer" class="hondaCB img-fluid">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Customer Centric Approach</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+<div class="container-fluid my-5 my-lg-5 mb-5">
+    <div class="VisitUs row">
+        <div class="col-lg-6 col-md-12 d-flex justify-content-center align-items-center">
+            <h1 class="visit text-center text-lg-left my-3 my-sm-5">Visit Us Today!</h1>
+        </div>
+        <div class="col-lg-6 col-md-12 d-flex justify-content-center align-items-center">
+            <p class="text-center text-lg-left my-sm-5 mt-sm-5">We invite you to visit our dealership and experience firsthand the thrill of finding the perfect ride. Whether you're in search of your next motorcycle, gear, or just looking to connect with fellow riders, <b><i>Throttle Twist</i></b> is your ultimate destination.
+                <br><br>
+                Thank you for choosing <b>ThrottleTwist-</b> where the road begins and the adventure never ends.</p>
+        </div>
+    </div>
+</div>
+
+ 
+
+<!--FOOTER-->
+
+<footer class="responsive-footer container-fluid mt-5 pt-5">
+    <div class="row mx-3">
+        <div class="col">
+            <p class="foothead">Motorcycles</p>
+            <ul class="footlist" id="aboutuslist">
+                <li><a href="#">Honda</a></li>
+                <li><a href="#">Kawasaki</a></li>
+                <li><a href="#">Yamaha</a></li>
+                <li><a href="#">Motorstar</a></li>
+                <li><a href="#">CFMoto</a></li>
+            </ul>
+        </div>
+
+
+        <div class="col">
+            <p class="foothead">Services</p>
+            <ul class="footlist" id="srvcslist">
+                <li><a href="#">Service Inquiry Form</a></li>
+                <li><a href="#">Loan Calculator</a></li>
+            </ul>
+        </div>
+
+        <div class="col">
+            <p class="foothead">Connect To Us</p>
+            <ul class="footlist" id="srvcslist">
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+
+        <div class="col">
+            <p class="foothead">Social Media Links</p>
+            <ul class="footlist" id="srvcslist">
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">Youtube</a></li>
+                <li><a href="#">Tiktok</a></li>
+            </ul>
+        </div>
+
+        <div class="col">
+            <p class="foothead">Location</p>
+            <ul class="footlist">
+                <li>Brgy. New Valencia, Tugbok District</li>
+                <li>Davao City, 8000, Philippines</li>
+            </ul>
+        </div>
+    
+    </div>
+
+
+
+    <hr>
+    <div class="row align-items-center">
+        <div class="col-md-6 ">
+            <p class="copy text-center mt-4">© 2023 Throttle Twist
+                <br>
+                <a class="footlist" href="#">Terms and Conditions</a>
+            </p>
+            
+        </div>
+        <div class="col-md-6 text-center">
+            <a class="footerLogo" href="#">
+                <img src="./images/throttlelogo.png" class="logo">
+            </a>
+        </div>
+    </div>
+    
+  
+</footer>
+
+
+
+
+
+
+<script>
+    $(document).ready(function(){
+        // Initialize Bootstrap modal
+        $('.modal').modal();
+    });
+    </script>
+</body>
+</html>
