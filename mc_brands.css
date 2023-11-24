@@ -13,7 +13,7 @@ body{
 
 .navbar_content{
 
-    background-color: black;
+    background-color: #1f2327;
     box-shadow: 1px 1px 5px rgb(189, 157, 48);
 
 }
@@ -106,7 +106,7 @@ transition: 0.3s ease;
 
 .responsive-footer {
     width: 100%;
-    background-color: black;
+    background-color: #1f2327;
     color: #fff;
     text-align: left;
     padding-bottom: 30px;

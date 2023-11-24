@@ -13,7 +13,7 @@ body{
 
 .navbar_content{
 
-    background-color: black;
+    background-color: #1f2327;
     box-shadow: 1px 1px 5px rgb(189, 157, 48);
 
 }
@@ -103,7 +103,7 @@ body{
 
 .responsive-footer {
     width: 100%;
-    background-color: black;
+    background-color: #1f2327;
     color: #fff;
     text-align: left;
    
@@ -195,7 +195,7 @@ body{
     box-shadow: 4px 4px 10px gray;
 }
 .OurMission{
-    background-color: black;
+    background-color: #1f2327;
     color: whitesmoke;
     margin-top: 20px;
     padding-top: 30px;
@@ -255,7 +255,7 @@ body{
 /*visit us*/
 
 .VisitUs{
-    background-color: black;
+    background-color: #1f2327;
     padding: 50px;
     margin-top: 200px;
     margin-bottom: 150px;
