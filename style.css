@@ -299,23 +299,35 @@ body{
 
 /*PROMO*/
 
+
 .banner {
-    background-image: url('./images/yamaha.jpg');
-    background-size: cover;
-    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     min-height: 400px;
+    background-color: black;
     border: none;
     box-shadow: 2px 2px 5px rgb(189, 157, 48);
 }
-.revUp{
+
+.banner img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+.revUp {
+    font-size: 40px;
     font-weight: bolder;
     text-shadow: 4px 2px 10px black;
     color: rgb(189, 157, 48);
 }
-.revUptxt{
+.revUptxt {
     font-weight: 550;
-    text-shadow: 2px 2px 10px black;
+    text-shadow: 2px 2px 10px rgb(33, 37, 41);
+    color: whitesmoke;
 }
+
 
 .limited {
     font-weight: bolder;
@@ -382,7 +394,15 @@ body{
     box-shadow: 2px 2px 5px rgb(221, 234, 247);
 }
 
-
+.promoDate{
+    background-color:  rgb(189, 157, 48);
+    color: rgb(33, 37, 41);
+    padding: 10px;
+    font-weight: bolder;
+    text-shadow: 2px 2px 5px rgb(221, 234, 247);
+    width: 100%;
+    text-align: center;
+}
 
 
 
