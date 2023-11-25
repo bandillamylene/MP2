@@ -104,16 +104,42 @@
         <p class="text-center">The calculator will help you determine the estimated monthly payments for your desired motorcycle loan.
             Please visit our branch to get a final computation.</p>
 <div class="content container-md">
+   
+    <form id="myForm">
+    <div class="row pb-5">
+        <div class="col-md-6">
+            <label class="form-label">Choose Brands:</label>
+            <select for="brands" class="form-select" id="brands" required>
+                <option selected>Open to choose</option>
+                <option value="honda">Honda</option>
+                <option value="kawasaki">Kawasaki</option>
+                <option value="yamaha">Yamaha</option>
+                <option value="motorstar">Motorstar</option>
+                <option value="cfmoto">CFMoto</option>
+            </select>
+        </div>
+
+        <div class="col-md-6">
+            <label class="form-label">Choose Motorcycle:</label>
+            <select for="brands" class="form-select" id="motorcycles" required>
+                <option selected disabled>Open to choose</option>
+            </select>
+        </div>
+    </div>
+
+    
+
 <div class="row">
 
 <div class="col-md-6">
 
-<form>
+
+
 <label class="form-label">Motorcycle SRP:</label>
-<input type="number" value="60000" class="form-control" id="srp">
+<input type="number" class="form-control" id="srp" disabled required>
 
 <label class="form-label pt-3">Downpayment</label>
-<input type="number" value="20000" class="form-control" id="downpayment">
+<input type="number"  class="form-control" id="downpayment" required>
 
 <label class="form-label pt-3">Registration</label>
 <input type="number" class="form-control" id="reg" value="1500" disabled>
@@ -121,7 +147,7 @@
 <label class="form-label pt-3">Doc Stamp</label>
 <input type="number" class="form-control" id="doc_stamp" value="600" disabled>
 
-</form>
+
 
 <div class="row pt-4 text-center">
     <div class="total_cashout col-md-6">
@@ -151,10 +177,12 @@
 
 <div class="row">
 <div class="calculate col-md-12 pt-4">
-    <button class="btn btn-dark" type="button" onclick="totalNum()">Calculate</button>
+    <button class="btn btn-dark" type="button" onclick="totalNum()">Calculate</button> &nbsp; &nbsp; &nbsp;
+    <button class="btn btn-danger" type="button" onclick="clearData()">Clear</button></div>
 </div>
 
-</div>
+
+</form>
 
 </div>
 
@@ -310,5 +338,28 @@
 
 <script src="loancalculator.js"></script>
 
+<script>
+
+    //BOOTSTRAP VALIDATION
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(() => {
+    'use strict'
+  
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    const forms = document.querySelectorAll('.needs-validation')
+  
+    // Loop over them and prevent submission
+    Array.from(forms).forEach(form => {
+      form.addEventListener('submit', event => {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+  
+        form.classList.add('was-validated')
+      }, false)
+    })
+  })()
+</script>
 </body>
 </html>
