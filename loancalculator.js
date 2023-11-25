@@ -173,9 +173,6 @@ if(thirtyS = numResult2 / 36 * 1.6){
 
 
 
-
-
-
 }
 
 
