@@ -52,9 +52,11 @@ let mcSRP = {
 
 //To update MC options
 function updateMC(){
+    //For Choosing Brands
     let selectBrand = brandSelect.value;//declaring selectBrand varibale then equal to variable "brand select"
     mcSelect.innerHTML = "<option selected disabled>Open to choose</option>";//to disable the "Open to choose"
 
+    //if conditional statement for Choose Motorcycles
     if(selectBrand !== "Open to choose"){
         mcData[selectBrand].forEach(model => {//Use foreach to detect multiple strings inside array
             let option = document.createElement("option");//Creating an options 
@@ -169,7 +171,6 @@ if(thirtyS = numResult2 / 36 * 1.6){
 }else{
     document.getElementById("thirty_six").textContent = "0";
 }
-
 
 
 
