@@ -165,7 +165,7 @@ if(thirtyM  = numResult2 / 30 * 1.5){
 
 
 if(thirtyS = numResult2 / 36 * 1.6){
-    document.getElementById("thirty_six").textContent = thirtyM.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    document.getElementById("thirty_six").textContent = thirtyS.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 }else{
     document.getElementById("thirty_six").textContent = "0";
 }
