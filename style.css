@@ -188,7 +188,7 @@ body{
 .story1{
     font-weight: bold;
 }
-/* Custom CSS for centering */
+/*  for centering */
 .center-content {
     display: flex;
     align-items: center;
@@ -307,33 +307,30 @@ body{
 
 /*PROMO*/
 
-
 .banner {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     min-height: 400px;
-    background-color:rgb(255, 254, 254);
+    background-image: url(./images/PromoHeroImg.jpg);
+    background-size: cover; /* Ensure the background image covers the entire container */
+    background-position: center; /* Center the background image */
     border: none;
     box-shadow: 2px 2px 5px rgb(40, 40, 40);
+    backdrop-filter: brightness(90%) blur(5px); /* Apply backdrop filter for readability */
 }
 
-.banner img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
-}
 .revUp {
     font-size: 40px;
     font-weight: bolder;
-    color: rgb(40, 40, 40);
+    color: rgb(189, 157, 48);
 }
 .revUptxt {
     font-weight: 550;
-    text-shadow: 1px 1px 5px rgb(182, 182, 182);
-    color: rgb(40, 40, 40);
+    color: whitesmoke;
 }
+
 
 
 .limited {
