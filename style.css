@@ -157,6 +157,12 @@ body{
     justify-content: center;
     align-items: center;
     
+    
+}
+.throttleCarousel{
+    border: none;
+    box-shadow: 4px 4px 10px gray;
+    
 }
 
 .EstText {
@@ -164,8 +170,7 @@ body{
     flex-direction: column;
     align-items: center;
     width: 100%;
-    border: none;
-    box-shadow: 4px 4px 10px gray;
+    
 
 }
 
@@ -182,23 +187,29 @@ body{
 .StoryCont{
     margin-top: 200px;
     margin-bottom: 150px;
-}
-.OurStory2{
-    background-color: whitesmoke;
-    margin-top: 20px;
-    padding-top: 30px;
     border: none;
     box-shadow: 4px 4px 10px gray;
+    
+}
+/* Custom CSS for centering */
+.center-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%; /* Ensure columns take full height */
+}
+
+.center-content img {
+    max-width: 100%; /* Ensure image doesn't exceed its container */
+    height: auto;
+}
+
+.OurStory2{
+    margin-top: 20px;
+    padding-top: 30px;
     color: rgb(33, 37, 41);
 }
-.OurMission{
-    background-color: rgb(33, 37, 41);
-    color: whitesmoke;
-    margin-top: 20px;
-    padding-top: 30px;
-    border: none;
-    box-shadow: 4px 4px 10px gray;
-}
+
 .MStory{
     font-weight: bold;
 }
@@ -306,9 +317,9 @@ body{
     align-items: center;
     justify-content: center;
     min-height: 400px;
-    background-color: black;
+    background-color:rgb(255, 254, 254);
     border: none;
-    box-shadow: 2px 2px 5px rgb(189, 157, 48);
+    box-shadow: 2px 2px 5px rgb(40, 40, 40);
 }
 
 .banner img {
@@ -319,19 +330,18 @@ body{
 .revUp {
     font-size: 40px;
     font-weight: bolder;
-    text-shadow: 4px 2px 10px black;
-    color: rgb(189, 157, 48);
+    color: rgb(40, 40, 40);
 }
 .revUptxt {
     font-weight: 550;
-    text-shadow: 2px 2px 10px rgb(33, 37, 41);
-    color: whitesmoke;
+    text-shadow: 1px 1px 5px rgb(182, 182, 182);
+    color: rgb(40, 40, 40);
 }
 
 
 .limited {
     font-weight: bolder;
-    color: rgb(33, 37, 41);
+    color: rgb(40, 40, 40);
     background-color: rgb(189, 157, 48);
     width: 100%;
     padding-top: 10px;
@@ -347,8 +357,8 @@ body{
 }
 
 .promocards {
-    background-color: rgb(33, 37, 41);
-    color: whitesmoke;
+    background-color: whitesmoke;
+    color: rgb(40, 40, 40);
     position: relative;
     overflow: hidden;
     margin-bottom: 20px;
@@ -382,16 +392,22 @@ body{
     font-size: 18px;
     padding: 4px 8px;
     border-radius: 4px;
-    box-shadow: 1px 1px 5px rgb(236, 237, 238);
+    box-shadow: 1px 1px 5px rgb(40, 40, 40);
     font-weight: bold;
     z-index: 1;
+}
+.duration-badge{
+    text-align: center;
+    background-color: rgb(40, 40, 40);
+    color: rgb(236, 237, 238);
+    padding-top: 10px;
 }
 
 .inquire {
     background:  #ffc107;
     font-weight: bolder;
     border: none;
-    box-shadow: 2px 2px 5px rgb(221, 234, 247);
+    box-shadow: 2px 2px 5px rgb(40, 40, 40);
 }
 
 .promoDate{
