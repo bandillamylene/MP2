@@ -170,14 +170,9 @@ body{
     flex-direction: column;
     align-items: center;
     width: 100%;
+    font-weight: bold;
     
 
-}
-
-.EstText .blank {
-    width: 100%;
-    border-top: 4px solid rgb(189, 157, 48);
-    margin-bottom: 20px;
 }
 
 .EstText .blank:nth-child(2),
@@ -191,16 +186,19 @@ body{
     box-shadow: 4px 4px 10px gray;
     
 }
+.story1{
+    font-weight: bold;
+}
 /* Custom CSS for centering */
 .center-content {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100%; /* Ensure columns take full height */
+    height: 100%;
 }
 
 .center-content img {
-    max-width: 100%; /* Ensure image doesn't exceed its container */
+    max-width: 100%; 
     height: auto;
 }
 
@@ -263,8 +261,8 @@ body{
 .card {
     border: none;
     box-shadow: 4px 4px 10px gray;
-    background-color: rgb(33, 37, 41);
-    color: whitesmoke;
+    background-color: rgb(250, 250, 247);
+    color: rgb(40, 40, 40);
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -292,9 +290,9 @@ body{
     padding: 50px;
     margin-top: 200px;
     margin-bottom: 0;
-    color: rgb(33, 37, 41);
+    color: rgb(40, 40, 40);
     border: none;
-    box-shadow: 4px 4px 10px rgb(33, 37, 41);
+    box-shadow: 4px 4px 10px rgb(40, 40, 40);
 
 }
 .visit{
