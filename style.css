@@ -313,12 +313,7 @@ body{
     align-items: center;
     justify-content: center;
     min-height: 400px;
-    background-image: url(./images/PromoHeroImg.jpg);
-    background-size: cover; /* Ensure the background image covers the entire container */
-    background-position: center; /* Center the background image */
-    border: none;
-    box-shadow: 2px 2px 5px rgb(40, 40, 40);
-    backdrop-filter: brightness(90%) blur(5px); /* Apply backdrop filter for readability */
+    
 }
 
 .revUp {
@@ -328,8 +323,9 @@ body{
 }
 .revUptxt {
     font-weight: 550;
-    color: whitesmoke;
+    color: #1f2327;
 }
+
 
 
 
