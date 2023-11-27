@@ -416,6 +416,11 @@ body{
     text-align: center;
 }
 
+.custom-strike{
+    font-size: small;
+    text-decoration-color: rgb(209, 52, 52);
+}
+
 
 
 
