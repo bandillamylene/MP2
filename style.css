@@ -421,7 +421,35 @@ body{
     text-decoration-color: rgb(209, 52, 52);
 }
 
+/*ANIMATIONS*/
 
+/* Initial hidden state for animation */
+.StoryCont {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  
+  /* Class to trigger animation */
+  .slide-in.animate {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  
+/*BOUNCING CARDS*/
+  .bounce-on-hover:hover {
+    animation: bounce 1s ease infinite;
+  }
+  
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+  
 
 
 

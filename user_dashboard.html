@@ -1,101 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="./style.css">
-    <title>User_Dashboard-Throtte Twist</title>
+    <title>User Dashboard - Motorcycle Dealership</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom CSS */
+        /* Add your custom styles here */
+    </style>
 </head>
+
 <body>
 
-      <!--NAVIGATION BAR-->
-<nav class="navbar_content navbar navbar-expand-lg sticky-top bg-dark">
-    <div class="container-fluid">
-
-        <a class="navbar-brand text-white" href="./index.html">
-            <img src="./images/throttlelogo.png" class="logo ">
-        </a>
-
-        <div class="collapse navbar-collapse justify-content-lg-around justify-content-md-around" id="navbar">
-
-            <ul class="navbar-nav">
-
-                <li class="nav-item dropdown pe-4">
-                    <a class="nav-link dropdown-toggle text-white" href="#" id="motorcyclesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Motorcycles
-                    </a>
-                        <ul class="dropdown-menu bg-white" aria-labelledby="motorcyclesDropdown">
-                            <li><a class="dropdown-item" href="honda.html">Honda</a></li>
-                            <li><a class="dropdown-item" href="kawasaki.html">Kawasaki</a></li>
-                            <li><a class="dropdown-item" href="#">Yamaha</a></li>
-                            <li><a class="dropdown-item" href="#">Motorstar</a></li>
-                            <li><a class="dropdown-item" href="#">CFMoto</a></li>
-                        </ul>
-                  </li>
-
-                  <li class="nav-item dropdown pe-4">
-                    <a class="nav-link dropdown-toggle text-white" href="#" id="services" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Services
-                    </a>
-                        <ul class="dropdown-menu bg-white" aria-labelledby="motorcyclesDropdown">
-                            <li><a class="dropdown-item" href="#">Service Inquiry</a></li>
-                            <li><a class="dropdown-item" href="loancalculator.html">Loan Calculator</a></li>
-                        </ul>
-                  </li>
-
-                  <li class="nav-item dropdown pe-4">
-                    <a class="nav-link dropdown-toggle text-white" href="./promos.html" id="Promos" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Promos
-                    </a>
-                        <ul class="dropdown-menu bg-white" aria-labelledby="motorcyclesDropdown">
-                            <li><a class="dropdown-item" href="./promos.html">Limited Time</a></li>
-                            <li><a class="dropdown-item" href="#">Hot Deals</a></li>
-                            <li><a class="dropdown-item" href="#">Option 3</a></li>
-                        </ul>
-                  </li>
-
-                <li class="nav-item pe-4">
-                    <a class="nav-link text-white" href="./aboutUs.html">About Us</a>
-
-
-                </li>
-
-                <li class="nav-item pe-4">
-                    <a class="nav-link text-white active-link" href="./contactUs.html">Contact Us</a>
-
-
-                </li>
-
-            </ul>
-         
-            <form class="s-bar d-flex justify-content-lg-end justify-content-end align-items-end" role="search">
-                <input class="form-control me-2 rounded-5" type="search" placeholder="Search" id="search">
-                <button class="s-button btn btn-outline-light btn-sm" type="submit">
-                    <i class="fas fa-search"></i>
-                </button>
-            </form>
-
-        </div>
-
-<br><br><br>
-
-
-        <div class="d-lg-block d-flex justify-content-end">
-            <a href="./login.html" class="login text-white mx-3 btn btn-md">Login</a>
-        
-
-            <button class="navbar-toggler bg-white ms-auto me-3" type="button" data-bs-target="#navbar" data-bs-toggle="collapse">
+    <!-- Navigation bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Throttle Twist</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Motorcycles</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Logout</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-        
+    </nav>
 
-
+    <!-- User Dashboard Content -->
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-3">
+                <!-- Profile Section -->
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <img src="https://via.placeholder.com/150" alt="Profile Picture" class="img-fluid rounded-circle mb-3">
+                        <h5 class="card-title">Personal Information</h5>
+                        <p class="card-text">Name: Apollonius Endymiun Flag</p>
+                        <p class="card-text">Email: bandillamylene.dev@gmail.com</p>
+                        <p class="card-text">Phone: 09565715585</p>
+                    </div>
+                </div>
+                <!-- Sidebar -->
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">User Dashboard</h5>
+                        <ul class="list-group">
+                            <li class="list-group-item">Profile</li>
+                            <li class="list-group-item">Orders</li>
+                            <li class="list-group-item">Loan</li>
+                            <li class="list-group-item">Settings</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <!-- Main Content -->
+                <h2>Welcome, User!</h2>
+                <p>This is your personalized dashboard. You can view your profile information, track orders, and
+                    manage your settings from here.</p>
+                <h3>Your Bikes</h3>
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <div class="card">
+                            <img src="https://via.placeholder.com/200" alt="Order Image" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">Bike #001</h5>
+                                <p class="card-text">Motorcycle Model: ABC123</p>
+                                <a href="#" class="btn btn-primary">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="card">
+                            <img src="https://via.placeholder.com/200" alt="Order Image" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">Bike #002</h5>
+                                <p class="card-text">Motorcycle Model: XYZ456</p>
+                                <a href="#" class="btn btn-primary">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Add more order cards -->
+                </div>
+            </div>
+        </div>
     </div>
-</nav>
-    
+
+    <!-- Footer -->
+    <footer class="footer mt-auto py-3 bg-dark text-light">
+        <div class="container text-center">
+            <span>&copy; 2023 Throttle Twist</span>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
+
+

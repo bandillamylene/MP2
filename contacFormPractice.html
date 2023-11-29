@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Us</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    form {
+      max-width: 500px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    label,
+    input,
+    select,
+    textarea,
+    input[type="submit"] {
+      display: block;
+      margin-bottom: 15px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    select {
+      height: 40px;
+    }
+
+    textarea {
+      height: 100px;
+    }
+
+    input[type="submit"] {
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Contact Us</h1>
+
+<form action="/submit-form" method="post" id="contactForm" onsubmit="return validateForm()">
+  <label for="topic">What are you contacting us about?</label>
+  <select id="topic" name="topic">
+    <option value="general">General Inquiry</option>
+    <option value="support">Support</option>
+    <option value="feedback">Feedback</option>
+    <!-- Add more options as needed -->
+  </select>
+
+  <label for="specific">Please be more specific:</label>
+  <select id="specific" name="specific">
+    <!-- Options for each topic -->
+  </select>
+
+  <label for="firstname">First Name:</label>
+  <input type="text" id="firstname" name="firstname" placeholder="Your first name" required>
+
+  <label for="surname">Surname:</label>
+  <input type="text" id="surname" name="surname" placeholder="Your surname" required>
+
+  <label for="address">Address:</label>
+  <input type="text" id="address" name="address" placeholder="Your address" required>
+
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" placeholder="Your email address" required>
+
+  <label for="phone">Phone Number:</label>
+  <input type="tel" id="phone" name="phone" placeholder="Your phone number" required>
+
+  <label for="message">Your Message:</label>
+  <textarea id="message" name="message" rows="4" cols="50"></textarea>
+
+  <input type="submit" value="Submit">
+</form>
+
+<script>
+  function validateForm() {
+    const firstname = document.getElementById('firstname').value;
+    const surname = document.getElementById('surname').value;
+    const address = document.getElementById('address').value;
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
+
+    if (firstname === '' || surname === '' || address === '' || email === '' || phone === '') {
+      alert('Please fill out all required fields');
+      return false; // Prevent form submission
+    }
+
+    // Additional validations can be added here if needed
+
+    return true; // Allow form submission
+  }
+
+  const topicDropdown = document.getElementById('topic');
+  const specificDropdown = document.getElementById('specific');
+
+  const optionsMap = {
+    general: [
+      { value: 'question', text: 'Question' },
+      { value: 'partnership', text: 'Partnership' },
+      // Add more options for General Inquiry
+    ],
+    support: [
+      { value: 'technical', text: 'Technical Issue' },
+      { value: 'account', text: 'Account Problem' },
+      // Add more options for Support
+    ],
+    feedback: [
+      { value: 'site', text: 'Website Feedback' },
+      { value: 'product', text: 'Product Feedback' },
+      // Add more options for Feedback
+    ],
+  };
+
+  topicDropdown.addEventListener('change', function () {
+    const selectedTopic = this.value;
+    specificDropdown.innerHTML = '';
+
+    optionsMap[selectedTopic].forEach(option => {
+      const optionElement = document.createElement('option');
+      optionElement.value = option.value;
+      optionElement.textContent = option.text;
+      specificDropdown.appendChild(optionElement);
+    });
+
+    console.log(`Selected Topic: ${selectedTopic}`);
+  });
+
+  specificDropdown.addEventListener('change', function () {
+    const selectedSpecific = this.value;
+    console.log(`Selected Specific Option: ${selectedSpecific}`);
+  });
+
+  // Trigger the change event initially to populate the specific dropdown
+  topicDropdown.dispatchEvent(new Event('change'));
+</script>
+
+</body>
+</html>
