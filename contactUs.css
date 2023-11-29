@@ -11,6 +11,7 @@
     border-radius: 10px;
     box-shadow: 2px 2px 5px rgb(40, 40, 40);
     padding: 20px;
+    padding-top: 60px;
   }
   
   label {
@@ -39,4 +40,8 @@
 
   .submit-contactForm:hover{
     background-color: rgb(189, 157, 48);
+  }
+
+  .warning-message{
+    color: red;
   }
