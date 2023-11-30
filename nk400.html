@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="products_styling.css">
+     <title>CFMoto - NK400</title>
+</head>
+<body> 
+
+<!--NAVIGATION BAR-->
+<nav class="navbar_content navbar navbar-expand-lg sticky-top bg-dark">
+    <div class="container-fluid">
+
+        <a class="navbar-brand text-white" href="./index.html">
+            <img src="./images/throttlelogo.png" class="logo ">
+        </a>
+
+        <div class="collapse navbar-collapse justify-content-lg-around justify-content-md-around" id="navbar">
+
+            <ul class="navbar-nav">
+
+                <li class="nav-item dropdown pe-4">
+                    <a class="nav-link dropdown-toggle text-white" href="#" id="motorcyclesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Motorcycles
+                    </a>
+                        <ul class="dropdown-menu bg-white" aria-labelledby="motorcyclesDropdown">
+                            <li><a class="dropdown-item" href="honda.html">Honda</a></li>
+                            <li><a class="dropdown-item" href="kawasaki.html">Kawasaki</a></li>
+                            <li><a class="dropdown-item" href="#">Yamaha</a></li>
+                            <li><a class="dropdown-item" href="#">Motorstar</a></li>
+                            <li><a class="dropdown-item" href="#">CFMoto</a></li>
+                        </ul>
+                  </li>
+
+                  <li class="nav-item dropdown pe-4">
+                    <a class="nav-link dropdown-toggle text-white" href="#" id="services" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Services
+                    </a>
+                        <ul class="dropdown-menu bg-white" aria-labelledby="motorcyclesDropdown">
+                            <li><a class="dropdown-item" href="#">Service Inquiry</a></li>
+                            <li><a class="dropdown-item" href="loancalculator.html">Loan Calculator</a></li>
+                        </ul>
+                  </li>
+
+                  <li class="nav-item dropdown pe-4">
+                    <a class="nav-link dropdown-toggle text-white" href="./promos.html" id="Promos" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Promos
+                    </a>
+                        <ul class="dropdown-menu bg-white" aria-labelledby="motorcyclesDropdown">
+                            <li><a class="dropdown-item" href="./promos.html">Limited Time</a></li>
+                            <li><a class="dropdown-item" href="#">Hot Deals</a></li>
+                            <li><a class="dropdown-item" href="#">Option 3</a></li>
+                        </ul>
+                  </li>
+
+                <li class="nav-item pe-4">
+                    <a class="nav-link text-white" href="./aboutUs.html">About Us</a>
+
+
+                </li>
+
+                <li class="nav-item pe-4">
+                    <a class="nav-link text-white" href="./contactUs.html">Contact Us</a>
+
+
+                </li>
+
+            </ul>
+         
+            <form class="s-bar d-flex justify-content-lg-end justify-content-end align-items-end" role="search">
+                <input class="form-control me-2 rounded-5" type="search" placeholder="Search" id="search">
+                <button class="s-button btn btn-outline-light btn-sm" type="submit">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+
+        </div>
+
+<br><br><br>
+
+
+        <div class="d-lg-block d-flex justify-content-end">
+            <a href="#" class="login text-white mx-3 btn btn-md">Login</a>
+        
+
+            <button class="navbar-toggler bg-white ms-auto me-3" type="button" data-bs-target="#navbar" data-bs-toggle="collapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+        
+
+
+    </div>
+</nav>
+
+
+    <!--Carousel-->
+    <div class="carousel slide pb-3" id="carousel_img" data-bs-ride="carousel">
+        <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="4000">
+        <img class="img-fluid" src="images/motorcycles/cfmoto/nk400/cover_1.jpg">
+        
+        
+            </div>
+        
+        <div class="carousel-item" data-bs-interval="4000">
+            <img class="img-fluid" src="images/motorcycles/cfmoto/nk400/cover_2.jpg">
+    
+        
+            </div>
+        
+          
+        
+             
+        
+        </div>
+        
+        <button class="carousel-control-prev" data-bs-target="#carousel_img" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon bg-black"></span>
+        </button>
+        
+        <button class="carousel-control-next" data-bs-target="#carousel_img" data-bs-slide="next">
+            <span class="carousel-control-next-icon bg-black"></span>
+            </button>
+        
+        </div>
+
+
+<div class="container-md pt-5">
+
+<div class="row">
+
+<!--MC Overview Details-->
+<div class="col-md-6">
+
+<a href="#galleryModal" data-bs-toggle="modal" data-bs-target="#galleryModal">
+<img class="img-fluid pb-3" id="main_image" src="images/motorcycles/cfmoto/nk400/pic_1.jpg">
+</a>
+
+<img class="img-fluid" style="width: 6rem;" src="images/motorcycles/cfmoto/nk400/pic_2.jpg" onclick="changeImage(this)">
+<img class="img-fluid" style="width: 6rem;" src="images/motorcycles/cfmoto/nk400/pic_1.jpg" onclick="changeImage(this)">
+
+<h4 class="h4 pt-5 pb-3"><b>CFMOTO NK400</b></h4>
+<p>Launched in the local market in 2018, the CFMOTO is an expressway-legal naked bike that aims to attract bikers who are up for thrilling rides at a reasonable price point of P215,000. Here in the Philippines, this big bike is available in color combinations of Athens Blue and Pearl Black as well as New Pearl White and Pearl Black.</p>
+<p>Aesthetic-wise, the CFMOTO 400 NK brags its sharp and muscular appearance, LED headlight and taillight, dual stepped seat, a pair of 17-inch wheels, and a 17-liter fuel tank. It also gets a center console that displays digital odometer, fuel gauge, and speedometer. There's also a tachometer and trip meter for additional rider information.</p>
+<p>As for enhanced rideability and handling, this naked bike is installed with retractable front suspension and cantilever rear suspension. To keep the rider's peace of mind, it is equipped with front and rear disc brakes, along with Anti-lock Braking System (ABS) as well as a pass switch.</p>
+
+<p class="pb-5">When it comes to performance, the 400 NK can sprint up to 155 km/h top speed. This feat is thanks to its powerful 400cc liquid-cooled, DOHC gasoline engine that can churn out a maximum output of 41 hp and 34 Nm of torque. This power mill is then coupled to a 6-speed manual gearbox.</p>
+
+</div>
+
+
+<!--MC Pricing details-->
+<div class="col-md-6 ps-4">
+<div class="pricing container text-white">
+<h5>SRP: PHP 248,900</h5>
+<h5>Downpayment: PHP 43,800</h5>
+<h5>Monthly: 9,022</h5>
+</div>
+<p>* Prices are indicative prices only and may be different at the branch. Prices are subject to change without prior notice.</p>
+
+
+<!--Gallery Modal-->
+<div class="modal fade" tabindex="-1" id="galleryModal">
+<div class="modal-dialog modal-lg">
+<div class="modal-content">
+    <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+<div class="modal-body">
+    <img class="img-fluid pb-3" id="main_image_modal" src="images/motorcycles/cfmoto/nk400/pic_1.jpg">
+
+    <img class="img-fluid" style="width: 6rem;" src="images/motorcycles/cfmoto/nk400/pic_2.jpg" onclick="changeImage_modal(this)">
+    
+    <img class="img-fluid" style="width: 6rem;" src="images/motorcycles/cfmoto/nk400/pic_1.jpg" onclick="changeImage_modal(this)">
+
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<!--Specs container-->
+<div class="specs container pt-2 pb-5">
+<h5><b>Specifications:</b></h5>
+
+<table class="table table-striped-columns">
+
+<tr class="table-dark">
+<th>
+<h5 class="h6">Make: </h5>
+</th>
+
+<th>
+<h5 class="h6 text-end">CFMOTO</h5>
+
+</th>
+
+</tr>
+
+<tr class="table-dark">
+<th>
+<h5 class="h6">Model: </h5>
+</th>
+
+<th>
+<h5 class="h6 text-end">NK400</h5>
+
+</th>
+
+</tr>
+
+<tr class="table-dark">
+<th>
+<h5 class="h6">Engine Type:</h5>
+</th>
+
+<th>
+<h5 class="h6 text-end">2-cylinder inline, 4-stroke, liquid-cooled, DOHC</h5>
+
+</th>
+
+</tr>
+
+<tr class="table-dark">
+<th>
+<h5 class="h6">Displacement</h5>
+</th>
+
+<th>
+<h5 class="h6 text-end">400.4 cc</h5>
+
+</th>
+
+</tr>
+
+<tr class="table-dark">
+<th>
+<h5 class="h6">BORE X STROKE</h5>
+</th>
+
+<th>
+<h5 class="h6 text-end">68.4 × 54.5 mm</h5>
+
+</th>
+
+</tr>
+
+<tr class="table-dark">
+<th>
+<h5 class="h6">POWER</h5>
+</th>
+
+<th>
+<h5 class="h6 text-end">29.5 kw / 9500 rpm</h5>
+
+</th>
+
+</tr>
+
+<tr class="table-dark">
+<th>
+<h5 class="h6">TORQUE</h5>
+</th>
+
+<th>
+<h5 class="h6 text-end">32 Nm / 7750 rpm</h5>
+
+</th>
+
+</tr>
+
+<tr class="table-dark">
+<th>
+<h5 class="h6">COMPRESSION RATIO</h5>
+</th>
+
+<th>
+<h5 class="h6 text-end">11.1:1</h5>
+</tr>
+
+<tr class="table-dark">
+<th>
+<h5 class="h6">CLUTCH TYPE</h5>
+</th>
+
+<th>
+<h5 class="h6 text-end">Wet multi plate</h5>
+</tr>
+
+<tr class="table-dark">
+<th>
+<h5 class="h6">LENGTH x WIDTH x HEIGHT</h5>
+</th>
+
+<th>
+<h5 class="h6 text-end">2114 × 830 × 1105 mm</h5>
+</tr>
+
+<tr class="table-dark">
+<th>
+<h5 class="h6">WHEELBASE</h5>
+</th>
+
+<th>
+<h5 class="h6 text-end">1415 mm</h5>
+</tr>
+
+<tr class="table-dark">
+<th>
+<h5 class="h6">SEAT HEIGHT</h5>
+</th>
+
+<th>
+<h5 class="h6 text-end">780 mm</h5>
+</tr>
+
+<tr class="table-dark">
+<th>
+<h5 class="h6">MINIMUM GROUND CLEARANCE</h5>
+</th>
+
+<th>
+<h5 class="h6 text-end">150 mm</h5>
+</tr>
+
+<tr class="table-dark">
+<th>
+<h5 class="h6">CURB WEIGHT</h5>
+</th>
+
+<th>
+<h5 class="h6 text-end">206 kg</h5>
+</tr>
+
+<tr class="table-dark">
+<th>
+<h5 class="h6">FUEL CAPACITY</h5>
+</th>
+
+<th>
+<h5 class="h6 text-end">17 L</h5>
+</tr>
+
+<tr class="table-dark">
+<th>
+<h5 class="h6">FRONT SUSPENSION</h5>
+</th>
+
+<th>
+<h5 class="h6 text-end">Telescopic fork</h5>
+</tr>
+
+<tr class="table-dark">
+<th>
+<h5 class="h6">REAR SUSPENSION	</h5>
+</th>
+
+<th>
+<h5 class="h6 text-end">Mono Suspension, side aligned (adjustable preload and rebound)</h5>
+</tr>
+
+<tr class="table-dark">
+<th>
+<h5 class="h6">FRONT BRAKE</h5>
+</th>
+
+<th>
+<h5 class="h6 text-end">Double disc, J.JUAN double-piston caliper</h5>
+</tr>
+
+<tr class="table-dark">
+<th>
+<h5 class="h6">REAR BRAKE</h5>
+</th>
+
+<th>
+<h5 class="h6 text-end">Single disc, J.JUAN single-piston caliper</h5>
+</tr>
+
+<tr class="table-dark">
+<th>
+<h5 class="h6">RIM</h5>
+</th>
+
+<th>
+<h5 class="h6 text-end">MT 3.5 × 17  MT 4.5 × 17</h5>
+</tr>
+
+<tr class="table-dark">
+<th>
+<h5 class="h6">FRONT TIRE</h5>
+</th>
+
+<th>
+<h5 class="h6 text-end">120/70 ZR17 M/C, CST</h5>
+</tr>
+
+<tr class="table-dark">
+<th>
+<h5 class="h6">ABS</h5>
+</th>
+
+<th>
+<h5 class="h6 text-end">Continental AG, dual channel</h5>
+</tr>
+
+<tr class="table-dark">
+<th>
+<h5 class="h6">REAR TIRE</h5>
+</th>
+
+<th>
+<h5 class="h6 text-end">160/60 ZR17 M/C, CST</h5>
+</tr>
+
+</table>
+
+
+</div>
+
+
+</div>
+
+</div>
+
+
+
+<div class="row pb-3">
+
+    <div class="col-md-12">
+        <a href="#" class="nav-link">
+            <div class="buy_now container w-50">
+                 <h4 class="h6">Buy Now</h4>
+            </div>
+        </a>
+    </div>
+    
+
+</div>
+
+<div class="row pb-3">
+
+    <div class="col-md-12">
+        <a href="#" class="nav-link">
+            <div class="buy_now container w-50">
+                 <h4 class="h6">Inquire About This Motorcycle</h4>
+            </div>
+        </a>
+    </div>
+    
+</div>
+
+<div class="row pb-4">
+
+    <div class="col-md-12">
+        <a href="#" class="nav-link">
+            <div class="buy_now container w-50">
+                 <h4 class="h6">Check Our Loan Calculator</h4>
+            </div>
+        </a>
+    </div>
+    
+</div>
+
+
+</div>
+
+
+
+    
+<!--Footer-->
+<footer class="responsive-footer container-fluid mt-5 pt-5">
+    <div class="container-md">
+    <div class="row mx-3">
+        <div class="col">
+            <p class="foothead">Motorcycles</p>
+            <ul class="footlist" id="aboutuslist">
+                <li><a href="honda.html">Honda</a></li>
+                <li><a href="#">Kawasaki</a></li>
+                <li><a href="#">Yamaha</a></li>
+                <li><a href="#">Motorstar</a></li>
+                <li><a href="#">CFMoto</a></li>
+            </ul>
+        </div>
+
+
+        <div class="col">
+            <p class="foothead">Services</p>
+            <ul class="footlist" id="srvcslist">
+                <li><a href="#">Service Inquiry Form</a></li>
+                <li><a href="loancalculator.html">Loan Calculator</a></li>
+            </ul>
+        </div>
+
+        <div class="col">
+            <p class="foothead">Connect To Us</p>
+            <ul class="footlist" id="srvcslist">
+                <li><a href="aboutUs.html">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+
+        <div class="col">
+            <p class="foothead">Social Media Links</p>
+            <ul class="footlist" id="srvcslist">
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">Youtube</a></li>
+                <li><a href="#">Tiktok</a></li>
+            </ul>
+        </div>
+
+        <div class="col">
+            <p class="foothead">Location</p>
+            <ul class="footlist">
+                <li>Brgy. New Valencia, Tugbok District</li>
+                <li>Davao City, 8000, Philippines</li>
+            </ul>
+        </div>
+
+        
+    </div>
+</div>
+
+
+    <hr>
+    <div class="row align-items-center">
+        <div class="col-md-6 ">
+            <p class="copy text-center mt-4">© 2023 Throttle Twist
+                <br>
+                <a class="footlist" href="#">Terms and Conditions</a>
+            </p>
+            
+        </div>
+        <div class="col-md-6 text-center">
+            <a class="footerLogo" href="#">
+                <img src="./images/throttlelogo.png" class="logo">
+            </a>
+        </div>
+    </div>
+    
+  
+</footer>
+
+
+<script src="products_pages.js"></script>
+
+</body>
+</html>

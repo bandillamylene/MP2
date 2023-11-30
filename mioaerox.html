@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="products_styling.css">
+     <title>Yamaha - Mio Aerox 155</title>
+</head>
+<body> 
+
+<!--NAVIGATION BAR-->
+<nav class="navbar_content navbar navbar-expand-lg sticky-top bg-dark">
+    <div class="container-fluid">
+
+        <a class="navbar-brand text-white" href="./index.html">
+            <img src="./images/throttlelogo.png" class="logo ">
+        </a>
+
+        <div class="collapse navbar-collapse justify-content-lg-around justify-content-md-around" id="navbar">
+
+            <ul class="navbar-nav">
+
+                <li class="nav-item dropdown pe-4">
+                    <a class="nav-link dropdown-toggle text-white" href="#" id="motorcyclesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Motorcycles
+                    </a>
+                        <ul class="dropdown-menu bg-white" aria-labelledby="motorcyclesDropdown">
+                            <li><a class="dropdown-item" href="honda.html">Honda</a></li>
+                            <li><a class="dropdown-item" href="kawasaki.html">Kawasaki</a></li>
+                            <li><a class="dropdown-item" href="#">Yamaha</a></li>
+                            <li><a class="dropdown-item" href="#">Motorstar</a></li>
+                            <li><a class="dropdown-item" href="#">CFMoto</a></li>
+                        </ul>
+                  </li>
+
+                  <li class="nav-item dropdown pe-4">
+                    <a class="nav-link dropdown-toggle text-white" href="#" id="services" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Services
+                    </a>
+                        <ul class="dropdown-menu bg-white" aria-labelledby="motorcyclesDropdown">
+                            <li><a class="dropdown-item" href="#">Service Inquiry</a></li>
+                            <li><a class="dropdown-item" href="loancalculator.html">Loan Calculator</a></li>
+                        </ul>
+                  </li>
+
+                  <li class="nav-item dropdown pe-4">
+                    <a class="nav-link dropdown-toggle text-white" href="./promos.html" id="Promos" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Promos
+                    </a>
+                        <ul class="dropdown-menu bg-white" aria-labelledby="motorcyclesDropdown">
+                            <li><a class="dropdown-item" href="./promos.html">Limited Time</a></li>
+                            <li><a class="dropdown-item" href="#">Hot Deals</a></li>
+                            <li><a class="dropdown-item" href="#">Option 3</a></li>
+                        </ul>
+                  </li>
+
+                <li class="nav-item pe-4">
+                    <a class="nav-link text-white" href="./aboutUs.html">About Us</a>
+
+
+                </li>
+
+                <li class="nav-item pe-4">
+                    <a class="nav-link text-white" href="./contactUs.html">Contact Us</a>
+
+
+                </li>
+
+            </ul>
+         
+            <form class="s-bar d-flex justify-content-lg-end justify-content-end align-items-end" role="search">
+                <input class="form-control me-2 rounded-5" type="search" placeholder="Search" id="search">
+                <button class="s-button btn btn-outline-light btn-sm" type="submit">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+
+        </div>
+
+<br><br><br>
+
+
+        <div class="d-lg-block d-flex justify-content-end">
+            <a href="#" class="login text-white mx-3 btn btn-md">Login</a>
+        
+
+            <button class="navbar-toggler bg-white ms-auto me-3" type="button" data-bs-target="#navbar" data-bs-toggle="collapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+        
+
+
+    </div>
+</nav>
+
+
+    <!--Carousel-->
+    <div class="carousel slide pb-3" id="carousel_img" data-bs-ride="carousel">
+        <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="4000">
+        <img class="img-fluid" src="images/motorcycles/yamaha/aerox/cover_1.jpg">
+        
+        
+            </div>
+
+            <div class="carousel-item" data-bs-interval="4000">
+                <img class="img-fluid" src="images/motorcycles/yamaha/aerox/cover_2.jpg">
+                
+                
+                    </div>
+
+        
+        </div>
+        
+        <button class="carousel-control-prev" data-bs-target="#carousel_img" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon bg-black"></span>
+        </button>
+        
+        <button class="carousel-control-next" data-bs-target="#carousel_img" data-bs-slide="next">
+            <span class="carousel-control-next-icon bg-black"></span>
+            </button>
+        
+        </div>
+
+
+<div class="container-md pt-5">
+
+<div class="row">
+
+<!--MC Overview Details-->
+<div class="col-md-6">
+
+<a href="#galleryModal" data-bs-toggle="modal" data-bs-target="#galleryModal">
+<img class="img-fluid pb-3" id="main_image" src="images/motorcycles/yamaha/aerox/pic_1.jpg">
+</a>
+
+<img class="img-fluid" style="width: 6rem;" src="images/motorcycles/yamaha/aerox/pic_2.jpg" onclick="changeImage(this)">
+<img class="img-fluid" style="width: 6rem;" src="images/motorcycles/yamaha/aerox/pic_3.jpg" onclick="changeImage(this)">
+<img class="img-fluid" style="width: 6rem;" src="images/motorcycles/yamaha/aerox/pic_4.jpg" onclick="changeImage(this)">
+<img class="img-fluid" style="width: 6rem;" src="images/motorcycles/yamaha/aerox/pic_1.jpg" onclick="changeImage(this)">
+
+
+<h4 class="h4 pt-5 pb-3"><b>MIO AEROX</b></h4>
+<p class="pb-5">This machine was designed with the intention of combining excellent design and racing technology. As a result, the fastest AT with features that complement performance and function was created.</p>
+
+</div>
+
+
+<!--MC Pricing details-->
+<div class="col-md-6 ps-4">
+<div class="pricing container text-white">
+<h5>SRP: PHP 124,000</h5>
+<h5>Downpayment: PHP 17,000</h5>
+<h5>Monthly: 4,662</h5>
+</div>
+<p>* Prices are indicative prices only and may be different at the branch. Prices are subject to change without prior notice.</p>
+
+
+<!--Gallery Modal-->
+<div class="modal fade" tabindex="-1" id="galleryModal">
+<div class="modal-dialog modal-lg">
+<div class="modal-content">
+    <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+<div class="modal-body">
+
+    <img class="img-fluid pb-3" id="main_image_modal" src="images/motorcycles/yamaha/aerox/pic_1.jpg">
+
+    <img class="img-fluid" style="width: 6rem;" src="images/motorcycles/yamaha/aerox/pic_2.jpg" onclick="changeImage_modal(this)">
+    
+    <img class="img-fluid" style="width: 6rem;" src="images/motorcycles/yamaha/aerox/pic_3.jpg" onclick="changeImage_modal(this)">
+
+    <img class="img-fluid" style="width: 6rem;" src="images/motorcycles/yamaha/aerox/pic_4.jpg" onclick="changeImage_modal(this)">
+
+    <img class="img-fluid" style="width: 6rem;" src="images/motorcycles/yamaha/aerox/pic_1.jpg" onclick="changeImage_modal(this)">
+    
+    
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<!--Specs container-->
+<div class="specs container pt-2 pb-5">
+    <h5><b>Specifications:</b></h5>
+    
+    <table class="table table-striped-columns">
+    
+    <tr class="table-dark">
+    <th>
+    <h5 class="h6">Make: </h5>
+    </th>
+    
+    <th>
+    <h5 class="h6 text-end">YAMAHA - Revs your Heart</h5>
+    
+    </th>
+    
+    </tr>
+    
+    <tr class="table-dark">
+    <th>
+    <h5 class="h6">Model: </h5>
+    </th>
+    
+    <th>
+    <h5 class="h6 text-end">YAMAHA Mio Aerox 155</h5>
+    
+    </th>
+    
+    </tr>
+    
+    <tr class="table-dark">
+    <th>
+    <h5 class="h6">Registration date</h5>
+    </th>
+    
+    <th>
+    <h5 class="h6 text-end">2021</h5>
+    
+    </th>
+    
+    </tr>
+    
+    <tr class="table-dark">
+    <th>
+    <h5 class="h6">Transmission</h5>
+    </th>
+    
+    <th>
+    <h5 class="h6 text-end">Automatic</h5>
+    
+    </th>
+    
+    </tr>
+    
+    <tr class="table-dark">
+    <th>
+    <h5 class="h6">Transmission Type</h5>
+    </th>
+    
+    <th>
+    <h5 class="h6 text-end">CVT</h5>
+    
+    </th>
+    
+    </tr>
+    
+    <tr class="table-dark">
+    <th>
+    <h5 class="h6">Brake System (Front / Rear)</h5>
+    </th>
+    
+    <th>
+    <h5 class="h6 text-end">Disc/Drum</h5>
+    
+    </th>
+    
+    </tr>
+    
+    <tr class="table-dark">
+    <th>
+    <h5 class="h6">Displacement (cc)</h5>
+    </th>
+    
+    <th>
+    <h5 class="h6 text-end">155</h5>
+    
+    </th>
+    
+    </tr>
+    
+    <tr class="table-dark">
+    <th>
+    <h5 class="h6">Maximum Horse Power</h5>
+    </th>
+    
+    <th>
+    <h5 class="h6 text-end">14.7 hp</h5>
+    </th>
+    </tr>
+
+    
+    </table>
+
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="row pb-3">
+
+    <div class="col-md-12">
+        <a href="#" class="nav-link">
+            <div class="buy_now container w-50">
+                 <h4 class="h6">Buy Now</h4>
+            </div>
+        </a>
+    </div>
+    
+
+</div>
+
+<div class="row pb-3">
+
+    <div class="col-md-12">
+        <a href="#" class="nav-link">
+            <div class="buy_now container w-50">
+                 <h4 class="h6">Inquire About This Motorcycle</h4>
+            </div>
+        </a>
+    </div>
+    
+</div>
+
+<div class="row pb-4">
+
+    <div class="col-md-12">
+        <a href="#" class="nav-link">
+            <div class="buy_now container w-50">
+                 <h4 class="h6">Check Our Loan Calculator</h4>
+            </div>
+        </a>
+    </div>
+    
+</div>
+
+
+</div>
+
+
+
+    
+<!--Footer-->
+<footer class="responsive-footer container-fluid mt-5 pt-5">
+    <div class="container-md">
+    <div class="row mx-3">
+        <div class="col">
+            <p class="foothead">Motorcycles</p>
+            <ul class="footlist" id="aboutuslist">
+                <li><a href="honda.html">Honda</a></li>
+                <li><a href="#">Kawasaki</a></li>
+                <li><a href="#">Yamaha</a></li>
+                <li><a href="#">Motorstar</a></li>
+                <li><a href="#">CFMoto</a></li>
+            </ul>
+        </div>
+
+
+        <div class="col">
+            <p class="foothead">Services</p>
+            <ul class="footlist" id="srvcslist">
+                <li><a href="#">Service Inquiry Form</a></li>
+                <li><a href="loancalculator.html">Loan Calculator</a></li>
+            </ul>
+        </div>
+
+        <div class="col">
+            <p class="foothead">Connect To Us</p>
+            <ul class="footlist" id="srvcslist">
+                <li><a href="aboutUs.html">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+
+        <div class="col">
+            <p class="foothead">Social Media Links</p>
+            <ul class="footlist" id="srvcslist">
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">Youtube</a></li>
+                <li><a href="#">Tiktok</a></li>
+            </ul>
+        </div>
+
+        <div class="col">
+            <p class="foothead">Location</p>
+            <ul class="footlist">
+                <li>Brgy. New Valencia, Tugbok District</li>
+                <li>Davao City, 8000, Philippines</li>
+            </ul>
+        </div>
+
+        
+    </div>
+</div>
+
+
+    <hr>
+    <div class="row align-items-center">
+        <div class="col-md-6 ">
+            <p class="copy text-center mt-4">© 2023 Throttle Twist
+                <br>
+                <a class="footlist" href="#">Terms and Conditions</a>
+            </p>
+            
+        </div>
+        <div class="col-md-6 text-center">
+            <a class="footerLogo" href="#">
+                <img src="./images/throttlelogo.png" class="logo">
+            </a>
+        </div>
+    </div>
+    
+  
+</footer>
+
+
+<script src="products_pages.js"></script>
+
+</body>
+</html>

@@ -78,6 +78,19 @@ body{
 
 }
 
+
+
+/*Search Container*/
+.search_container{
+    margin-top: 25px;
+    border-radius: 20px;
+    padding: 30px;
+    background-color: #1f2327;
+    color: #fff;
+
+}
+
+
 /*Motorcycle Cards*/
 .mc_card{
     display: flex;
