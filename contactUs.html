@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ThrottleTwist-Promo Page</title>
+    <title>Contact-ThrottleTwist</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./contactUs.css">
 </head>
 <body>
     
@@ -84,7 +85,7 @@
 
 
         <div class="d-lg-block d-flex justify-content-end">
-            <a href="#" class="login text-white mx-3 btn btn-md">Login</a>
+            <a href="./login.html" class="login text-white mx-3 btn btn-md">Login</a>
         
 
             <button class="navbar-toggler bg-white ms-auto me-3" type="button" data-bs-target="#navbar" data-bs-toggle="collapse">
@@ -97,62 +98,105 @@
     </div>
 </nav>
 
-<!--Contact Us hero Image-->
-    <div class="container-fluid m-0 p-0">
-        <img src="./images/ContactUs/copyofcontactUsimg.png" class="img-fluid">
-    </div>
-<!--LOCATION-->
-
-            <iframe 
-                width="100%"
-                height="500"
-                frameborder="0" style="border:0"
-
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5902.83210601518!2d125.54128623437072!3d7.1760872563648155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x32f915137f6f0e6b%3A0x74835bdf1619ec76!2sAdorable%20garden%20farm!5e1!3m2!1sen!2sph!4v1701091378702!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
 
 
-            <div class="container-fluid">
-                <div class="row"></div>
+<div class="container-fluid">
+    <div class="container-fluid my-3">
+        <h1 class="text-center my-5">Good Day! Send Us a message.</h1>
+        <form id="contactForm" action="#" method="post">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="inquiryType"><h3>What are you contacting us about?</h3></label>
+                <span id="inquiryTypeWarning" class="warning-message" style="display: none;">Please select an inquiry type.</span>
+                <select id="inquiryType" name="inquiryType" onchange="enableSpecific()" class="form-control">
+                  <option value="" selected disabled>Select an Option</option>
+                  <option value="general">General Inquiry</option>
+                  <option value="support">Support</option>
+                  <option value="sales">Sales</option>
+                  <option value="feedback">Feedback</option>
+                  <!-- Add more options as needed -->
+                </select>
+             
+                <br>
+        
+                <label for="specificInquiry"><h3>Please be more specific:</h3></label>
+                <span id="specificInquiryWarning" class="warning-message" style="display: none;">Please specify your inquiry.</span>
+                <select id="specificInquiry" name="specificInquiry" disabled class="form-control">
+                  <option value="" selected disabled>Select an Option</option>
+                  <!-- Options will be added using JavaScript -->
+                </select>
+                
+                <br>
+        
+                <label for="additionalInfo"><h3>Additional Information:</h3></label>
+                <textarea id="additionalInfo" name="additionalInfo" class="form-control" rows="4" placeholder="Enter additional information"></textarea>
+                <br>
+              </div>
             </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="firstName">First Name:</label>
+                <span id="firstNameWarning" class="warning-message" style="display: none;">Please enter your first name.</span>
+                <input type="text" id="firstName" name="firstName" class="form-control" placeholder="Enter First Name">
+                <br>
+        
+                <label for="surname">Last Name:</label>
+                <span id="surnameWarning" class="warning-message" style="display: none;">Please enter your last name.</span>
+                <input type="text" id="surname" name="surname" class="form-control" placeholder="Enter Last Name">
+                <br>
+        
+                <label for="email">Email:</label>
+                <span id="emailWarning" class="warning-message" style="display: none;">Please enter your email.</span>
+                <input type="email" id="email" name="email" class="form-control" placeholder="sample.sample@gmail.com" autocomplete="email">
+                <br>
+        
+                <label for="phone">Phone Number:</label>
+                <span id="phoneWarning" class="warning-message" style="display: none;">Please enter your phone number.</span>
+                <input type="tel" id="phone" name="phone" class="form-control" placeholder="+69" autocomplete="phone">
+                <br>
+        
+                <label for="address">Address:</label>
+                <span id="addressWarning" class="warning-message" style="display: none;">Please enter your address.</span>
+                <input type="text" id="address" name="address" class="form-control" placeholder="Enter Address" autocomplete="address-level1">
+                <br>
+              </div>
+            </div>
+          </div>
+          <div class="row my-5">
+            <div class="col d-flex justify-content-center align-items-center">
+              <input type="submit" value="Submit" class="submit-contactForm btn">
+            </div>
+          </div>
+        </form>
+      </div>
+</div>
 
 
+        <img src="./images/ContactUs/Throttle T.png" class="img-fluid mt-5" width="100%">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        <iframe 
+            width="100%"
+            height="600px"
+            frameborder="0"
+            style="border:0"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5902.83210601518!2d125.54128623437072!3d7.1760872563648155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x32f915137f6f0e6b%3A0x74835bdf1619ec76!2sAdorable%20garden%20farm!5e1!3m2!1sen!2sph!4v1701091378702!5m2!1sen!2sph"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
 
 
 
     <!--FOOTER-->
 
     <footer class="responsive-footer container-fluid mt-5 pt-5">
-        <div class="container-md">
-        <div class="row mx-3">
-            <div class="col">
+        <div class="row mx-3 px-2">
+            <div class="col-lg-2 col-md-4 col-sm-6 my-3">
                 <p class="foothead">Motorcycles</p>
                 <ul class="footlist" id="aboutuslist">
-                    <li><a href="honda.html">Honda</a></li>
-                    <li><a href="#">Kawasaki</a></li>
+                    <li><a href="./honda.html">Honda</a></li>
+                    <li><a href="./kawasaki.html">Kawasaki</a></li>
                     <li><a href="#">Yamaha</a></li>
                     <li><a href="#">Motorstar</a></li>
                     <li><a href="#">CFMoto</a></li>
@@ -160,7 +204,7 @@
             </div>
     
     
-            <div class="col">
+            <div class="col-lg-2 col-md-4 col-sm-6 my-3">
                 <p class="foothead">Services</p>
                 <ul class="footlist" id="srvcslist">
                     <li><a href="#">Service Inquiry Form</a></li>
@@ -168,25 +212,23 @@
                 </ul>
             </div>
     
-            <div class="col">
+            <div class="col-lg-2 col-md-4 col-sm-6 my-3">
                 <p class="foothead">Connect To Us</p>
                 <ul class="footlist" id="srvcslist">
-                    <li><a href="aboutUs.html">About Us</a></li>
-                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="./aboutUs.html">About Us</a></li>
+                    <li><a href="./contactUs.html">Contact Us</a></li>
                 </ul>
             </div>
     
-            <div class="col">
-                <p class="foothead">Social Media Links</p>
+            <div class="col-lg-3 col-md-6 col-sm-6 my-3">
+                <p class="foothead">Contact Details</p>
                 <ul class="footlist" id="srvcslist">
-                    <li><a href="#">Facebook</a></li>
-                    <li><a href="#">Instagram</a></li>
-                    <li><a href="#">Youtube</a></li>
-                    <li><a href="#">Tiktok</a></li>
+                    <li>Phone: +123 456 789</li>
+                    <li>Email: bandillamylene.dev@gmail.com</li>
                 </ul>
             </div>
     
-            <div class="col">
+            <div class="col-lg-3 col-md-6 col-sm-12 my-3">
                 <p class="foothead">Location</p>
                 <ul class="footlist">
                     <li>Brgy. New Valencia, Tugbok District</li>
@@ -219,6 +261,7 @@
     </footer>
 
 
+    <script src="./contactUs.js"></script>
 
 
 
