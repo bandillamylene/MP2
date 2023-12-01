@@ -144,8 +144,8 @@
 <img class="img-fluid" style="width: 6rem;" src="images/motorcycles/cfmoto/nk400/pic_2.jpg" onclick="changeImage(this)">
 <img class="img-fluid" style="width: 6rem;" src="images/motorcycles/cfmoto/nk400/pic_1.jpg" onclick="changeImage(this)">
 
-<h4 class="h4 pt-5 pb-3"><b>CFMOTO NK400</b></h4>
-<p>Launched in the local market in 2018, the CFMOTO is an expressway-legal naked bike that aims to attract bikers who are up for thrilling rides at a reasonable price point of P215,000. Here in the Philippines, this big bike is available in color combinations of Athens Blue and Pearl Black as well as New Pearl White and Pearl Black.</p>
+<h4 class="h4 pt-5 pb-3" id="model_title"><b>CFMOTO NK400</b></h4>
+<p id="model_details">Launched in the local market in 2018, the CFMOTO is an expressway-legal naked bike that aims to attract bikers who are up for thrilling rides at a reasonable price point of P215,000. Here in the Philippines, this big bike is available in color combinations of Athens Blue and Pearl Black as well as New Pearl White and Pearl Black.</p>
 <p>Aesthetic-wise, the CFMOTO 400 NK brags its sharp and muscular appearance, LED headlight and taillight, dual stepped seat, a pair of 17-inch wheels, and a 17-liter fuel tank. It also gets a center console that displays digital odometer, fuel gauge, and speedometer. There's also a tachometer and trip meter for additional rider information.</p>
 <p>As for enhanced rideability and handling, this naked bike is installed with retractable front suspension and cantilever rear suspension. To keep the rider's peace of mind, it is equipped with front and rear disc brakes, along with Anti-lock Braking System (ABS) as well as a pass switch.</p>
 
@@ -157,7 +157,7 @@
 <!--MC Pricing details-->
 <div class="col-md-6 ps-4">
 <div class="pricing container text-white">
-<h5>SRP: PHP 248,900</h5>
+<h5 id="modelSRP">SRP: PHP 248,900</h5>
 <h5>Downpayment: PHP 43,800</h5>
 <h5>Monthly: 9,022</h5>
 </div>
@@ -437,7 +437,7 @@
 <div class="row pb-3">
 
     <div class="col-md-12">
-        <a href="#" class="nav-link">
+        <a href="checkoutpage.html" class="nav-link" onclick="updateProduct()">
             <div class="buy_now container w-50">
                  <h4 class="h6">Buy Now</h4>
             </div>
@@ -551,7 +551,7 @@
   
 </footer>
 
-
+<script src="buynow.js"></script>
 <script src="products_pages.js"></script>
 
 </body>

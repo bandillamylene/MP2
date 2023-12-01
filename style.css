@@ -451,10 +451,24 @@ body{
   }
   
 
+/*Service Inquiry Form*/
+.content{
+    background-color: white;
+    border-style: solid;
+    border-color: rgb(109, 109, 109);
+    box-shadow: -3px 10px 15px rgb(167, 166, 166);
+    padding: 60px;
+    border-radius: 20px;
+}
 
-
-
-
+/*Choose Model*/
+.main_product{
+   
+    background: #1f2327;
+    color: white;
+    padding: 30px;
+    border-radius: 20px;
+}
 
 
 

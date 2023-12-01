@@ -144,8 +144,8 @@
 <img class="img-fluid" style="width: 6rem;" src="images/motorcycles/motorstar/cafe 150/pic_2.jpg" onclick="changeImage(this)">
 <img class="img-fluid" style="width: 6rem;" src="images/motorcycles/motorstar/cafe 150/pic_1.jpg" onclick="changeImage(this)">
 
-<h4 class="h4 pt-5 pb-3"><b>CAFE 150</b></h4>
-<p>Introducing the Cafe 150, a compact yet dynamic ride engineered for the modern enthusiast. Sporting a 149CC engine with a bore x stroke of 57.3*57.8, this motorcycle packs a punch while maintaining impressive fuel efficiency. Its air-cooled system ensures reliable performance without compromising on cooling, offering a seamless ride in various conditions.</p>
+<h4 class="h4 pt-5 pb-3" id="model_title"><b>CAFE 150</b></h4>
+<p id="model_details">Introducing the Cafe 150, a compact yet dynamic ride engineered for the modern enthusiast. Sporting a 149CC engine with a bore x stroke of 57.3*57.8, this motorcycle packs a punch while maintaining impressive fuel efficiency. Its air-cooled system ensures reliable performance without compromising on cooling, offering a seamless ride in various conditions.</p>
 <p>Boasting a compression ratio of 9.26:1, the Cafe 150 delivers a spirited experience with a maximum power output of 8.3/8000 and torque peaking at 11.5/6000. Whether tackling city streets or winding roads, this bike's power and agility shine through.</p>
 <p class="pb-5">The automatic wet multi-plate clutch coupled with a constant mesh, two-stage transmission featuring a 5-speed gearshift system ensures smooth gear transitions, empowering riders to effortlessly navigate diverse terrains. With its blend of performance, style, and user-friendly features like electric and kick starting options, the Cafe 150 is an enticing choice for riders seeking a thrilling yet manageable ride.</p>
 
@@ -155,7 +155,7 @@
 <!--MC Pricing details-->
 <div class="col-md-6 ps-4">
 <div class="pricing container text-white">
-<h5>SRP: PHP 59,000</h5>
+<h5 id="modelSRP">SRP: PHP 59,000</h5>
 <h5>Downpayment: PHP 4,320</h5>
 <h5>Monthly: 2,336</h5>
 </div>
@@ -349,7 +349,7 @@
 <div class="row pb-3">
 
     <div class="col-md-12">
-        <a href="#" class="nav-link">
+        <a href="checkoutpage.html" class="nav-link" onclick="updateProduct()">
             <div class="buy_now container w-50">
                  <h4 class="h6">Buy Now</h4>
             </div>
@@ -463,7 +463,7 @@
   
 </footer>
 
-
+<Script src="buynow.js"></Script>
 <script src="products_pages.js"></script>
 
 </body>

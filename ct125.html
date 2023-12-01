@@ -135,8 +135,8 @@
 <img class="img-fluid" style="width: 6rem;" src="images/motorcycles/kawasaki/CT125/pic_2.jpg" onclick="changeImage(this)">
 <img class="img-fluid" style="width: 6rem;" src="images/motorcycles/kawasaki/CT125/pic_1.jpg" onclick="changeImage(this)">
 
-<h4 class="h4 pt-5 pb-3"><b>CT125</b></h4>
-<p class="pb-5">The newest hero of the Filipino tricycle drivers has finally come! The long wait is over because the CT125 is here! Equipped with 4-stroke, 125 cc., SI engine, the CT125 is the most powerful in the 125cc class with a max. power of 9.86 HP @ 7500 rpm and max. torque of 1.07 Kgf.m @ 5500 rpm. These features are the essential features for mid to heavy duty use. It also sports new features like the electric start for easier starting, fuel gauge for readily available information regarding fuel level, and 5-Speed Transmission to achieve better Low-End Torque, Pick Up and to obtain maximum Mileage the gear ratios are spread uniformly across all gears.</p>
+<h4 class="h4 pt-5 pb-3" id="model_title"><b>CT125</b></h4>
+<p class="pb-5" id="model_details">The newest hero of the Filipino tricycle drivers has finally come! The long wait is over because the CT125 is here! Equipped with 4-stroke, 125 cc., SI engine, the CT125 is the most powerful in the 125cc class with a max. power of 9.86 HP @ 7500 rpm and max. torque of 1.07 Kgf.m @ 5500 rpm. These features are the essential features for mid to heavy duty use. It also sports new features like the electric start for easier starting, fuel gauge for readily available information regarding fuel level, and 5-Speed Transmission to achieve better Low-End Torque, Pick Up and to obtain maximum Mileage the gear ratios are spread uniformly across all gears.</p>
 
 </div>
 
@@ -144,7 +144,7 @@
 <!--MC Pricing details-->
 <div class="col-md-6 ps-4">
 <div class="pricing container text-white">
-<h5>SRP: PHP 58,700</h5>
+<h5 id="modelSRP">SRP: PHP 58,700</h5>
 <h5>Downpayment: PHP 3,000</h5>
 <h5>Monthly: 2,382</h5>
 </div>
@@ -327,7 +327,7 @@
 <div class="row pb-3">
 
     <div class="col-md-12">
-        <a href="#" class="nav-link">
+        <a href="checkoutpage.html" class="nav-link" onclick="updateProduct()">
             <div class="buy_now container w-50">
                  <h4 class="h6">Buy Now</h4>
             </div>
@@ -441,7 +441,7 @@
   
 </footer>
 
-
+<script src="buynow.js"></script>
 <script src="products_pages.js"></script>
 
 </body>

@@ -146,8 +146,8 @@
 <img class="img-fluid" style="width: 6rem;" src="images/motorcycles/kawasaki/barako/pic_4.jpg" onclick="changeImage(this)">
 <img class="img-fluid" style="width: 6rem;" src="images/motorcycles/kawasaki/barako/pic_1.jpg" onclick="changeImage(this)">
 
-<h4 class="h4 pt-5 pb-3"><b>BARAKO II 175</b></h4>
-<p class="pb-5">Barako II has been a reliable tricycle motorcycle to our drivers nationwide. But now, it has become more dependable with its increase of 15% in power and 13% in fuel efficiency. The Barako II 2017 is still a heavy-duty, mean machine that is equipped with 175 cc, 4-stroke SOHC engine. Plus, the Kawasaki Automatic Compression Release (KACR) still gives the rider an ease in kick-starting. It is also now Euro III compliant, which makes it more environment-friendly.</p>
+<h4 class="h4 pt-5 pb-3" id="model_title"><b>BARAKO II 175</b></h4>
+<p class="pb-5" id="model_details">Barako II has been a reliable tricycle motorcycle to our drivers nationwide. But now, it has become more dependable with its increase of 15% in power and 13% in fuel efficiency. The Barako II 2017 is still a heavy-duty, mean machine that is equipped with 175 cc, 4-stroke SOHC engine. Plus, the Kawasaki Automatic Compression Release (KACR) still gives the rider an ease in kick-starting. It is also now Euro III compliant, which makes it more environment-friendly.</p>
 
 </div>
 
@@ -155,7 +155,7 @@
 <!--MC Pricing details-->
 <div class="col-md-6 ps-4">
 <div class="pricing container text-white">
-<h5>SRP: PHP 91,000</h5>
+<h5 id="modelSRP">SRP: PHP 91,000</h5>
 <h5>Downpayment: PHP 4,800</h5>
 <h5>Monthly: 3,915</h5>
 </div>
@@ -307,7 +307,7 @@
 <div class="row pb-3">
 
     <div class="col-md-12">
-        <a href="#" class="nav-link">
+        <a href="checkoutpage.html" class="nav-link" onclick="updateProduct()">
             <div class="buy_now container w-50">
                  <h4 class="h6">Buy Now</h4>
             </div>
@@ -421,7 +421,7 @@
   
 </footer>
 
-
+<script src="buynow.js"></script>
 <script src="products_pages.js"></script>
 
 </body>

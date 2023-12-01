@@ -142,8 +142,8 @@
 <img class="img-fluid" style="width: 6rem;" src="images/motorcycles/yamaha/xsr155/pic_1.jpg" onclick="changeImage(this)">
 
 
-<h4 class="h4 pt-5 pb-3"><b>XSR155</b></h4>
-<p class="pb-5">The XSR155 inherits the design traits of the XSR series while being distinctively unique. It provides a remarkable sense of freedom with an agile balance of different elements of the machine. It’s a tribute to timeless and pure style of iconic motorcycles in history that redefines the riding excellence of today.</p>
+<h4 class="h4 pt-5 pb-3" id="model_title"><b>XSR155</b></h4>
+<p class="pb-5" id="model_details">The XSR155 inherits the design traits of the XSR series while being distinctively unique. It provides a remarkable sense of freedom with an agile balance of different elements of the machine. It’s a tribute to timeless and pure style of iconic motorcycles in history that redefines the riding excellence of today.</p>
 
 </div>
 
@@ -151,7 +151,7 @@
 <!--MC Pricing details-->
 <div class="col-md-6 ps-4">
 <div class="pricing container text-white">
-<h5>SRP: PHP 175,000</h5>
+<h5 id="modelSRP">SRP: PHP 175,000</h5>
 <h5>Downpayment: PHP 21,000</h5>
 <h5>Monthly: 6,751</h5>
 </div>
@@ -467,7 +467,7 @@
 <div class="row pb-3">
 
     <div class="col-md-12">
-        <a href="#" class="nav-link">
+        <a href="checkoutpage.html" class="nav-link" onclick="updateProduct()">
             <div class="buy_now container w-50">
                  <h4 class="h6">Buy Now</h4>
             </div>
@@ -581,7 +581,7 @@
   
 </footer>
 
-
+<script src="buynow.js"></script>
 <script src="products_pages.js"></script>
 
 </body>

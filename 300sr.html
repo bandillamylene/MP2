@@ -145,8 +145,8 @@
 <img class="img-fluid" style="width: 6rem;" src="images/motorcycles/cfmoto/300sr/pic_3.jpg" onclick="changeImage(this)">
 <img class="img-fluid" style="width: 6rem;" src="images/motorcycles/cfmoto/300sr/pic_1.jpg" onclick="changeImage(this)">
 
-<h4 class="h4 pt-5 pb-3"><b>CFMOTO 300SR</b></h4>
-<p>The CFMoto 300SR is the entry-level sportbike that has the power and performance that punches well above its price point. Launched on August 14, 2020. Coming in at P165,000, the 300SR sportbike gets a 292.4 cc single-cylinder engine that is capable of pushing out 28.6 hp at 8,750 RPM, and 25.3 Nm of torque at 7,250 RPM. Power is sent out through a 6-speed manual transmission, and stopping power is brought about by a 292 mm disc in the front, and a 220 mm disc in the rear.</p>
+<h4 class="h4 pt-5 pb-3" id="model_title"><b>CFMOTO 300SR</b></h4>
+<p id="model_details">The CFMoto 300SR is the entry-level sportbike that has the power and performance that punches well above its price point. Launched on August 14, 2020. Coming in at P165,000, the 300SR sportbike gets a 292.4 cc single-cylinder engine that is capable of pushing out 28.6 hp at 8,750 RPM, and 25.3 Nm of torque at 7,250 RPM. Power is sent out through a 6-speed manual transmission, and stopping power is brought about by a 292 mm disc in the front, and a 220 mm disc in the rear.</p>
 <p class="pb-5">Key features in the model include LED headlights and taillamps, along with a 5-inch all-digital TFT display cluster that displays your fuel gauge, temp gauge, speedometer, tachometer, trip meter, odometer, and it even displays different layouts for sport and eco modes.
 
     Safety features on this motorcycle include a standard ABS system allowing for more controlled hard braking.</p>
@@ -157,7 +157,7 @@
 <!--MC Pricing details-->
 <div class="col-md-6 ps-4">
 <div class="pricing container text-white">
-<h5>SRP: PHP 162,000</h5>
+<h5 id="modelSRP">SRP: PHP 162,000</h5>
 <h5>Downpayment: PHP 33,000</h5>
 <h5>Monthly: 5,640</h5>
 </div>
@@ -467,7 +467,7 @@
 <div class="row pb-3">
 
     <div class="col-md-12">
-        <a href="#" class="nav-link">
+        <a href="checkoutpage.html" class="nav-link" onclick="updateProduct()">
             <div class="buy_now container w-50">
                  <h4 class="h6">Buy Now</h4>
             </div>
@@ -581,7 +581,7 @@
   
 </footer>
 
-
+<script src="buynow.js"></script>
 <script src="products_pages.js"></script>
 
 </body>

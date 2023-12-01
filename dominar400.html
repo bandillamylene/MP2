@@ -143,8 +143,8 @@
 <img class="img-fluid" style="width: 6rem;" src="images/motorcycles/kawasaki/dominar400/pic_4.jpg" onclick="changeImage(this)">
 <img class="img-fluid" style="width: 6rem;" src="images/motorcycles/kawasaki/dominar400/pic_1.jpg" onclick="changeImage(this)">
 
-<h4 class="h4 pt-5 pb-3"><b>DOMINAR 400UG</b></h4>
-<p class="pb-5">Born to sprint and built to tour, the Dominar 400 has arrived finally in the Philippines. Ever since its launch in India, the riding community here in our country had been anticipating for this model. And now, it’s here and ready to give the riders the experience to their most thrilling adventures. This sports-touring bike is macho, adventurous, and dominating. It was born to sprint and built to tour. The newest machine that has arrived in our country that is perfect for the entry-level big biker market.
+<h4 class="h4 pt-5 pb-3" id="model_title"><b>DOMINAR 400UG</b></h4>
+<p class="pb-5" id="model_details">Born to sprint and built to tour, the Dominar 400 has arrived finally in the Philippines. Ever since its launch in India, the riding community here in our country had been anticipating for this model. And now, it’s here and ready to give the riders the experience to their most thrilling adventures. This sports-touring bike is macho, adventurous, and dominating. It was born to sprint and built to tour. The newest machine that has arrived in our country that is perfect for the entry-level big biker market.
 
 </p>
 
@@ -154,7 +154,7 @@
 <!--MC Pricing details-->
 <div class="col-md-6 ps-4">
 <div class="pricing container text-white">
-<h5>SRP: PHP 199,900</h5>
+<h5 id="modelSRP">SRP: PHP 199,900</h5>
 <h5>Downpayment: PHP 42,000</h5>
 <h5>Monthly: 6,924</h5>
 </div>
@@ -414,7 +414,7 @@
 <div class="row pb-3">
 
     <div class="col-md-12">
-        <a href="#" class="nav-link">
+        <a href="checkoutpage.html" class="nav-link" onclick="updateProduct()">
             <div class="buy_now container w-50">
                  <h4 class="h6">Buy Now</h4>
             </div>
@@ -528,7 +528,7 @@
   
 </footer>
 
-
+<script src="buynow.js"></script>
 <script src="products_pages.js"></script>
 
 </body>

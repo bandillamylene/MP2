@@ -144,12 +144,12 @@
 <img class="img-fluid" style="width: 6rem;" src="images/motorcycles/cfmoto/nk650/pic_2.jpg" onclick="changeImage(this)">
 <img class="img-fluid" style="width: 6rem;" src="images/motorcycles/cfmoto/nk650/pic_1.jpg" onclick="changeImage(this)">
 
-<h4 class="h4 pt-5 pb-3"><b>CFMOTO NK650</b></h4>
-<p>Introduced in the Philippine motorcycle scene in 2018, the CFMoto 650 NK is a naked bike that offers riders not just style but also power and performance. Priced at P295,000, this middleweight bike is offered in color combinations Athens Blue and Pearl Black as well as New Pearl White and Pearl Black.</p>
-<p>What makes the 650 NK a head-turner are its body curves and sporty stance. This Chinese naked bike gets LED headlight and taillights, dual stepped seat, 17-liter fuel tank, and 17-inch wheels. To keep the riders informed while riding, it comes with digital instrumentation that shows the odometer, fuel gauge, speedometer, tachometer, and trip meter.</p>
-<p>For enhanced riding experience, this street racer is equipped with retractable front suspension while the rear gets a cantilever suspension setup. When it comes to safety, the 650 NK is integrated with front and rear disc brakes complemented with Anti-lock Braking System (ABS). Other important features include a pass switch, side reflectors, and engine check warning.</p>
+<h4 class="h4 pt-5 pb-3" id="model_title"><b>CFMOTO NK650</b></h4>
+<p id="model_details">Introduced in the Philippine motorcycle scene in 2018, the CFMoto 650 NK is a naked bike that offers riders not just style but also power and performance. Priced at P295,000, this middleweight bike is offered in color combinations Athens Blue and Pearl Black as well as New Pearl White and Pearl Black.</p>
+<p id="model_details">What makes the 650 NK a head-turner are its body curves and sporty stance. This Chinese naked bike gets LED headlight and taillights, dual stepped seat, 17-liter fuel tank, and 17-inch wheels. To keep the riders informed while riding, it comes with digital instrumentation that shows the odometer, fuel gauge, speedometer, tachometer, and trip meter.</p>
+<p id="model_details">For enhanced riding experience, this street racer is equipped with retractable front suspension while the rear gets a cantilever suspension setup. When it comes to safety, the 650 NK is integrated with front and rear disc brakes complemented with Anti-lock Braking System (ABS). Other important features include a pass switch, side reflectors, and engine check warning.</p>
 
-<p class="pb-5">With a top speed of 180 km/h, this powerful bike is run by a 649cc 2-cylinder, liquid-cooled, DOHC gasoline engine with a Bosch EFI system. This powertrain can deliver a maximum output of 60 hp and 56 Nm of torque, connected to a 6-speed manual gearbox.</p>
+<p class="pb-5" id="model_details">With a top speed of 180 km/h, this powerful bike is run by a 649cc 2-cylinder, liquid-cooled, DOHC gasoline engine with a Bosch EFI system. This powertrain can deliver a maximum output of 60 hp and 56 Nm of torque, connected to a 6-speed manual gearbox.</p>
 
 </div>
 
@@ -157,7 +157,7 @@
 <!--MC Pricing details-->
 <div class="col-md-6 ps-4">
 <div class="pricing container text-white">
-<h5>SRP: PHP 295,000</h5>
+<h5 id="modelSRP">SRP: PHP 295,000</h5>
 <h5>Downpayment: PHP 59,000</h5>
 <h5>Monthly: 10,395</h5>
 </div>
@@ -431,7 +431,7 @@
 <div class="row pb-3">
 
     <div class="col-md-12">
-        <a href="#" class="nav-link">
+        <a href="checkoutpage.html" class="nav-link" onclick="updateProduct()">
             <div class="buy_now container w-50">
                  <h4 class="h6">Buy Now</h4>
             </div>
@@ -545,7 +545,7 @@
   
 </footer>
 
-
+<script src="buynow.js"></script>
 <script src="products_pages.js"></script>
 
 </body>
