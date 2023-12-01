@@ -1,13 +1,42 @@
-.road1{
+.HDeals{
 
     position: relative;
 
 }
 
 
-.mc {
+.HD1 {
     position: absolute;
-    top: 75%; /* Adjust this value to move the image downward */
-    left: 65%;
+    top: 55%;
+    left: 74%;
     transform: translate(-50%, -50%);
+}
+
+.hotDeals_heroImg {
+    max-height: 858px;
+    height: auto;
+    width: 100%;
+}
+
+.loginPrompt {
+    font-weight: bolder;
+    color:  rgb(40, 40, 40);
+    text-shadow: 2px 2px 5px rgb(189, 157, 48);
+}
+
+.hdBtn{
+    background-color:  rgb(189, 157, 48);
+    text-decoration: none;
+    border: none;
+    color: rgb(40, 40, 40);
+    font-weight: bold;
+    box-shadow: 4px 4px 10px rgb(40, 40, 40);
+}
+
+.hdBtn:hover {
+    background-color: rgb(40, 40, 40);
+    text-decoration: none;
+    border: none;
+    color: rgb(189, 157, 48);
+    font-weight: bold;
 }
