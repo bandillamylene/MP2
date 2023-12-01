@@ -142,8 +142,8 @@
 <img class="img-fluid" style="width: 6rem;" src="images/motorcycles/honda/supremo/pic_2.jpg" onclick="changeImage(this)">
 <img class="img-fluid" style="width: 6rem;" src="images/motorcycles/honda/supremo/pic_1.jpg" onclick="changeImage(this)">
 
-<h4 class="h4 pt-5 pb-3"><b>TMX SUPREMO</b></h4>
-<p>The 3rd Generation TMX Supremo now boasts of enhanced features, such as its new and improved engine that maintains its fuel efficiency at 62km/L. It also comes with 18-inch tires, as well as a high ground clearance and a seat height that ensures the riders’ comfort despite the impact of rough roads. This makes the 3rd Generation TMX Supremo better suited for heavy-duty rides and climbs on demanding roads, even when carrying loads.</p>
+<h4 class="h4 pt-5 pb-3" id="model_title"><b>TMX SUPREMO</b></h4>
+<p id="model_details">The 3rd Generation TMX Supremo now boasts of enhanced features, such as its new and improved engine that maintains its fuel efficiency at 62km/L. It also comes with 18-inch tires, as well as a high ground clearance and a seat height that ensures the riders’ comfort despite the impact of rough roads. This makes the 3rd Generation TMX Supremo better suited for heavy-duty rides and climbs on demanding roads, even when carrying loads.</p>
 
 </div>
 
@@ -174,7 +174,7 @@
 <!--MC Pricing details-->
 <div class="col-md-6 ps-4">
 <div class="pricing container text-white">
-<h5>SRP: PHP 78,900</h5>
+<h5 id="modelSRP">SRP: PHP 78,900</h5>
 <h5>Downpayment: PHP 4,500</h5>
 <h5>Monthly: 4,108</h5>
 </div>
@@ -554,7 +554,7 @@
 <div class="row pb-3">
 
     <div class="col-md-12">
-        <a href="#" class="nav-link">
+        <a href="checkoutpage.html" class="nav-link" onclick="updateProduct()">
             <div class="buy_now container w-50">
                  <h4 class="h6">Buy Now</h4>
             </div>
@@ -667,7 +667,7 @@
       
     </footer>
 
-
+<script src="buynow.js"></script>
 <script src="products_pages.js"></script>
 
 </body>

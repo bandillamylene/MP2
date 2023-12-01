@@ -143,8 +143,8 @@
 <img class="img-fluid" style="width: 6rem;" src="images/motorcycles/kawasaki/ns200/pic_4.jpg" onclick="changeImage(this)">
 <img class="img-fluid" style="width: 6rem;" src="images/motorcycles/kawasaki/ns200/pic_1.jpg" onclick="changeImage(this)">
 
-<h4 class="h4 pt-5 pb-3"><b>ROUSER NS200 ABS</b></h4>
-<p class="pb-5">With a new and better looks, come the much anticipated naked motorcycle – the Rouser NS200 ABS! The ever popular naked, macho and powerful machine is made ever safer and reliable with the addition of a Front Anti-Lock Braking System that help prevents the wheel from locking during rapid braking. The Rouser NS200 ABS is sure to give you an extra ordinary experience with a mix of powerful and safe performance.</p>
+<h4 class="h4 pt-5 pb-3" id="model_title"><b>ROUSER NS200 ABS</b></h4>
+<p class="pb-5" id="model_details">With a new and better looks, come the much anticipated naked motorcycle – the Rouser NS200 ABS! The ever popular naked, macho and powerful machine is made ever safer and reliable with the addition of a Front Anti-Lock Braking System that help prevents the wheel from locking during rapid braking. The Rouser NS200 ABS is sure to give you an extra ordinary experience with a mix of powerful and safe performance.</p>
 
 </div>
 
@@ -152,7 +152,7 @@
 <!--MC Pricing details-->
 <div class="col-md-6 ps-4">
 <div class="pricing container text-white">
-<h5>SRP: PHP 129,800</h5>
+<h5 id="modelSRP">SRP: PHP 129,800</h5>
 <h5>Downpayment: PHP 17,000</h5>
 <h5>Monthly: 4,920</h5>
 </div>
@@ -311,7 +311,7 @@
 <div class="row pb-3">
 
     <div class="col-md-12">
-        <a href="#" class="nav-link">
+        <a href="checkoutpage.html" class="nav-link" onclick="updateProduct()">
             <div class="buy_now container w-50">
                  <h4 class="h6">Buy Now</h4>
             </div>
@@ -423,7 +423,7 @@
   
 </footer>
 
-
+<Script src="buynow.js"></Script>
 <script src="products_pages.js"></script>
 
 </body>

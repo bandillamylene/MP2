@@ -144,8 +144,8 @@
 <img class="img-fluid" style="width: 6rem;" src="images/motorcycles/motorstar/cafe 400/pic_2.jpg" onclick="changeImage(this)">
 <img class="img-fluid" style="width: 6rem;" src="images/motorcycles/motorstar/cafe 400/pic_1.jpg" onclick="changeImage(this)">
 
-<h4 class="h4 pt-5 pb-3"><b>CAFE 400</b></h4>
-<p>Introducing the Cafe 400, a harmonious blend of power, style, and functionality designed for the modern rider. This motorcycle houses a robust single-cylinder, oil-cooled, 4-stroke engine with a displacement of 397.2ml, delivering an impressive 27hp of power at 7000 rpm and a torque of 30 Nm at 5500 rpm. Whether cruising through city streets or tackling adventurous routes, the Cafe 400 ensures a thrilling yet controlled ride.</p>
+<h4 class="h4 pt-5 pb-3" id="model_title"><b>CAFE 400</b></h4>
+<p id="model_details">Introducing the Cafe 400, a harmonious blend of power, style, and functionality designed for the modern rider. This motorcycle houses a robust single-cylinder, oil-cooled, 4-stroke engine with a displacement of 397.2ml, delivering an impressive 27hp of power at 7000 rpm and a torque of 30 Nm at 5500 rpm. Whether cruising through city streets or tackling adventurous routes, the Cafe 400 ensures a thrilling yet controlled ride.</p>
 <p>Equipped with both electric and kick-start systems, this bike offers convenience and reliability in every journey. The braking system features a front disc and rear drum, ensuring responsive braking for enhanced safety. Its tire configuration of 100/90-19 in the front and 130/90-18 in the rear strikes a balance between stability and maneuverability on various terrains.</p>
 <p class="pb-5">With a fuel tank capacity of 13 liters, the Cafe 400 enables extended rides without frequent refueling stops. Its dimensions of 2130x760x1130 mm, a wheelbase of 1420 mm, a seat height of 790 mm, and a ground clearance of 160 mm offer a comfortable and commanding riding posture for riders of different statures. Embodying a perfect fusion of performance, design, and practicality, the Cafe 400 is poised to elevate your riding experience to new heights.</p>
 
@@ -155,7 +155,7 @@
 <!--MC Pricing details-->
 <div class="col-md-6 ps-4">
 <div class="pricing container text-white">
-<h5>SRP: PHP 170,000</h5>
+<h5 id="modelSRP">SRP: PHP 170,000</h5>
 <h5>Downpayment: PHP 60,000</h5>
 <h5>Monthly: 4,795</h5>
 </div>
@@ -351,7 +351,7 @@
 <div class="row pb-3">
 
     <div class="col-md-12">
-        <a href="#" class="nav-link">
+        <a href="checkoutpage.html" class="nav-link" onclick="updateProduct()">
             <div class="buy_now container w-50">
                  <h4 class="h6">Buy Now</h4>
             </div>
@@ -463,7 +463,7 @@
   
 </footer>
 
-
+<Script src="buynow.js"></Script>
 <script src="products_pages.js"></script>
 
 </body>

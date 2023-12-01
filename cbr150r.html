@@ -144,8 +144,8 @@
 <img class="img-fluid" style="width: 6rem;" src="images/motorcycles/honda/cbr150/pic_1.jpg" onclick="changeImage(this)">
 
 
-<h4 class="h4 pt-5 pb-3"><b>CBR150R</b></h4>
-<p>Race like a champion everyday with power and confidence on the road. It has an overall design upgrade with Fireblade-inspired image that will surely ignite your passion in riding. It features a new assist/slipper clutch, inverted front fork, and new LED headlight, tail light design, and front winker. On the other hand, it retains its Bank Angle Sensor, a built-in safety feature that automatically turns off the engine when you bank 60° on either sides.</p>
+<h4 class="h4 pt-5 pb-3" id="model_title"><b>CBR150R</b></h4>
+<p id="model_details">Race like a champion everyday with power and confidence on the road. It has an overall design upgrade with Fireblade-inspired image that will surely ignite your passion in riding. It features a new assist/slipper clutch, inverted front fork, and new LED headlight, tail light design, and front winker. On the other hand, it retains its Bank Angle Sensor, a built-in safety feature that automatically turns off the engine when you bank 60° on either sides.</p>
 
 </div>
 
@@ -177,7 +177,7 @@
 <!--MC Pricing details-->
 <div class="col-md-6 ps-4">
 <div class="pricing container text-white">
-<h5>SRP: PHP 183,900</h5>
+<h5 id="modelSRP">SRP: PHP 183,900</h5>
 <h5>Downpayment: PHP 27,500</h5>
 <h5>Monthly: 8,145</h5>
 </div>
@@ -400,7 +400,7 @@
 <div class="row pb-3">
 
     <div class="col-md-12">
-        <a href="#" class="nav-link">
+        <a href="checkoutpage.html" class="nav-link" onclick="updateProduct()">
             <div class="buy_now container w-50">
                  <h4 class="h6">Buy Now</h4>
             </div>
@@ -513,7 +513,7 @@
       
     </footer>
 
-
+<Script src="buynow.js"></Script>
 <script src="products_pages.js"></script>
 
 </body>

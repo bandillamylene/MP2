@@ -6,10 +6,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="products_styling.css">
-     <title>Kawasaki Barako II 175</title>
+    <link rel="stylesheet" href="./style.css">
+    <title>Checkout</title>
 </head>
-<body> 
+<body>
 
 <!--NAVIGATION BAR-->
 <nav class="navbar_content navbar navbar-expand-lg sticky-top bg-dark">
@@ -30,9 +30,9 @@
                         <ul class="dropdown-menu bg-white" aria-labelledby="motorcyclesDropdown">
                             <li><a class="dropdown-item" href="honda.html">Honda</a></li>
                             <li><a class="dropdown-item" href="kawasaki.html">Kawasaki</a></li>
-                            <li><a class="dropdown-item" href="#">Yamaha</a></li>
-                            <li><a class="dropdown-item" href="#">Motorstar</a></li>
-                            <li><a class="dropdown-item" href="#">CFMoto</a></li>
+                            <li><a class="dropdown-item" href="yamaha.html">Yamaha</a></li>
+                            <li><a class="dropdown-item" href="motorstar.html">Motorstar</a></li>
+                            <li><a class="dropdown-item" href="cfmoto.html">CFMoto</a></li>
                         </ul>
                   </li>
 
@@ -41,7 +41,7 @@
                       Services
                     </a>
                         <ul class="dropdown-menu bg-white" aria-labelledby="motorcyclesDropdown">
-                            <li><a class="dropdown-item" href="#">Service Inquiry</a></li>
+                            <li><a class="dropdown-item" href="serviceform.html">Service Inquiry</a></li>
                             <li><a class="dropdown-item" href="loancalculator.html">Loan Calculator</a></li>
                         </ul>
                   </li>
@@ -52,7 +52,7 @@
                     </a>
                         <ul class="dropdown-menu bg-white" aria-labelledby="motorcyclesDropdown">
                             <li><a class="dropdown-item" href="./promos.html">Limited Time</a></li>
-                            <li><a class="dropdown-item" href="./promos_hotDeals.html">Hot Deals</a></li>
+                            <li><a class="dropdown-item" href="#">Hot Deals</a></li>
                             <li><a class="dropdown-item" href="#">Option 3</a></li>
                         </ul>
                   </li>
@@ -84,7 +84,7 @@
 
 
         <div class="d-lg-block d-flex justify-content-end">
-            <a href="#" class="login text-white mx-3 btn btn-md">Login</a>
+            <a href="./login.html" class="login text-white mx-3 btn btn-md">Login</a>
         
 
             <button class="navbar-toggler bg-white ms-auto me-3" type="button" data-bs-target="#navbar" data-bs-toggle="collapse">
@@ -98,257 +98,103 @@
 </nav>
 
 
-    <!--Carousel-->
-    <div class="carousel slide pb-3" id="carousel_img" data-bs-ride="carousel">
-        <div class="carousel-inner">
-        <div class="carousel-item active" data-bs-interval="4000">
-        <img class="img-fluid" src="images/motorcycles/kawasaki/barako/cover_!.jpg">
-        
-        
-            </div>
-        
-        <div class="carousel-item" data-bs-interval="4000">
-            <img class="img-fluid" src="images/motorcycles/kawasaki/barako/cover_2.jpg">
-    
-        
-            </div>
-        
-          
-        
-             
-        
-        </div>
-        
-        <button class="carousel-control-prev" data-bs-target="#carousel_img" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon bg-black"></span>
-        </button>
-        
-        <button class="carousel-control-next" data-bs-target="#carousel_img" data-bs-slide="next">
-            <span class="carousel-control-next-icon bg-black"></span>
-            </button>
-        
-        </div>
-
 
 <div class="container-md pt-5">
-
+<div class="row">
+<div class="col-md-6 pb-5">
+<form>
 <div class="row">
 
-<!--MC Overview Details-->
-<div class="col-md-6">
+<div class="col-md-12">
 
-<a href="#galleryModal" data-bs-toggle="modal" data-bs-target="#galleryModal">
-<img class="img-fluid pb-3" id="main_image" src="images/motorcycles/kawasaki/barako/pic_1.jpg">
-</a>
+<label>Account:</label>
+<input type="text" class="form-control" >
 
-<img class="img-fluid" style="width: 6rem;" src="images/motorcycles/kawasaki/barako/pic_2.jpg" onclick="changeImage(this)">
-<img class="img-fluid" style="width: 6rem;" src="images/motorcycles/kawasaki/barako/pic_3.jpg" onclick="changeImage(this)">
-<img class="img-fluid" style="width: 6rem;" src="images/motorcycles/kawasaki/barako/pic_4.jpg" onclick="changeImage(this)">
-<img class="img-fluid" style="width: 6rem;" src="images/motorcycles/kawasaki/barako/pic_1.jpg" onclick="changeImage(this)">
+</div>
 
-<h4 class="h4 pt-5 pb-3" id="model_title"><b>BARAKO II 175</b></h4>
-<p class="pb-5" id="model_details">Barako II has been a reliable tricycle motorcycle to our drivers nationwide. But now, it has become more dependable with its increase of 15% in power and 13% in fuel efficiency. The Barako II 2017 is still a heavy-duty, mean machine that is equipped with 175 cc, 4-stroke SOHC engine. Plus, the Kawasaki Automatic Compression Release (KACR) still gives the rider an ease in kick-starting. It is also now Euro III compliant, which makes it more environment-friendly.</p>
+</div>
+
+<div class="row pt-4">
+<div class="col-md-12">
+    <label>Shipping Address:</label>
+    <input type="text" class="form-control" >
+
+</div>
+
+</div>
+
+<Div class="row pt-5">
+    <label class="form-label">Shippping Method:</label>
+<div class="col-md-12">
+<input class="form-check-input" type="radio" name="deliverytype" id="pickBranch">
+<label>Pick Up at Branch</label>
 
 </div>
 
 
-<!--MC Pricing details-->
-<div class="col-md-6 ps-4">
-<div class="pricing container text-white">
-<h5 id="modelSRP">SRP: PHP 91,000</h5>
-<h5>Downpayment: PHP 4,800</h5>
-<h5>Monthly: 3,915</h5>
+</Div>
+
+<Div class="row pt-2">
+<div class="col-md-12">
+<input class="form-check-input" type="radio" name="deliverytype" id="delivery">
+<label>Delivery</label>
+
 </div>
-<p>* Prices are indicative prices only and may be different at the branch. Prices are subject to change without prior notice.</p>
 
 
-<!--Gallery Modal-->
-<div class="modal fade" tabindex="-1" id="galleryModal">
-<div class="modal-dialog modal-lg">
-<div class="modal-content">
-    <div class="modal-header">
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+</Div>
+
+<div class="row pt-5">
+<label class="form-label">Payment Method:</label>
+<div class="col-md-12">
+<input class="form-check-input" type="radio" name="payment_type" id="pickBranch">
+<label class="form-label">Payments Via Bank Transfer</label>
+
+
+
+</div>
+
+<div class="col-md-12">
+    <input class="form-check-input" type="radio" name="payment_type" id="pickBranch">
+    <label class="form-label">Financing</label>
+    
+    
+    
     </div>
-<div class="modal-body">
-    <img class="img-fluid pb-3" id="main_image_modal" src="images/motorcycles/kawasaki/barako/pic_1.jpg">
 
-    <img class="img-fluid" style="width: 6rem;" src="images/motorcycles/kawasaki/barako/pic_2.jpg" onclick="changeImage_modal(this)">
+
+</div>
+
+<div class="row pt-5">
+<div class="col-md-12 d-flex justify-content-center">
+<button type="button" class="btn btn-dark btn-md">Proceed</button>
+</div>
+</div>
     
-    <img class="img-fluid" style="width: 6rem;" src="images/motorcycles/kawasaki/barako/pic_3.jpg" onclick="changeImage_modal(this)">
-    
-    <img class="img-fluid" style="width: 6rem;" src="images/motorcycles/kawasaki/barako/pic_4.jpg" onclick="changeImage_modal(this)">
-    
-    <img class="img-fluid" style="width: 6rem;" src="images/motorcycles/kawasaki/barako/pic_1.jpg" onclick="changeImage_modal(this)">
-    
-    
-</div>
-
-</div>
-
+</form>
 </div>
 
 
-</div>
-
-
-<!--Specs container-->
-<div class="specs container pt-2 pb-5">
-<h5><b>Specifications:</b></h5>
-
-<table class="table table-striped-columns">
-
-<tr class="table-dark">
-<th>
-<h5 class="h6">Make: </h5>
-</th>
-
-<th>
-<h5 class="h6 text-end">KAWASAKI - Top selling big bike brand in the Philippines</h5>
-
-</th>
-
-</tr>
-
-<tr class="table-dark">
-<th>
-<h5 class="h6">Model: </h5>
-</th>
-
-<th>
-<h5 class="h6 text-end">KAWASAKI Barako II - Kick BC175HLF</h5>
-
-</th>
-
-</tr>
-
-<tr class="table-dark">
-<th>
-<h5 class="h6">Registration date</h5>
-</th>
-
-<th>
-<h5 class="h6 text-end">2017</h5>
-
-</th>
-
-</tr>
-
-<tr class="table-dark">
-<th>
-<h5 class="h6">Transmission</h5>
-</th>
-
-<th>
-<h5 class="h6 text-end">Manual</h5>
-
-</th>
-
-</tr>
-
-<tr class="table-dark">
-<th>
-<h5 class="h6">Engine Type</h5>
-</th>
-
-<th>
-<h5 class="h6 text-end">4-stroke, SOHC</h5>
-
-</th>
-
-</tr>
-
-<tr class="table-dark">
-<th>
-<h5 class="h6">Displacement (cc)</h5>
-</th>
-
-<th>
-<h5 class="h6 text-end">177</h5>
-
-</th>
-
-</tr>
-
-<tr class="table-dark">
-<th>
-<h5 class="h6">Maximum Horse Power</h5>
-</th>
-
-<th>
-<h5 class="h6 text-end">12.74 HP</h5>
-
-</th>
-
-</tr>
-
-<tr class="table-dark">
-<th>
-<h5 class="h6">Maximum Torque</h5>
-</th>
-
-<th>
-<h5 class="h6 text-end">1.34 KGF.M</h5>
-
-
-</table>
-
-
-
+<div class="main_product col-md-6 border-start">
+<h3 class="h5 text-center">Chosen Model:</h3>
+<img class="img-fluid pt-3" src="images/motorcycles/yamaha/mt15/pic_1.jpg" id="productImage">
+<h3 class="h4 pt-3" id="modelName">Model Name</h3>
+<p class="pt-2" id="productDetails">Details</p>
+<h3 class="h4 pt-2" id="modelPrice">SRP: </h3>
 
 </div>
 
 
 </div>
-
+</div>
 </div>
 
 
 
-<div class="row pb-3">
-
-    <div class="col-md-12">
-        <a href="checkoutpage.html" class="nav-link" onclick="updateProduct()">
-            <div class="buy_now container w-50">
-                 <h4 class="h6">Buy Now</h4>
-            </div>
-        </a>
-    </div>
-    
-
-</div>
-
-<div class="row pb-3">
-
-    <div class="col-md-12">
-        <a href="#" class="nav-link">
-            <div class="buy_now container w-50">
-                 <h4 class="h6">Inquire About This Motorcycle</h4>
-            </div>
-        </a>
-    </div>
-    
-</div>
-
-<div class="row pb-4">
-
-    <div class="col-md-12">
-        <a href="#" class="nav-link">
-            <div class="buy_now container w-50">
-                 <h4 class="h6">Check Our Loan Calculator</h4>
-            </div>
-        </a>
-    </div>
-    
-</div>
-
-
-</div>
 
 
 
-    
 <!--FOOTER-->
-
 <footer class="responsive-footer container-fluid mt-5 pt-5">
     <div class="row mx-3 px-2">
         <div class="col-lg-2 col-md-4 col-sm-6 my-3">
@@ -410,17 +256,16 @@
             
         </div>
         <div class="col-md-6 text-center">
-            <a class="footerLogo" href="./index.html">
+            <a class="footerLogo" href="#">
                 <img src="./images/throttlelogo.png" class="logo">
             </a>
         </div>
     </div>
     
-  
+    
 </footer>
 
 <script src="buynow.js"></script>
-<script src="products_pages.js"></script>
 
 </body>
 </html>
