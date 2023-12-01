@@ -4,11 +4,10 @@
 
 }
 
-.mc{
 
+.mc {
     position: absolute;
-    top: 55%;
-    left: 50%;
+    top: 75%; /* Adjust this value to move the image downward */
+    left: 65%;
     transform: translate(-50%, -50%);
-
 }
