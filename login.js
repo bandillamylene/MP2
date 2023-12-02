@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
   createAccountForm.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    // Your signup form validation or processing logic here...
+    
     // For example, if validation is successful:
     createAccountForm.reset();
     loginForm.classList.remove("form--hidden");
