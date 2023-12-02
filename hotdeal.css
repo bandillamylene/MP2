@@ -40,3 +40,40 @@
     color: rgb(189, 157, 48);
     font-weight: bold;
 }
+
+
+/*CARDS */
+
+h1 {
+    font-weight: bolder;
+}
+
+.hotdeals-card {
+    position: relative;
+    overflow: hidden;
+    perspective: 1000px;
+}
+
+.image-card {
+    position: relative;
+    z-index: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.text-card-hidden {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 0;
+    padding-top: 50px;
+}
+
+.hotdeals-card:hover .image-card {
+    opacity: 0;
+}
+
+.hotdeals-card:hover .text-card-hidden {
+    opacity: 1;
+}
