@@ -1,11 +1,7 @@
-*{
-    font-family: Verdana, Tahoma, sans-serif;
-
-    
-}
 body{
     background-color: rgba(245, 245, 245, 0.842);
 }
+
 .navbar-nav .nav-item .active-link {
     text-decoration: underline;
     text-decoration-color: rgb(189, 157, 48);
@@ -17,6 +13,7 @@ body{
     box-shadow: 1px 1px 5px rgb(189, 157, 48);
 
 }
+
 .dropdown-menu{
     border: 2px solid rgb(189, 157, 48);
     box-shadow: 2px 2px 5px gray;
@@ -37,11 +34,19 @@ body{
 }
 
 .login{
-    border: 2px solid rgb(189, 157, 48);
+    border: none;
     border-radius: 100px;
-    box-shadow: 1px 1px 7px rgb(250, 250, 247);
-    background: black;
+    box-shadow: 2px 2px 10px rgb(189, 157, 48);
+    background: #1f2327;
     
+}
+
+.login:hover{
+    background-color: rgb(189, 157, 48);
+    color:  #1f2327;
+    box-shadow: 2px 2px 10px rgb(40, 40, 40);
+    
+
 }
 
 @media screen and (max-width: 990px) {
@@ -53,6 +58,7 @@ body{
     }
 
 }
+
 .carousel1_btn{
 
     position: absolute;

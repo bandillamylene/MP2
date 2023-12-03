@@ -3,7 +3,7 @@ const sections = document.querySelectorAll('.StoryCont');
 const options = {
   root: null,
   rootMargin: '0px',
-  threshold: 0.3 // Adjust this value as needed
+  threshold: 0.3
 };
 
 const observer = new IntersectionObserver(entries => {
