@@ -431,6 +431,11 @@ body{
     padding-top: 10px;
 }
 
+.specsLink{
+    text-decoration: none;
+    color: #1f2327;
+}
+
 .inquire {
     background:  #ffc107;
     font-weight: bolder;
