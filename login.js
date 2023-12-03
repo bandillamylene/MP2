@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
     e.preventDefault();
 
     
-    // For example, if validation is successful:
+    //if validation is successful:
     createAccountForm.reset();
     loginForm.classList.remove("form--hidden");
     createAccountForm.classList.add("form--hidden");
