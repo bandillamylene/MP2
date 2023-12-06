@@ -157,3 +157,8 @@ body::before {
     text-decoration: underline;
     text-decoration-color:  rgb(189, 157, 48);
 }
+
+.field-warning {
+    color: rgb(175, 5, 5);
+
+}

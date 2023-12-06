@@ -50,59 +50,102 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Function to handle applying for a loan
     function applyForLoan() {
-        // Redirect the user to the loan application page
         window.location.href = "loan_application.html";
     }
 
-    // Event listener for the "Save" button
-    var saveBtn = document.getElementById("saveBtn");
-    saveBtn.addEventListener("click", function () {
-        saveEditedData();
-        enableFormEditing(false);
-    });
+    // Function to handle login
+    function loginUser(email, password) {
+        // Your login logic here
+    }
 
-    // Event listener for the "Edit" button
-    var editBtn = document.getElementById("editBtn");
-    editBtn.addEventListener("click", function () {
-        enableFormEditing(true);
-    });
-
-    // Event listener for the "Apply for a Loan" button
-    var applyLoanBtn = document.getElementById("applyLoanBtn");
-    applyLoanBtn.addEventListener("click", function () {
-        applyForLoan();
-    });
-
-    // Show saved data on page load
-    enableFormEditing(false);
-    retrieveSavedData();
-
-    // Add event listeners for dashboard links
-    document.getElementById("savedItemsLink").addEventListener("click", function (event) {
-        event.preventDefault();
-        showDashboardSection("mysaveditems");
-    });
-
-    document.getElementById("loanTrackerLink").addEventListener("click", function (event) {
-        event.preventDefault();
-        showDashboardSection("myloans");
-    });
-
-    document.getElementById("settingsLink").addEventListener("click", function (event) {
-        event.preventDefault();
-        showDashboardSection("mysettings");
-    });
+    // Function to handle logout
+    function logoutUser() {
+        sessionStorage.removeItem("userData");
+        window.location.href = "login.html";
+    }
 
     // Function to display specific dashboard section
     function showDashboardSection(sectionId) {
         var dashboardSections = document.querySelectorAll(".col-md-8");
 
         dashboardSections.forEach(function (section) {
-            if (section.id === sectionId) {
-                section.style.display = "block";
-            } else {
-                section.style.display = "none";
-            }
+            section.style.display = "none";
+        });
+
+        var selectedSection = document.getElementById(sectionId);
+        if (selectedSection) {
+            selectedSection.style.display = "block";
+        }
+    }
+
+    // Event listeners for dashboard links and logout
+    var savedItemsLink = document.getElementById("savedItemsLink");
+    if (savedItemsLink) {
+        savedItemsLink.addEventListener("click", function (event) {
+            event.preventDefault();
+            showDashboardSection("mysaveditems");
         });
     }
+
+    var loanTrackerLink = document.getElementById("loanTrackerLink");
+    if (loanTrackerLink) {
+        loanTrackerLink.addEventListener("click", function (event) {
+            event.preventDefault();
+            showDashboardSection("myloans");
+        });
+    }
+
+    var settingsLink = document.getElementById("settingsLink");
+    if (settingsLink) {
+        settingsLink.addEventListener("click", function (event) {
+            event.preventDefault();
+            showDashboardSection("mysettings");
+        });
+    }
+
+    var logoutBtns = document.querySelectorAll("#logoutBtn");
+    logoutBtns.forEach(function (logoutBtn) {
+        logoutBtn.addEventListener("click", function () {
+            logoutUser();
+        });
+    });
+
+    // Event listener for the login form
+    var loginForm = document.getElementById("loginForm");
+    if (loginForm) {
+        loginForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+            var emailInput = document.getElementById("emailInput").value;
+            var passwordInput = document.getElementById("passwordInput").value;
+            loginUser(emailInput, passwordInput);
+        });
+    }
+
+    // Event listener for the "Save" button
+    var saveBtn = document.getElementById("saveBtn");
+    if (saveBtn) {
+        saveBtn.addEventListener("click", function () {
+            saveEditedData();
+            enableFormEditing(false);
+        });
+    }
+
+    // Event listener for the "Edit" button
+    var editBtn = document.getElementById("editBtn");
+    if (editBtn) {
+        editBtn.addEventListener("click", function () {
+            enableFormEditing(true);
+        });
+    }
+
+    // Event listener for the "Apply for a Loan" button
+    var applyLoanBtn = document.getElementById("applyLoanBtn");
+    if (applyLoanBtn) {
+        applyLoanBtn.addEventListener("click", function () {
+            applyForLoan();
+        });
+    }
+
+    // Retrieve saved data when the DOM is loaded
+    retrieveSavedData();
 });
