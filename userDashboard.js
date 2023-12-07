@@ -1,40 +1,44 @@
 document.addEventListener("DOMContentLoaded", function () {
+    
     // Function to enable/disable form fields for editing
-    function enableFormEditing(enable) {
-        var inputs = document.querySelectorAll("#personalInfoForm input");
-        inputs.forEach(function (input) {
-            input.disabled = !enable;
-        });
+function enableFormEditing(enable) {
+    var inputs = document.querySelectorAll("#personalInfoForm input");
+    inputs.forEach(function (input) {
+        input.disabled = !enable;
+    });
 
-        var saveBtn = document.getElementById("saveBtn");
-        saveBtn.style.display = enable ? "block" : "none";
-    }
+    var saveBtn = document.getElementById("saveBtn");
+    saveBtn.style.display = enable ? "block" : "none";
+}
 
     // Function to save edited data to session storage
-    function saveEditedData() {
-        var userData = {};
-        var isValid = true;
-        var errorMessages = document.querySelectorAll(".form__input--error-message");
+function saveEditedData() {
+    var userData = {};
+    var isValid = true;
+    var errorMessages = document.querySelectorAll(".form__input--error-message");
 
-        errorMessages.forEach(function (errorMessage) {
-            errorMessage.style.display = "none";
+    errorMessages.forEach(function (errorMessage) {
+        errorMessage.style.display = "none";
 
-            var inputField = errorMessage.nextElementSibling;
-            userData[inputField.id] = inputField.value.trim();
+        var inputField = errorMessage.previousElementSibling; // Changed to previousElementSibling to target input fields
+        userData[inputField.id] = inputField.value.trim();
 
-            if (inputField.value.trim() === "") {
-                errorMessage.style.display = "block";
-                isValid = false;
-            }
-        });
-
-        if (isValid) {
-            sessionStorage.setItem("userData", JSON.stringify(userData));
-            console.log("Data saved to session storage:", userData);
-        } else {
-            console.log("Cannot save. Please fill in all required fields.");
+        if (inputField.value.trim() === "") {
+            errorMessage.style.display = "block";
+            isValid = false;
         }
+    });
+
+    if (isValid) {
+        sessionStorage.setItem("userData", JSON.stringify(userData));
+        console.log("Data saved to session storage:", userData);
+        enableFormEditing(false); // Disabling editing mode upon successful save
+        document.getElementById("saveBtn").style.display = "none"; // Hide the save button
+    } else {
+        console.log("Cannot save. Please fill in all required fields.");
     }
+}
+
 
     // Function to retrieve saved data from session storage
     function retrieveSavedData() {
@@ -55,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Function to handle login
     function loginUser(email, password) {
-        // Your login logic here
+
     }
 
     // Function to handle logout
@@ -126,7 +130,6 @@ document.addEventListener("DOMContentLoaded", function () {
     if (saveBtn) {
         saveBtn.addEventListener("click", function () {
             saveEditedData();
-            enableFormEditing(false);
         });
     }
 

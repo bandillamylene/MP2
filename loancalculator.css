@@ -33,15 +33,34 @@ a:hover{
 .login{
     border: none;
     border-radius: 100px;
-    box-shadow: 2px 2px 10px rgb(189, 157, 48);
-    background: #1f2327;
+    box-shadow: 2px 2px 10px #1f2327;
+    background: rgb(189, 157, 48);
+    color: #1f2327;
     
 }
+
 .login:hover{
-    background-color: rgb(189, 157, 48);
-    color:  #1f2327;
-    box-shadow: 2px 2px 10px rgb(40, 40, 40);
+    background-color: rgb(40, 40, 40);
+    color: rgb(189, 157, 48);
+    box-shadow: 2px 2px 10px whitesmoke;
     
+
+}
+
+
+.logout {
+    border: none;
+    border-radius: 100px;
+    box-shadow: 2px 2px 10px #1f2327;
+    background: rgb(189, 157, 48);
+    color: #1f2327;
+}
+
+.logout:hover {
+
+    background-color: rgb(40, 40, 40);
+    color:  rgb(189, 157, 48);
+    box-shadow: 2px 2px 10px rgb(189, 157, 48);
 
 }
 
