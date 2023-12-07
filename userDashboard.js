@@ -1,6 +1,10 @@
-document.addEventListener("DOMContentLoaded", function () {
-    
-    // Function to enable/disable form fields for editing
+// Function to check login status
+function checkLoginStatus() {
+    const loggedIn = sessionStorage.getItem("loggedIn");
+    return loggedIn === "true";
+}
+
+// Function to enable/disable form fields for editing
 function enableFormEditing(enable) {
     var inputs = document.querySelectorAll("#personalInfoForm input");
     inputs.forEach(function (input) {
@@ -11,8 +15,8 @@ function enableFormEditing(enable) {
     saveBtn.style.display = enable ? "block" : "none";
 }
 
-   // Function to save edited data to session storage
-   function saveEditedData() {
+// Function to save edited data to session storage
+function saveEditedData() {
     var userData = {};
     var isValid = true;
     var errorMessages = document.querySelectorAll(".form__input--error-message");
@@ -20,7 +24,7 @@ function enableFormEditing(enable) {
     errorMessages.forEach(function (errorMessage) {
         errorMessage.style.display = "none";
 
-        var inputField = errorMessage.nextElementSibling; //target input fields
+        var inputField = errorMessage.nextElementSibling; // Target input fields
         userData[inputField.id] = inputField.value.trim();
 
         if (inputField.value.trim() === "") {
@@ -41,50 +45,57 @@ function enableFormEditing(enable) {
     }
 }
 
+// Function to handle applying for a loan
+function applyForLoan() {
+    window.location.href = "loan_application.html";
+}
 
-    // Function to retrieve saved data from session storage
-    function retrieveSavedData() {
-        var savedData = sessionStorage.getItem("userData");
-        if (savedData) {
-            var userData = JSON.parse(savedData);
+// Function to handle logout
+function logoutUser() {
+    sessionStorage.removeItem("userData");
+    sessionStorage.setItem("loggedIn", "false"); // Update login status
+    window.location.href = "login.html";
+}
 
-            Object.keys(userData).forEach(function (key) {
-                document.getElementById(key).value = userData[key];
-            });
-        }
+// Function to display specific dashboard section
+function showDashboardSection(sectionId) {
+    var dashboardSections = document.querySelectorAll(".col-md-8");
+
+    dashboardSections.forEach(function (section) {
+        section.style.display = "none";
+    });
+
+    var selectedSection = document.getElementById(sectionId);
+    if (selectedSection) {
+        selectedSection.style.display = "block";
     }
+}
 
-    // Function to handle applying for a loan
-    function applyForLoan() {
-        window.location.href = "loan_application.html";
+// Function to check login status and handle navigation
+window.addEventListener("load", function () {
+    if (!checkLoginStatus()) {
+        history.pushState(null, null, location.href);
+        window.onpopstate = function () {
+            history.go(1);
+        };
     }
+});
 
-    // Function to handle login
-    function loginUser(email, password) {
+// Function to handle login
+function loginUser(email, password) {
+    // Your login logic here
+    // Set loggedIn to true if login successful
+    sessionStorage.setItem("loggedIn", "true");
+    // Redirect to dashboard or specific page upon successful login
+    window.location.href = "user_dashboard.html";
+}
 
-    }
-
-    // Function to handle logout
-    function logoutUser() {
-        sessionStorage.removeItem("userData");
+// Event listeners for dashboard links and logout
+document.addEventListener("DOMContentLoaded", function () {
+    if (!checkLoginStatus()) {
         window.location.href = "login.html";
     }
 
-    // Function to display specific dashboard section
-    function showDashboardSection(sectionId) {
-        var dashboardSections = document.querySelectorAll(".col-md-8");
-
-        dashboardSections.forEach(function (section) {
-            section.style.display = "none";
-        });
-
-        var selectedSection = document.getElementById(sectionId);
-        if (selectedSection) {
-            selectedSection.style.display = "block";
-        }
-    }
-
-    // Event listeners for dashboard links and logout
     var savedItemsLink = document.getElementById("savedItemsLink");
     if (savedItemsLink) {
         savedItemsLink.addEventListener("click", function (event) {
@@ -93,21 +104,22 @@ function enableFormEditing(enable) {
         });
     }
 
-    var loanTrackerLink = document.getElementById("loanTrackerLink");
-    if (loanTrackerLink) {
-        loanTrackerLink.addEventListener("click", function (event) {
+    var savedItemsLink = document.getElementById("settingsLink");
+    if (savedItemsLink) {
+        savedItemsLink.addEventListener("click", function (event) {
+            event.preventDefault();
+            showDashboardSection("mysettings");
+        });
+    }
+
+    var savedItemsLink = document.getElementById("loanTrackerLink");
+    if (savedItemsLink) {
+        savedItemsLink.addEventListener("click", function (event) {
             event.preventDefault();
             showDashboardSection("myloans");
         });
     }
 
-    var settingsLink = document.getElementById("settingsLink");
-    if (settingsLink) {
-        settingsLink.addEventListener("click", function (event) {
-            event.preventDefault();
-            showDashboardSection("mysettings");
-        });
-    }
 
     var logoutBtns = document.querySelectorAll("#logoutBtn");
     logoutBtns.forEach(function (logoutBtn) {
@@ -152,7 +164,14 @@ function enableFormEditing(enable) {
     }
 
     // Retrieve saved data when the DOM is loaded
-    retrieveSavedData();
+    var savedData = sessionStorage.getItem("userData");
+    if (savedData) {
+        var userData = JSON.parse(savedData);
+
+        Object.keys(userData).forEach(function (key) {
+            document.getElementById(key).value = userData[key];
+        });
+    }
 });
 
 
