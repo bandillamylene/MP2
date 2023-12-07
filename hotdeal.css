@@ -1,42 +1,26 @@
-.HDeals{
 
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px); 
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.hotdeals-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
     position: relative;
+    transition: transform 1s ease;
+}
 
+.hotdeals-card:hover {
+    animation: bounce 0.8s ease; 
 }
 
 
-.HD1 {
-    position: absolute;
-    top: 55%;
-    left: 74%;
-    transform: translate(-50%, -50%);
-}
-
-.hotDeals_heroImg {
-    max-height: 858px;
-    height: auto;
-    width: 100%;
-}
-
-.loginPrompt {
-    font-weight: bolder;
-    color:  rgb(40, 40, 40);
-    text-shadow: 2px 2px 5px rgb(189, 157, 48);
-}
-
-.hdBtn{
-    background-color:  rgb(189, 157, 48);
-    text-decoration: none;
-    border: none;
-    color: rgb(40, 40, 40);
-    font-weight: bold;
-    box-shadow: 4px 4px 10px rgb(40, 40, 40);
-}
-
-.hdBtn:hover {
-    background-color: rgb(40, 40, 40);
-    text-decoration: none;
-    border: none;
-    color: rgb(189, 157, 48);
-    font-weight: bold;
-}

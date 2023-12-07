@@ -3,114 +3,359 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>User Dashboard - Motorcycle Dealership</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        /* Custom CSS */
-        /* Add your custom styles here */
-    </style>
+    <title>User Dashboard - ThrottleTwist</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="user.css">
+    <link rel="stylesheet" href="./fonts.css">
 </head>
 
-<body>
 
-    <!-- Navigation bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="#">Throttle Twist</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+<body>
+<!--NAVIGATION BAR-->
+<nav class="navbar_content navbar navbar-expand-lg sticky-top bg-dark">
+    <div class="container-fluid">
+
+        <a class="navbar-brand text-white" href="./index.html">
+            <img src="./images/throttlelogo.png" class="logo ">
+        </a>
+
+        <div class="collapse navbar-collapse justify-content-lg-around justify-content-md-around" id="navbar">
+
+            <ul class="navbar-nav">
+
+                <li class="nav-item dropdown pe-4">
+                    <a class="nav-link dropdown-toggle text-white" href="#" id="motorcyclesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Motorcycles
+                    </a>
+                        <ul class="dropdown-menu bg-white" aria-labelledby="motorcyclesDropdown">
+                            <li><a class="dropdown-item" href="./honda.html">Honda</a></li>
+                            <li><a class="dropdown-item" href="./kawasaki.html">Kawasaki</a></li>
+                            <li><a class="dropdown-item" href="./yamaha.html">Yamaha</a></li>
+                            <li><a class="dropdown-item" href="./motorstar.html">Motorstar</a></li>
+                            <li><a class="dropdown-item" href="./cfmoto.html">CFMoto</a></li>
+                        </ul>
+                  </li>
+
+                  <li class="nav-item dropdown pe-4">
+                    <a class="nav-link dropdown-toggle text-white" href="#" id="services" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Services
+                    </a>
+                        <ul class="dropdown-menu bg-white" aria-labelledby="motorcyclesDropdown">
+                            <li><a class="dropdown-item" href="./serviceform.html">Service Inquiry</a></li>
+                            <li><a class="dropdown-item" href="./loancalculator.html">Loan Calculator</a></li>
+                        </ul>
+                  </li>
+
+                  <li class="nav-item dropdown pe-4">
+                    <a class="nav-link dropdown-toggle text-white" href="./promos.html" id="Promos" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Promos
+                    </a>
+                        <ul class="dropdown-menu bg-white" aria-labelledby="motorcyclesDropdown">
+                            <li><a class="dropdown-item" href="./promos.html">Limited Time</a></li>
+                            <li><a class="dropdown-item" href="./promos_hotDeals.html">Hot Deals</a></li>
+                        </ul>
+                  </li>
+
+                <li class="nav-item pe-4">
+                    <a class="nav-link text-white active-link" href="./aboutUs.html">About Us</a>
+
+
+                </li>
+
+                <li class="nav-item pe-4">
+                    <a class="nav-link text-white" href="./contactUs.html">Contact Us</a>
+
+
+                </li>
+
+            </ul>
+         
+            <form class="s-bar d-flex justify-content-lg-end justify-content-end align-items-end" role="search">
+                <input class="form-control me-2 rounded-5" type="search" placeholder="Search" id="search">
+                <button class="s-button btn btn-outline-light btn-sm" type="submit">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+
+        </div>
+
+<br><br><br>
+
+
+        <div class="d-lg-block d-flex justify-content-end">
+            <a href="./login.html" class="login text-white mx-3 btn btn-md">Login</a>
+        
+
+            <button class="navbar-toggler bg-white ms-auto me-3" type="button" data-bs-target="#navbar" data-bs-toggle="collapse">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Motorcycles</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Profile</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Logout</a>
-                    </li>
-                </ul>
+        </div>
+        
+
+
+    </div>
+</nav>
+
+
+
+<!-- User Dashboard Content -->
+<div class="userDashboard container-fluid mt-4">
+    <div class="row">
+        <!-- Profile Section with Dashboard -->
+        <div class="col text-center">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <div class="position-relative">
+                        <img src="https://via.placeholder.com/150" alt="Profile Picture" class="profile_icon img-fluid rounded-circle mb-3">
+                        <div class="text-center mt-2">
+                            <button class="btn btn-light btn-sm" id="editImageBtn">
+                                <span>Change Avatar</span>
+                                <i class="fas fa-edit"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="card mt-3">
+                        <div class="card-body">
+                            <ul class="list-group">
+
+                                <li class="list-group-item"><a href="#mysaveditems" id="savedItemsLink">Saved Items</a></li>
+                                <li class="list-group-item"><a href="#myloans" id="loanTrackerLink">Loan</a></li>
+                                <li class="list-group-item"><a href="#mysettings" id="settingsLink">Settings</a></li>
+
+                                <li class="d-flex justify-content-center align-items-center my-3">
+
+                                      <button class="btn btn-dark" id="logoutBtn">Logout</button>
+                                      
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </nav>
 
-    <!-- User Dashboard Content -->
-    <div class="container mt-4">
-        <div class="row">
-            <div class="col-md-3">
-                <!-- Profile Section -->
-                <div class="card mb-3">
+        <div class="settings col-md-8" id="mysettings">
+            <div class="col">
+                <!-- Personal Information with Form Fields -->
+                <div class="personal-info card mb-3">
                     <div class="card-body">
-                        <img src="https://via.placeholder.com/150" alt="Profile Picture" class="img-fluid rounded-circle mb-3">
+                        <div class="d-flex justify-content-end mb-2">
+                            <button class="btn btn-secondary" id="editBtn">Edit</button>
+                        </div>
                         <h5 class="card-title">Personal Information</h5>
-                        <p class="card-text">Name: Apollonius Endymiun Flag</p>
-                        <p class="card-text">Email: bandillamylene.dev@gmail.com</p>
-                        <p class="card-text">Phone: 09565715585</p>
-                    </div>
-                </div>
-                <!-- Sidebar -->
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">User Dashboard</h5>
-                        <ul class="list-group">
-                            <li class="list-group-item">Profile</li>
-                            <li class="list-group-item">Orders</li>
-                            <li class="list-group-item">Loan</li>
-                            <li class="list-group-item">Settings</li>
-                        </ul>
+
+                        <form id="personalInfoForm">
+                            <div class="mb-3">
+
+                                <label for="name" class="form-label">Name</label>
+                                
+                                <div class="form__input--error-message">*Please fill in this field.*</div>
+
+                                <input type="text" class="form-control" id="name" placeholder="Enter Fullname" disabled>
+                            </div>
+                            <div class="mb-3">
+
+                                <label for="email" class="form-label">Email</label>
+
+                                <div class="form__input--error-message">*Please fill in this field.*</div>
+
+                                <input type="email" class="form-control" id="email" placeholder="Enter Email" disabled>
+                            </div>
+                            <div class="mb-3">
+    
+                                <label for="phone" class="form-label">Phone</label>
+
+                                
+                                <div class="form__input--error-message">*Please fill in this field.*</div>
+
+                                <input type="tel" class="form-control" id="phone" placeholder="Enter Phone Number" disabled>
+                            </div>
+                            <!-- Address Fields -->
+                            <div class="mb-3">
+                                <label for="streetBrgy" class="form-label">Street/Brgy</label>
+
+                                <div class="form__input--error-message">*Please fill in this field.*</div>
+
+                                <input type="text" class="form-control" id="streetBrgy" placeholder="Enter Street/ Brgy." disabled>
+                            </div>
+
+
+                            <div class="mb-3">
+                                <label for="municipality" class="form-label">Municipality</label>
+
+                                <div class="form__input--error-message">
+                                    *Please fill in this field.* </div>
+
+                                <input type="text" class="form-control" id="municipality" placeholder="Enter Municipality" disabled>
+                            </div>
+
+                            <div class="mb-3">
+                                
+                                <label for="city" class="form-label">City</label>
+
+                                <div class="form__input--error-message">*Please fill in this field.*</div>
+
+                                <input type="text" class="form-control" id="city" placeholder="Enter City" disabled>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="province" class="form-label">Province</label>
+
+                                <div class="form__input--error-message">Please fill in all required fields.</div>
+
+                                <input type="text" class="form-control" id="province" placeholder="Enter Province" disabled>
+                            </div>
+                            <div class="mb-3">
+                                <label for="zipCode" class="form-label">Zip Code</label>
+
+                                <div class="form__input--error-message">*Please fill in this field.*</div>
+
+                                <input type="text" class="form-control" id="zipCode" placeholder="Enter Zip Code" disabled>
+                            </div>
+                            <!-- Additional Fields -->
+                            <div class="mb-3">
+                                <label for="dob" class="form-label">Date of Birth</label>
+
+                                <div class="form__input--error-message">*Please fill in this field.*</div>
+
+                                <input type="text" class="form-control" id="dob" placeholder="Month/Day/Year" disabled>
+                            </div>
+                            <div class="mb-3">
+                                <label for="favBrand" class="form-label">Favorite Motorcycle Brand</label>
+
+                                <div class="form__input--error-message">*Please fill in this field.*</div>
+
+                                <input type="text" class="form-control" id="favBrand" placeholder="Choose Brand" disabled >
+                            </div>
+                            <div class="mb-3">
+                                
+                                <label for="favModel" class="form-label">Favorite Motorcycle Model</label>
+
+                                <div class="form__input--error-message">*Please fill in this field.*</div>
+
+                                <input type="text" class="form-control" id="favModel" placeholder="Choose Model" disabled>
+                            </div>
+                        </form>
+                        <div class="d-flex justify-content-end">
+                            <button class="btn btn-primary" id="saveBtn" style="display: none;">Save</button>
+                        </div>
+                        
                     </div>
                 </div>
             </div>
-            <div class="col-md-9">
-                <!-- Main Content -->
-                <h2>Welcome, User!</h2>
-                <p>This is your personalized dashboard. You can view your profile information, track orders, and
-                    manage your settings from here.</p>
-                <h3>Your Bikes</h3>
-                <div class="row">
-                    <div class="col-md-4 mb-3">
-                        <div class="card">
-                            <img src="https://via.placeholder.com/200" alt="Order Image" class="card-img-top">
-                            <div class="card-body">
-                                <h5 class="card-title">Bike #001</h5>
-                                <p class="card-text">Motorcycle Model: ABC123</p>
-                                <a href="#" class="btn btn-primary">View Details</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <div class="card">
-                            <img src="https://via.placeholder.com/200" alt="Order Image" class="card-img-top">
-                            <div class="card-body">
-                                <h5 class="card-title">Bike #002</h5>
-                                <p class="card-text">Motorcycle Model: XYZ456</p>
-                                <a href="#" class="btn btn-primary">View Details</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Add more order cards -->
+        </div>
+
+        <div class="savedItems col-md-8" style="display: none;" id="mysaveditems">
+            <div class="saved-itemscard card">
+                <div class="card-body">
+                    <h2 class="card-title text-center">Saved Items</h2>
+                    
                 </div>
             </div>
+        </div>
+
+        <div class="loanTracker col-md-8" style="display: none;" id="myloans">
+            <div class="loancard card">
+                <div class="card-body">
+                    <h2 class="card-title text-center">Loan Application</h2>
+                </div>
+                
+            </div>
+
+            <div class="row"><button class="btn btn-primary" id="applyLoanBtn">Apply for a Loan</button></div>
         </div>
     </div>
+</div>
 
-    <!-- Footer -->
-    <footer class="footer mt-auto py-3 bg-dark text-light">
-        <div class="container text-center">
-            <span>&copy; 2023 Throttle Twist</span>
+
+
+<!--FOOTER-->
+
+<footer class="responsive-footer container-fluid mt-5 pt-5">
+    <div class="row mx-3 px-2">
+        <div class="col-lg-2 col-md-4 col-sm-6 my-3">
+            <p class="foothead">Motorcycles</p>
+            <ul class="footlist" id="aboutuslist">
+                <li><a href="./honda.html">Honda</a></li>
+                <li><a href="./kawasaki.html">Kawasaki</a></li>
+                <li><a href="./yamaha.html">Yamaha</a></li>
+                <li><a href="./motorstar.html">Motorstar</a></li>
+                <li><a href="./cfmoto.html">CFMoto</a></li>
+            </ul>
         </div>
-    </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+        <div class="col-lg-2 col-md-4 col-sm-6 my-3">
+            <p class="foothead">Services</p>
+            <ul class="footlist" id="srvcslist">
+                <li><a href="./serviceform.html">Service Inquiry Form</a></li>
+                <li><a href="./loancalculator.html">Loan Calculator</a></li>
+            </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-4 col-sm-6 my-3">
+            <p class="foothead">Connect To Us</p>
+            <ul class="footlist" id="srvcslist">
+                <li><a href="./aboutUs.html">About Us</a></li>
+                <li><a href="./contactUs.html">Contact Us</a></li>
+            </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-6 my-3">
+            <p class="foothead">Contact Details</p>
+            <ul class="footlist" id="srvcslist">
+                <li>Phone: +123 456 789</li>
+                <li>Email: bandillamylene.dev@gmail.com</li>
+            </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-12 my-3">
+            <p class="foothead">Location</p>
+            <ul class="footlist">
+                <li>Brgy. New Valencia, Tugbok District</li>
+                <li>Davao City, 8000, Philippines</li>
+            </ul>
+        </div>
+
+        
+    </div>
+</div>
+
+
+    <hr>
+    <div class="row align-items-center">
+        <div class="col-md-6 ">
+            <p class="copy text-center mt-4">© 2023 Throttle Twist
+                <br>
+                <a class="footlist" href="#">Terms and Conditions</a>
+            </p>
+            
+        </div>
+        <div class="col-md-6 text-center">
+            <a class="footerLogo" href="./index.html">
+                <img src="./images/throttlelogo.png" class="logo">
+            </a>
+        </div>
+    </div>
+    
+  
+</footer>
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="./userDashboard.js"></script>
+
+
+
+
+
 </body>
 
 </html>
