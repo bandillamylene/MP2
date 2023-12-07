@@ -62,7 +62,7 @@
                   </li>
 
                 <li class="nav-item pe-4">
-                    <a class="nav-link text-white active-link" href="./aboutUs.html">About Us</a>
+                    <a class="nav-link text-white" href="./aboutUs.html">About Us</a>
 
 
                 </li>
@@ -145,7 +145,9 @@
                             <ul class="myList3 list-group">
 
                                 <li class="list-group-item"><a href="#mysaveditems" id="savedItemsLink">Saved Items</a></li>
+
                                 <li class="list-group-item"><a href="#myloans" id="loanTrackerLink">Loan Application</a></li>
+
                                 <li class="list-group-item"><a href="#mysettings" id="settingsLink">Settings</a></li>
 
 
@@ -267,50 +269,126 @@
             </div>
         </div>
 
-        <div class="savedItems col-md-8" id="mysaveditems">
-            <div class="saved-itemscard card">
+
+
+
+<!--SAVED ITEMS-->
+
+
+        <div class="savedItems col-md-8 " id="mysaveditems">
+           
+            <div class="loancard card m-5">
                 <div class="card-body">
                     <h2 class="card-title text-center">Saved Items</h2>
-                    <div class="row row-cols-1 row-cols-md-3 g-4 d-flex justify-content-center align-items-center">
-                        <div class="col col-lg-4 col-md-6 col-sm-10 col-xs-12 mb-4">
-                            <div class="saved-items--card card h-100 d-flex flex-column">
-                                <div class="card-body">
-                                    <h4 class="card-title text-center">Saved Item 1</h4>
-                                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, asperiores!.</p>
-                                </div>
+                </div>
+                
+            </div>
+
+
+            <div class="row d-flex justify-content-center align-items-center">
+            
+                <!--ITEM 1 GOES HERE-->
+
+                <div class="col">
+
+                    <div class="mc_card p-4" id="#">
+                
+                        <div class="card" style="width: 20rem">
+                
+                            <div class="card-body">
+                            
                             </div>
-                        </div>
-                        <div class="col col-lg-4 col-md-6 col-sm-10 col-xs-12 mb-4">
-                            <div class="saved-items--card card h-100 d-flex flex-column">
-                                <div class="card-body">
-                                    <h4 class="card-title text-center">Saved Item 2</h4>
-                                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, nihil. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis, nihil.</p>
-                                </div>
+                
+                            <div class="card-footer" style="background-color: #1f2327;">
+                
                             </div>
+                
                         </div>
-                        <div class="col col-lg-4 col-md-6 col-sm-10 col-xs-12 mb-4">
-                            <div class="saved-items--card card h-100 d-flex flex-column">
-                                <div class="card-body">
-                                    <h4 class="card-title text-center">Saved Item 3</h4>
-                                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, accusamus.</p>
-                                </div>
-                            </div>
-                        </div>
+                
                     </div>
                 </div>
+
+        
+
+                    <!--ITEM 2 GOES HERE-->
+
+
+                    
+                <div class="col">
+
+                    <div class="mc_card p-4" id="#">
+                
+                        <div class="card" style="width: 20rem">
+                
+                            <div class="card-body">
+                            
+                            </div>
+                
+                            <div class="card-footer" style="background-color: #1f2327;">
+                
+                            </div>
+                
+                        </div>
+                
+                    </div>
+                </div>
+            
+
+                    <!--ITEM 3 GOES HERE-->
+
+
+                    <div class="col">
+
+                        <div class="mc_card p-4" id="#">
+                    
+                            <div class="card" style="width: 20rem">
+                    
+                                <div class="card-body">
+                                
+                                </div>
+                    
+                                <div class="card-footer" style="background-color: #1f2327;">
+                    
+                                </div>
+                    
+                            </div>
+                    
+                        </div>
+                    </div>
+                    
+            
             </div>
         </div>
         
+
+        <!--LOAN TRACKER-->
+
+
         <div class="loanTracker col-md-8" style="display: none;" id="myloans">
-            <div class="loancard card">
+            <div class="loancard card m-5">
                 <div class="card-body">
                     <h2 class="card-title text-center">Loan Application</h2>
                 </div>
                 
             </div>
 
-            <div class="row"><button class="btn btn-primary" id="applyLoanBtn">Apply for a Loan</button></div>
+            <div class="row my-5">
+
+                <div class="col d-flex justify-content-center align-items-center" id="applyLoanContainer" style="display: none;">
+                    
+                    <p id="noLoansMessage" style="display: none;">NO LOANS FOUND. APPLY FOR A LOAN?</p>
+
+                    <button class="btn btn-primary btn-lg" id="applyLoanBtn">Apply for a Loan</button>
+
+                    <button class="btn btn-primary btn-lg" id="trackLoanBtn">Track Loan Application</button>
+
+                </div>
+                
+
+            </div>
         </div>
+
+
     </div>
 </div>
 

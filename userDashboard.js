@@ -1,45 +1,58 @@
 document.addEventListener("DOMContentLoaded", function () {
-    
-    // Function to enable/disable form fields for editing
-function enableFormEditing(enable) {
-    var inputs = document.querySelectorAll("#personalInfoForm input");
-    inputs.forEach(function (input) {
-        input.disabled = !enable;
-    });
-
-    var saveBtn = document.getElementById("saveBtn");
-    saveBtn.style.display = enable ? "block" : "none";
-}
-
-   // Function to save edited data to session storage
-   function saveEditedData() {
-    var userData = {};
-    var isValid = true;
-    var errorMessages = document.querySelectorAll(".form__input--error-message");
-
-    errorMessages.forEach(function (errorMessage) {
-        errorMessage.style.display = "none";
-
-        var inputField = errorMessage.nextElementSibling; //target input fields
-        userData[inputField.id] = inputField.value.trim();
-
-        if (inputField.value.trim() === "") {
-            errorMessage.style.display = "block";
-            isValid = false;
-        }
-    });
-
-    if (isValid) {
-        sessionStorage.setItem("userData", JSON.stringify(userData));
-        console.log("Data saved to session storage:", userData);
-        enableFormEditing(false); // Disabling editing mode upon successful save
-        document.getElementById("saveBtn").style.display = "none"; // Hide the save button
-    } else {
-        console.log("Cannot save. Please fill in all required fields.");
-        // Displaying error messages for required fields
-        // The error messages are already provided in the HTML
+    // Check if the user is logged in; if not, redirect to login page
+    const loggedIn = sessionStorage.getItem("loggedIn");
+    if (loggedIn !== "true") {
+        window.location.href = "login.html";
     }
-}
+
+    
+    // Hide Apply for Loan button and message initially
+    var applyLoanContainer = document.getElementById("applyLoanContainer");
+    var noLoansMessage = document.getElementById("noLoansMessage");
+    applyLoanContainer.style.display = "none";
+    noLoansMessage.style.display = "none";
+
+
+    // Function to enable/disable form fields for editing
+    function enableFormEditing(enable) {
+        var inputs = document.querySelectorAll("#personalInfoForm input");
+        inputs.forEach(function (input) {
+            input.disabled = !enable;
+        });
+
+        var saveBtn = document.getElementById("saveBtn");
+        saveBtn.style.display = enable ? "block" : "none";
+    }
+
+    // Function to save edited data to session storage
+    function saveEditedData() {
+        var userData = {};
+        var isValid = true;
+        var errorMessages = document.querySelectorAll(".form__input--error-message");
+
+        errorMessages.forEach(function (errorMessage) {
+            errorMessage.style.display = "none";
+
+            var inputField = errorMessage.nextElementSibling; // target input fields
+            userData[inputField.id] = inputField.value.trim();
+
+            if (inputField.value.trim() === "") {
+                errorMessage.style.display = "block";
+                isValid = false;
+            }
+        });
+
+        if (isValid) {
+            sessionStorage.setItem("userData", JSON.stringify(userData));
+            console.log("Data saved to session storage:", userData);
+            enableFormEditing(false); // Disabling editing mode upon successful save
+            document.getElementById("saveBtn").style.display = "none"; // Hide the save button
+        } else {
+            console.log("Cannot save. Please fill in all required fields.");
+            // Displaying error messages for required fields
+            // The error messages are already provided in the HTML
+        }
+    }
 
 
     // Function to retrieve saved data from session storage
@@ -54,19 +67,44 @@ function enableFormEditing(enable) {
         }
     }
 
-    // Function to handle applying for a loan
-    function applyForLoan() {
+
+// Function to handle applying for a loan
+function applyForLoan() {
+    // Retrieve data from the admin dashboard (in this case, from sessionStorage)
+    let hasLoan = sessionStorage.getItem("hasLoan") === "true";
+
+    if (!hasLoan) {
+        // If the user has no existing loan, proceed to apply for a new loan
         window.location.href = "loan_application.html";
+    } else {
+        // If the user has an existing loan, display the loan information
+        const loanTracker = document.getElementById("myloans");
+        if (loanTracker) {
+            loanTracker.style.display = "block";
+            // Logic to display existing loan or loan application data
+            console.log('Display existing loan or loan application data');
+        }
     }
 
-    // Function to handle login
-    function loginUser(email, password) {
+    // Show Apply for Loan button and message if user has no loan
+    if (!hasLoan) {
+        var applyLoanContainer = document.getElementById("applyLoanContainer");
+        var noLoansMessage = document.getElementById("noLoansMessage");
 
+        // Display Apply for Loan button and message
+        applyLoanContainer.style.display = "block";
+        noLoansMessage.style.display = "block";
     }
+}
+
+
+
+
 
     // Function to handle logout
     function logoutUser() {
         sessionStorage.removeItem("userData");
+        sessionStorage.removeItem("loggedIn");
         window.location.href = "login.html";
     }
 
@@ -85,29 +123,21 @@ function enableFormEditing(enable) {
     }
 
     // Event listeners for dashboard links and logout
-    var savedItemsLink = document.getElementById("savedItemsLink");
-    if (savedItemsLink) {
-        savedItemsLink.addEventListener("click", function (event) {
-            event.preventDefault();
-            showDashboardSection("mysaveditems");
-        });
-    }
+    var dashboardLinks = {
+        savedItemsLink: "mysaveditems",
+        loanTrackerLink: "myloans",
+        settingsLink: "mysettings"
+    };
 
-    var loanTrackerLink = document.getElementById("loanTrackerLink");
-    if (loanTrackerLink) {
-        loanTrackerLink.addEventListener("click", function (event) {
-            event.preventDefault();
-            showDashboardSection("myloans");
-        });
-    }
-
-    var settingsLink = document.getElementById("settingsLink");
-    if (settingsLink) {
-        settingsLink.addEventListener("click", function (event) {
-            event.preventDefault();
-            showDashboardSection("mysettings");
-        });
-    }
+    Object.keys(dashboardLinks).forEach(function (linkId) {
+        var linkElement = document.getElementById(linkId);
+        if (linkElement) {
+            linkElement.addEventListener("click", function (event) {
+                event.preventDefault();
+                showDashboardSection(dashboardLinks[linkId]);
+            });
+        }
+    });
 
     var logoutBtns = document.querySelectorAll("#logoutBtn");
     logoutBtns.forEach(function (logoutBtn) {
@@ -127,13 +157,13 @@ function enableFormEditing(enable) {
         });
     }
 
-     // Event listener for the "Save" button
-     var saveBtn = document.getElementById("saveBtn");
-     if (saveBtn) {
-         saveBtn.addEventListener("click", function () {
-             saveEditedData();
-         });
-     }
+    // Event listener for the "Save" button
+    var saveBtn = document.getElementById("saveBtn");
+    if (saveBtn) {
+        saveBtn.addEventListener("click", function () {
+            saveEditedData();
+        });
+    }
 
     // Event listener for the "Edit" button
     var editBtn = document.getElementById("editBtn");
@@ -151,16 +181,42 @@ function enableFormEditing(enable) {
         });
     }
 
+    // Event listener for the "Track Loan" button
+    var trackLoanBtn = document.getElementById("trackLoanBtn");
+    if (trackLoanBtn) {
+        trackLoanBtn.addEventListener("click", function () {
+            applyForLoan();
+        });
+    }
+
+    // Hide Apply for Loan button initially
+    var applyLoanBtn = document.getElementById("applyLoanBtn");
+    if (applyLoanBtn) {
+        applyLoanBtn.style.display = "none";
+    }
+
+    // Event listener for the "Track Loan" button
+    var trackLoanBtn = document.getElementById("trackLoanBtn");
+    if (trackLoanBtn) {
+        trackLoanBtn.addEventListener("click", function () {
+            // Retrieve data from the admin dashboard (in this case, from sessionStorage)
+            let hasLoan = sessionStorage.getItem("hasLoan") === "true";
+
+            if (!hasLoan) {
+                // If the user has no existing loan, display the Apply for Loan button
+                applyLoanBtn.style.display = "block";
+            } else {
+                // If the user has an existing loan, display the loan information
+                const loanTracker = document.getElementById("myloans");
+                if (loanTracker) {
+                    loanTracker.style.display = "block";
+                    // Logic to display existing loan or loan application data
+                    console.log('Display existing loan or loan application data');
+                }
+            }
+        });
+    }
+
     // Retrieve saved data when the DOM is loaded
     retrieveSavedData();
-});
-
-
-// user_dashboard.js preventing to go back when logged in
-document.addEventListener("DOMContentLoaded", () => {
-    const loggedIn = sessionStorage.getItem("loggedIn");
-
-    if (loggedIn !== "true") {
-        window.location.href = "login.html";
-    }
 });

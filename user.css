@@ -145,10 +145,11 @@
     text-decoration: none;
     color: whitesmoke;
 }
-.saved-itemscard {
+
+.savedItems {
     background-color: #1f2327;
-    color: whitesmoke;
 }
-.saved-items--card {
-    background-color: whitesmoke;
+
+.loanTracker {
+    background-color: #1f2327;
 }
