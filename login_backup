@@ -38,41 +38,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
     loginForm.addEventListener("submit", (e) => {
         e.preventDefault();
-    
+
         const usernameInput = document.querySelector('#username').value;
         const passwordInput = document.querySelector('#password').value;
-    
+
         const foundUser = storedUsers.find(user => user.username === usernameInput && user.password === passwordInput);
-    
-        // For the admin credentials
-        const isAdmin = usernameInput === 'admin' && passwordInput === '12345';
-    
-        if (foundUser || isAdmin) {
-            sessionStorage.setItem("loggedIn", "true");
-            sessionStorage.setItem("username", usernameInput);
-
-            if (isAdmin) {
-                window.location.href = "admindashboard.html";
-            } else {
-                window.location.href = "user_dashboard.html";
-            }
-        } else {
-            setFormMessage(loginForm, "error", "Invalid username/password combination");
-        }
-
 
         if (foundUser) {
             sessionStorage.setItem("loggedIn", "true");
             sessionStorage.setItem("username", usernameInput);
-            sessionStorage.setItem("userRole", "user"); // Set user role for regular users
-            window.location.href = "index.html"; // Redirect to index.html
-        } else if (isAdmin) {
-            sessionStorage.setItem("loggedIn", "true");
-            sessionStorage.setItem("username", usernameInput);
-            sessionStorage.setItem("userRole", "admin"); // Set user role for admin
-            window.location.href = "index.html"; // Redirect to index.html
+            window.location.href = "user_dashboard.html";
+        } else {
+            setFormMessage(loginForm, "error", "Invalid username/password combination");
         }
     });
+
 
     
 

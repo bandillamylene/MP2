@@ -2,6 +2,7 @@
 let brandSelect = document.getElementById("brands");
 let mcSelect = document.getElementById("motorcycles");
 let srpInput = document.getElementById("srp");
+let dpinput = document.getElementById("downpayment");
 
 //Declarting MC datas
 let mcData = {
@@ -50,6 +51,45 @@ let mcSRP = {
 
 }
 
+let mcDP ={
+    honda: {
+        "Click 125": 5500,
+        "Beat 125": 3700,
+        "TMX Supremo": 4500,
+        "PCX160": 18000,
+        "CBR150R": 27500,
+    },
+
+    kawasaki: {
+        "Barako II": 5000,
+        "CT 125": 3000,
+        "Rouser NS200fi": 17000,
+        "Dominar 400": 42000,
+    },
+
+    yamaha: {
+        "XSR 155": 21000,
+        "Sniper 155": 16000,
+        "Mio Aerox": 17000,
+        "Mio Soul 125i": 7500,
+        "MT15": 29000,
+    },
+
+    motorstar: {
+        "Cafe 150": 4320,
+        "Cafe 400": 60000,
+    },
+   
+    cfmoto: {
+        "300SR": 33000,
+        "NK400": 43800,
+        "650NK": 59000,
+    }
+
+}
+
+
+
 //To update MC options
 function updateMC(){
     //For Choosing Brands
@@ -80,19 +120,60 @@ function updateSRP(){
         
         srpInput.value = mcSRP[selectBrand][selectmodel];//To display the SRP of the model.
 
+    }else {
+        // Handle the case when values are undefined or not valid
+        srpInput.value = "";
     }
 
 }
+
+
+//Function to update specific model's price to Motorcycle DP input field
+function updateDP(){
+
+    let selectBrand = brandSelect.value;//declaring varibale selectBrand equal to brandSelect
+    let selectmodel = mcSelect.value;//declaring varibale selectmodel equal to mcSelect
+
+     //If conditional if the chosen brand and chosen model is true, it will display the DP of the model
+    if(selectBrand !== "Open to choose" && selectmodel !== "Open to Choose"){
+
+        dpinput.value = mcDP[selectBrand][selectmodel];//To display the DP of the model.
+        dpinput.min = mcDP[selectBrand][selectmodel];
+
+
+    }else {
+        // Handle the case when values are undefined or not valid
+        dpinput.value = "";
+        dpinput.min = "";
+    }
+
+
+}
+
+// Add an event listener to restrict the input value
+dpinput.addEventListener('input', function (){
+
+    if(parseFloat(dpinput.value) < parseFloat(dpinput.min)){
+    
+        dpinput.setCustomValidity(`Minimum downpayment allowed is ${dpinput.min}`)
+    }else{
+        dpinput.setCustomValidity('');
+    }
+    
+    });
+    
 
 
 //Event listeners for changes in brand and motorcycle options
 brandSelect.addEventListener("change", () => {
     updateMC();
     updateSRP();
+    updateDP();
 });
 
 mcSelect.addEventListener("change", () => {
     updateSRP();
+    updateDP();
 });
 
 
@@ -176,31 +257,3 @@ if(thirtyS = numResult2 / 36 * 1.6){
 
 }
 
-
-
-
-
-
-
-
-
-//BOOTSTRAP VALIDATION
-// Example starter JavaScript for disabling form submissions if there are invalid fields
-(() => {
-    'use strict'
-  
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    const forms = document.querySelectorAll('.needs-validation')
-  
-    // Loop over them and prevent submission
-    Array.from(forms).forEach(form => {
-      form.addEventListener('submit', event => {
-        if (!form.checkValidity()) {
-          event.preventDefault()
-          event.stopPropagation()
-        }
-  
-        form.classList.add('was-validated')
-      }, false)
-    })
-  })()

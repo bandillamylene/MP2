@@ -25,3 +25,12 @@ function showContent(id, event){
     }
 
 }
+
+// admin_dashboard.js preventing to go back when logged in
+document.addEventListener("DOMContentLoaded", () => {
+    const loggedIn = sessionStorage.getItem("loggedIn");
+
+    if (loggedIn !== "true") {
+        window.location.href = "login.html";
+    }
+});
