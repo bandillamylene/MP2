@@ -157,7 +157,7 @@
 <!--ROW 1-->
 <div class="row">
 
-    <div class="mc_card col-md-4 p-4">
+    <div class="mc_card col-md-4 p-4" id="item_click125">
 
         <div class="card" style="width: 20rem">
 
@@ -170,7 +170,7 @@
         <div class="card-body">
         <div class="model-title card-title">
             <a href="click125.html" class="nav-link">
-            <h4 class="h5">Honda Click 125</h2>
+            <h4 class="h5 m-title" id="click125_title_brand">Honda Click 125</h2>
             </a>
          </div>
          
@@ -178,9 +178,9 @@
 
             <div class="card-footer" style="background-color: #1f2327;">
                 <a href="click125.html" class="nav-link">
-                <h4 class="h5 text-white">SRP: 80,900</h4>
-                <h4 class="h6 text-white">Downpayment: 5,500</h4>
-                <h4 class="h6 text-white pb-3">Monthly: 3,229</h4>
+                <h4 class="h5 text-white" id="click125_modelSRP_brand">SRP: 80,900</h4>
+                <h4 class="h6 text-white" id="click125_modelDP_brand">Downpayment: 5,500</h4>
+                <h4 class="h6 text-white pb-3" id="click125_modelmonthly_brand">Monthly: 3,229</h4>
                 </a>
                 <a href="click125.html" class="btn btn-outline-light btn-sm" role="button">See More</a>
             </div>
@@ -190,7 +190,7 @@
 
         </div>
 
-        <div class="mc_card col-md-4 p-4">
+        <div class="mc_card col-md-4 p-4" id="item_pcx160">
 
             <div class="card" style="width: 20rem">
     
@@ -203,7 +203,7 @@
             <div class="card-body">
             <div class="model-title card-title">
                 <a href="pcx160.html" class="nav-link">
-                <h4 class="h5">Honda PCX160</h2>
+                <h4 class="h5 ">Honda PCX160</h2>
                 </a>
              </div>
              
@@ -224,7 +224,7 @@
     
             </div>
 
-            <div class="mc_card col-md-4 p-4">
+            <div class="mc_card col-md-4 p-4" id="item_beat125">
 
                 <div class="card" style="width: 20rem">
         
@@ -237,7 +237,7 @@
                 <div class="card-body">
                 <div class="model-title card-title">
                     <a href="beat125.html" class="nav-link">
-                    <h4 class="h5">Honda Beat Fashion Sport</h2>
+                    <h4 class="h5" id="beat125_title_brand">Honda Beat Fashion Sport</h2>
                     </a>
                  </div>
                  
@@ -245,9 +245,9 @@
         
                     <div class="card-footer" style="background-color: #1f2327;">
                         <a href="beat125.html" class="nav-link">
-                        <h4 class="h5 text-white">SRP: 70,670</h4>
-                        <h4 class="h6 text-white">Downpayment: 3,700</h4>
-                        <h4 class="h6 text-white pb-3">Monthly: 2,883</h4>
+                        <h4 class="h5 text-white" id="beat125_modelSRP_brand">SRP: 70,670</h4>
+                        <h4 class="h6 text-white" id="beat125_modelDP_brand">Downpayment: 3,700</h4>
+                        <h4 class="h6 text-white pb-3" id="beat125_modelmonthly_brand">Monthly: 2,883</h4>
                         </a>
                         <a href="beat125.html" class="btn btn-outline-light btn-sm" role="button">See More</a>
         
@@ -268,7 +268,7 @@
 <!--ROW 2-->
 <div class="row">
 
-    <div class="mc_card col-md-4 p-4">
+    <div class="mc_card col-md-4 p-4" id="item_supremo">
 
         <div class="card" style="width: 20rem">
 
@@ -301,7 +301,7 @@
 
         </div>
 
-        <div class="mc_card col-md-4 p-4">
+        <div class="mc_card col-md-4 p-4" id="item_cbr150r">
 
             <div class="card" style="width: 20rem">
     
@@ -417,6 +417,21 @@
         
       
     </footer>
+
+<script>
+   document.addEventListener('DOMContentLoaded', function() {
+    // Check localStorage for hidden products and hide them
+    const hiddenProducts = Object.keys(localStorage);
+    hiddenProducts.forEach(productId => {
+      const item = document.getElementById(`item_${productId}`);
+      if (item) {
+        item.style.display = 'none'; // Hide the product element
+      }
+    });
+  });
+</script>
+<script src="admin fash_functionalities/editproduct.js"></script>
+
 
 </body>
 </html>

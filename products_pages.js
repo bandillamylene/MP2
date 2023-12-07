@@ -14,3 +14,4 @@ const modalImage = document.getElementById("main_image_modal");
 modalImage.src = chosenImage.src;
 
 }
+

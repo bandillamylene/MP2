@@ -22,8 +22,7 @@ body{
     box-shadow: 2px 2px 5px gray;
     max-width: 50%;
 }
-
-.navbar_content a:hover{
+a:hover{
     opacity: 0.7;
 }
 
@@ -53,71 +52,26 @@ body{
     }
 
 }
-.carousel1_btn{
-
-    position: absolute;
-    top: 85%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
 
 
-
-.road1{
-
-    position: relative;
-
-}
-
-.mc{
-
-    position: absolute;
-    top: 55%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-}
-
-
-
-/*Search Container*/
-.search_container{
-    margin-top: 25px;
-    border-radius: 20px;
-    padding: 30px;
+.admin_navs{
     background-color: #1f2327;
-    color: #fff;
+    color:white;
+    padding: 40px;
+    border-radius: 10px;
+}
 
+.admin_display{
+    background-color: #1f2327;
+    color:white;
+    padding: 40px;
+    border-radius: 10px;
 }
 
 
-/*Motorcycle Cards*/
 
-.m_title{
-font-weight: lighter;
-
-}
-
-.mc_card{
-    display: flex;
-    justify-content: center;
-}
-
-.img-hover-zoom {
-    overflow: hidden;
-}
-
-.img-hover-zoom img{
-    transition: transform .5s ease;
-}
-
-.img-hover-zoom img:hover{
-    transform: scale(1.5);
-}
-
-.model-title a:hover{
-margin-left: 20px;
-transition: 0.3s ease;
+.content{
+    display: block;
 }
 
 

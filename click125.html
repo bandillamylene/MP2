@@ -101,13 +101,13 @@
     <!--Carousel-->
     <div class="carousel slide pb-3" id="carousel_img" data-bs-ride="carousel">
         <div class="carousel-inner">
-        <div class="carousel-item active" data-bs-interval="4000">
+        <div class="carousel-item active" data-bs-interval="4000" id="carousel1">
         <img class="img-fluid" src="images/motorcycles/honda/click125/cover_1.jpg">
         
         
             </div>
         
-        <div class="carousel-item" data-bs-interval="4000">
+        <div class="carousel-item" data-bs-interval="4000" id="carousel2">
             <img class="img-fluid" src="images/motorcycles/honda/click125/cover_2.jpg">
     
         
@@ -147,10 +147,11 @@
 <img class="img-fluid" style="width: 6rem;" src="images/motorcycles/honda/click125/pic-5.jpg" onclick="changeImage(this)">
 <img class="img-fluid" style="width: 6rem;" src="images/motorcycles/honda/click125/pic-1.jpg" onclick="changeImage(this)">
 
-<h4 class="h4 pt-5 pb-3" id="model_title"><b>The All-New CLICK125</b></h4>
-<p id="model_details">Even a quick glance is enough to know that The All-New CLICK125 is unlike any other. This latest model features a new bold design with a more refined front and body image. Neat decals provide a nice touch and bring the look to life that everyone from the sporty to the stylish will definitely love.</p>
-<p>​A sporty-style muffler design with an aluminum end cap is sure to turn heads as you zoom past onlookers. They’ll also notice The All-New CLICK125’s new black cast wheel design that displays wider tubeless tires in front and rear that ensure comfort in every ride with better traction and greater stability. There’s also a new wavy disc brake on the front wheel that makes braking more responsive. Its wavy edge not only looks nice but effectively removes dirt and rainwater on brake pads as well.</p>
-<p class="pb-5">​Finally, choose The All-New CLICK125 that fits your character as the model comes in five, sensational colors. These are Pearl Crimson Red, Pearl Sylvestris Gray, Stellar Blue Metallic, Pearl Arctic White, and Obsidian Black Metallic.</p>
+<h4 class="h4 pt-5 pb-3 m_title" id="model_title"><b>The All-New CLICK125</b></h4>
+<p id="model_details">Even a quick glance is enough to know that The All-New CLICK125 is unlike any other. This latest model features a new bold design with a more refined front and body image. Neat decals provide a nice touch and bring the look to life that everyone from the sporty to the stylish will definitely love.<br> <br>
+​A sporty-style muffler design with an aluminum end cap is sure to turn heads as you zoom past onlookers. They’ll also notice The All-New CLICK125’s new black cast wheel design that displays wider tubeless tires in front and rear that ensure comfort in every ride with better traction and greater stability. There’s also a new wavy disc brake on the front wheel that makes braking more responsive. Its wavy edge not only looks nice but effectively removes dirt and rainwater on brake pads as well.<br> <Br>
+​Finally, choose The All-New CLICK125 that fits your character as the model comes in five, sensational colors. These are Pearl Crimson Red, Pearl Sylvestris Gray, Stellar Blue Metallic, Pearl Arctic White, and Obsidian Black Metallic.
+</p>
 
 </div>
 
@@ -159,8 +160,8 @@
 <div class="col-md-6 ps-4">
 <div class="pricing container text-white">
 <h5 id="modelSRP">SRP: PHP 80,900</h5>
-<h5>Downpayment: PHP 5,500</h5>
-<h5>Monthly: 3,229</h5>
+<h5 id="modelDP">Downpayment: PHP 5,500</h5>
+<h5 id="modelmonthly">Monthly: 3,229</h5>
 </div>
 <p>* Prices are indicative prices only and may be different at the branch. Prices are subject to change without prior notice.</p>
 
@@ -620,8 +621,9 @@
       
     </footer>
 
-    <Script src="buynow.js"></Script>
+<Script src="buynow.js"></Script>
 <script src="products_pages.js"></script>
+<script src="admin fash_functionalities/editproduct.js"></script>
 
 </body>
 </html>

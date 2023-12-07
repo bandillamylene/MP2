@@ -149,7 +149,7 @@
 <!--ROW 1-->
 <div class="row">
 
-    <div class="mc_card col-md-4 p-4">
+    <div class="mc_card col-md-4 p-4" id="item_300sr">
 
         <div class="card" style="width: 20rem">
 
@@ -182,7 +182,7 @@
 
         </div>
 
-        <div class="mc_card col-md-4 p-4">
+        <div class="mc_card col-md-4 p-4" id="item_nk400">
 
             <div class="card" style="width: 20rem">
     
@@ -216,7 +216,7 @@
     
             </div>
 
-            <div class="mc_card col-md-4 p-4">
+            <div class="mc_card col-md-4 p-4" id="item_nk650">
 
                 <div class="card" style="width: 20rem">
         
@@ -337,6 +337,19 @@
     
   
 </footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    // Check localStorage for hidden products and hide them
+    const hiddenProducts = Object.keys(localStorage);
+    hiddenProducts.forEach(productId => {
+      const item = document.getElementById(`item_${productId}`);
+      if (item) {
+        item.style.display = 'none'; // Hide the product element
+      }
+    });
+  });
+</script>
 
 </body>
 </html>

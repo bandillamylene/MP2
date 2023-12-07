@@ -53,6 +53,9 @@ a:hover{
 
 }
 
+.m_title{
+    font-weight: bold;
+}
 
 .pricing{
     background-color: #1f2327;

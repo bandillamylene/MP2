@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="admindashboard.css">
+    <title>Throttle Twist Motors</title>
+</head>
+<body>
+
+<!--NAVIGATION BAR-->
+<nav class="navbar_content navbar navbar-expand-lg sticky-top bg-dark">
+    <div class="container-fluid">
+
+        <a class="navbar-brand text-white" href="./index.html">
+            <img src="./images/throttlelogo.png" class="logo ">
+        </a>
+
+        <div class="collapse navbar-collapse justify-content-lg-around justify-content-md-around" id="navbar">
+
+            <ul class="navbar-nav">
+
+                <li class="nav-item dropdown pe-4">
+                    <a class="nav-link dropdown-toggle text-white" href="#" id="motorcyclesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Motorcycles
+                    </a>
+                        <ul class="dropdown-menu bg-white" aria-labelledby="motorcyclesDropdown">
+                            <li><a class="dropdown-item" href="honda.html">Honda</a></li>
+                            <li><a class="dropdown-item" href="kawasaki.html">Kawasaki</a></li>
+                            <li><a class="dropdown-item" href="yamaha.html">Yamaha</a></li>
+                            <li><a class="dropdown-item" href="motorstar.html">Motorstar</a></li>
+                            <li><a class="dropdown-item" href="cfmoto.html">CFMoto</a></li>
+                        </ul>
+                  </li>
+
+                  <li class="nav-item dropdown pe-4">
+                    <a class="nav-link dropdown-toggle text-white" href="#" id="services" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Services
+                    </a>
+                        <ul class="dropdown-menu bg-white" aria-labelledby="motorcyclesDropdown">
+                            <li><a class="dropdown-item" href="serviceform.html">Service Inquiry</a></li>
+                            <li><a class="dropdown-item" href="loancalculator.html">Loan Calculator</a></li>
+                        </ul>
+                  </li>
+
+                  <li class="nav-item dropdown pe-4">
+                    <a class="nav-link dropdown-toggle text-white" href="./promos.html" id="Promos" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Promos
+                    </a>
+                        <ul class="dropdown-menu bg-white" aria-labelledby="motorcyclesDropdown">
+                            <li><a class="dropdown-item" href="./promos.html">Limited Time</a></li>
+                            <li><a class="dropdown-item" href="./promos_hotDeals.html">Hot Deals</a></li>
+                            <li><a class="dropdown-item" href="#">Option 3</a></li>
+                        </ul>
+                  </li>
+
+                <li class="nav-item pe-4">
+                    <a class="nav-link text-white" href="./aboutUs.html">About Us</a>
+
+
+                </li>
+
+                <li class="nav-item pe-4">
+                    <a class="nav-link text-white" href="./contactUs.html">Contact Us</a>
+
+
+                </li>
+
+            </ul>
+         
+            <form class="s-bar d-flex justify-content-lg-end justify-content-end align-items-end" role="search">
+                <input class="form-control me-2 rounded-5" type="search" placeholder="Search" id="search">
+                <button class="s-button btn btn-outline-light btn-sm" type="submit">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+
+        </div>
+
+<br><br><br>
+
+
+        <div class="d-lg-block d-flex justify-content-end">
+            <span id="profileName" class="text-white mx-3"></span>
+            
+            <a href="./login.html" id="loginButton" class="login text-white mx-3 btn btn-md">Login</a>
+        
+
+            <button class="navbar-toggler bg-white ms-auto me-3" type="button" data-bs-target="#navbar" data-bs-toggle="collapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+        
+
+
+    </div>
+</nav>
+
+<div class="container-md pt-5 pb-5">
+<div class="row">
+<div class="admin_navs col-md-4 border">
+<div class="row pb-5">
+    <div class="col-md">
+        <h5 class="h4 fw-bold pt-4">Admin's Dashboard</h5>
+    </div>
+
+</div>
+
+<div class="row pb-4">
+    <div class="col-md">
+       <a href="#manage_accounts" class="nav-link toggle-link" onclick="showContent('manage_accounts', event)">
+        Manage Accounts
+       </a>
+    </div>
+
+</div>
+
+<div class="row pb-4">
+    <div class="col-md">
+       <a href="#manage_models" class="nav-link toggle-link" onclick="showContent('manage_models', event)">
+        Manage Models
+       </a>
+    </div>
+
+</div>
+
+<div class="row pb-4">
+    <div class="col-md">
+       <a href="#" class="nav-link toggle-link">
+        Sales and Orders
+       </a>
+    </div>
+
+</div>
+
+
+<div class="row pb-4">
+    <div class="col-md">
+       <a href="#" class="nav-link toggle-link">
+        Inquiry Managements
+       </a>
+    </div>
+
+</div>
+
+</div>
+
+<!--Display Area-->
+<div class="admin_display col-md-8 border">
+<div class="row">
+
+<div class="col-md-12 pt-3">
+<div class="content container" id="manage_accounts">
+<h5 class="h4 fw-bold">Manage Accounts</h5>
+
+<button class="btn btn-light">Add User</button>
+<button class="btn btn-light">Delete User</button>
+
+<h5 class="h5 pt-5">Users:</h5>
+
+<Table class="table table-light table-striped">
+
+    <thead>
+        <tr>
+            <Th>Username</Th>
+            <Th>Email</Th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+
+            <td>clyde1997</td>
+            <td>sample@email.com</td>
+        
+        </tr>
+        <tr>
+
+            <td>clyde1997</td>
+            <td>sample@email.com</td>
+        
+        </tr>
+        <tr>
+
+            <td>clyde1997</td>
+            <td>sample@email.com</td>
+        
+        </tr>
+        <tr>
+
+            <td>clyde1997</td>
+            <td>sample@email.com</td>
+        
+        </tr>
+        <tr>
+
+            <td>clyde1997</td>
+            <td>sample@email.com</td>
+        
+        </tr>
+    </tbody>
+
+</Table>
+
+
+</div>
+
+
+<div class="content container" id="manage_models">
+    <h5 class="h4 fw-bold">Manage Models</h5>
+    <button class="btn btn-light">Add Product</button>
+
+    <h5 class="h5 pt-5">Models:</h5>
+
+    <!--Displaying the models-->
+    <Table class="table table-light table-striped">
+
+    <thead>
+        <tr>
+            
+            <Th>Model Name</Th>
+            <Th>Brand</Th>
+            <th>Status</th>
+            <Th>Operations</Th>
+        </tr>
+    </thead>
+
+    <tbody id="hondaProducts">
+        <tr>
+
+            <td>Click 125</td>
+            <td>Honda</td>
+            <td id="status_click125">Available</td>
+            <td>
+                
+                    <!--Modal backup for edit product.-->
+                    <div class="modal fade" id="click125" tabindex="-1" >
+                    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-body">
+
+                            <div class="container">
+                                <label class="form-label">Model Title</label>
+                                <input class="form-control" type="text" id="click125_title_input"  value="The All-New CLICK125">
+                                
+                                <label class="form-label">Model Details</label>
+                                <textarea class="form-control" id="model_details_click125_input" style="height: 40rem;">
+                                    Even a quick glance is enough to know that The All-New CLICK125 is unlike any other. This latest model features a new bold design with a more refined front and body image. Neat decals provide a nice touch and bring the look to life that everyone from the sporty to the stylish will definitely love.
+
+                                    ​A sporty-style muffler design with an aluminum end cap is sure to turn heads as you zoom past onlookers. They’ll also notice The All-New CLICK125’s new black cast wheel design that displays wider tubeless tires in front and rear that ensure comfort in every ride with better traction and greater stability. There’s also a new wavy disc brake on the front wheel that makes braking more responsive. Its wavy edge not only looks nice but effectively removes dirt and rainwater on brake pads as well.
+                                    
+                                    ​Finally, choose The All-New CLICK125 that fits your character as the model comes in five, sensational colors. These are Pearl Crimson Red, Pearl Sylvestris Gray, Stellar Blue Metallic, Pearl Arctic White, and Obsidian Black Metallic.
+
+                                </textarea>
+
+                                <label class="form-label">Model SRP</label>
+                                <input class="form-control" type="text" id="model_srp_click125_input" value="SRP: PHP 80,900">
+
+                                <label class="form-label">Model Downpayment</label>
+                                <input class="form-control" type="text" id="model_dp_click125_input" value="Downpayment: PHP 5,500">
+
+                                <label class="form-label">Model Monthly Payment</label>
+                                <input class="form-control" type="text" id="model_monthly_click125_input" value="Monthly: 3,229">
+                             </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-dark" onclick="saveChanges('click125')">Save Changes</button>
+                    </div>
+
+                    </div>
+
+                    </div>
+
+                    </div>
+    
+
+
+                <button type="submit" class="btn btn-dark btn-sm" onclick="hide('click125')">Hide Product</button>   
+                <button type="submit" class="btn btn-dark btn-sm" onclick="unhide('click125')">Unhide Product</button> 
+            </td>
+        </tr>
+
+        <tr>
+
+            <td>Beat 125</td>
+            <td>Honda</td>
+            <td id="status_beat125">Available</td>
+            <td>
+
+                <button type="submit" class="btn btn-dark btn-sm" onclick="hide('beat125')">Hide Product</button>   
+                <button type="submit" class="btn btn-dark btn-sm" onclick="unhide('beat125')">Unhide Product</button> 
+            </td>
+        </tr>
+
+        <tr>
+
+            <td>TMX Supremo</td>
+            <td>Honda</td>
+            <td id="status_supremo">Available</td>
+            <td>
+                <button type="submit" class="btn btn-dark btn-sm" onclick="hide('supremo')">Hide Product</button>   
+                <button type="submit" class="btn btn-dark btn-sm" onclick="unhide('supremo')">Unhide Product</button> 
+            </td>
+        </tr>
+
+        <tr>
+
+            <td>PCX 160</td>
+            <td>Honda</td>
+            <td id="status_pcx160">Available</td>
+            <td>
+                <button type="submit" class="btn btn-dark btn-sm" onclick="hide('pcx160')">Hide Product</button>   
+                <button type="submit" class="btn btn-dark btn-sm" onclick="unhide('pcx160')">Unhide Product</button> 
+
+            </td>
+        </tr>
+
+        <tr>
+
+            <td>CBR150R</td>
+            <td>Honda</td>
+            <td id="status_cbr150r">Available</td>
+            <td>
+                <button type="submit" class="btn btn-dark btn-sm" onclick="hide('cbr150r')">Hide Product</button>   
+                <button type="submit" class="btn btn-dark btn-sm" onclick="unhide('cbr150r')">Unhide Product</button> 
+
+            </td>
+        </tr>
+
+    </tbody>
+
+
+    <tbody id="kawasakiProducts">
+
+        <tr>
+
+            <td>Barako II</td>
+            <td>Kawasaki</td>
+            <td id="status_barako2">Available</td>
+            <td>
+                <button type="submit" class="btn btn-dark btn-sm" onclick="hide('barako2')">Hide Product</button>   
+                <button type="submit" class="btn btn-dark btn-sm" onclick="unhide('barako2')">Unhide Product</button> 
+ 
+            </td>
+        </tr>
+
+        <tr>
+
+            <td>CT 125</td>
+            <td>Kawasaki</td>
+            <td id="status_ct125">Available</td>
+            <td>
+                <button type="submit" class="btn btn-dark btn-sm" onclick="hide('ct125')">Hide Product</button>   
+                <button type="submit" class="btn btn-dark btn-sm" onclick="unhide('ct125')">Unhide Product</button> 
+
+            </td>
+        </tr>
+
+        <tr>
+
+            <td>Rouser NS200fi</td>
+            <td>Kawasaki</td>
+            <td id="status_rouser">Available</td>
+            <td>
+                <button type="submit" class="btn btn-dark btn-sm" onclick="hide('rouser')">Hide Product</button>   
+                <button type="submit" class="btn btn-dark btn-sm" onclick="unhide('rouser')">Unhide Product</button> 
+
+            </td>
+        </tr>
+
+        <tr>
+
+            <td>Dominar 400</td>
+            <td>Kawasaki</td>
+            <td id="status_dominar400">Available</td>
+            <td>
+                <button type="submit" class="btn btn-dark btn-sm" onclick="hide('dominar400')">Hide Product</button>   
+                <button type="submit" class="btn btn-dark btn-sm" onclick="unhide('dominar400')">Unhide Product</button> 
+
+            </td>
+        </tr>
+    </tbody>
+
+    <tbody id="yamahaProducts">
+
+        <tr>
+
+            <td>XSR 155</td>
+            <td>Yamaha</td>
+            <td id="status_xsr155">Available</td>
+            <td>
+                <button type="submit" class="btn btn-dark btn-sm" onclick="hide('xsr155')">Hide Product</button>   
+                <button type="submit" class="btn btn-dark btn-sm" onclick="unhide('xsr155')">Unhide Product</button> 
+
+            </td>
+        </tr>
+
+        <tr>
+
+            <td>Sniper 155</td>
+            <td>Yamaha</td>
+            <td id="status_sniper155">Available</td>
+            <td>
+                <button type="submit" class="btn btn-dark btn-sm" onclick="hide('sniper155')">Hide Product</button>   
+                <button type="submit" class="btn btn-dark btn-sm" onclick="unhide('sniper155')">Unhide Product</button> 
+
+            </td>
+        </tr>
+
+        <tr>
+
+            <td>Mio Aerox</td>
+            <td>Yamaha</td>
+            <td id="status_aerox">Available</td>
+            <td>
+                <button type="submit" class="btn btn-dark btn-sm" onclick="hide('aerox')">Hide Product</button>   
+                <button type="submit" class="btn btn-dark btn-sm" onclick="unhide('aerox')">Unhide Product</button> 
+
+            </td>
+        </tr>
+
+        <tr>
+
+            <td>Mio Soul 125i</td>
+            <td>Yamaha</td>
+            <td id="status_mio">Available</td>
+            <td>
+                <button type="submit" class="btn btn-dark btn-sm" onclick="hide('mio')">Hide Product</button>   
+                <button type="submit" class="btn btn-dark btn-sm" onclick="unhide('mio')">Unhide Product</button> 
+
+            </td>
+        </tr>
+
+        <tr>
+
+            <td>MT15</td>
+            <td>Yamaha</td>
+            <td id="status_mt15">Available</td>
+            <td>
+                <button type="submit" class="btn btn-dark btn-sm" onclick="hide('mt15')">Hide Product</button>   
+                <button type="submit" class="btn btn-dark btn-sm" onclick="unhide('mt15')">Unhide Product</button> 
+
+            </td>
+        </tr>
+    </tbody>
+
+    <tbody id="motorstarProducts">
+
+        <tr>
+
+            <td>Cafe 150</td>
+            <td>Motorstar</td>
+            <td id="status_cafe150">Available</td>
+            <td>
+                <button type="submit" class="btn btn-dark btn-sm" onclick="hide('cafe150')">Hide Product</button>   
+                <button type="submit" class="btn btn-dark btn-sm" onclick="unhide('cafe150')">Unhide Product</button> 
+
+            </td>
+        </tr>
+
+        <tr>
+
+            <td>Cafe 400</td>
+            <td>Motorstar</td>
+            <td id="status_cafe400">Available</td>
+            <td>
+                <button class="btn btn-dark btn-sm" onclick="hide('cafe400')">Hide Product</button>   
+                <button class="btn btn-dark btn-sm" onclick="unhide('cafe400')">Unhide Product</button> 
+            </td>
+        </tr>
+
+        
+        </tr>
+    </tbody>
+
+    <tbody id="cfmotoProducts">
+
+        <tr>
+
+            <td>300sr</td>
+            <td>CFMoto</td>
+            <td id="status_300sr">Available</td>
+            <td>
+                <button type="submit" class="btn btn-dark btn-sm" onclick="hide('300sr')">Hide Product</button>   
+                <button type="submit" class="btn btn-dark btn-sm" onclick="unhide('300sr')">Unhide Product</button> 
+
+            </td>
+        </tr>
+
+        <tr>
+
+            <td>NK 400</td>
+            <td>CFMoto</td>
+            <td id="status_nk400">Available</td>
+            <td>
+                <button type="submit" class="btn btn-dark btn-sm" onclick="hide('nk400')">Hide Product</button>   
+                <button type="submit" class="btn btn-dark btn-sm" onclick="unhide('nk400')">Unhide Product</button> 
+
+            </td>
+        </tr>
+
+        <tr>
+
+            <td>NK 650</td>
+            <td>CFMoto</td>
+            <td id="status_nk650">Available</td>
+            <td>
+                <button type="submit" class="btn btn-dark btn-sm" onclick="hide('nk650')">Hide Product</button>   
+                <button type="submit" class="btn btn-dark btn-sm" onclick="unhide('nk650')">Unhide Product</button> 
+
+            </td>
+        </tr>
+
+        
+        </tr>
+    </tbody>
+
+</Table>
+
+</div>
+
+
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+
+
+    <!--FOOTER-->
+
+    <footer class="responsive-footer container-fluid mt-5 pt-5">
+        <div class="row mx-3 px-2">
+            <div class="col-lg-2 col-md-4 col-sm-6 my-3">
+                <p class="foothead">Motorcycles</p>
+                <ul class="footlist" id="aboutuslist">
+                    <li><a href="./honda.html">Honda</a></li>
+                    <li><a href="./kawasaki.html">Kawasaki</a></li>
+                    <li><a href="#">Yamaha</a></li>
+                    <li><a href="#">Motorstar</a></li>
+                    <li><a href="#">CFMoto</a></li>
+                </ul>
+            </div>
+    
+    
+            <div class="col-lg-2 col-md-4 col-sm-6 my-3">
+                <p class="foothead">Services</p>
+                <ul class="footlist" id="srvcslist">
+                    <li><a href="#">Service Inquiry Form</a></li>
+                    <li><a href="loancalculator.html">Loan Calculator</a></li>
+                </ul>
+            </div>
+    
+            <div class="col-lg-2 col-md-4 col-sm-6 my-3">
+                <p class="foothead">Connect To Us</p>
+                <ul class="footlist" id="srvcslist">
+                    <li><a href="./aboutUs.html">About Us</a></li>
+                    <li><a href="./contactUs.html">Contact Us</a></li>
+                </ul>
+            </div>
+    
+            <div class="col-lg-3 col-md-6 col-sm-6 my-3">
+                <p class="foothead">Contact Details</p>
+                <ul class="footlist" id="srvcslist">
+                    <li>Phone: +123 456 789</li>
+                    <li>Email: bandillamylene.dev@gmail.com</li>
+                </ul>
+            </div>
+    
+            <div class="col-lg-3 col-md-6 col-sm-12 my-3">
+                <p class="foothead">Location</p>
+                <ul class="footlist">
+                    <li>Brgy. New Valencia, Tugbok District</li>
+                    <li>Davao City, 8000, Philippines</li>
+                </ul>
+            </div>
+    
+            
+        </div>
+    </div>
+    
+    
+        <hr>
+        <div class="row align-items-center">
+            <div class="col-md-6 ">
+                <p class="copy text-center mt-4">© 2023 Throttle Twist
+                    <br>
+                    <a class="footlist" href="#">Terms and Conditions</a>
+                </p>
+                
+            </div>
+            <div class="col-md-6 text-center">
+                <a class="footerLogo" href="#">
+                    <img src="./images/throttlelogo.png" class="logo">
+                </a>
+            </div>
+        </div>
+        
+      
+    </footer>
+
+
+<script src="admin fash_functionalities/basic_scripting.js"></script>
+<script src="admin fash_functionalities/hide_products.js"></script>
+<script src="admin fash_functionalities/editproduct.js"></script>
+
+</body>
+</html>
