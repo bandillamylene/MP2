@@ -11,8 +11,8 @@ function enableFormEditing(enable) {
     saveBtn.style.display = enable ? "block" : "none";
 }
 
-    // Function to save edited data to session storage
-function saveEditedData() {
+   // Function to save edited data to session storage
+   function saveEditedData() {
     var userData = {};
     var isValid = true;
     var errorMessages = document.querySelectorAll(".form__input--error-message");
@@ -20,7 +20,7 @@ function saveEditedData() {
     errorMessages.forEach(function (errorMessage) {
         errorMessage.style.display = "none";
 
-        var inputField = errorMessage.previousElementSibling; // Changed to previousElementSibling to target input fields
+        var inputField = errorMessage.nextElementSibling; //target input fields
         userData[inputField.id] = inputField.value.trim();
 
         if (inputField.value.trim() === "") {
@@ -36,6 +36,8 @@ function saveEditedData() {
         document.getElementById("saveBtn").style.display = "none"; // Hide the save button
     } else {
         console.log("Cannot save. Please fill in all required fields.");
+        // Displaying error messages for required fields
+        // The error messages are already provided in the HTML
     }
 }
 
@@ -125,13 +127,13 @@ function saveEditedData() {
         });
     }
 
-    // Event listener for the "Save" button
-    var saveBtn = document.getElementById("saveBtn");
-    if (saveBtn) {
-        saveBtn.addEventListener("click", function () {
-            saveEditedData();
-        });
-    }
+     // Event listener for the "Save" button
+     var saveBtn = document.getElementById("saveBtn");
+     if (saveBtn) {
+         saveBtn.addEventListener("click", function () {
+             saveEditedData();
+         });
+     }
 
     // Event listener for the "Edit" button
     var editBtn = document.getElementById("editBtn");

@@ -35,6 +35,16 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    function isValidEmail(email) {
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailPattern.test(email);
+    }
+
+    // Admin credentials
+    const adminCredentials = {
+        username: 'admin',
+        password: '12345'
+    };
 
     loginForm.addEventListener("submit", (e) => {
         e.preventDefault();
@@ -44,39 +54,24 @@ document.addEventListener("DOMContentLoaded", () => {
     
         const foundUser = storedUsers.find(user => user.username === usernameInput && user.password === passwordInput);
     
-        // For the admin credentials
-        const isAdmin = usernameInput === 'admin' && passwordInput === '12345';
+        const isAdmin = usernameInput === adminCredentials.username && passwordInput === adminCredentials.password;
     
         if (foundUser || isAdmin) {
             sessionStorage.setItem("loggedIn", "true");
             sessionStorage.setItem("username", usernameInput);
 
             if (isAdmin) {
+                sessionStorage.setItem("userRole", "admin");
                 window.location.href = "admindashboard.html";
             } else {
+                sessionStorage.setItem("userRole", "user");
                 window.location.href = "user_dashboard.html";
             }
         } else {
             setFormMessage(loginForm, "error", "Invalid username/password combination");
         }
-
-
-        if (foundUser) {
-            sessionStorage.setItem("loggedIn", "true");
-            sessionStorage.setItem("username", usernameInput);
-            sessionStorage.setItem("userRole", "user"); // Set user role for regular users
-            window.location.href = "index.html"; // Redirect to index.html
-        } else if (isAdmin) {
-            sessionStorage.setItem("loggedIn", "true");
-            sessionStorage.setItem("username", usernameInput);
-            sessionStorage.setItem("userRole", "admin"); // Set user role for admin
-            window.location.href = "index.html"; // Redirect to index.html
-        }
     });
 
-    
-
-    
     createAccountForm.addEventListener("submit", (e) => {
         e.preventDefault();
 
@@ -106,11 +101,19 @@ document.addEventListener("DOMContentLoaded", () => {
             hasWarnings = true;
         }
 
-        if (newPassword.value.trim() === '') {
+        const passwordValue = newPassword.value.trim();
+        const hasCapitalLetter = /[A-Z]/.test(passwordValue);
+        const hasNumber = /[0-9]/.test(passwordValue);
+        const hasSpecialChar = /[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]/.test(passwordValue);
+
+        if (passwordValue === '') {
             displayFieldWarning(newPassword, "Please enter a password");
             hasWarnings = true;
-        } else if (newPassword.value.trim().length < 8) {
+        } else if (passwordValue.length < 8) {
             displayFieldWarning(newPassword, "Password must be at least 8 characters");
+            hasWarnings = true;
+        } else if (!hasCapitalLetter || !hasNumber || !hasSpecialChar) {
+            displayFieldWarning(newPassword, "Password must contain at least one capital letter, one number, and one special character");
             hasWarnings = true;
         }
 
@@ -148,10 +151,4 @@ document.addEventListener("DOMContentLoaded", () => {
         loginForm.classList.remove("form--hidden");
         createAccountForm.classList.add("form--hidden");
     });
-
-    function isValidEmail(email) {
-        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailPattern.test(email);
-    }
 });
-
