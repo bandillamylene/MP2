@@ -2,6 +2,9 @@ body{
     --border-radius:4px;
     --color-error: rgb(158, 3, 3);
     --color-success: rgb(189, 157, 48);
+    --color-primary: #1f2327;
+    --border-radius: 10px;
+    --border: none;
 
     margin: 0;
     height: 100vh;
@@ -11,6 +14,26 @@ body{
     font-size: 18px;
 
 }
+
+  /* Custom CSS for back button positioning */
+  .back-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999; 
+    background-color: var(--color-success);
+    color: #1f2327;
+    border: var(--border);
+    font-weight: bold;
+}
+
+.back-button:hover {
+
+    background-color: var(--color-primary);
+    color: var(--color-success);
+    box-shadow: 4px 0 10px var(--color-success);
+}
+
 
 body{
     position: relative;

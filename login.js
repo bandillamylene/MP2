@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
    
     let storedUsers = [];
     let isWarningsDisplayed = false;
+    
 
     function setFormMessage(formElement, type, message) {
         const messageElement = formElement.querySelector(".form__message");
@@ -151,4 +152,13 @@ document.addEventListener("DOMContentLoaded", () => {
         loginForm.classList.remove("form--hidden");
         createAccountForm.classList.add("form--hidden");
     });
+
+     // Back button functionality
+     const backButton = document.getElementById("backButton");
+
+     backButton.addEventListener("click", function(event) {
+         event.preventDefault();
+         window.history.back();
+     });
+     
 });
