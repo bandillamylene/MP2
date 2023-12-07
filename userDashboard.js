@@ -163,4 +163,5 @@ document.addEventListener("DOMContentLoaded", () => {
     if (loggedIn !== "true") {
         window.location.href = "login.html";
     }
+    
 });
