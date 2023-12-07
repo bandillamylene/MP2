@@ -162,3 +162,21 @@ body::before {
     color: rgb(175, 5, 5);
 
 }
+
+
+
+.form__input-group {
+    position: relative;
+}
+
+.form__input-group i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px;
+    cursor: pointer;
+}
+
+.form__input-group i.fa-eye {
+    display: none;
+}
