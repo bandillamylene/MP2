@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 window.location.href = "user_dashboard.html";
             }
         } else {
-            setFormMessage(loginForm, "error", "Please Enter a valid Email/Password combination.");
+            setFormMessage(loginForm, "error", "Invalid username/password combination");
         }
     });
 
@@ -137,7 +137,7 @@ document.addEventListener("DOMContentLoaded", () => {
             createAccountForm.reset();
             loginForm.classList.remove("form--hidden");
             createAccountForm.classList.add("form--hidden");
-            setFormMessage(loginForm, "success", "Account created successfully! Please log in.");
+            setFormMessage(loginForm, "success", "Account created successfully. Please log in.");
         } else {
             isWarningsDisplayed = true;
         }
@@ -157,6 +157,13 @@ document.addEventListener("DOMContentLoaded", () => {
         e.preventDefault();
         loginForm.classList.remove("form--hidden");
         createAccountForm.classList.add("form--hidden");
+    });
+
+    // Back button functionality
+    const backButton = document.getElementById("backButton");
+    backButton.addEventListener("click", function(event) {
+        event.preventDefault();
+        window.history.back();
     });
 
     // Function to prevent going back after logout
@@ -186,4 +193,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
     preventBackAfterLogout(); // Call preventBackAfterLogout function initially
 });
-

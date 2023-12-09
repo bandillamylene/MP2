@@ -113,3 +113,42 @@
     display: none;
     color: red;
 }
+
+
+.welcome-message {
+    border: none;
+    background-color:  rgba(189, 156, 48, 0.521);
+    color: #1f2327;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.profSection, .personal-info, .myList.card, .list-group-item{
+    background-color: #1f2327;
+}
+
+.personal-info {
+    color: whitesmoke;
+}
+
+ /* Remove borders from cards */
+ .profSection.card,
+ .myList.card {
+     border: none;
+ }
+ .list-group-item {
+    border: none;
+
+}
+/* Remove text decoration from links within myList3 list-group */
+.myList3 .list-group-item a {
+    text-decoration: none;
+    color: whitesmoke;
+}
+.saved-itemscard {
+    background-color: #1f2327;
+    color: whitesmoke;
+}
+.saved-items--card {
+    background-color: whitesmoke;
+}

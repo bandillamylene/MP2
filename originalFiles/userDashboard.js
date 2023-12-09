@@ -1,10 +1,6 @@
-// Function to check login status
-function checkLoginStatus() {
-    const loggedIn = sessionStorage.getItem("loggedIn");
-    return loggedIn === "true";
-}
-
-// Function to enable/disable form fields for editing
+document.addEventListener("DOMContentLoaded", function () {
+    
+    // Function to enable/disable form fields for editing
 function enableFormEditing(enable) {
     var inputs = document.querySelectorAll("#personalInfoForm input");
     inputs.forEach(function (input) {
@@ -15,8 +11,8 @@ function enableFormEditing(enable) {
     saveBtn.style.display = enable ? "block" : "none";
 }
 
-// Function to save edited data to session storage
-function saveEditedData() {
+   // Function to save edited data to session storage
+   function saveEditedData() {
     var userData = {};
     var isValid = true;
     var errorMessages = document.querySelectorAll(".form__input--error-message");
@@ -24,7 +20,7 @@ function saveEditedData() {
     errorMessages.forEach(function (errorMessage) {
         errorMessage.style.display = "none";
 
-        var inputField = errorMessage.nextElementSibling; // Target input fields
+        var inputField = errorMessage.nextElementSibling; //target input fields
         userData[inputField.id] = inputField.value.trim();
 
         if (inputField.value.trim() === "") {
@@ -45,57 +41,50 @@ function saveEditedData() {
     }
 }
 
-// Function to handle applying for a loan
-function applyForLoan() {
-    window.location.href = "loan_application.html";
-}
 
-// Function to handle logout
-function logoutUser() {
-    sessionStorage.removeItem("userData");
-    sessionStorage.setItem("loggedIn", "false"); // Update login status
-    window.location.href = "login.html";
-}
+    // Function to retrieve saved data from session storage
+    function retrieveSavedData() {
+        var savedData = sessionStorage.getItem("userData");
+        if (savedData) {
+            var userData = JSON.parse(savedData);
 
-// Function to display specific dashboard section
-function showDashboardSection(sectionId) {
-    var dashboardSections = document.querySelectorAll(".col-md-8");
-
-    dashboardSections.forEach(function (section) {
-        section.style.display = "none";
-    });
-
-    var selectedSection = document.getElementById(sectionId);
-    if (selectedSection) {
-        selectedSection.style.display = "block";
+            Object.keys(userData).forEach(function (key) {
+                document.getElementById(key).value = userData[key];
+            });
+        }
     }
-}
 
-// Function to check login status and handle navigation
-window.addEventListener("load", function () {
-    if (!checkLoginStatus()) {
-        history.pushState(null, null, location.href);
-        window.onpopstate = function () {
-            history.go(1);
-        };
+    // Function to handle applying for a loan
+    function applyForLoan() {
+        window.location.href = "loan_application.html";
     }
-});
 
-// Function to handle login
-function loginUser(email, password) {
-    // Your login logic here
-    // Set loggedIn to true if login successful
-    sessionStorage.setItem("loggedIn", "true");
-    // Redirect to dashboard or specific page upon successful login
-    window.location.href = "user_dashboard.html";
-}
+    // Function to handle login
+    function loginUser(email, password) {
 
-// Event listeners for dashboard links and logout
-document.addEventListener("DOMContentLoaded", function () {
-    if (!checkLoginStatus()) {
+    }
+
+    // Function to handle logout
+    function logoutUser() {
+        sessionStorage.removeItem("userData");
         window.location.href = "login.html";
     }
 
+    // Function to display specific dashboard section
+    function showDashboardSection(sectionId) {
+        var dashboardSections = document.querySelectorAll(".col-md-8");
+
+        dashboardSections.forEach(function (section) {
+            section.style.display = "none";
+        });
+
+        var selectedSection = document.getElementById(sectionId);
+        if (selectedSection) {
+            selectedSection.style.display = "block";
+        }
+    }
+
+    // Event listeners for dashboard links and logout
     var savedItemsLink = document.getElementById("savedItemsLink");
     if (savedItemsLink) {
         savedItemsLink.addEventListener("click", function (event) {
@@ -104,22 +93,21 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    var savedItemsLink = document.getElementById("settingsLink");
-    if (savedItemsLink) {
-        savedItemsLink.addEventListener("click", function (event) {
-            event.preventDefault();
-            showDashboardSection("mysettings");
-        });
-    }
-
-    var savedItemsLink = document.getElementById("loanTrackerLink");
-    if (savedItemsLink) {
-        savedItemsLink.addEventListener("click", function (event) {
+    var loanTrackerLink = document.getElementById("loanTrackerLink");
+    if (loanTrackerLink) {
+        loanTrackerLink.addEventListener("click", function (event) {
             event.preventDefault();
             showDashboardSection("myloans");
         });
     }
 
+    var settingsLink = document.getElementById("settingsLink");
+    if (settingsLink) {
+        settingsLink.addEventListener("click", function (event) {
+            event.preventDefault();
+            showDashboardSection("mysettings");
+        });
+    }
 
     var logoutBtns = document.querySelectorAll("#logoutBtn");
     logoutBtns.forEach(function (logoutBtn) {
@@ -164,14 +152,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Retrieve saved data when the DOM is loaded
-    var savedData = sessionStorage.getItem("userData");
-    if (savedData) {
-        var userData = JSON.parse(savedData);
-
-        Object.keys(userData).forEach(function (key) {
-            document.getElementById(key).value = userData[key];
-        });
-    }
+    retrieveSavedData();
 });
 
 
@@ -182,5 +163,4 @@ document.addEventListener("DOMContentLoaded", () => {
     if (loggedIn !== "true") {
         window.location.href = "login.html";
     }
-    
 });

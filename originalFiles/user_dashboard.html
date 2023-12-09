@@ -114,21 +114,11 @@
 
 
 <!-- User Dashboard Content -->
-<div class="userDashboard container-fluid mt-5">
-
-<div class="row mt-5 pt-5 pb-5">
-        <!-- Welcome Message -->
-    <div class="welcome-message alert alert-info alert-dismissible fade show" role="alert">
-        <strong>Welcome!</strong> Please fill out the form fields below to update your personal information.
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
-
-</div>
-
+<div class="userDashboard container-fluid mt-4">
     <div class="row">
         <!-- Profile Section with Dashboard -->
         <div class="col text-center">
-            <div class="profSection card mb-3">
+            <div class="card mb-3">
                 <div class="card-body">
                     <div class="position-relative">
                         <img src="https://via.placeholder.com/150" alt="Profile Picture" class="profile_icon img-fluid rounded-circle mb-3">
@@ -140,12 +130,12 @@
                         </div>
                     </div>
 
-                    <div class="myList card mt-3">
-                        <div class="myList2 card-body">
-                            <ul class="myList3 list-group">
+                    <div class="card mt-3">
+                        <div class="card-body">
+                            <ul class="list-group">
 
                                 <li class="list-group-item"><a href="#mysaveditems" id="savedItemsLink">Saved Items</a></li>
-                                <li class="list-group-item"><a href="#myloans" id="loanTrackerLink">Loan Application</a></li>
+                                <li class="list-group-item"><a href="#myloans" id="loanTrackerLink">Loan</a></li>
                                 <li class="list-group-item"><a href="#mysettings" id="settingsLink">Settings</a></li>
 
 
@@ -164,7 +154,7 @@
                         <div class="d-flex justify-content-end mb-2">
                             <button class="btn btn-secondary" id="editBtn">Edit</button>
                         </div>
-                        <h2 class="card-title text-center">Personal Information</h2>
+                        <h5 class="card-title">Personal Information</h5>
 
                         <form id="personalInfoForm">
                             <div class="mb-3">
@@ -267,40 +257,15 @@
             </div>
         </div>
 
-        <div class="savedItems col-md-8" id="mysaveditems">
+        <div class="savedItems col-md-8" style="display: none;" id="mysaveditems">
             <div class="saved-itemscard card">
                 <div class="card-body">
                     <h2 class="card-title text-center">Saved Items</h2>
-                    <div class="row row-cols-1 row-cols-md-3 g-4 d-flex justify-content-center align-items-center">
-                        <div class="col col-lg-4 col-md-6 col-sm-10 col-xs-12 mb-4">
-                            <div class="saved-items--card card h-100 d-flex flex-column">
-                                <div class="card-body">
-                                    <h4 class="card-title text-center">Saved Item 1</h4>
-                                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, asperiores!.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col col-lg-4 col-md-6 col-sm-10 col-xs-12 mb-4">
-                            <div class="saved-items--card card h-100 d-flex flex-column">
-                                <div class="card-body">
-                                    <h4 class="card-title text-center">Saved Item 2</h4>
-                                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, nihil. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis, nihil.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col col-lg-4 col-md-6 col-sm-10 col-xs-12 mb-4">
-                            <div class="saved-items--card card h-100 d-flex flex-column">
-                                <div class="card-body">
-                                    <h4 class="card-title text-center">Saved Item 3</h4>
-                                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, accusamus.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         </div>
-        
+
         <div class="loanTracker col-md-8" style="display: none;" id="myloans">
             <div class="loancard card">
                 <div class="card-body">
