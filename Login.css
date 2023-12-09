@@ -15,7 +15,7 @@ body {
 }
 
 /* Custom CSS for back button positioning */
-.back-button, .home-button {
+.home-button {
     position: fixed;
     top: 20px;
     right: 20px;
@@ -26,7 +26,7 @@ body {
     font-weight: bold;
 }
 
-.back-button:hover {
+.home-button:hover {
     background-color: var(--color-primary);
     color: var(--color-success);
     box-shadow: 4px 0 10px var(--color-success);

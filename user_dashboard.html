@@ -116,15 +116,6 @@
 <!-- User Dashboard Content -->
 <div class="userDashboard container-fluid mt-5">
 
-<div class="row mt-5 pt-5 pb-5">
-        <!-- Welcome Message -->
-    <div class="welcome-message alert alert-info alert-dismissible fade show" role="alert">
-        <strong>Welcome!</strong> Please fill out the form fields below to update your personal information.
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
-
-</div>
-
     <div class="row">
         <!-- Profile Section with Dashboard -->
         <div class="col text-center">
@@ -132,6 +123,8 @@
                 <div class="card-body">
                     <div class="position-relative">
                         <img src="https://via.placeholder.com/150" alt="Profile Picture" class="profile_icon img-fluid rounded-circle mb-3">
+
+                       
                         <div class="text-center mt-2">
                             <button class="btn btn-light btn-sm" id="editImageBtn">
                                 <span>Change Avatar</span>
@@ -173,7 +166,7 @@
                                 
                                 <div class="form__input--error-message">*Please fill in this field.*</div>
 
-                                <input type="text" class="form-control" id="name" placeholder="Enter Fullname" disabled>
+                                <input type="text" class="form-control input-field edited-field" id="name" placeholder="Enter Fullname" disabled>
                             </div>
                             <div class="mb-3">
 
@@ -181,7 +174,7 @@
 
                                 <div class="form__input--error-message">*Please fill in this field.*</div>
 
-                                <input type="email" class="form-control" id="email" placeholder="Enter Email" disabled>
+                                <input type="email" class="form-control input-field edited-field" id="email" placeholder="Enter Email" disabled>
                             </div>
                             <div class="mb-3">
     
@@ -190,7 +183,7 @@
                                 
                                 <div class="form__input--error-message">*Please fill in this field.*</div>
 
-                                <input type="tel" class="form-control" id="phone" placeholder="Enter Phone Number" disabled>
+                                <input type="tel" class="form-control input-field edited-field" id="phone" placeholder="Enter Phone Number" disabled>
                             </div>
                             <!-- Address Fields -->
                             <div class="mb-3">
@@ -198,7 +191,7 @@
 
                                 <div class="form__input--error-message">*Please fill in this field.*</div>
 
-                                <input type="text" class="form-control" id="streetBrgy" placeholder="Enter Street/ Brgy." disabled>
+                                <input type="text" class="form-control input-field edited-field" id="streetBrgy" placeholder="Enter Street/ Brgy." disabled>
                             </div>
 
 
@@ -208,7 +201,7 @@
                                 <div class="form__input--error-message">
                                     *Please fill in this field.* </div>
 
-                                <input type="text" class="form-control" id="municipality" placeholder="Enter Municipality" disabled>
+                                <input type="text" class="form-control input-field edited-field" id="municipality" placeholder="Enter Municipality" disabled>
                             </div>
 
                             <div class="mb-3">
@@ -217,7 +210,7 @@
 
                                 <div class="form__input--error-message">*Please fill in this field.*</div>
 
-                                <input type="text" class="form-control" id="city" placeholder="Enter City" disabled>
+                                <input type="text" class="form-control input-field edited-field" id="city" placeholder="Enter City" disabled>
                             </div>
 
                             <div class="mb-3">
@@ -225,14 +218,14 @@
 
                                 <div class="form__input--error-message">Please fill in all required fields.</div>
 
-                                <input type="text" class="form-control" id="province" placeholder="Enter Province" disabled>
+                                <input type="text" class="form-control input-field edited-field" id="province" placeholder="Enter Province" disabled>
                             </div>
                             <div class="mb-3">
                                 <label for="zipCode" class="form-label">Zip Code</label>
 
                                 <div class="form__input--error-message">*Please fill in this field.*</div>
 
-                                <input type="text" class="form-control" id="zipCode" placeholder="Enter Zip Code" disabled>
+                                <input type="text" class="form-control input-field edited-field" id="zipCode" placeholder="Enter Zip Code" disabled>
                             </div>
                             <!-- Additional Fields -->
                             <div class="mb-3">
@@ -240,14 +233,14 @@
 
                                 <div class="form__input--error-message">*Please fill in this field.*</div>
 
-                                <input type="text" class="form-control" id="dob" placeholder="Month/Day/Year" disabled>
+                                <input type="text" class="form-control input-field edited-field" id="dob" placeholder="Month/Day/Year" disabled>
                             </div>
                             <div class="mb-3">
                                 <label for="favBrand" class="form-label">Favorite Motorcycle Brand</label>
 
                                 <div class="form__input--error-message">*Please fill in this field.*</div>
 
-                                <input type="text" class="form-control" id="favBrand" placeholder="Choose Brand" disabled >
+                                <input type="text" class="form-control input-field edited-field" id="favBrand" placeholder="Choose Brand" disabled >
                             </div>
                             <div class="mb-3">
                                 
@@ -255,11 +248,11 @@
 
                                 <div class="form__input--error-message">*Please fill in this field.*</div>
 
-                                <input type="text" class="form-control" id="favModel" placeholder="Choose Model" disabled>
+                                <input type="text" class="form-control input-field edited-field" id="favModel" placeholder="Choose Model" disabled>
                             </div>
                         </form>
                         <div class="d-flex justify-content-end">
-                            <button class="btn btn-primary" id="saveBtn" style="display: none;">Save</button>
+                            <button class="btn saveButton" id="saveBtn" style="display: none;">Save</button>
                         </div>
                         
                     </div>
@@ -368,8 +361,10 @@
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script src="./userDashboard.js"></script>
 
+
+<script src="./userDashboard.js"></script>
+<script src="editbtn.js"></script>
 <script src="login.js"></script>
 <script src="index.js"></script>
 
