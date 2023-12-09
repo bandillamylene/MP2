@@ -11,8 +11,8 @@
     <title>Checkout</title>
 </head>
 <body>
-
-<!--NAVIGATION BAR-->
+    
+    <!--NAVIGATION BAR-->
 <nav class="navbar_content navbar navbar-expand-lg sticky-top bg-dark">
     <div class="container-fluid">
 
@@ -104,101 +104,601 @@
     </div>
 </nav>
 
-
-
+<!--Checkout Step by Step-->
 <div class="container-md pt-5">
+    <div class="row">
+        
+        <div class="col text-center">
+            <div class="d-flex flex-column align-items-center justify-content-center">
+                <span class="mb-2" id="iconStep1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-1-circle" viewBox="0 0 16 16">
+                        <path d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M9.283 4.002V12H7.971V5.338h-.065L6.072 6.656V5.385l1.899-1.383z"/>
+                    </svg>
+                </span>
+                <label class="form-label">Review Your Order</label>
+            </div>
+        </div>
+
+
+        <div class="col">
+
+            <hr class="border-dark border-2">
+        </div>
+
+        <div class="col text-center">
+            <div class="d-flex flex-column align-items-center justify-content-center">
+                <span class="mb-2" id="iconStep2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-2-circle" viewBox="0 0 16 16">
+                        <path d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.646 6.24v.07H5.375v-.064c0-1.213.879-2.402 2.637-2.402 1.582 0 2.613.949 2.613 2.215 0 1.002-.6 1.667-1.287 2.43l-.096.107-1.974 2.22v.077h3.498V12H5.422v-.832l2.97-3.293c.434-.475.903-1.008.903-1.705 0-.744-.557-1.236-1.313-1.236-.843 0-1.336.615-1.336 1.306Z"/>
+                      </svg>
+                </span>
+                <label class="form-label">Application</label>
+            </div>
+        </div>
+
+        <div class="col">
+
+            <hr class="border-dark border-2">
+        </div>
+
+        <div class="col text-center">
+            <div class="d-flex flex-column align-items-center justify-content-center">
+                <span class="mb-2" id="iconStep3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-3-circle" viewBox="0 0 16 16">
+                        <path d="M7.918 8.414h-.879V7.342h.838c.78 0 1.348-.522 1.342-1.237 0-.709-.563-1.195-1.348-1.195-.79 0-1.312.498-1.348 1.055H5.275c.036-1.137.95-2.115 2.625-2.121 1.594-.012 2.608.885 2.637 2.062.023 1.137-.885 1.776-1.482 1.875v.07c.703.07 1.71.64 1.734 1.917.024 1.459-1.277 2.396-2.93 2.396-1.705 0-2.707-.967-2.754-2.144H6.33c.059.597.68 1.06 1.541 1.066.973.006 1.6-.563 1.588-1.354-.006-.779-.621-1.318-1.541-1.318Z"/>
+                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8"/>
+                      </svg>
+                </span>
+                <label class="form-label">Review Application</label>
+            </div>
+        </div>
+
+        <div class="col">
+
+            <hr class="border-dark border-2">
+        </div>
+
+        <div class="col text-center">
+            <div class="d-flex flex-column align-items-center justify-content-center">
+                <span class="mb-2" id="iconStep4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-4-circle" viewBox="0 0 16 16">
+                        <path d="M7.519 5.057c.22-.352.439-.703.657-1.055h1.933v5.332h1.008v1.107H10.11V12H8.85v-1.559H4.978V9.322c.77-1.427 1.656-2.847 2.542-4.265ZM6.225 9.281v.053H8.85V5.063h-.065c-.867 1.33-1.787 2.806-2.56 4.218Z"/>
+                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8"/>
+                      </svg>
+                </span>
+                <label class="form-label">Application Successful</label>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+
+<!--Step 1 Review Your Order-->
+<div class="step_1 container-md pt-5">
+
 <div class="row">
-<div class="col-md-6 pb-5">
-<form>
-<div class="row">
 
-<div class="col-md-12">
+    <div class="main_product col-md-12">
 
-<label>Account:</label>
-<input type="text" class="form-control" >
-
-</div>
-
-</div>
-
-<div class="row pt-4">
-<div class="col-md-12">
-    <label>Shipping Address:</label>
-    <input type="text" class="form-control" >
-
-</div>
-
-</div>
-
-<Div class="row pt-5">
-    <label class="form-label">Shippping Method:</label>
-<div class="col-md-12">
-<input class="form-check-input" type="radio" name="deliverytype" id="pickBranch">
-<label>Pick Up at Branch</label>
-
+            <h3 class="h5 text-center">Chosen Model:</h3>
+            <img class="img-fluid pt-3" src="images/motorcycles/yamaha/mt15/pic_1.jpg" id="productImage">
+            <h3 class="h4 pt-3" id="modelName">Model Name</h3>
+            <p class="pt-2" id="productDetails">Details</p>
+            <h3 class="h4 pt-2 text-center" id="modelPrice">SRP: </h3>
+   
 </div>
 
 
-</Div>
-
-<Div class="row pt-2">
-<div class="col-md-12">
-<input class="form-check-input" type="radio" name="deliverytype" id="delivery">
-<label>Delivery</label>
-
 </div>
-
-
-</Div>
 
 <div class="row pt-5">
-<label class="form-label">Payment Method:</label>
-<div class="col-md-12">
-<input class="form-check-input" type="radio" name="payment_type" id="pickBranch">
-<label class="form-label">Payments Via Bank Transfer</label>
 
+    <p class="pt-2 text-center">Upon clicking proceed, you'll need to fill out the application form.</p>
 
+    <div class="col-md-12 d-flex justify-content-center">
+        <button type="button" class="btn btn-dark btn-lg" onclick="proceedButton()">Proceed</button>
+        </div>
+</div>
 
 </div>
 
-<div class="col-md-12">
-    <input class="form-check-input" type="radio" name="payment_type" id="pickBranch">
-    <label class="form-label">Financing</label>
-    
-    
-    
+
+
+<!--Step 2 Application Form-->
+<div class="step_2 container-md pt-5">
+
+    <h5 class="card-title p-4 text-center">Application Form</h5>
+
+    <form>
+
+
+        <div class="row">
+
+            <label class="card-title p-3">Personal Details:</label>
+
+            <div class="col-md-6 p-3">
+
+                <label class="form-label">Full Name:</label>
+                <input class="form-control" type="text" id="app_name">
+
+            </div>
+
+            <div class="col-md-6 p-3">
+
+                <label class="form-label">Email:</label>
+                <input class="form-control" type="email" id="app_email">
+
+            </div>
+
+
+        </div>
+
+        <div class="row">
+
+
+            <div class="col-md-6 p-3">
+
+                <label class="form-label">Birthday:</label>
+                <input class="form-control" type="text" id="app_name">
+
+            </div>
+
+            <div class="col-md-6 p-3">
+
+                <label class="form-label">Phone Number:</label>
+                <input class="form-control" type="email" id="app_email">
+
+            </div>
+
+
+        </div>
+
+
+
+
+        <div class="row">
+
+            
+            <label class="card-title p-3">Address:</label>
+
+            <div class="col-md-6 p-3">
+
+                <label class="form-label">Street/Brgy:</label>
+                <input class="form-control" type="text" id="app_streetbrgy" >
+
+            </div>
+
+            <div class="col-md-6 p-3">
+
+                <label class="form-label">Municipality:</label>
+                <input class="form-control" type="text" id="app_mun" >
+
+            </div>
+
+
+        </div>
+
+
+        <div class="row">
+
+            <div class="col-md-6 p-3">
+
+                <label class="form-label">Province:</label>
+                <input class="form-control" type="text" id="app_streetbrgy">
+
+            </div>
+
+            <div class="col-md-6 p-3">
+
+                <label class="form-label">Zip Code:</label>
+                <input class="form-control" type="text" id="app_zip">
+
+            </div>
+
+
+        </div>
+
+
+        <div class="row">
+
+            
+            <label class="card-title p-3">Employment Details:</label>
+
+            <div class="col-md-6 p-3">
+
+                <label class="form-label">Company Name:</label>
+                <input class="form-control" type="text" id="app_compName" placeholder="Name of Company or Business">
+
+            </div>
+
+            <div class="col-md-6 p-3">
+
+                <label class="form-label">Employment Type:</label>
+                <input class="form-control" type="text" id="app_empType" placeholder="Full Time / Part Time / Freelance">
+
+            </div>
+
+
+        </div>
+
+
+        <div class="row">
+
+            <div class="col-md-6 p-3">
+
+                <label class="form-label">Company / Business Phone:</label>
+                <input class="form-control" type="text" id="app_comNum" >
+
+            </div>
+
+            <div class="col-md-6 p-3">
+
+                <label class="form-label">Company / Business Address:</label>
+                <input class="form-control" type="text" id="app_compAdd" >
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="row">
+
+            <div class="col-md-6 p-3">
+
+                <label class="form-label">Monthly Income:</label>
+                <input class="form-control" type="number" id="app_monIncome" placeholder="Enter Monthly Income">
+
+            </div>
+
+            <div class="col-md-6 p-3">
+
+                <label class="form-label">Annual Income:</label>
+                <input class="form-control" type="number" id="app_annIncome" placeholder="Enter Annual Income">
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="row">
+
+            
+            <label class="card-title p-3">Payment Type:</label>
+
+                <div class="col-md-6 p-3">
+
+                    <input type="radio" id="cash_payment" class="form-check-input" name="paymentMethod">
+                    <label class="form-label" for="cash_payment">Cash Payment</label> 
+                    
+
+                </div>
+
+                <div class="col-md-6 p-3">
+
+                    <input type="radio" id="financing_payment" class="form-check-input" name="paymentMethod">
+                    <label class="form-label" for="financing_payment">Financing / Installment</label>
+
+                    
+                </div>
+
+
+        </div>
+
+        <div class="row">
+
+            <p class="lead text-center text-danger"><small>* Please be advised that irrespective of the chosen payment method—whether cash basis or financing—all applicants must personally visit one of our branch locations. This mandatory visit is crucial for security measures and validation purposes in ensuring the accuracy and authenticity of your payment selection.</small></p>
+
+
+        </div>
+
+
+
+        <div class="row pb-4">
+
+            
+            <label class="card-title p-3">Vehicle Information:</label>
+
+            <div class="col-md-6 p-3">
+
+                <label class="form-label">Desired Model:</label>
+                <input class="form-control" type="text" id="app_compName" placeholder="Name of Company or Business">
+
+            </div>
+
+            <div class="col-md-6 p-3">
+
+                <label class="form-label">Employment Type:</label>
+                <input class="form-control" type="text" id="app_empType" placeholder="Full Time / Part Time / Freelance">
+
+            </div>
+
+
+        </div>
+
+
+
+            <input type="checkbox" class="form-check-input" required>
+            <label>Agree to <a href="">Terms and Conditions</a> </label>
+ 
+            <div class="row pt-5">
+
+                <div class="col-md-12 d-flex justify-content-center">
+
+                    <button type="button" class="btn btn-dark btn-lg" onclick="backButton()">Back</button> &nbsp; &nbsp; &nbsp;
+  
+                    <button type="button" class="btn btn-dark btn-lg" onclick="proceedButton()">Proceed</button>
+ 
+
+                </div>
+
+            </div>
+
+
+    </form>
+
+</div>
+
+
+
+<!--Step 3 Review Application Form-->
+<div class="step_3 container-md pt-5">
+
+    <h5 class="card-title p-4 text-center">Review Form</h5>
+
+    <form>
+
+
+        <div class="row">
+
+            <label class="card-title p-3">Personal Details:</label>
+
+            <div class="col-md-6 p-3">
+
+                <label class="form-label">Full Name:</label>
+                <input class="form-control" type="text" id="review_name" disabled>
+
+            </div>
+
+            <div class="col-md-6 p-3">
+
+                <label class="form-label">Email:</label>
+                <input class="form-control" type="email" id="review_email" disabled>
+
+            </div>
+
+
+        </div>
+
+        <div class="row">
+
+
+            <div class="col-md-6 p-3">
+
+                <label class="form-label">Birthday:</label>
+                <input class="form-control" type="text" id="review_name" disabled>
+
+            </div>
+
+            <div class="col-md-6 p-3">
+
+                <label class="form-label">Phone Number:</label>
+                <input class="form-control" type="email" id="review_email" disabled>
+
+            </div>
+
+
+        </div>
+
+
+
+
+        <div class="row">
+
+            
+            <label class="card-title p-3">Address:</label>
+
+            <div class="col-md-6 p-3">
+
+                <label class="form-label">Street/Brgy:</label>
+                <input class="form-control" type="text" id="review_streetbrgy" disabled>
+
+            </div>
+
+            <div class="col-md-6 p-3">
+
+                <label class="form-label">Municipality:</label>
+                <input class="form-control" type="text" id="review_mun" disabled >
+
+            </div>
+
+
+        </div>
+
+
+        <div class="row">
+
+            <div class="col-md-6 p-3">
+
+                <label class="form-label">Province:</label>
+                <input class="form-control" type="text" id="review_streetbrgy"disabled>
+
+            </div>
+
+            <div class="col-md-6 p-3">
+
+                <label class="form-label">Zip Code:</label>
+                <input class="form-control" type="text" id="review_zip" disabled>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="row">
+
+            
+            <label class="card-title p-3">Employment Details:</label>
+
+            <div class="col-md-6 p-3">
+
+                <label class="form-label">Company Name:</label>
+                <input class="form-control" type="text" id="review_compName" disabled placeholder="Name of Company or Business">
+
+            </div>
+
+            <div class="col-md-6 p-3">
+
+                <label class="form-label">Employment Type:</label>
+                <input class="form-control" type="text" id="review_empType" disabled placeholder="Full Time / Part Time / Freelance">
+
+            </div>
+
+
+        </div>
+
+
+        <div class="row">
+
+            <div class="col-md-6 p-3">
+
+                <label class="form-label">Company / Business Phone:</label>
+                <input class="form-control" type="text" id="review_comNum" disabled>
+
+            </div>
+
+            <div class="col-md-6 p-3">
+
+                <label class="form-label">Company / Business Address:</label>
+                <input class="form-control" type="text" id="review_compAdd" disabled>
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="row">
+
+            <div class="col-md-6 p-3">
+
+                <label class="form-label">Monthly Income:</label>
+                <input class="form-control" type="number" id="review_monIncome" disabled placeholder="Enter Monthly Income">
+
+            </div>
+
+            <div class="col-md-6 p-3">
+
+                <label class="form-label">Annual Income:</label>
+                <input class="form-control" type="number" id="review_annIncome" disabled placeholder="Enter Annual Income">
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="row">
+
+            
+            <label class="card-title p-3">Payment Type:</label>
+
+                <div class="col-md-6 p-3">
+
+                    <input type="radio" id="review_cash_payment" disabled class="form-check-input" name="paymentMethod">
+                    <label class="form-label" for="cash_payment">Cash Payment</label> 
+                    
+
+                </div>
+
+                <div class="col-md-6 p-3">
+
+                    <input type="radio" id="review_financing_payment" disabled class="form-check-input" name="paymentMethod">
+                    <label class="form-label" for="financing_payment">Financing / Installment</label>
+
+                    
+                </div>
+
+
+        </div>
+
+
+
+
+        <div class="row pb-4">
+
+            
+            <label class="card-title p-3">Vehicle Information:</label>
+
+            <div class="col-md-6 p-3">
+
+                <label class="form-label">Desired Model:</label>
+                <input class="form-control" type="text" id="review_compName" disabled  placeholder="Name of Company or Business">
+
+            </div>
+
+            <div class="col-md-6 p-3">
+
+                <label class="form-label">Employment Type:</label>
+                <input class="form-control" type="text" id="review_empType" disabled placeholder="Full Time / Part Time / Freelance">
+
+            </div>
+
+
+        </div>
+
+ 
+            <div class="row pt-5">
+
+                <div class="col-md-12 d-flex justify-content-center">
+
+                    <button type="button" class="btn btn-dark btn-lg" onclick="backButton()">Back</button> &nbsp; &nbsp; &nbsp;
+
+                    <button type="button" class="btn btn-dark btn-lg" onclick="proceedButton()">Submit</button>
+ 
+
+                </div>
+
+            </div>
+
+
+    </form>
+
+</div>
+
+
+<!--Step 4 Application Success-->
+<div class="step_4 container-md pt-5">
+
+    <div class="row">
+
+        <div class="col-md-12">
+
+            <h5 class="h5 text-center">Application Received and Successful, please follow the instructions below:</h4>
+
+
+        </div>
+
+     <div class="row">
+
+        <div class="col-md-12 d-flex justify-content-center">
+
+            <button type="button" class="btn btn-dark btn-lg">Submit</button>
+
+        </div>
+     </div>
+
     </div>
 
-
 </div>
-
-<div class="row pt-5">
-<div class="col-md-12 d-flex justify-content-center">
-<button type="button" class="btn btn-dark btn-md">Proceed</button>
-</div>
-</div>
-    
-</form>
-</div>
-
-
-<div class="main_product col-md-6 border-start">
-<h3 class="h5 text-center">Chosen Model:</h3>
-<img class="img-fluid pt-3" src="images/motorcycles/yamaha/mt15/pic_1.jpg" id="productImage">
-<h3 class="h4 pt-3" id="modelName">Model Name</h3>
-<p class="pt-2" id="productDetails">Details</p>
-<h3 class="h4 pt-2" id="modelPrice">SRP: </h3>
-
-</div>
-
-
-</div>
-</div>
-</div>
-
-
-
-
 
 
 <!--FOOTER-->
@@ -269,6 +769,7 @@
             </a>
         </div>
     </div>
+  
     
   
 </footer>
@@ -311,6 +812,7 @@
 <script src="buynow.js"></script>
 <script src="login.js"></script>
 <script src="index.js"></script>
+
 
 </body>
 </html>
