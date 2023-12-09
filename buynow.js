@@ -26,3 +26,57 @@ document.getElementById('productImage').src = productImage;
 document.getElementById('modelName').innerText = modelName;
 document.getElementById('productDetails').innerText = productDetails;
 document.getElementById('modelPrice').innerText = productSRP;
+
+
+
+
+//Script for step by step functions
+let currentStep = 1;
+
+// Function to manage the checkout steps
+function manageCheckoutSteps() {
+    // Hide all steps initially
+    document.querySelectorAll('.step_1, .step_2, .step_3, .step_4').forEach(step => {
+        step.style.display = 'none';
+    });
+
+    // Show the current step
+    document.querySelector(`.step_${currentStep}`).style.display = 'block';
+
+    // Update icons based on the current step
+    const icons = document.querySelectorAll('.form-label > svg');
+    icons.forEach(icon => {
+        icon.style.fill = 'black'; // Reset all icons to black
+    });
+
+    // Update icons based on the current step
+    const icon = document.getElementById(`iconStep${currentStep}`);
+    if (icon) {
+        icon.querySelector('svg').style.fill = 'green';
+    }
+}
+
+// Function to handle the 'Proceed' button click
+function proceedButton() {
+    if (currentStep < 4) {
+        currentStep++;
+        manageCheckoutSteps();
+    }
+}
+
+// Function to handle the 'Back' button click
+function backButton() {
+    if (currentStep > 1) {
+        currentStep--;
+        manageCheckoutSteps();
+    }
+    if (currentStep < 4) {
+        const icon = document.getElementById(`iconStep${currentStep + 1}`);
+        if (icon) {
+            icon.querySelector('svg').style.fill = 'black';
+        }
+    }
+}
+
+// Initially display only the first step
+manageCheckoutSteps();
