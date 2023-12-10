@@ -548,5 +548,10 @@ body {
 
 
 
-/*checkoutpage*/
+/*CHATBOT*/
+
+#fb-customer-chat {
+    width: 500px; 
+    height: 600px; 
+}
 
