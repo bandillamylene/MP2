@@ -71,12 +71,14 @@
 
             </ul>
          
-            <form class="s-bar d-flex justify-content-lg-end justify-content-end align-items-end" role="search">
+            <form class="s-bar d-flex justify-content-lg-end justify-content-end align-items-end" onsubmit="redirectBasedOnSearch(); return false;">
                 <input class="form-control me-2 rounded-5" type="search" placeholder="Search" id="search">
                 <button class="s-button btn btn-outline-light btn-sm" type="submit">
                     <i class="fas fa-search"></i>
                 </button>
             </form>
+
+
 
         </div>
 
@@ -627,6 +629,7 @@
 <script src="products_pages.js"></script>
 <script src="login.js"></script>
 <script src="index.js"></script>
+<script src="search_function.js"></script>
 
 </body>
 </html>
