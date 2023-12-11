@@ -81,15 +81,6 @@ window.addEventListener("load", function () {
     }
 });
 
-// Function to handle login
-function loginUser(email, password) {
-    // Your login logic here
-    // Set loggedIn to true if login successful
-    sessionStorage.setItem("loggedIn", "true");
-    // Redirect to dashboard or specific page upon successful login
-    window.location.href = "user_dashboard.html";
-}
-
 // Event listeners for dashboard links and logout
 document.addEventListener("DOMContentLoaded", function () {
     if (!checkLoginStatus()) {
