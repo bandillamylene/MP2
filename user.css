@@ -124,26 +124,71 @@
 }
 
 .profSection, .personal-info, .myList.card, .list-group-item{
-    background-color: #1f2327;
+    background-color: whitesmoke;
+    
 }
 
 .personal-info {
-    color: whitesmoke;
+    color: #1f2327;
+    text-shadow: 4px 4px 10px ;
+    border: none;
+    box-shadow: 4px 4px 10px #1f2327;
 }
+
+/* FORM - SETTINGS */
+
+.edited-field {
+    background-color: #474d53cc;
+    color: rgba(189, 156, 48) ;
+}
+
+.edited-field:disabled {
+    background-color:  rgba(189, 156, 48); 
+    color: #1f2327;
+}
+
+.input-field{
+    font-weight: 500;
+    padding: 10px;
+    
+}
+
+.form-label{
+    font-weight: 800;
+}
+
+
+.saveButton {
+    background-color: rgba(189, 156, 48);
+    font-weight: 600;
+}
+.saveButton:hover {
+    background-color: #1f2327;
+    color: rgba(189, 156, 48);
+}
+
+
+
 
  /* Remove borders from cards */
  .profSection.card,
  .myList.card {
      border: none;
+     
  }
  .list-group-item {
-    border: none;
+    border: 4px 10px solid #1f2327;
+    background-color: rgba(189, 156, 48);
+    box-shadow: 4px 4px 10px #1f2327;
+    
 
 }
 /* Remove text decoration from links within myList3 list-group */
 .myList3 .list-group-item a {
     text-decoration: none;
-    color: whitesmoke;
+    color: #1f2327;
+    font-weight: 700;
+    
 }
 .saved-itemscard {
     background-color: #1f2327;
@@ -151,4 +196,11 @@
 }
 .saved-items--card {
     background-color: whitesmoke;
+}
+
+
+#editBtn.clicked {
+    background-color: rgb(189, 157, 48);
+    color: #1f2327;
+   
 }
