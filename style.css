@@ -5,6 +5,7 @@ body {
 nav{
     background-color: #495E57;
 }
+
 .navbar-nav .nav-item .active-link {
     text-decoration: underline;
     text-decoration-color: rgb(189, 157, 48);
@@ -146,8 +147,8 @@ nav{
 }
 
 .featured_text {
-    background: linear-gradient(45deg, #45474B, #F4CE14);
-    color: black;
+    background: linear-gradient(45deg, #495E57, #F4CE14);
+    color: rgba(0, 0, 0, 0.87);
     margin-top: 150px;
 }
 
