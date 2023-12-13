@@ -144,3 +144,8 @@ transition: 0.3s ease;
 .mc--footer {
     background-color: #45474B;
 }
+
+
+.table-striped-columns tbody tr:nth-child(odd) {
+    background-color: red; /* Change this to the color you prefer */
+}

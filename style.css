@@ -20,7 +20,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     background: #45474B;
-    color: #F5F7F8
+    color: #F5F7F8;
 }
 
 .button_services:hover, .button_financing:hover {
