@@ -1,84 +1,4 @@
-body {
-    background-color: #F5F7F8;
-}
 
-nav{
-    background-color: #495E57;
-
-}
-
-.nav-link {
-    color:  #F5F7F8;
-}
-
-.navbar-nav .nav-item .active-link {
-    text-decoration: underline;
-    text-decoration-color: rgb(189, 157, 48);
-}
-
-.dropdown-menu {
-    border: 2px solid rgb(189, 157, 48);
-    box-shadow: 2px 2px 5px gray;
-    max-width: 50%;
-}
-
-.navbar_content a:hover{
-    opacity: 0.7;
-
-}
-
-.logo{
-    width: 135px;
-}
-
-.s-bar{
-    max-width: 100%;
-}
-
-.login{
-    border: none;
-    border-radius: 100px;
-    box-shadow: 2px 2px 10px #1f2327;
-    background: rgb(189, 157, 48);
-    color: #1f2327;
-    
-}
-
-.login:hover{
-    background-color: rgb(40, 40, 40);
-    color: rgb(189, 157, 48);
-    box-shadow: 2px 2px 10px whitesmoke;
-    
-
-}
-
-
-.logout {
-    border: none;
-    border-radius: 100px;
-    box-shadow: 2px 2px 10px #1f2327;
-    background: rgb(189, 157, 48);
-    color: #1f2327;
-}
-
-.logout:hover {
-
-    background-color: rgb(40, 40, 40);
-    color:  rgb(189, 157, 48);
-    box-shadow: 2px 2px 10px rgb(189, 157, 48);
-
-}
-
-
-@media screen and (max-width: 990px) {
-    .s-bar{
-        margin: 10px;
-    }
-    .navbar-nav{
-        margin-left: 10px;
-    }
-
-}
 
 .carousel1_btn {
 
@@ -92,22 +12,24 @@ nav{
     position: relative;
 }
 
-.button_services {
+.button_services, .button_financing {
+    border: 1px solid #F5F7F8;
+    box-shadow: 2px 2px 10px #F5F7F8;
     position: absolute;
     top: 80%;
     left: 50%;
     transform: translate(-50%, -50%);
+    background: #45474B;
+    color: #F5F7F8
+}
+
+.button_services:hover, .button_financing:hover {
+    background-color: #F4CE14;
+    color: #1f2327;
 }
 
 .services_financing {
     position: relative;
-}
-
-.button_financing {
-    position: absolute;
-    top: 80%;
-    left: 50%;
-    transform: translate(-50%, -50%);
 }
 
 .mc_brands img:hover {
@@ -152,50 +74,17 @@ nav{
 }
 
 .featured_text {
-    background: linear-gradient(45deg, #495E57, #F4CE14);
-    color: #1f2327;;
+    background: rgb(69,71,75);
+    background: linear-gradient(5deg, rgba(69,71,75,1) 65%, rgba(244,206,20,1) 100%);
+    color: #F5F7F8;
     margin-top: 150px;
 }
 
-
-
-
-
-
-/*FOOTER*/  
-
-.responsive-footer {
-    width: 100%;
-    background-color: #495E57;
-    color:  #F5F7F8;
-    text-align: left;
-   
-}
-
-.foothead {
-    font-weight: bold;
-}
-
-.footlist {
-    list-style-type: none;
-    padding: 0;
+.mc--honda {
     text-decoration: none;
-    color:  #F5F7F8;
-    
+    color: #1f2327;
 }
 
-.footlist li {
-    margin-bottom: 10px;
-}
-
-.footlist li a {
-    color: #F5F7F8 !important;
-    text-decoration: none;
-}
-
-.footlist li a:hover {
-    opacity: 0.6;
-}
 
 
 /*About Us*/

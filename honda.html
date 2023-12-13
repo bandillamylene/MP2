@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="mc_brands.css">
     <link rel="stylesheet" href="./fonts.css">
+    <link rel="stylesheet" href="./navFooter.css">
     <title>Throttle Twist Motors - Honda</title>
 </head>
 <body>
@@ -83,23 +84,31 @@
 <br><br><br>
 
     
-<div class="row">
-    <span id="profileName" class=" mx-3 d-flex justify-content-center align-items-center"></span>
-</div>
+        <div class="row">
+
+            <span id="profileName" class=" mx-3 d-flex justify-content-center align-items-center"></span>
+
+        </div>
 
 
 
-<div class="d-lg-block d-flex justify-content-end">
-    
-    <a href="./login.html" id="loginButton" class="login mx-3 btn btn-lg">Login</a>
+        <div class="d-lg-block d-flex justify-content-end">
+            
+            <a href="./login.html" id="loginButton" class="login mx-3 btn btn-lg">
+                Login <i class="fas fa-sign-in-alt ms-1"></i>
+            </a>
+            
 
-    <a href="./login.html" id="logoutButton" class="logout mx-3 btn btn-lg d-none">Logout</a>
+            <a href="./logout.html" id="logoutButton" class="logout mx-3 btn btn-lg d-none">
+                Logout <i class="fas fa-sign-out-alt ms-1"></i>
+            </a>
 
 
-    <button class="navbar-toggler bg-white ms-auto me-3" type="button" data-bs-target="#navbar" data-bs-toggle="collapse">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-</div>
+            <button class="navbar-toggler bg-white ms-auto me-3" type="button" data-bs-target="#navbar" data-bs-toggle="collapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+        </div>
         
 
 
@@ -152,24 +161,6 @@
                 
             </div>
 
-  
-                <!--Search-->
-                <div class="search_container container-md">
-
-                    <h2 class="h5 text-center">Motorcycle Search</h2>
-
-                        <form class="s-bar d-flex" role="search" oninput="return mc_Filter();" id="searchForm">
-
-                            <input type="search" class="form-control" placeholder="Search" id="search_MC">
-
-                                <button class="s-button btn btn-outline-light btn-sm" type="submit">
-
-                                    <i class="fas fa-search"></i>
-                                    
-                                </button>
-                        </form>
-
-                </div>
         </div>
 
 
@@ -199,9 +190,9 @@
 
                 <div class="model-title card-title">
 
-                    <a href="click125.html" class="mc--honda">
+                    <a href="click125.html">
 
-                        <h4 class="h5 m-title" id="click125_title_brand">Honda Click 125</h4>
+                        <h5 class="m-title" id="click125_title_brand">Honda Click 125</h5>
 
                     </a>
 
@@ -209,15 +200,15 @@
             
                 </div>
 
-                <div class="card-footer" style="background-color: #1f2327;">
+                <div class="mc--footer card-footer">
 
                     <a href="click125.html" class="mc--honda">
 
-                        <h4 class="h5 text-white" id="click125_modelSRP_brand">SRP: 80,900</h4>
+                        <h4 class="h5" id="click125_modelSRP_brand">SRP: 80,900</h4>
 
-                        <h4 class="h6 text-white" id="click125_modelDP_brand">Downpayment: 5,500</h4>
+                        <h4 class="h6" id="click125_modelDP_brand">Downpayment: 5,500</h4>
 
-                        <h4 class="h6 text-white pb-3" id="click125_modelmonthly_brand">Monthly: 3,229</h4>
+                        <h4 class="h6 pb-3" id="click125_modelmonthly_brand">Monthly: 3,229</h4>
 
                     </a>
 
@@ -256,7 +247,7 @@
 
                 <a href="pcx160.html" class="nav-link">
 
-                    <h4 class="h5 ">Honda PCX160</h2>
+                    <h5 class="m-title">Honda PCX160</h5>
 
                 </a>
 
@@ -264,15 +255,15 @@
              
         </div>
     
-        <div class="card-footer" style="background-color: #1f2327;">
+        <div class="mc--footer card-footer">
 
-            <a href="pcx160.html" class="nav-link">
+            <a href="pcx160.html" class="mc--honda">
 
-                <h4 class="h5 text-white">SRP: 152,890</h4>
+                <h4 class="h5">SRP: 152,890</h4>
 
-                <h4 class="h6 text-white">Downpayment: 18,000</h4>
+                <h4 class="h6">Downpayment: 18,000</h4>
 
-                <h4 class="h6 text-white pb-3">Monthly: 5,901</h4>
+                <h4 class="h6 pb-3">Monthly: 5,901</h4>
 
             </a>
 
@@ -310,7 +301,7 @@
 
                 <a href="beat125.html" class="nav-link">
 
-                    <h4 class="h5" id="beat125_title_brand">Honda Beat Fashion Sport</h4>
+                    <h5 class="m-title" id="beat125_title_brand">Honda Beat Fashion Sport</h5>
                     
                 </a>
 
@@ -318,15 +309,15 @@
                  
         </div>
         
-        <div class="card-footer" style="background-color: #1f2327;">
+        <div class="mc--footer card-footer">
 
-            <a href="beat125.html" class="nav-link">
+            <a href="beat125.html" class="mc--honda">
 
-                <h4 class="h5 text-white" id="beat125_modelSRP_brand">SRP: 70,670</h4>
+                <h4 class="h5" id="beat125_modelSRP_brand">SRP: 70,670</h4>
 
-                <h4 class="h6 text-white" id="beat125_modelDP_brand">Downpayment: 3,700</h4>
+                <h4 class="h6" id="beat125_modelDP_brand">Downpayment: 3,700</h4>
 
-                <h4 class="h6 text-white pb-3" id="beat125_modelmonthly_brand">Monthly: 2,883</h4>
+                <h4 class="h6 pb-3" id="beat125_modelmonthly_brand">Monthly: 2,883</h4>
 
             </a>
 
@@ -368,7 +359,7 @@
 
                 <a href="tmxsupremo125.html" class="nav-link">
 
-                    <h4 class="h5">Honda TMX Supremo</h4>
+                    <h5 class="m-title">Honda TMX Supremo</h5>
 
                 </a>
 
@@ -376,15 +367,15 @@
          
         </div>
 
-        <div class="card-footer" style="background-color: #1f2327;">
+        <div class="mc--footer card-footer">
 
-            <a href="tmxsupremo125.html" class="nav-link">
+            <a href="tmxsupremo125.html" class="mc--honda">
 
-                <h4 class="h5 text-white">SRP: 78,900</h4>
+                <h4 class="h5">SRP: 78,900</h4>
 
-                <h4 class="h6 text-white">Downpayment: 4,500</h4>
+                <h4 class="h6">Downpayment: 4,500</h4>
 
-                <h4 class="h6 text-white pb-3">Monthly: 3,213</h4>
+                <h4 class="h6 pb-3">Monthly: 3,213</h4>
 
             </a>
 
@@ -422,7 +413,7 @@
 
                 <a href="cbr150r.html" class="nav-link">
 
-                    <h4 class="h5">Honda CBR150R</h4>
+                    <h5 class="m-title">Honda CBR150R</h5>
 
                 </a>
 
@@ -430,15 +421,15 @@
              
         </div>
     
-        <div class="card-footer" style="background-color: #1f2327;">
+        <div class="mc--footer card-footer">
 
-            <a href="cbr150r.html" class="nav-link">
+            <a href="cbr150r.html" class="mc--honda">
 
-                <h4 class="h5 text-white">SRP: 183,900</h4>
+                <h4 class="h5">SRP: 183,900</h4>
 
-                <h4 class="h6 text-white">Downpayment: 27,500</h4>
+                <h4 class="h6">Downpayment: 27,500</h4>
 
-                <h4 class="h6 text-white pb-3">Monthly: 6,857</h4>
+                <h4 class="h5 pb-3">Monthly: 6,857</h4>
 
             </a>
 
