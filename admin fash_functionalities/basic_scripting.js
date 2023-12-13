@@ -6,6 +6,7 @@ function showContent(id, event){
     //Declared variables equals to their given id per link
     let manage_accounts = document.getElementById('manage_accounts');
     let manage_models = document.getElementById('manage_models');
+    let manage_sales = document.getElementById('manage_sales_orders');
 
     //Hide the manage_accounts contents 
     if (manage_accounts){
@@ -16,6 +17,12 @@ function showContent(id, event){
     if (manage_models){
         manage_models.style.display = 'none';
     }
+
+    if(manage_sales){
+
+        manage_sales.style.display = 'none';
+    }
+
 
     //Shows the selected contents
     let selectedContent = document.getElementById(id);

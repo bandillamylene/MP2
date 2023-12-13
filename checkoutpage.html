@@ -211,24 +211,31 @@
 
     <h5 class="card-title p-4 text-center">Application Form</h5>
 
-    <form>
+    <form id="app_form" class="needs-validation" onsubmit="return handleFormSubmission()">
 
 
         <div class="row">
 
-            <label class="card-title p-3">Personal Details:</label>
+            <label class="card-title p-3">Customer Details:</label>
 
-            <div class="col-md-6 p-3">
+            <div class="col-md-4 p-3">
 
                 <label class="form-label">Full Name:</label>
-                <input class="form-control" type="text" id="app_name">
+                <input class="form-control" type="text" id="app_name" required>
 
             </div>
 
-            <div class="col-md-6 p-3">
+            <div class="col-md-4 p-3">
 
                 <label class="form-label">Email:</label>
-                <input class="form-control" type="email" id="app_email">
+                <input class="form-control" type="email" id="app_email" required>
+
+            </div>
+
+            <div class="col-md-4 p-3">
+
+                <label class="form-label">Application Date:</label>
+                <p class="lead" id="app_date"></p>
 
             </div>
 
@@ -241,14 +248,14 @@
             <div class="col-md-6 p-3">
 
                 <label class="form-label">Birthday:</label>
-                <input class="form-control" type="text" id="app_name">
+                <input class="form-control" type="text" id="app_birthday" required>
 
             </div>
 
             <div class="col-md-6 p-3">
 
                 <label class="form-label">Phone Number:</label>
-                <input class="form-control" type="email" id="app_email">
+                <input class="form-control" type="number" id="app_phone" required>
 
             </div>
 
@@ -266,14 +273,14 @@
             <div class="col-md-6 p-3">
 
                 <label class="form-label">Street/Brgy:</label>
-                <input class="form-control" type="text" id="app_streetbrgy" >
+                <input class="form-control" type="text" id="app_streetbrgy" required>
 
             </div>
 
             <div class="col-md-6 p-3">
 
                 <label class="form-label">Municipality:</label>
-                <input class="form-control" type="text" id="app_mun" >
+                <input class="form-control" type="text" id="app_mun" required>
 
             </div>
 
@@ -286,14 +293,14 @@
             <div class="col-md-6 p-3">
 
                 <label class="form-label">Province:</label>
-                <input class="form-control" type="text" id="app_streetbrgy">
+                <input class="form-control" type="text" id="app_province" required>
 
             </div>
 
             <div class="col-md-6 p-3">
 
                 <label class="form-label">Zip Code:</label>
-                <input class="form-control" type="text" id="app_zip">
+                <input class="form-control" type="number" id="app_zip" required>
 
             </div>
 
@@ -309,14 +316,14 @@
             <div class="col-md-6 p-3">
 
                 <label class="form-label">Company Name:</label>
-                <input class="form-control" type="text" id="app_compName" placeholder="Name of Company or Business">
+                <input class="form-control" type="text" id="app_compName" placeholder="Name of Company or Business" required>
 
             </div>
 
             <div class="col-md-6 p-3">
 
                 <label class="form-label">Employment Type:</label>
-                <input class="form-control" type="text" id="app_empType" placeholder="Full Time / Part Time / Freelance">
+                <input class="form-control" type="text" id="app_empType" placeholder="Full Time / Part Time / Freelance" required>
 
             </div>
 
@@ -329,14 +336,14 @@
             <div class="col-md-6 p-3">
 
                 <label class="form-label">Company / Business Phone:</label>
-                <input class="form-control" type="text" id="app_comNum" >
+                <input class="form-control" type="text" id="app_comNum" required>
 
             </div>
 
             <div class="col-md-6 p-3">
 
                 <label class="form-label">Company / Business Address:</label>
-                <input class="form-control" type="text" id="app_compAdd" >
+                <input class="form-control" type="text" id="app_compAdd" required>
 
             </div>
 
@@ -350,14 +357,14 @@
             <div class="col-md-6 p-3">
 
                 <label class="form-label">Monthly Income:</label>
-                <input class="form-control" type="number" id="app_monIncome" placeholder="Enter Monthly Income">
+                <input class="form-control" type="number" id="app_monIncome" placeholder="Enter Monthly Income" required>
 
             </div>
 
             <div class="col-md-6 p-3">
 
                 <label class="form-label">Annual Income:</label>
-                <input class="form-control" type="number" id="app_annIncome" placeholder="Enter Annual Income">
+                <input class="form-control" type="number" id="app_annIncome" placeholder="Enter Annual Income" required>
 
             </div>
 
@@ -369,34 +376,26 @@
         <div class="row">
 
             
-            <label class="card-title p-3">Payment Type:</label>
+            <label class="card-title p-3">Payment:</label>
 
                 <div class="col-md-6 p-3">
 
-                    <input type="radio" id="cash_payment" class="form-check-input" name="paymentMethod">
-                    <label class="form-label" for="cash_payment">Cash Payment</label> 
+                    <label class="form-label" for="cash_payment">Type Of Payment:</label>
+                    <input type="text" id="app_payment" class="form-control" placeholder="Cash / Financing" required>
+                 
                     
 
                 </div>
 
                 <div class="col-md-6 p-3">
 
-                    <input type="radio" id="financing_payment" class="form-check-input" name="paymentMethod">
-                    <label class="form-label" for="financing_payment">Financing / Installment</label>
+                    <p class="lead text-danger"><small>* Please be advised that irrespective of the chosen payment method—whether cash basis or financing—all applicants must personally visit one of our branch locations. This mandatory visit is crucial for security measures and validation purposes in ensuring the accuracy and authenticity of your payment selection.</small></p>
 
                     
                 </div>
 
 
         </div>
-
-        <div class="row">
-
-            <p class="lead text-center text-danger"><small>* Please be advised that irrespective of the chosen payment method—whether cash basis or financing—all applicants must personally visit one of our branch locations. This mandatory visit is crucial for security measures and validation purposes in ensuring the accuracy and authenticity of your payment selection.</small></p>
-
-
-        </div>
-
 
 
         <div class="row pb-4">
@@ -407,14 +406,14 @@
             <div class="col-md-6 p-3">
 
                 <label class="form-label">Desired Model:</label>
-                <input class="form-control" type="text" id="app_compName" placeholder="Name of Company or Business">
+                <input class="form-control" type="text" id="app_desiredModel" disabled>
 
             </div>
 
             <div class="col-md-6 p-3">
 
-                <label class="form-label">Employment Type:</label>
-                <input class="form-control" type="text" id="app_empType" placeholder="Full Time / Part Time / Freelance">
+                <label class="form-label">Model SRP:</label>
+                <input class="form-control" type="text" id="app_srp" disabled>
 
             </div>
 
@@ -423,7 +422,7 @@
 
 
 
-            <input type="checkbox" class="form-check-input" required>
+            <input type="checkbox" class="form-check-input" id="app_agree" required>
             <label>Agree to <a href="">Terms and Conditions</a> </label>
  
             <div class="row pt-5">
@@ -432,7 +431,7 @@
 
                     <button type="button" class="btn btn-dark btn-lg" onclick="backButton()">Back</button> &nbsp; &nbsp; &nbsp;
   
-                    <button type="button" class="btn btn-dark btn-lg" onclick="proceedButton()">Proceed</button>
+                    <button type="submit" value="Submit" class="btn btn-dark btn-lg">Proceed</button>
  
 
                 </div>
@@ -451,24 +450,31 @@
 
     <h5 class="card-title p-4 text-center">Review Form</h5>
 
-    <form>
+    <form id="review_form">
 
 
         <div class="row">
 
-            <label class="card-title p-3">Personal Details:</label>
+            <label class="card-title p-3">Customer Details:</label>
 
-            <div class="col-md-6 p-3">
+            <div class="col-md-4 p-3">
 
                 <label class="form-label">Full Name:</label>
                 <input class="form-control" type="text" id="review_name" disabled>
 
             </div>
 
-            <div class="col-md-6 p-3">
+            <div class="col-md-4 p-3">
 
                 <label class="form-label">Email:</label>
                 <input class="form-control" type="email" id="review_email" disabled>
+
+            </div>
+
+            <div class="col-md-4 p-3">
+
+                <label class="form-label">Application Date:</label>
+                <p class="lead" id="review_date"></p>
 
             </div>
 
@@ -481,14 +487,14 @@
             <div class="col-md-6 p-3">
 
                 <label class="form-label">Birthday:</label>
-                <input class="form-control" type="text" id="review_name" disabled>
+                <input class="form-control" type="text" id="review_birthday" disabled>
 
             </div>
 
             <div class="col-md-6 p-3">
 
                 <label class="form-label">Phone Number:</label>
-                <input class="form-control" type="email" id="review_email" disabled>
+                <input class="form-control" type="numer" id="review_phone" disabled>
 
             </div>
 
@@ -526,7 +532,7 @@
             <div class="col-md-6 p-3">
 
                 <label class="form-label">Province:</label>
-                <input class="form-control" type="text" id="review_streetbrgy"disabled>
+                <input class="form-control" type="text" id="review_province"disabled>
 
             </div>
 
@@ -609,27 +615,26 @@
         <div class="row">
 
             
-            <label class="card-title p-3">Payment Type:</label>
+            <label class="card-title p-3">Payment:</label>
 
                 <div class="col-md-6 p-3">
 
-                    <input type="radio" id="review_cash_payment" disabled class="form-check-input" name="paymentMethod">
-                    <label class="form-label" for="cash_payment">Cash Payment</label> 
+                    <label class="form-label" for="cash_payment">Type Of Payment:</label>
+                    <input type="text" id="review_payment" class="form-control" placeholder="Cash / Financing" disabled required>
+                 
                     
 
                 </div>
 
                 <div class="col-md-6 p-3">
 
-                    <input type="radio" id="review_financing_payment" disabled class="form-check-input" name="paymentMethod">
-                    <label class="form-label" for="financing_payment">Financing / Installment</label>
+                    <p class="lead text-danger"><small>* Please be advised that irrespective of the chosen payment method—whether cash basis or financing—all applicants must personally visit one of our branch locations. This mandatory visit is crucial for security measures and validation purposes in ensuring the accuracy and authenticity of your payment selection.</small></p>
 
                     
                 </div>
 
 
         </div>
-
 
 
 
@@ -641,14 +646,14 @@
             <div class="col-md-6 p-3">
 
                 <label class="form-label">Desired Model:</label>
-                <input class="form-control" type="text" id="review_compName" disabled  placeholder="Name of Company or Business">
+                <input class="form-control" type="text" id="review_desiredModel" disabled  placeholder="Name of Company or Business">
 
             </div>
 
             <div class="col-md-6 p-3">
 
-                <label class="form-label">Employment Type:</label>
-                <input class="form-control" type="text" id="review_empType" disabled placeholder="Full Time / Part Time / Freelance">
+                <label class="form-label">Model SRP:</label>
+                <input class="form-control" type="text" id="review_model_srp" disabled>
 
             </div>
 
@@ -680,29 +685,391 @@
 
     <div class="row">
 
-        <div class="col-md-12">
+        <div class="col-md-12 p-2">
 
-            <h5 class="h5 text-center">Application Received and Successful, please follow the instructions below:</h4>
+            <h5 class="h5 text-center">Application Successful!</h4>
 
 
         </div>
 
+    </div>
 
 
+    <div class="row">
+
+        <div class="col-md-12 border p-2">
+
+            <div class="row">
+        <div class="col-6">
+
+        <h5 class="h6" style="font-weight: bold;">
+            Dear 
+            <label class="h6" style="font-weight: bold;" id="customer_name"> Name</label>
+        </h5>
+
+        </div>
+
+        <div class="col-6">
+            <h5 class="h6" style="font-weight: bold;"> Order Number: <h5 id="order_number"></h5></h5>
+
+         </div>
+    </div>
 
 
+            <p class="lead" style="font-size: medium;">
+                Thank you for applying to avail one of our motorcycles. We're thrilled to assist you through this process. To proceed, please follow the steps outlined below:
+            </p>
+
+            <ol  class="list-group list-group-numbered">
+
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                      <div class="fw-bold pb-3" >Print the Application Form: </div>
+                      Kindly print the application form attached to this email. If you encounter any issues, feel free to contact us for assistance.
+                      <button class="btn btn-dark btn-sm" data-bs-toggle="modal" data-bs-target="#form_print" onclick="printDetails()">See Form & Print</button>
+
+                    </div>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <div class="ms-2 me-auto">
+                          <div class="fw-bold pb-3">Required Documents:</div>
+                          Along with the completed application form, please provide the following documents:
+                            <ul>
+                                <li style="list-style-type: disc;">
+                                    2 passport-sized (2x2) pictures
+                                </li>
+
+                                <li style="list-style-type: disc;">
+                                    2 valid IDs (Accepted IDs: SSS ID, Police Clearance, NBI Clearance, Postal ID, Passport, Driver's License)
+                                </li>
+                            </ul>
+                        </div>
+                        </li>
+
+                        <li class="list-group-item d-flex justify-content-between align-items-start">
+                            <div class="ms-2 me-auto">
+                              <div class="fw-bold pb-3">Accepted Proof of Income (if opting for Financing):</div>
+                              Depending on your employment status, please submit one of the following:
+                            
+                              <ul>
+                                <li style="list-style-type: disc;">
+                                    For Employed: Certificate of Employment OR 3 months' payslip
+                                </li>
+
+                                <li style="list-style-type: disc;">
+                                    For Self-Employed: Mayor's Business Permit OR Barangay Business Permit OR Picture of Business with Declaration of Income    
+                                </li>
+
+                                <li style="list-style-type: disc;">
+                                    For Recipient of Remittance: 3 months' latest remittance slip OR Statement of Account/Bank Statement                                
+                                </li>
+
+                                <li style="list-style-type: disc;">
+                                    For Pensioner: Statement of Account/Bank Statement
+                                </li>
+
+                                <li style="list-style-type: disc;">
+                                    For OFW/Seaman: Return Plane Ticket OR Latest Contract                                </li>
+
+                            </ul>
+                            
+                            </div>
+                            
+                            </li>
+            </ol>
+           
+
+            <p class="lead pt-2" style="font-size: medium;">
+                Please ensure all documents are clear and legible to facilitate the processing of your application. Once you have gathered these documents, you can submit them by visiting our nearest branch.            
+            </p>
+
+            <p class="lead" style="font-size: medium;">
+                We appreciate your interest in Throttle Twist Motors. We look forward to providing you with the best motorcycle options tailored to your needs.           
+             </p>
+
+                <p class="lead" style="font-size: medium;">
+                    Please Click "Submit Button" To finish processing your application
+                 </p>
+    
+
+
+        </div>
 
         
-     <div class="row">
+        
+    </div>
 
-        <div class="col-md-12 d-flex justify-content-center">
+    <!--Application FOrm Printable-->
+           <div class="modal fade" id="form_print" tabindex="-1" aria-labelledby="printform" aria-hidden="true">
+                <Div class="modal-dialog">
 
-            <button type="button" class="btn btn-dark btn-lg">Submit</button>
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            
+                            <h5 class="modal-title">Application Form </h5>
+                    
+                        </div>
+
+                        <div class="modal-body">
+                            <div class="container-md">
+
+                                <div class="row">
+
+                                    <form id="printableform">
+
+                                        <h5 class="modal-title h5 text-center">Throttle Twist - Application Form </h5>
+
+                                        <div class="row">
+                                            <div class="col-md-12 text-center p-3">
+
+                                                <label class="form-label">Application Date:</label>
+                                                <p class="lead" id="print_date"></p>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                
+                                            <label class="card-title p-3">Customer Details:</label>
+                                
+                                            <div class="col-md-6 p-3">
+                                
+                                                <label class="form-label">Full Name:</label>
+                                                <input class="form-control" type="text" id="print_name" disabled>
+                                
+                                            </div>
+                                
+                                            <div class="col-md-6 p-3">
+                                
+                                                <label class="form-label">Email:</label>
+                                                <input class="form-control" type="email" id="print_email" disabled>
+                                
+                                            </div>
+
+                                     
+                                        </div>
+                                
+                                        <div class="row">
+                                
+                                
+                                            <div class="col-md-6 p-3">
+                                
+                                                <label class="form-label">Birthday:</label>
+                                                <input class="form-control" type="text" id="print_birthday" disabled>
+                                
+                                            </div>
+                                
+                                            <div class="col-md-6 p-3">
+                                
+                                                <label class="form-label">Phone Number:</label>
+                                                <input class="form-control" type="numer" id="print_phone" disabled
+                                
+                                            </div>
+                                
+                                
+                                        </div>
+                                
+                                
+                                
+                                
+                                        <div class="row">
+                                
+                                            
+                                            <label class="card-title p-3">Address:</label>
+                                
+                                            <div class="col-md-6 p-3">
+                                
+                                                <label class="form-label">Street/Brgy:</label>
+                                                <input class="form-control" type="text" id="print_streetbrgy" disabled>
+                                
+                                            </div>
+                                
+                                            <div class="col-md-6 p-3">
+                                
+                                                <label class="form-label">Municipality:</label>
+                                                <input class="form-control" type="text" id="print_mun" disabled>
+                                
+                                            </div>
+                                
+                                
+                                        </div>
+                                
+                                
+                                        <div class="row">
+                                
+                                            <div class="col-md-6 p-3">
+                                
+                                                <label class="form-label">Province:</label>
+                                                <input class="form-control" type="text" id="print_province" disabled>
+                                
+                                            </div>
+                                
+                                            <div class="col-md-6 p-3">
+                                
+                                                <label class="form-label">Zip Code:</label>
+                                                <input class="form-control" type="text" id="print_zip" disabled>
+                                
+                                            </div>
+                                
+                                
+                                        </div>
+                                
+                                
+                                        <div class="row">
+                                
+                                            
+                                            <label class="card-title p-3">Employment Details:</label>
+                                
+                                            <div class="col-md-6 p-3">
+                                
+                                                <label class="form-label">Company Name:</label>
+                                                <input class="form-control" type="text" id="print_compName"  placeholder="Name of Company or Business" disabled>
+                                
+                                            </div>
+                                
+                                            <div class="col-md-6 p-3">
+                                
+                                                <label class="form-label">Employment Type:</label>
+                                                <input class="form-control" type="text" id="print_empType"  placeholder="Full Time / Part Time / Freelance" disabled> 
+                                
+                                            </div>
+                                
+                                
+                                        </div>
+                                
+                                
+                                        <div class="row">
+                                
+                                            <div class="col-md-6 p-3">
+                                
+                                                <label class="form-label">Company / Business Phone:</label>
+                                                <input class="form-control" type="text" id="print_comNum" disabled> 
+                                
+                                            </div>
+                                
+                                            <div class="col-md-6 p-3">
+                                
+                                                <label class="form-label">Company / Business Address:</label>
+                                                <input class="form-control" type="text" id="print_compAdd" disabled>
+                                
+                                            </div>
+                                
+                                
+                                        </div>
+                                
+                                
+                                
+                                        <div class="row">
+                                
+                                            <div class="col-md-6 p-3">
+                                
+                                                <label class="form-label">Monthly Income:</label>
+                                                <input class="form-control" type="number" id="print_monIncome" placeholder="Enter Monthly Income" disabled>
+                                
+                                            </div>
+                                
+                                            <div class="col-md-6 p-3">
+                                
+                                                <label class="form-label">Annual Income:</label>
+                                                <input class="form-control" type="number" id="print_annIncome" placeholder="Enter Annual Income" disabled>
+                                
+                                            </div>
+                                
+                                
+                                        </div>
+                                
+                                
+                                        <div class="row">
+
+            
+                                            <label class="card-title p-3">Payment:</label>
+                                
+                                                <div class="col-md-6 p-3">
+                                
+                                                    <label class="form-label" for="cash_payment">Type Of Payment:</label>
+                                                    <input type="text" id="print_payment" class="form-control" placeholder="Cash / Financing" disabled required>
+                                                 
+                                                    
+                                
+                                                </div>
+                                
+                                                <div class="col-md-6 p-3">
+                                
+                                                    <p class="lead text-danger"><small>* Please be advised that irrespective of the chosen payment method—whether cash basis or financing—all applicants must personally visit one of our branch locations. This mandatory visit is crucial for security measures and validation purposes in ensuring the accuracy and authenticity of your payment selection.</small></p>
+                                
+                                                    
+                                                </div>
+                                
+                                
+                                        </div>
+                                
+                                
+                                
+                                
+                                        <div class="row pb-4">
+                                
+                                            
+                                            <label class="card-title p-3">Vehicle Information:</label>
+                                
+                                            <div class="col-md-6 p-3">
+                                
+                                                <label class="form-label">Desired Model:</label>
+                                                <input class="form-control" type="text" id="print_desiredModel" disabled>
+                                
+                                            </div>
+                                
+                                            <div class="col-md-6 p-3">
+                                
+                                                <label class="form-label">Model SRP:</label>
+                                                <input class="form-control" type="text" id="print_srp" disabled>
+                                
+                                            </div>
+                                
+                                
+                                        </div>
+        
+                                    
+                                        <button class="btn btn-dark" type="button" data-bs-dismiss="modal">Close</button>
+                                        <button class="btn btn-dark" type="button" onclick="printForm()">Print</button>
+            
+                              
+                                        </form>
+        
+                                       
+
+                                </div>
+
+
+
+                            </div>
+                     
+                           
+                
+                        </div>
+                    
+                      
+                    </div>
+
+                </Div>
+
+            </div>
+
+        </div>
+
+  
+
+
+    <div class="row">
+
+        <div class="col-md-12 d-flex justify-content-center p-2">
+
+            <button type="button" class="btn btn-dark btn-lg" onclick="submit()">Submit</button>
 
         </div>
      </div>
 
-    </div>
+     
 
 </div>
 
@@ -815,10 +1182,35 @@
 
 
 
+<!--Validation forms bootstrap-->
+<script>
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(() => {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  const forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.from(forms).forEach(form => {
+    form.addEventListener('submit', event => {
+      if (!form.checkValidity()) {
+        event.preventDefault()
+        event.stopPropagation()
+      }
+
+      form.classList.add('was-validated')
+    }, false)
+  })
+})()
+
+</script>
+
 
 <script src="login.js"></script>
 <script src="index.js"></script>
 <script src="search_function.js"></script>
+<script src="buynow.js"></script>
 
 
 </body>

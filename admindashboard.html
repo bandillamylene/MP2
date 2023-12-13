@@ -139,7 +139,7 @@
 
 <div class="row pb-4">
     <div class="col-md">
-       <a href="#" class="nav-link toggle-link">
+       <a href="#" class="nav-link toggle-link" onclick="showContent('manage_sales_orders', event)">
         Sales and Orders
        </a>
     </div>
@@ -535,21 +535,309 @@
 
 </Table>
 
+
+
+</div>
+
+
+</div>
+</div>
+
+
+<!--Displaying Sales and Orders-->
+<div class="content container" id="manage_sales_orders">
+    <h5 class="h4 fw-bold">Sales and Orders</h5>
+
+    <h5 class="h5 pt-5">Orders:</h5>
+    
+    <Table class="table table-light table-striped">
+    
+        <thead>
+            <tr>
+                <Th>Full Name</Th>
+                <Th>Order Number</Th>
+                <Th>Motorcycle Unit</Th>
+                <th>Order Date</th>
+                <th>Operation</th>
+            </tr>
+        </thead>
+    
+        <tbody>
+        
+             
+           
+        </tbody>
+    
+    </Table>
+    
+    
+    </div>
+    
+
+
+
 </div>
 
 
 </div>
-</div>
-
-</div>
-
-</div>
 
 </div>
 
 
 
 
+
+
+ <!--Modal to see sales and orders form-->
+ <div class="modal fade" id="data_print" tabindex="-1" aria-labelledby="printform" aria-hidden="true">
+    <Div class="modal-dialog">
+
+        <div class="modal-content">
+            <div class="modal-header">
+                
+                <h5 class="modal-title">Application Form </h5>
+        
+            </div>
+
+            <div class="modal-body">
+                <div class="container-md">
+
+                    <div class="row">
+
+                        <form id="databaseform">
+
+                            <div class="row">
+                    
+                                <label class="card-title p-3">Customer Details:</label>
+                    
+                                <div class="col-md-4 p-3">
+                    
+                                    <label class="form-label">Full Name:</label>
+                                    <input class="form-control" type="text" id="data_name" disabled>
+                    
+                                </div>
+                    
+                                <div class="col-md-4 p-3">
+                    
+                                    <label class="form-label">Email:</label>
+                                    <input class="form-control" type="email" id="data_email" disabled>
+                    
+                                </div>
+
+                                <div class="col-md-4 p-3">
+
+                                    <label class="form-label">Application Date:</label>
+                                    <p class="lead" id="data_date"></p>
+                    
+                                </div>
+                    
+                    
+                            </div>
+                    
+                            <div class="row">
+                    
+                    
+                                <div class="col-md-6 p-3">
+                    
+                                    <label class="form-label">Birthday:</label>
+                                    <input class="form-control" type="text" id="data_birthday" disabled>
+                    
+                                </div>
+                    
+                                <div class="col-md-6 p-3">
+                    
+                                    <label class="form-label">Phone Number:</label>
+                                    <input class="form-control" type="numer" id="data_phone" disabled
+                    
+                                </div>
+                    
+                    
+                            </div>
+                    
+                    
+                    
+                    
+                            <div class="row">
+                    
+                                
+                                <label class="card-title p-3">Address:</label>
+                    
+                                <div class="col-md-6 p-3">
+                    
+                                    <label class="form-label">Street/Brgy:</label>
+                                    <input class="form-control" type="text" id="data_streetbrgy" disabled>
+                    
+                                </div>
+                    
+                                <div class="col-md-6 p-3">
+                    
+                                    <label class="form-label">Municipality:</label>
+                                    <input class="form-control" type="text" id="data_mun" disabled>
+                    
+                                </div>
+                    
+                    
+                            </div>
+                    
+                    
+                            <div class="row">
+                    
+                                <div class="col-md-6 p-3">
+                    
+                                    <label class="form-label">Province:</label>
+                                    <input class="form-control" type="text" id="data_province" disabled>
+                    
+                                </div>
+                    
+                                <div class="col-md-6 p-3">
+                    
+                                    <label class="form-label">Zip Code:</label>
+                                    <input class="form-control" type="text" id="data_zip" disabled>
+                    
+                                </div>
+                    
+                    
+                            </div>
+                    
+                    
+                            <div class="row">
+                    
+                                
+                                <label class="card-title p-3">Employment Details:</label>
+                    
+                                <div class="col-md-6 p-3">
+                    
+                                    <label class="form-label">Company Name:</label>
+                                    <input class="form-control" type="text" id="data_compName"  placeholder="Name of Company or Business" disabled>
+                    
+                                </div>
+                    
+                                <div class="col-md-6 p-3">
+                    
+                                    <label class="form-label">Employment Type:</label>
+                                    <input class="form-control" type="text" id="data_empType"  placeholder="Full Time / Part Time / Freelance" disabled> 
+                    
+                                </div>
+                    
+                    
+                            </div>
+                    
+                    
+                            <div class="row">
+                    
+                                <div class="col-md-6 p-3">
+                    
+                                    <label class="form-label">Company / Business Phone:</label>
+                                    <input class="form-control" type="text" id="data_comNum" disabled> 
+                    
+                                </div>
+                    
+                                <div class="col-md-6 p-3">
+                    
+                                    <label class="form-label">Company / Business Address:</label>
+                                    <input class="form-control" type="text" id="data_compAdd" disabled>
+                    
+                                </div>
+                    
+                    
+                            </div>
+                    
+                    
+                    
+                            <div class="row">
+                    
+                                <div class="col-md-6 p-3">
+                    
+                                    <label class="form-label">Monthly Income:</label>
+                                    <input class="form-control" type="number" id="data_monIncome" placeholder="Enter Monthly Income" disabled>
+                    
+                                </div>
+                    
+                                <div class="col-md-6 p-3">
+                    
+                                    <label class="form-label">Annual Income:</label>
+                                    <input class="form-control" type="number" id="data_annIncome" placeholder="Enter Annual Income" disabled>
+                    
+                                </div>
+                    
+                    
+                            </div>
+                    
+                    
+                            <div class="row">
+
+
+                                <label class="card-title p-3">Payment:</label>
+                    
+                                    <div class="col-md-6 p-3">
+                    
+                                        <label class="form-label" for="cash_payment">Type Of Payment:</label>
+                                        <input type="text" id="data_payment" class="form-control" placeholder="Cash / Financing" disabled required>
+                                     
+                                        
+                    
+                                    </div>
+                    
+                                    <div class="col-md-6 p-3">
+                    
+                                        <p class="lead text-danger"><small>* Please be advised that irrespective of the chosen payment method—whether cash basis or financing—all applicants must personally visit one of our branch locations. This mandatory visit is crucial for security measures and validation purposes in ensuring the accuracy and authenticity of your payment selection.</small></p>
+                    
+                                        
+                                    </div>
+                    
+                    
+                            </div>
+                    
+                    
+                    
+                    
+                            <div class="row pb-4">
+                    
+                                
+                                <label class="card-title p-3">Vehicle Information:</label>
+                    
+                                <div class="col-md-6 p-3">
+                    
+                                    <label class="form-label">Desired Model:</label>
+                                    <input class="form-control" type="text" id="data_desiredModel" disabled>
+                    
+                                </div>
+                    
+                                <div class="col-md-6 p-3">
+                    
+                                    <label class="form-label">Model SRP:</label>
+                                    <input class="form-control" type="text" id="data_srp" disabled>
+                    
+                                </div>
+                    
+                    
+                            </div>
+
+                        
+                            <button class="btn btn-dark" type="button" data-bs-dismiss="modal">Close</button>
+                 
+                            </form>
+
+                           
+
+                    </div>
+
+
+
+                </div>
+         
+               
+    
+            </div>
+        
+          
+        </div>
+
+    </Div>
+
+</div>
+
+</div>
 
     <!--FOOTER-->
 
@@ -626,9 +914,12 @@
 
 <script src="admin fash_functionalities/basic_scripting.js"></script>
 <script src="admin fash_functionalities/hide_products.js"></script>
+<script src="admin fash_functionalities/sales_orders.js"></script>
 <script src="login.js"></script>
 <script src="index.js"></script>
 <script src="search_function.js"></script>
+<script src="buynow.js"></script>
+
 
 </body>
 </html>
