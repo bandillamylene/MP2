@@ -88,18 +88,19 @@
 
   /* Style for the promotional banner */
   .promo-banner {
+    background-color: #45474B;
     border: none;
     box-shadow: 2px 2px 10px #495E57;
-    color: #1f2327;
-    padding: 20px;
+    color: #F5F7F8;
     text-align: center;
     position: relative;
+    padding-bottom: 50px;
   }
 
   /* Style for the button */
   .explore-button {
-    background-color: #495E57;
-    color: #F5F7F8;
+    background-color: #F4CE14;
+    color: #45474B;
     font-weight: 600;
     border: none;
     border-radius: 10px;
@@ -113,14 +114,21 @@
   }
 
   /* Style for the close button */
-  .close-button {
-    position: absolute;
-    top: 5px;
-    right: 10px;
-    color: #1f2327;
+  .clickMe {
+    display:flex;
+    justify-content:end;
+    align-items: end;
+    color: #F4CE14;
     font-size: 50px;
     text-decoration: none;
     cursor: pointer;
+    margin-left: auto;
+
+  }
+
+  .clickMe:hover {
+    color: red;
+
   }
 
   .explore-button:hover {
@@ -140,7 +148,7 @@
 
   /* Apply animation to the banner */
   .exploreTxt {
-    animation: blink-animation 4s infinite;
+    animation: blink-animation 3s infinite;
 
   }
 
@@ -160,7 +168,8 @@
 
 .welcome {
     font-weight: bolder;
-    background-color: rgb(189, 157, 48);
+    background: linear-gradient(5deg, rgba(69,71,75,1) 65%, rgba(244,206,20,1) 100%);
+    color: #F5F7F8;
     padding-top: 10px;
     padding-bottom: 10px;
     width: 100%;
@@ -175,18 +184,13 @@
     
     
 }
-.throttleCarousel {
-    border: none;
-    box-shadow: 4px 4px 10px gray;
-    
-}
 
 .EstText {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    font-weight: bold;
+    font-weight: 700;
     
 
 }
@@ -200,7 +204,7 @@
     margin-top: 200px;
     margin-bottom: 150px;
     border: none;
-    box-shadow: 4px 4px 10px gray;
+   
     
 }
 
@@ -270,15 +274,15 @@
 .contactBtn {
     border: none;
     border-radius: 100px;
-    box-shadow: 2px 2px 10px #1f2327;
-    background: rgb(189, 157, 48);
-    color: #1f2327;
+    box-shadow: 2px 2px 10px #45474B;
+    background: #F4CE14;
+    color: #45474B;
     
 }
 
 .contactBtn:hover {
-    background-color: rgb(40, 40, 40);
-    color: rgb(189, 157, 48);
+    background-color: #45474B;
+    color: #F5F7F8;
     box-shadow: 2px 2px 10px whitesmoke;
     
 
@@ -296,7 +300,8 @@
 .WhyChooseUs {
     font-weight: bolder;
     margin-top: 20px; 
-    background-color: rgb(189, 157, 48);
+    background: linear-gradient(5deg, rgba(69,71,75,1) 65%, rgba(244,206,20,1) 100%);
+    color: #F5F7F8;
     padding-top: 10px;
     padding-bottom: 10px;
 }
@@ -334,16 +339,15 @@
     margin-top: 200px;
     margin-bottom: 0;
     color: rgb(40, 40, 40);
-    border: none;
-    box-shadow: 4px 4px 10px rgb(40, 40, 40);
 
 }
 
 .visit {
     font-weight: bolder;
-    color: rgb(33, 37, 41);
-    background-color: rgb(189, 157, 48);
-    padding: 10px;
+    color: #F5F7F8;
+    background: rgb(69,71,75);
+    background: linear-gradient(5deg, rgba(69,71,75,1) 65%, rgba(244,206,20,1) 100%);
+    padding: 15px;
     width: 100%;
     box-shadow: 2px 2px 10px  rgb(33, 37, 41);
     
@@ -383,6 +387,14 @@
     margin-bottom: 20px;
     border: none;
     border-radius: 5px;
+}
+
+.click-cards {
+    margin-top: 100px;
+    background-color: #45474B;
+    color: #F5F7F8;
+    text-align: center;
+    padding-bottom: 50px;
 }
 
 
@@ -453,6 +465,7 @@
     text-decoration-color: rgb(209, 52, 52);
 }
 
+
 /*ANIMATIONS*/
 
 /* Initial hidden state for animation */
@@ -522,7 +535,11 @@
     box-shadow: 4px 4px 10px #F4CE14;
 }
 
-/*INQUIRY FORM */
+.inquiries {
+    padding: 30px;
+    background: #F5F7F8;
+    color: #45474B;
+}
 
 .inquiry--header {
     background: rgb(69,71,75);

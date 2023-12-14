@@ -103,7 +103,7 @@ document.getElementById("contactForm").addEventListener("submit", function(event
   var phoneValidation = validatePhone(phone.value);
 
   if (phoneValidation === 'empty') {
-    phoneWarning.textContent = "Please enter your phone number.";
+    phoneWarning.textContent = "*Please enter phone number.*";
     phoneWarning.style.display = "block";
     isValid = false;
   } else if (phoneValidation === 'invalidFormat') {

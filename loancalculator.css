@@ -3,7 +3,9 @@
 
 .content{
 
-    background-color: #F5F7F8;
+    background: rgb(69,71,75);
+    background: #F5F7F8;
+    color: #45474B;
     border-style: solid;
     border-color: #495E57;
     box-shadow: 4px 4px 10px #45474B;
@@ -12,28 +14,28 @@
 }
 
 
-.calculate{
-
-display: flex;
-justify-content: center;
-
-
-}
 
 .calculate-btn {
-    background-color: #45474B;
-    color: #F5F7F8;
+    background-color: #F4CE14;
+    box-shadow: 2px 2px 10px #45474B;
+    color: #45474B;
+    font-weight: 550;
+    margin: 10px;
 }
 .calculate-btn:hover {
-    background-color: #F4CE14;
-    color: #45474B;
+    background-color: #45474B;
+    color: #F4CE14;
 }
 
 .clear-btn {
-    background-color: #495E57;
-    color: #F4CE14;
+    margin: 10px;
+    background-color: rgb(179,30,30);
+    box-shadow: 2px 2px 10px #45474B;
+    color: #F5F7F8;
+    font-weight: 550
 }
 .clear-btn:hover {
-    background-color: rgb(179, 30, 30);
+    background-color: #495E57;
     color: #F5F7F8;
 }
+
