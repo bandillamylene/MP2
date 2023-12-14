@@ -17,7 +17,7 @@
 <nav class="navbar_content navbar navbar-expand-lg sticky-top">
     <div class="container-fluid">
 
-        <a class="navbar-brand text-white" href="./index.html">
+        <a class="navbar-brand" href="./index.html">
             <img src="./images/throttlelogo.png" class="logo ">
         </a>
 
@@ -26,7 +26,7 @@
             <ul class="navbar-nav">
 
                 <li class="nav-item dropdown pe-4">
-                    <a class="nav-link dropdown-toggle text-white active-link" href="#" id="motorcyclesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle active-link" href="#" id="motorcyclesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       Motorcycles
                     </a>
                         <ul class="dropdown-menu bg-white" aria-labelledby="motorcyclesDropdown">
@@ -39,7 +39,7 @@
                   </li>
 
                   <li class="nav-item dropdown pe-4">
-                    <a class="nav-link dropdown-toggle text-white" href="#" id="services" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" id="services" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       Services
                     </a>
                         <ul class="dropdown-menu bg-white" aria-labelledby="motorcyclesDropdown">
@@ -49,7 +49,7 @@
                   </li>
 
                   <li class="nav-item dropdown pe-4">
-                    <a class="nav-link dropdown-toggle text-white" href="#" id="Promos" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" id="Promos" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       Promos
                     </a>
                         <ul class="dropdown-menu bg-white" aria-labelledby="motorcyclesDropdown">
@@ -59,13 +59,13 @@
                   </li>
 
                 <li class="nav-item pe-4">
-                    <a class="nav-link text-white" href="./aboutUs.html">About Us</a>
+                    <a class="nav-link" href="./aboutUs.html">About Us</a>
 
 
                 </li>
 
                 <li class="nav-item pe-4">
-                    <a class="nav-link text-white" href="./contactUs.html">Contact Us</a>
+                    <a class="nav-link" href="./contactUs.html">Contact Us</a>
 
 
                 </li>
@@ -83,74 +83,58 @@
 
 <br><br><br>
 
-<div class="row">
-    <span id="profileName" class="text-white mx-3 d-flex justify-content-center align-items-center"></span>
-</div>
+        <div class="row">
+            <span id="profileName" class="text-white mx-3 d-flex justify-content-center align-items-center"></span>
+        </div>
 
 
-<div class="d-lg-block d-flex justify-content-end">
+        <div class="d-lg-block d-flex justify-content-end">
 
-    
-    <a href="./login.html" id="loginButton" class="login mx-3 btn btn-lg">
-        Login <i class="fas fa-sign-in-alt ms-1"></i>
-    </a>
-    
+            
+            <a href="./login.html" id="loginButton" class="login mx-3 btn btn-lg">
+                Login <i class="fas fa-sign-in-alt ms-1"></i>
+            </a>
+            
 
-    <a href="./logout.html" id="logoutButton" class="logout mx-3 btn btn-lg d-none">
-        Logout <i class="fas fa-sign-out-alt ms-1"></i>
-    </a>
+            <a href="./logout.html" id="logoutButton" class="logout mx-3 btn btn-lg d-none">
+                Logout <i class="fas fa-sign-out-alt ms-1"></i>
+            </a>
 
 
-    <button class="navbar-toggler bg-white ms-auto me-3" type="button" data-bs-target="#navbar" data-bs-toggle="collapse">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-</div>
-        
-
+            <button class="navbar-toggler bg-white ms-auto me-3" type="button" data-bs-target="#navbar" data-bs-toggle="collapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
 
     </div>
 </nav>
 
 
 <!--Carousel-->
-        <div class="road1 col-md-12">
-            <img class="img-fluid" src="images/motorcycles/cfmoto/homepage/road.jpg">
-            <div class="mc carousel slide pb-3" id="carousel_img" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                <div class="carousel-item active" data-bs-interval="4000">
+<div class="road1 col-md-12">
+    <img class="img-fluid" src="images/motorcycles/cfmoto/homepage/road.jpg">
+
+    <div class="mc carousel slide pb-3" id="carousel_img" data-bs-ride="carousel">
+        <div class="carousel-inner">
+
+            <div class="carousel-item active" data-bs-interval="4000">
                 <img class="img-fluid" src="images/motorcycles/cfmoto/homepage/pic_1.png">
-            
-                    </div>
+            </div>
 
-                    <div class="carousel-item" data-bs-interval="4000">
-                        <img class="img-fluid" src="images/motorcycles/cfmoto/homepage/pic_2.png">
+            <div class="carousel-item" data-bs-interval="4000">
+                <img class="img-fluid" src="images/motorcycles/cfmoto/homepage/pic_2.png">
                     
-                            </div>
+            </div>
 
-                            <div class="carousel-item" data-bs-interval="4000">
-                                <img class="img-fluid" src="images/motorcycles/cfmoto/homepage/pic_3.png">
+            <div class="carousel-item" data-bs-interval="4000">
+                <img class="img-fluid" src="images/motorcycles/cfmoto/homepage/pic_3.png">
                             
-                                    </div>
+            </div>
 
-                 </div>
-            
-                
-                </div>
-                
         </div>
-
-  
-<!--Search-->
-<div class="search_container container-md">
-    <h2 class="h5 text-center">Motorcycle Search</h2>
-
-    <form class="s-bar d-flex" role="search" oninput="return mc_Filter();" id="searchForm">
-        <input type="search" class="form-control" placeholder="Search" id="search_MC">
-        <button class="s-button btn btn-outline-light btn-sm" type="submit">
-            <i class="fas fa-search"></i>
-        </button>
-    </form>
-
+            
+    </div>
+                
 </div>
 
 
@@ -158,43 +142,44 @@
 
 <div class="container">
 
-<!--ROW 1-->
-<div class="row">
+    <!--ROW 1-->
+    <div class="row">
 
-    <div class="mc_card col-md-4 p-4" id="item_300sr">
+        <div class="mc_card col-md-4 p-4" id="item_300sr">
 
-        <div class="card" style="width: 20rem">
+            <div class="card" style="width: 20rem">
 
-        <div class="img-hover-zoom card-img-top">
-        <a href="300sr.html">
-        <img class="img-fluid" src="images/motorcycles/cfmoto/homepage/pic_1.png">
-         </a>
-        </div>
+                <div class="img-hover-zoom card-img-top">
+                    <a href="300sr.html">
+                        <img class="img-fluid" src="images/motorcycles/cfmoto/homepage/pic_1.png">
+                    </a>
+                </div>
 
-        <div class="card-body">
-        <div class="model-title card-title">
-            <a href="300sr.html" class="nav-link">
-            <h4 class="h5">CFMoto - 300sr</h2>
-            </a>
-         </div>
-         
+                <div class="card-body">
+                    <div class="model-title card-title">
+                        <a href="300sr.html" class="mc--honda">
+                            <h5 class="m-title">CFMoto - 300sr</h5>
+                        </a>
+                    </div>
+            
+                </div>
+
+                <div class="mc--footer card-footer">
+                    <a href="300sr.html" class="mc--honda">
+                        <h4 class="h5">SRP: 162,000</h4>
+                        <h4 class="h6">Downpayment: 33,000</h4>
+                        <h4 class="h6 pb-3">Monthly: 5,640</h4>
+                    </a>
+
+                    <a href="300sr.html" class="btn btn-outline-light btn-sm" role="button">See More</a>
+
+                    <a href="#" class="save-icon fa-lg" style="position: absolute; bottom: 10px; right: 15px; color: #FFFFFF;">
+                        <i class="far fa-bookmark"></i>
+                    </a>
+
+                </div>
+
             </div>
-
-            <div class="card-footer" style="background-color: #1f2327;">
-                <a href="300sr.html" class="nav-link">
-                <h4 class="h5 text-white">SRP: 162,000</h4>
-                <h4 class="h6 text-white">Downpayment: 33,000</h4>
-                <h4 class="h6 text-white pb-3">Monthly: 5,640</h4>
-                </a>
-                <a href="300sr.html" class="btn btn-outline-light btn-sm" role="button">See More</a>
-
-                <a href="#" class="save-icon fa-lg" style="position: absolute; bottom: 10px; right: 15px; color: #FFFFFF;">
-                    <i class="far fa-bookmark"></i>
-                </a>
-
-            </div>
-
-        </div>
 
 
         </div>
@@ -202,93 +187,85 @@
         <div class="mc_card col-md-4 p-4" id="item_nk400">
 
             <div class="card" style="width: 20rem">
-    
-            <div class="img-hover-zoom card-img-top">
-            <a href="nk400.html">
-            <img class="img-fluid" src="images/motorcycles/cfmoto/homepage/pic_2.png">
-             </a>
-            </div>
-    
-            <div class="card-body">
-            <div class="model-title card-title">
-                <a href="nk400.html" class="nav-link">
-                <h4 class="h5">CFMoto - NK400</h2>
-                </a>
-             </div>
-             
-                </div>
-    
-                <div class="card-footer" style="background-color: #1f2327;">
-                    <a href="nk400.html" class="nav-link">
-                    <h4 class="h5 text-white">SRP: 248,900</h4>
-                    <h4 class="h6 text-white">Downpayment: 43,800</h4>
-                    <h4 class="h6 text-white pb-3">Monthly: 9,022</h4>
+        
+                <div class="img-hover-zoom card-img-top">
+                    <a href="nk400.html">
+                        <img class="img-fluid" src="images/motorcycles/cfmoto/homepage/pic_2.png">
                     </a>
+                </div>
+        
+            <div class="card-body">
+                <div class="model-title card-title">
+                    <a href="nk400.html" class="mc--honda">
+                        <h5 class="m-title">CFMoto - NK400</h5>
+                    </a>
+                </div>
+                
+            </div>
+        
+                <div class="mc--footer card-footer">
+                    <a href="nk400.html" class="mc--honda">
+                        <h4 class="h5">SRP: 248,900</h4>
+                        <h4 class="h6">Downpayment: 43,800</h4>
+                        <h4 class="h6 pb-3">Monthly: 9,022</h4>
+                    </a>
+
                     <a href="nk400.html" class="btn btn-outline-light btn-sm" role="button">See More</a>
 
                     <a href="#" class="save-icon fa-lg" style="position: absolute; bottom: 10px; right: 15px; color: #FFFFFF;">
                         <i class="far fa-bookmark"></i>
                     </a>
-    
+        
                 </div>
-    
+        
             </div>
-    
-    
-            </div>
+        
+        
+        </div>
 
-            <div class="mc_card col-md-4 p-4" id="item_nk650">
 
-                <div class="card" style="width: 20rem">
-        
-                <div class="img-hover-zoom card-img-top">
-                <a href="nk650.html">
-                <img class="img-fluid" src="images/motorcycles/cfmoto/homepage/pic_3.png">
-                 </a>
-                </div>
-        
-                <div class="card-body">
-                <div class="model-title card-title">
-                    <a href="nk650.html" class="nav-link">
-                    <h4 class="h5">CFMoto - NK650</h2>
-                    </a>
-                 </div>
-                 
-                    </div>
-        
-                    <div class="card-footer" style="background-color: #1f2327;">
-                        <a href="nk650.html" class="nav-link">
-                        <h4 class="h5 text-white">SRP: 295,000</h4>
-                        <h4 class="h6 text-white">Downpayment: 59,000</h4>
-                        <h4 class="h6 text-white pb-3">Monthly: 10,395</h4>
-                        </a>
-                        <a href="nk650.html" class="btn btn-outline-light btn-sm" role="button">See More</a>
 
-                        <a href="#" class="save-icon fa-lg" style="position: absolute; bottom: 10px; right: 15px; color: #FFFFFF;">
-                            <i class="far fa-bookmark"></i>
-                        </a>
-        
-                    </div>
-        
-                </div>
-        
-        
-                </div>
+        <div class="mc_card col-md-4 p-4" id="item_nk650">
 
+            <div class="card" style="width: 20rem">
             
+                <div class="img-hover-zoom card-img-top">
+                    <a href="nk650.html">
+                        <img class="img-fluid" src="images/motorcycles/cfmoto/homepage/pic_3.png">
+                    </a>
+                </div>
+            
+                <div class="card-body">
+                    <div class="model-title card-title">
+                        <a href="nk650.html" class="mc--honda">
+                            <h5 class="m-title">CFMoto - NK650</h5>
+                        </a>
+                    </div>
+                    
+                </div>
+            
+                <div class="mc--footer card-footer">
+                    <a href="nk650.html" class="mc--honda">
+                        <h4 class="h5 ">SRP: 295,000</h4>
+                        <h4 class="h6 ">Downpayment: 59,000</h4>
+                        <h4 class="h6  pb-3">Monthly: 10,395</h4>
+                    </a>
+                    <a href="nk650.html" class="btn btn-outline-light btn-sm" role="button">See More</a>
 
+                    <a href="#" class="save-icon fa-lg" style="position: absolute; bottom: 10px; right: 15px; color: #FFFFFF;">
+                        <i class="far fa-bookmark"></i>
+                    </a>
+            
+                </div>
+            
+            </div>
+
+        </div>
+
+    </div>
 
 </div>
 
-<!--ROW 2-->
-<div class="row">
-
-
-
-</div>
-
-
-</div>
 
 
 <!--FOOTER-->

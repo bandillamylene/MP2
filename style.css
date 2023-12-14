@@ -67,6 +67,8 @@
     }
   }
 
+
+
 /*Featured MC*/
 
 .mc_container a:hover{
@@ -84,6 +86,7 @@
     text-decoration: none;
     color: #1f2327;
 }
+
 
 
 
@@ -300,9 +303,10 @@
 }
 
 .limited {
+    background: rgb(69,71,75);
+    background: linear-gradient(5deg, rgba(69,71,75,1) 65%, rgba(244,206,20,1) 100%);
     font-weight: bolder;
-    color: rgb(40, 40, 40);
-    background-color: rgb(189, 157, 48);
+    color: #F5F7F8;
     width: 100%;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -343,11 +347,11 @@
     transform: scale(1.5);
 }
 
-.badge.bg-warning.text-dark {
+.badge {
     position: absolute;
     top: 10px;
     right: 10px;
-    background-color: #ffc107;
+    background-color: #F4CE14;
     color: #333;
     font-size: 18px;
     padding: 4px 8px;
@@ -358,7 +362,7 @@
 }
 .duration-badge {
     text-align: center;
-    background-color: rgb(40, 40, 40);
+    background: #45474B;
     color: rgb(236, 237, 238);
     padding-top: 10px;
 }
@@ -369,7 +373,7 @@
 }
 
 .inquire {
-    background:  #ffc107;
+    background:  #F4CE14;
     font-weight: bolder;
     border: none;
     box-shadow: 2px 2px 5px rgb(40, 40, 40);
@@ -420,16 +424,6 @@
   }
   
 
-/*Service Inquiry Form*/
-
-.content{
-    background-color: white;
-    border-style: solid;
-    border-color: rgb(109, 109, 109);
-    box-shadow: -3px 10px 15px rgb(167, 166, 166);
-    padding: 60px;
-    border-radius: 20px;
-}
 
 /*Choose Model*/
 
@@ -448,4 +442,46 @@
 *{
     margin: 0;
     padding: 0;
+}
+
+
+/*SERVICE INQUIRY FORM */
+
+.serviceform-btn {
+    background-color: #F4CE14;
+    padding: 8px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px #45474B;
+    font-weight: 600;
+}
+
+.serviceform-btn:hover {
+    background-color: #45474B;
+    color: #F4CE14;
+    border: none;
+    box-shadow: 4px 4px 10px #F4CE14;
+}
+
+/*INQUIRY FORM */
+
+.inquiry--header {
+    background: rgb(69,71,75);
+    background: linear-gradient(5deg, rgba(69,71,75,1) 65%, rgba(244,206,20,1) 100%);
+    text-align: center;
+    color: #F5F7F8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin: 60px 0 50px 0;
+}
+
+.content{
+    background-color:#F5F7F8;
+    border-style: solid;
+    border-color:  #495E57;
+    box-shadow: 4px 4px 10px #45474B;
+    padding: 60px;
+    border-radius: 20px;
 }
