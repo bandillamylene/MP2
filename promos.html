@@ -87,50 +87,42 @@
 
 
     
-<div class="row">
-    <span id="profileName" class="text-white mx-3 d-flex justify-content-center align-items-center"></span>
-</div>
+        <div class="row">
+            <span id="profileName" class="text-white mx-3 d-flex justify-content-center align-items-center"></span>
+        </div>
 
 
 
-<div class="d-lg-block d-flex justify-content-end">
-     
-    <a href="./login.html" id="loginButton" class="login mx-3 btn btn-lg">
-        Login <i class="fas fa-sign-in-alt ms-1"></i>
-    </a>
-    
+        <div class="d-lg-block d-flex justify-content-end">
+            
+            <a href="./login.html" id="loginButton" class="login mx-3 btn btn-lg">
+                Login <i class="fas fa-sign-in-alt ms-1"></i>
+            </a>
+            
 
-    <a href="./logout.html" id="logoutButton" class="logout mx-3 btn btn-lg d-none">
-        Logout <i class="fas fa-sign-out-alt ms-1"></i>
-    </a>
-
-
-    <button class="navbar-toggler bg-white ms-auto me-3" type="button" data-bs-target="#navbar" data-bs-toggle="collapse">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-</div>
+            <a href="./logout.html" id="logoutButton" class="logout mx-3 btn btn-lg d-none">
+                Logout <i class="fas fa-sign-out-alt ms-1"></i>
+            </a>
 
 
-        
-
+            <button class="navbar-toggler bg-white ms-auto me-3" type="button" data-bs-target="#navbar" data-bs-toggle="collapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
 
     </div>
 </nav>
 
 
-<!--PROMO-->
+<!-- Image Section -->
+<div class="container-fluid p-0">
+    <img src="./images/PromoPageFinal.jpg" class="img-fluid" alt="Rev Up Your Ride">
+</div>
 
-        <div class="container-fluid p-0">
-            <img src="./images/PromoPageFinal.jpg" class="img-fluid" alt="Rev Up Your Ride">
-        </div>
-    
-    
-    
-<div class="myPromo container-fluid mt-lg-5 mt-md-3 mb-lg-5 mb-md-3 mb-sm-4">
+<!-- Promo Content Section -->
+<div class="myPromo container-fluid mt-lg-5 mt-md-3 mb-lg-5 mb-md-3 mb-sm-4 position-relative">
     <div class="row mt-lg-5 mt-md-3">
-
             <h1 class="limited mt-5 text-center">Limited Time Offers!</h1>
-
         <div class="col px-3 d-flex align-items-center justify-content-center">
             <div class="text-center">
                 <br>
@@ -140,6 +132,11 @@
             </div>
         </div>
     </div>
+</div>
+
+<div id="removableMessage" class="alert alert-info alert-dismissible fade show text-center" role="alert">
+    Click Cards to see Specs !
+    <button type="button" class="btn-close btn-sm" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>
 
 <!--ITEMS-->
@@ -410,7 +407,7 @@
 </script>
 
 
-
+<script src="removablemessage.js"></script>
 <script src="login.js"></script>
 <script src="index.js"></script>
 <script src="search_function.js"></script>

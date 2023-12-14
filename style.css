@@ -1,5 +1,4 @@
 
-
 .carousel1_btn {
 
     position: absolute;
@@ -87,7 +86,63 @@
     color: #1f2327;
 }
 
+  /* Style for the promotional banner */
+  .promo-banner {
+    border: none;
+    box-shadow: 2px 2px 10px #495E57;
+    color: #1f2327;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+  }
 
+  /* Style for the button */
+  .explore-button {
+    background-color: #495E57;
+    color: #F5F7F8;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+
+  /* Style for the close button */
+  .close-button {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    color: #1f2327;
+    font-size: 50px;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .explore-button:hover {
+    color: #495E57;
+    background-color: #F5F7F8;
+  }
+
+   /* Animation keyframes */
+   @keyframes blink-animation {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
+  /* Apply animation to the banner */
+  .exploreTxt {
+    animation: blink-animation 4s infinite;
+
+  }
 
 
 /*About Us*/
@@ -330,6 +385,10 @@
     border-radius: 5px;
 }
 
+
+
+
+
 @media (max-width: 576px) {
     
     .promocards {
@@ -484,4 +543,21 @@
     box-shadow: 4px 4px 10px #45474B;
     padding: 60px;
     border-radius: 20px;
+}
+
+
+/*REMOVABLE ALERT */
+
+#removableMessage {
+    background-color: #F5F7F8;
+    padding: 10px;
+    color: #1f2327;
+    font-weight: 600;
+    font-size: 30px;
+    border-color: #F4CE14;
+    box-shadow: 2px 2px 10px #1f2327;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
