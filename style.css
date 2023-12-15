@@ -146,7 +146,7 @@
     }
   }
 
-  /* Apply animation to the banner */
+  /* animation to the banner */
   .exploreTxt {
     animation: blink-animation 3s infinite;
 
@@ -282,8 +282,8 @@
 
 .contactBtn:hover {
     background-color: #45474B;
-    color: #F5F7F8;
-    box-shadow: 2px 2px 10px whitesmoke;
+    color: #F4CE14;
+    box-shadow: 2px 2px 10px #F4CE14;
     
 
 }

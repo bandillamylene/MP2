@@ -1,3 +1,4 @@
+// Intersection Observer for sections
 const sections = document.querySelectorAll('.StoryCont');
 
 const options = {
@@ -18,3 +19,16 @@ const observer = new IntersectionObserver(entries => {
 sections.forEach(section => {
   observer.observe(section);
 });
+
+// Blinking effect function
+function startBlinking() {
+  const blinkingText = document.getElementById('blinkingText');
+
+  function blink() {
+    blinkingText.classList.toggle('blink-hidden');
+  }
+
+  setInterval(blink, 500); // blinking time interval (in milliseconds)
+}
+
+startBlinking(); //function to start blinking
