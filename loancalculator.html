@@ -8,15 +8,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="loancalculator.css">
     <link rel="stylesheet" href="./fonts.css">
+    <link rel="stylesheet" href="./navFooter.css">
     <title>Loan Calculator</title>
 </head>
 <body>
 
  <!--NAVIGATION BAR-->
-<nav class="navbar_content navbar navbar-expand-lg sticky-top bg-dark">
+<nav class="navbar_content navbar navbar-expand-lg sticky-top">
     <div class="container-fluid">
 
-        <a class="navbar-brand text-white" href="./index.html">
+        <a class="navbar-brand" href="./index.html">
             <img src="./images/throttlelogo.png" class="logo ">
         </a>
 
@@ -25,7 +26,7 @@
             <ul class="navbar-nav">
 
                 <li class="nav-item dropdown pe-4">
-                    <a class="nav-link dropdown-toggle text-white" href="#" id="motorcyclesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" id="motorcyclesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       Motorcycles
                     </a>
                         <ul class="dropdown-menu bg-white" aria-labelledby="motorcyclesDropdown">
@@ -38,7 +39,7 @@
                   </li>
 
                   <li class="nav-item dropdown pe-4">
-                    <a class="nav-link dropdown-toggle text-white active-link" href="#" id="services" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle active-link" href="#" id="services" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       Services
                     </a>
                         <ul class="dropdown-menu bg-white" aria-labelledby="motorcyclesDropdown">
@@ -48,7 +49,7 @@
                   </li>
 
                   <li class="nav-item dropdown pe-4">
-                    <a class="nav-link dropdown-toggle text-white" href="./promos.html" id="Promos" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="./promos.html" id="Promos" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       Promos
                     </a>
                         <ul class="dropdown-menu bg-white" aria-labelledby="motorcyclesDropdown">
@@ -58,13 +59,13 @@
                   </li>
 
                 <li class="nav-item pe-4">
-                    <a class="nav-link text-white" href="./aboutUs.html">About Us</a>
+                    <a class="nav-link" href="./aboutUs.html">About Us</a>
 
 
                 </li>
 
                 <li class="nav-item pe-4">
-                    <a class="nav-link text-white" href="./contactUs.html">Contact Us</a>
+                    <a class="nav-link" href="./contactUs.html">Contact Us</a>
 
 
                 </li>
@@ -83,25 +84,29 @@
 <br><br><br>
 
     
-<div class="row">
-    <span id="profileName" class="text-white mx-3 d-flex justify-content-center align-items-center"></span>
-</div>
+            <div class="row">
+                <span id="profileName" class="text-white mx-3 d-flex justify-content-center align-items-center"></span>
+            </div>
 
 
 
-<div class="d-lg-block d-flex justify-content-end">
-    
-    <a href="./login.html" id="loginButton" class="login mx-3 btn btn-lg">Login</a>
+        <div class="d-lg-block d-flex justify-content-end">
+            
+           
+            <a href="./login.html" id="loginButton" class="login mx-3 btn btn-lg">
+                Login <i class="fas fa-sign-in-alt ms-1"></i>
+            </a>
+            
 
-    <a href="./login.html" id="logoutButton" class="logout mx-3 btn btn-lg d-none">Logout</a>
+            <a href="./logout.html" id="logoutButton" class="logout mx-3 btn btn-lg d-none">
+                Logout <i class="fas fa-sign-out-alt ms-1"></i>
+            </a>
 
 
-    <button class="navbar-toggler bg-white ms-auto me-3" type="button" data-bs-target="#navbar" data-bs-toggle="collapse">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-</div>
-        
-
+            <button class="navbar-toggler bg-white ms-auto me-3" type="button" data-bs-target="#navbar" data-bs-toggle="collapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
 
     </div>
 </nav>
@@ -110,164 +115,153 @@
     <!--Calculator Tool-->
     <div class="container p-5">
         <h3 class="text-dark text-center"><b>Loan Calculator</b></h3>
-        <p class="text-center">The calculator will help you determine the estimated monthly payments for your desired motorcycle loan.
+            <p class="text-center">The calculator will help you determine the estimated monthly payments for your desired motorcycle loan.
             Please visit our branch to get a final computation.</p>
-<div class="content container-md">
-   
-    <form id="myForm">
-    <div class="row pb-5">
-        <div class="col-md-6">
-            <label class="form-label">Choose Brands:</label>
-            <select for="brands" class="form-select" id="brands" required>
-                <option selected>Open to choose</option>
-                <option value="honda">Honda</option>
-                <option value="kawasaki">Kawasaki</option>
-                <option value="yamaha">Yamaha</option>
-                <option value="motorstar">Motorstar</option>
-                <option value="cfmoto">CFMoto</option>
-            </select>
-        </div>
-
-        <div class="col-md-6">
-            <label class="form-label">Choose Motorcycle:</label>
-            <select for="brands" class="form-select" id="motorcycles" required>
-                <option selected disabled>Open to choose</option>
-            </select>
-        </div>
-    </div>
-
-    
-
-<div class="row">
-
-<div class="col-md-6">
 
 
-
-<label class="form-label">Motorcycle SRP:</label>
-<input type="number" class="form-control" id="srp" disabled required>
-
-<label class="form-label pt-3">Downpayment</label>
-<input type="number"  class="form-control" id="downpayment" min="2000" required>
-
-
-<label class="form-label pt-3">Registration</label>
-<input type="number" class="form-control" id="reg" value="1500" disabled>
-
-<label class="form-label pt-3">Doc Stamp</label>
-<input type="number" class="form-control" id="doc_stamp" value="600" disabled>
-
-
-
-<div class="row pt-4 text-center">
-    <div class="total_cashout col-md-6">
-    <h6 class="h6">Total Cash Out:</h6>
-    
-    </div>
-    
-    <div class="total_amount col-md-6 ">
-        <h6 class="h6" id="result">0</h6>
+                <div class="content container-md">
         
-        </div>
-    
-    </div>
+                    <form id="myForm">
+                            <div class="row pb-5">
+                                <div class="col-md-6">
+                                    <label class="form-label">Choose Brands:</label>
+                                    <select for="brands" class="form-select" id="brands" required>
+                                        <option selected>Open to choose</option>
+                                        <option value="honda">Honda</option>
+                                        <option value="kawasaki">Kawasaki</option>
+                                        <option value="yamaha">Yamaha</option>
+                                        <option value="motorstar">Motorstar</option>
+                                        <option value="cfmoto">CFMoto</option>
+                                    </select>
+                                </div>
 
-<div class="row text-center">
-<div class="total_cashout col-md-6">
-<h6 class="h6">Approvable Loan Amount:</h6>
+                                <div class="col-md-6">
+                                    <label class="form-label">Choose Motorcycle:</label>
+                                    <select for="brands" class="form-select" id="motorcycles" required>
+                                        <option selected disabled>Open to choose</option>
+                                    </select>
+                                </div>
+                            </div>
 
-</div>
-
-<div class="total_amount col-md-6 ">
-    <h6 class="h6" id="result1">0</h6>
-    
-    </div>
-
-</div>
-
-<div class="row">
-<div class="calculate col-md-12 pt-4">
-    <button class="btn btn-dark" type="button" onclick="totalNum()">Calculate</button> &nbsp; &nbsp; &nbsp;
-    <button class="btn btn-danger" type="button" onclick="clearData()">Clear</button></div>
-</div>
-
-
-</form>
-
-</div>
-
-<div class="monthly_contents col-md-6 text-center pt-4">
-
-    <h5 class="h5 p-4">Estimated Monthly Payments:</h5>
-
-<div class="row p-2 ">
-<div class="col-md-6">
-    <h6 class="h6">12 Months: </h6>
-</div>
-
-<div class="col-md-6">
-    <h6 class="h6" id="twelveM">0</h6>
-</div>
-
-
-</div>
-
-<div class="row p-2 ">
-    <div class="col-md-6">
-        <h5 class="h6">18 Months: </h5>
-    </div>
-    
-    <div class="col-md-6">
-        <h5 class="h6" id="eighteenM">0</h5>
-    </div>
-    
-    
-    </div>
-
-    <div class="row p-2 ">
-        <div class="col-md-6">
-            <h5 class="h6">24 Months:</h5>
-        </div>
-        
-        <div class="col-md-6">
-            <h5 class="h6" id="twentyF">0</h5>
-        </div>
-        
-        
-        </div>
-
-        <div class="row p-2 ">
-            <div class="col-md-6">
-                <h5 class="h6">30 Months:</h5>
-            </div>
-            
-            <div class="col-md-6">
-                <h5 class="h6" id="thirty">0</h5>
-            </div>
-            
-            
-            </div>
-
-            <div class="row p-2 ">
-                <div class="col-md-6">
-                    <h5 class="h6">36 Months:</h5>
-                </div>
                 
-                <div class="col-md-6">
-                    <h5 class="h6" id="thirty_six">0</h5>
+
+                            <div class="row">
+
+                                <div class="col-md-6">
+
+
+
+                                    <label class="form-label">Motorcycle SRP:</label>
+                                    <input type="number" class="form-control" id="srp" disabled required>
+
+                                    <label class="form-label pt-3">Downpayment</label>
+                                    <input type="number"  class="form-control" id="downpayment" min="2000" required>
+
+
+                                    <label class="form-label pt-3">Registration</label>
+                                    <input type="number" class="form-control" id="reg" value="1500" disabled>
+
+                                    <label class="form-label pt-3">Doc Stamp</label>
+                                    <input type="number" class="form-control" id="doc_stamp" value="600" disabled>
+                    </form>
+
+                </div>
+
+                <div class="monthly_contents col-md-6 text-center pt-4">
+
+                    <h5 class="h5 p-4">Estimated Monthly Payments:</h5>
+
+                    <div class="row p-2 ">
+                        <div class="col-md-6">
+                            <h6 class="h6">12 Months: </h6>
+                        </div>
+
+                        <div class="col-md-6">
+                            <h6 class="h6" id="twelveM">0</h6>
+                        </div>
+
+
+                    </div>
+
+                    <div class="row p-2 ">
+                        <div class="col-md-6">
+                            <h5 class="h6">18 Months: </h5>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <h5 class="h6" id="eighteenM">0</h5>
+                        </div>
+                        
+            
+                    </div>
+
+                    <div class="row p-2 ">
+                        <div class="col-md-6">
+                            <h5 class="h6">24 Months:</h5>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <h5 class="h6" id="twentyF">0</h5>
+                    </div>
+
+                </div>
+
+                <div class="row p-2 ">
+                    <div class="col-md-6">
+                        <h5 class="h6">30 Months:</h5>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <h5 class="h6" id="thirty">0</h5>
+                    </div>
+                    
+                    
+                </div>
+
+                <div class="row p-2 ">
+                    <div class="col-md-6">
+                        <h5 class="h6">36 Months:</h5>
+                    </div>
+                        
+                    <div class="col-md-6">
+                            <h5 class="h6" id="thirty_six">0</h5>
+                        </div>
+                        
+                        
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="container-fluid">
+                    <div class="row  text-center pt-4 mt-5">
+                        <div class="col-md-6">
+                            <h6 class="h6 d-inline-block">Total Cash Out:</h6>
+                            <h6 class="h6 d-inline-block" id="result">0</h6>
+                        </div>
+                    </div>
+                    
+                    <div class="row  text-center mt-2">
+                        <div class="col-md-6">
+                            <h6 class="h6 d-inline-block">Approvable Loan Amount:</h6>
+                            <h6 class="h6 d-inline-block" id="result1">0</h6>
+                        </div>
+                    </div>
+                    
+                    <div class="row text-center mt-4">
+                        <div class="col">
+                            <button class="calculate-btn btn" type="button" onclick="totalNum()">Calculate</button>
+                            <button class="clear-btn btn" type="button" onclick="clearData()">Clear</button>
+                        </div>
+                    </div>
                 </div>
                 
                 
-                </div>
 
-</div>
+            </div>
 
-
-</div>
-
-</div>
-
-</div>
+    </div>
 
 
 

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="mc_brands.css">
     <link rel="stylesheet" href="./fonts.css">
+    <link rel="stylesheet" href="./navFooter.css">
     <title>Throttle Twist Motors - Kawasaki</title>
 </head>
 <body>
@@ -25,7 +26,7 @@
             <ul class="navbar-nav">
 
                 <li class="nav-item dropdown pe-4">
-                    <a class="nav-link dropdown-toggle text-white active-link" href="#" id="motorcyclesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle active-link" href="#" id="motorcyclesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       Motorcycles
                     </a>
                         <ul class="dropdown-menu bg-white" aria-labelledby="motorcyclesDropdown">
@@ -38,7 +39,7 @@
                   </li>
 
                   <li class="nav-item dropdown pe-4">
-                    <a class="nav-link dropdown-toggle text-white" href="#" id="services" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" id="services" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       Services
                     </a>
                         <ul class="dropdown-menu bg-white" aria-labelledby="motorcyclesDropdown">
@@ -48,7 +49,7 @@
                   </li>
 
                   <li class="nav-item dropdown pe-4">
-                    <a class="nav-link dropdown-toggle text-white" href="#" id="Promos" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" id="Promos" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       Promos
                     </a>
                         <ul class="dropdown-menu bg-white" aria-labelledby="motorcyclesDropdown">
@@ -58,13 +59,13 @@
                   </li>
 
                 <li class="nav-item pe-4">
-                    <a class="nav-link text-white" href="./aboutUs.html">About Us</a>
+                    <a class="nav-link" href="./aboutUs.html">About Us</a>
 
 
                 </li>
 
                 <li class="nav-item pe-4">
-                    <a class="nav-link text-white" href="./contactUs.html">Contact Us</a>
+                    <a class="nav-link " href="./contactUs.html">Contact Us</a>
 
 
                 </li>
@@ -81,29 +82,32 @@
 
         </div>
 
-<br><br><br>
 
     
-<div class="row">
-    <span id="profileName" class="text-white mx-3 d-flex justify-content-center align-items-center"></span>
-</div>
+        <div class="row">
+            <span id="profileName" class="text-white mx-3 d-flex justify-content-center align-items-center"></span>
+        </div>
 
 
 
-<div class="d-lg-block d-flex justify-content-end">
-    
-    <a href="./login.html" id="loginButton" class="login mx-3 btn btn-lg">Login</a>
+        <div class="d-lg-block d-flex justify-content-end">
+            
+            
+            <a href="./login.html" id="loginButton" class="login mx-3 btn btn-lg">
+                Login <i class="fas fa-sign-in-alt ms-1"></i>
+            </a>
+            
 
-    <a href="./login.html" id="logoutButton" class="logout mx-3 btn btn-lg d-none">Logout</a>
+            <a href="./logout.html" id="logoutButton" class="logout mx-3 btn btn-lg d-none">
+                Logout <i class="fas fa-sign-out-alt ms-1"></i>
+            </a>
 
 
-    <button class="navbar-toggler bg-white ms-auto me-3" type="button" data-bs-target="#navbar" data-bs-toggle="collapse">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-</div>
-        
-
-
+            <button class="navbar-toggler bg-white ms-auto me-3" type="button" data-bs-target="#navbar" data-bs-toggle="collapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+                
     </div>
 </nav>
 
@@ -140,191 +144,175 @@
                 
         </div>
 
-  
-<!--Search-->
-<div class="search_container container-md">
-    <h2 class="h5 text-center">Motorcycle Search</h2>
-
-    <form class="s-bar d-flex" role="search" oninput="return mc_Filter();" id="searchForm">
-        <input type="search" class="form-control" placeholder="Search" id="search_MC">
-        <button class="s-button btn btn-outline-light btn-sm" type="submit">
-            <i class="fas fa-search"></i>
-        </button>
-    </form>
-
-</div>
-
-
-
-
 <!--MC Cards-->
 
 <div class="container">
 
-<!--ROW 1-->
-<div class="row">
+    <!--ROW 1-->
+    <div class="row">
 
-    <div class="mc_card col-md-4 p-4" id="item_barako2">
-
-        <div class="card" style="width: 20rem">
-
-        <div class="img-hover-zoom card-img-top">
-        <a href="barakoII.html">
-        <img class="img-fluid" src="images/motorcycles/kawasaki/homepage/pic_1.png">
-         </a>
-        </div>
-
-        <div class="card-body">
-        <div class="model-title card-title">
-            <a href="barakoII.html" class="nav-link">
-            <h4 class="h5">Kawasaki Barako II 175</h2>
-            </a>
-         </div>
-         
-            </div>
-
-            <div class="card-footer" style="background-color: #1f2327;">
-                <a href="barakoII.html" class="nav-link">
-                <h4 class="h5 text-white">SRP: 95,000</h4>
-                <h4 class="h6 text-white">Downpayment: 5,000</h4>
-                <h4 class="h6 text-white pb-3">Monthly: 4,892</h4>
-                </a>
-                <a href="barakoII.html" class="btn btn-outline-light btn-sm" role="button">See More</a>
-
-                <a href="#" class="save-icon fa-lg" style="position: absolute; bottom: 10px; right: 15px; color: #FFFFFF;">
-                    <i class="far fa-bookmark"></i>
-                </a>
-
-            </div>
-
-        </div>
-
-
-        </div>
-
-        <div class="mc_card col-md-4 p-4" id="item_ct125">
+        <div class="mc_card col-md-4 p-4" id="item_barako2">
 
             <div class="card" style="width: 20rem">
-    
-            <div class="img-hover-zoom card-img-top">
-            <a href="ct125.html">
-            <img class="img-fluid" src="images/motorcycles/kawasaki/homepage/pic_2.png">
-             </a>
-            </div>
-    
-            <div class="card-body">
-            <div class="model-title card-title">
-                <a href="ct125.html" class="nav-link">
-                <h4 class="h5">Kawasaki CT 125</h2>
-                </a>
-             </div>
-             
-                </div>
-    
-                <div class="card-footer" style="background-color: #1f2327;">
-                    <a href="ct125.html" class="nav-link">
-                    <h4 class="h5 text-white">SRP: 58,700</h4>
-                    <h4 class="h6 text-white">Downpayment: 3,000</h4>
-                    <h4 class="h6 text-white pb-3">Monthly: 2,382</h4>
+
+                <div class="img-hover-zoom card-img-top">
+                    <a href="barakoII.html">
+                        <img class="img-fluid" src="images/motorcycles/kawasaki/homepage/pic_1.png">
                     </a>
+                </div>
+
+                <div class="card-body">
+                    <div class="model-title card-title">
+                        <a href="barakoII.html" >
+                            <h5 class="m-title">Kawasaki Barako II 175</h5>
+                        </a>
+                    </div>
+                
+                </div>
+
+                <div class="mc--footer card-footer">
+                    <a href="barakoII.html" class="mc--honda">
+                        <h4 class="h5 text-white">SRP: 95,000</h4>
+                        <h4 class="h6 text-white">Downpayment: 5,000</h4>
+                        <h4 class="h6 text-white pb-3">Monthly: 4,892</h4>
+                    </a>
+                    <a href="barakoII.html" class="btn btn-outline-light btn-sm" role="button">See More</a>
+
+                    <a href="#" class="save-icon fa-lg" style="position: absolute; bottom: 10px; right: 15px; color: #FFFFFF;">
+                        <i class="far fa-bookmark"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            </div>
+
+            <div class="mc_card col-md-4 p-4" id="item_ct125">
+
+                <div class="card" style="width: 20rem">
+        
+                    <div class="img-hover-zoom card-img-top">
+                        <a href="ct125.html">
+                            <img class="img-fluid" src="images/motorcycles/kawasaki/homepage/pic_2.png">
+                        </a>
+                    </div>
+        
+                <div class="card-body">
+                    <div class="model-title card-title">
+                        <a href="ct125.html">
+                            <h5 class="m-title">Kawasaki CT 125</h5>
+                        </a>
+                    </div>
+                
+                </div>
+        
+                <div class="mc--footer card-footer">
+                    <a href="ct125.html" class="mc--honda">
+                        <h4 class="h5 text-white">SRP: 58,700</h4>
+                        <h4 class="h6 text-white">Downpayment: 3,000</h4>
+                        <h4 class="h6 text-white pb-3">Monthly: 2,382</h4>
+                    </a>
+
                     <a href="ct125.html" class="btn btn-outline-light btn-sm" role="button">See More</a>
 
                     <a href="#" class="save-icon fa-lg" style="position: absolute; bottom: 10px; right: 15px; color: #FFFFFF;">
                         <i class="far fa-bookmark"></i>
                     </a>
-    
-                </div>
-    
-            </div>
-    
-    
-            </div>
-
-            <div class="mc_card col-md-4 p-4" id="item_rouser">
-
-                <div class="card" style="width: 20rem">
         
+                </div>
+        
+            </div>
+        
+        
+        </div>
+
+        <div class="mc_card col-md-4 p-4" id="item_rouser">
+
+            <div class="card" style="width: 20rem">
+            
                 <div class="img-hover-zoom card-img-top">
                     <a href="rouserns200.html">
-                <img class="img-fluid" src="images/motorcycles/kawasaki/homepage/pic_3.png">
-                     </a>
-                </div>
-        
-                <div class="card-body">
-                <div class="model-title card-title">
-                    <a href="rouserns200.html" class="nav-link">
-                    <h4 class="h5">Kawasaki NS200fi</h2>
+                        <img class="img-fluid" src="images/motorcycles/kawasaki/homepage/pic_3.png">
                     </a>
-                 </div>
-                 
+                </div>
+            
+                <div class="card-body">
+                    <div class="model-title card-title">
+                        <a href="rouserns200.html">
+                            <h5 class="m-title">Kawasaki NS200fi</h5>
+                        </a>
                     </div>
-        
-                    <div class="card-footer" style="background-color: #1f2327;">
-                        <a href="rouserns200.html" class="nav-link">
+                    
+                </div>
+            
+                <div class="mc--footer card-footer">
+                    <a href="rouserns200.html" class="mc--honda">
                         <h4 class="h5 text-white">SRP: 129,800</h4>
                         <h4 class="h6 text-white">Downpayment: 17,000</h4>
                         <h4 class="h6 text-white pb-3">Monthly: 4,920</h4>
-                        </a>
-                        <a href="rouserns200.html" class="btn btn-outline-light btn-sm" role="button">See More</a>
+                    </a>
+
+                    <a href="rouserns200.html" class="btn btn-outline-light btn-sm" role="button">See More</a>
 
                         <a href="#" class="save-icon fa-lg" style="position: absolute; bottom: 10px; right: 15px; color: #FFFFFF;">
-                            <i class="far fa-bookmark"></i>
+                                <i class="far fa-bookmark"></i>
                         </a>
-        
+            
+                </div>
+            
+            </div>
+            
+            
+        </div>
+
+    </div>
+
+
+                <!--ROW 2-->
+    <div class="row">
+
+        <div class="mc_card col-md-4 p-4" id="item_dominar400">
+
+            <div class="card" style="width: 20rem">
+
+                <div class="img-hover-zoom card-img-top">
+                    <a href="dominar400.html">
+                        <img class="img-fluid" src="images/motorcycles/kawasaki/homepage/pic_4.png">
+                    </a>
+                </div>
+
+                <div class="card-body">
+                    <div class="model-title card-title">
+                        <a href="dominar400.html">
+                            <h5 class="m-title">Kawasaki Dominar 400</h2>
+                        </a>
                     </div>
-        
-                </div>
-        
-        
+                            
                 </div>
 
- 
+                <div class="mc--footer card-footer">
+                    <a href="dominar400.html" class="mc--honda">
+                        <h4 class="h5 text-white">SRP: 199,900</h4>
+                        <h4 class="h6 text-white">Downpayment: 42,000</h4>
+                        <h4 class="h6 text-white pb-3">Monthly: 6,924</h4>
+                    </a>
 
-</div>
+                    <a href="dominar400.html" class="btn btn-outline-light btn-sm" role="button">See More</a>
 
-<!--ROW 2-->
-<div class="row">
+                    <a href="#" class="save-icon fa-lg" style="position: absolute; bottom: 10px; right: 15px; color: #FFFFFF;">
+                        <i class="far fa-bookmark"></i>
+                    </a>
+                                
+                </div>
 
-    <div class="mc_card col-md-4 p-4" id="item_dominar400">
-
-        <div class="card" style="width: 20rem">
-
-        <div class="img-hover-zoom card-img-top">
-            <a href="dominar400.html">
-        <img class="img-fluid" src="images/motorcycles/kawasaki/homepage/pic_4.png">
-         </a>
-        </div>
-
-        <div class="card-body">
-        <div class="model-title card-title">
-            <a href="dominar400.html" class="nav-link">
-            <h4 class="h5">Kawasaki Dominar 400</h2>
-            </a>
-         </div>
-         
-            </div>
-
-            <div class="card-footer" style="background-color: #1f2327;">
-                <a href="dominar400.html" class="nav-link">
-                <h4 class="h5 text-white">SRP: 199,900</h4>
-                <h4 class="h6 text-white">Downpayment: 42,000</h4>
-                <h4 class="h6 text-white pb-3">Monthly: 6,924</h4>
-                </a>
-                <a href="dominar400.html" class="btn btn-outline-light btn-sm" role="button">See More</a>
-
-                <a href="#" class="save-icon fa-lg" style="position: absolute; bottom: 10px; right: 15px; color: #FFFFFF;">
-                    <i class="far fa-bookmark"></i>
-                </a>
-                
             </div>
 
         </div>
 
-
-        </div>
-
-
-</div>
+    </div>
+            
 </div>
 
 

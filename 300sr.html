@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -8,12 +9,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="products_styling.css">
     <link rel="stylesheet" href="./fonts.css">
-     <title>CFMoto - 300sr</title>
+    <link rel="stylesheet" href="./navFooter.css">
+    <title>CFMoto - 300sr</title>
+
 </head>
 <body> 
 
 <!--NAVIGATION BAR-->
-<nav class="navbar_content navbar navbar-expand-lg sticky-top bg-dark">
+<nav class="navbar_content navbar navbar-expand-lg sticky-top">
     <div class="container-fluid">
 
         <a class="navbar-brand text-white" href="./index.html">
@@ -91,9 +94,15 @@
 
 <div class="d-lg-block d-flex justify-content-end">
     
-    <a href="./login.html" id="loginButton" class="login mx-3 btn btn-lg">Login</a>
+    
+    <a href="./login.html" id="loginButton" class="login mx-3 btn btn-lg">
+        Login <i class="fas fa-sign-in-alt ms-1"></i>
+    </a>
+    
 
-    <a href="./login.html" id="logoutButton" class="logout mx-3 btn btn-lg d-none">Logout</a>
+    <a href="./logout.html" id="logoutButton" class="logout mx-3 btn btn-lg d-none">
+        Logout <i class="fas fa-sign-out-alt ms-1"></i>
+    </a>
 
 
     <button class="navbar-toggler bg-white ms-auto me-3" type="button" data-bs-target="#navbar" data-bs-toggle="collapse">
@@ -147,320 +156,336 @@
 <!--MC Overview Details-->
 <div class="col-md-6">
 
-<a href="#galleryModal" data-bs-toggle="modal" data-bs-target="#galleryModal">
-<img class="img-fluid pb-3" id="main_image" src="images/motorcycles/cfmoto/300sr/pic_1.jpg">
-</a>
+        <a href="#galleryModal" data-bs-toggle="modal" data-bs-target="#galleryModal">
+        <img class="img-fluid pb-3" id="main_image" src="images/motorcycles/cfmoto/300sr/pic_1.jpg">
+        </a>
 
-<img class="img-fluid" style="width: 6rem;" src="images/motorcycles/cfmoto/300sr/pic_2.jpg" onclick="changeImage(this)">
-<img class="img-fluid" style="width: 6rem;" src="images/motorcycles/cfmoto/300sr/pic_3.jpg" onclick="changeImage(this)">
-<img class="img-fluid" style="width: 6rem;" src="images/motorcycles/cfmoto/300sr/pic_1.jpg" onclick="changeImage(this)">
+        <img class="img-fluid" style="width: 6rem;" src="images/motorcycles/cfmoto/300sr/pic_2.jpg" onclick="changeImage(this)">
+        <img class="img-fluid" style="width: 6rem;" src="images/motorcycles/cfmoto/300sr/pic_3.jpg" onclick="changeImage(this)">
+        <img class="img-fluid" style="width: 6rem;" src="images/motorcycles/cfmoto/300sr/pic_1.jpg" onclick="changeImage(this)">
 
-<h4 class="h4 pt-5 pb-3" id="model_title"><b>CFMOTO 300SR</b></h4>
-<p id="model_details">The CFMoto 300SR is the entry-level sportbike that has the power and performance that punches well above its price point. Launched on August 14, 2020. Coming in at P165,000, the 300SR sportbike gets a 292.4 cc single-cylinder engine that is capable of pushing out 28.6 hp at 8,750 RPM, and 25.3 Nm of torque at 7,250 RPM. Power is sent out through a 6-speed manual transmission, and stopping power is brought about by a 292 mm disc in the front, and a 220 mm disc in the rear.</p>
-<p class="pb-5">Key features in the model include LED headlights and taillamps, along with a 5-inch all-digital TFT display cluster that displays your fuel gauge, temp gauge, speedometer, tachometer, trip meter, odometer, and it even displays different layouts for sport and eco modes.
+        <h4 class="h4 pt-5 pb-3" id="model_title"><b>CFMOTO 300SR</b></h4>
+        <p id="model_details">The CFMoto 300SR is the entry-level sportbike that has the power and performance that punches well above its price point. Launched on August 14, 2020. Coming in at P165,000, the 300SR sportbike gets a 292.4 cc single-cylinder engine that is capable of pushing out 28.6 hp at 8,750 RPM, and 25.3 Nm of torque at 7,250 RPM. Power is sent out through a 6-speed manual transmission, and stopping power is brought about by a 292 mm disc in the front, and a 220 mm disc in the rear.</p>
+        <p class="pb-5">Key features in the model include LED headlights and taillamps, along with a 5-inch all-digital TFT display cluster that displays your fuel gauge, temp gauge, speedometer, tachometer, trip meter, odometer, and it even displays different layouts for sport and eco modes.
 
-    Safety features on this motorcycle include a standard ABS system allowing for more controlled hard braking.</p>
+        Safety features on this motorcycle include a standard ABS system allowing for more controlled hard braking.</p>
 
 </div>
 
 
 <!--MC Pricing details-->
 <div class="col-md-6 ps-4">
-<div class="pricing container text-white">
-<h5 id="modelSRP">SRP: PHP 162,000</h5>
-<h5>Downpayment: PHP 33,000</h5>
-<h5>Monthly: 5,640</h5>
-</div>
-<p>* Prices are indicative prices only and may be different at the branch. Prices are subject to change without prior notice.</p>
-
-
-<!--Gallery Modal-->
-<div class="modal fade" tabindex="-1" id="galleryModal">
-<div class="modal-dialog modal-lg">
-<div class="modal-content">
-    <div class="modal-header">
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <div class="pricing container">
+        <h5 id="modelSRP">SRP: PHP 162,000</h5>
+        <h5>Downpayment: PHP 33,000</h5>
+        <h5>Monthly: 5,640</h5>
     </div>
-<div class="modal-body">
-    <img class="img-fluid pb-3" id="main_image_modal" src="images/motorcycles/cfmoto/300sr/pic_1.jpg">
 
-    <img class="img-fluid" style="width: 6rem;" src="images/motorcycles/cfmoto/300sr/pic_2.jpg" onclick="changeImage_modal(this)">
-    
-    <img class="img-fluid" style="width: 6rem;" src="images/motorcycles/cfmoto/300sr/pic_3.jpg" onclick="changeImage_modal(this)">
-
-    <img class="img-fluid" style="width: 6rem;" src="images/motorcycles/cfmoto/300sr/pic_1.jpg" onclick="changeImage_modal(this)">
+        <p>* Prices are indicative prices only and may be different at the branch. Prices are subject to change without prior notice.</p>
 
 
-</div>
+    <!--Gallery Modal-->
+    <div class="modal fade" tabindex="-1" id="galleryModal">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+            <div class="modal-body">
 
-</div>
+                <img class="img-fluid pb-3" id="main_image_modal" src="images/motorcycles/cfmoto/300sr/pic_1.jpg">
 
-</div>
+                <img class="img-fluid" style="width: 6rem;" src="images/motorcycles/cfmoto/300sr/pic_2.jpg" onclick="changeImage_modal(this)">
+        
+                <img class="img-fluid" style="width: 6rem;" src="images/motorcycles/cfmoto/300sr/pic_3.jpg" onclick="changeImage_modal(this)">
 
+                <img class="img-fluid" style="width: 6rem;" src="images/motorcycles/cfmoto/300sr/pic_1.jpg" onclick="changeImage_modal(this)">
+
+
+            </div>
+
+        </div>
+
+    </div>
 
 </div>
 
 
 <!--Specs container-->
 <div class="specs container pt-2 pb-5">
-<h5><b>Specifications:</b></h5>
+    <h5><b>Specifications:</b></h5>
 
-<table class="table table-striped-columns">
+    <table class="table table-striped-columns">
 
-<tr class="table-dark">
-<th>
-<h5 class="h6">Make: </h5>
-</th>
+        <tr>
+            <th class="thead">
+                <h5 class="h6">Make: </h5>
+            </th>
 
-<th>
-<h5 class="h6 text-end">CFMOTO</h5>
+            <th>
+                <h5 class="h6 text-end">CFMOTO</h5>
 
-</th>
+            </th>
 
-</tr>
+        </tr>
 
-<tr class="table-dark">
-<th>
-<h5 class="h6">Model: </h5>
-</th>
+        <tr>
+            <th>
+                <h5 class="h6">Model: </h5>
+            </th>
 
-<th>
-<h5 class="h6 text-end">300sr</h5>
+            <th>
+                <h5 class="h6 text-end">300sr</h5>
 
-</th>
+            </th>
 
-</tr>
+        </tr>
 
-<tr class="table-dark">
-<th>
-<h5 class="h6">Engine Type:</h5>
-</th>
+        <tr>
+            <th>
+                <h5 class="h6">Engine Type:</h5>
+            </th>
 
-<th>
-<h5 class="h6 text-end">Single-cylinder, liquid-cooled, DOHC, 4 valves</h5>
+            <th>
+                <h5 class="h6 text-end">Single-cylinder, liquid-cooled, DOHC, 4 valves</h5>
 
-</th>
+            </th>
 
-</tr>
+        </tr>
 
-<tr class="table-dark">
-<th>
-<h5 class="h6">Displacement</h5>
-</th>
+        <tr>
+            <th>
+                <h5 class="h6">Displacement</h5>
+            </th>
 
-<th>
-<h5 class="h6 text-end">292.4 cc</h5>
+            <th>
+                <h5 class="h6 text-end">292.4 cc</h5>
 
-</th>
+            </th>
 
-</tr>
+        </tr>
 
-<tr class="table-dark">
-<th>
-<h5 class="h6">BORE X STROKE</h5>
-</th>
+        <tr>
+            <th>
+                <h5 class="h6">BORE X STROKE</h5>
+            </th>
 
-<th>
-<h5 class="h6 text-end">78 mm × 61.2 mm</h5>
+            <th>
+                <h5 class="h6 text-end">78 mm × 61.2 mm</h5>
 
-</th>
+            </th>
 
-</tr>
+        </tr>
 
-<tr class="table-dark">
-<th>
-<h5 class="h6">POWER</h5>
-</th>
+        <tr>
+            <th>
+                <h5 class="h6">POWER</h5>
+            </th>
 
-<th>
-<h5 class="h6 text-end">21.4 kw / 8750 rpm</h5>
+            <th>
+                <h5 class="h6 text-end">21.4 kw / 8750 rpm</h5>
 
-</th>
+            </th>
 
-</tr>
+        </tr>
 
-<tr class="table-dark">
-<th>
-<h5 class="h6">TORQUE</h5>
-</th>
+        <tr>
+            <th>
+                <h5 class="h6">TORQUE</h5>
+            </th>
 
-<th>
-<h5 class="h6 text-end">25.3 Nm / 7250 rpm</h5>
+            <th>
+                <h5 class="h6 text-end">25.3 Nm / 7250 rpm</h5>
 
-</th>
+            </th>
 
-</tr>
+        </tr>
 
-<tr class="table-dark">
-<th>
-<h5 class="h6">COMPRESSION RATIO</h5>
-</th>
+        <tr>
+            <th>
+                <h5 class="h6">COMPRESSION RATIO</h5>
+            </th>
 
-<th>
-<h5 class="h6 text-end">11:1</h5>
-</tr>
+            <th>
+                <h5 class="h6 text-end">11:1</h5>
+            </tr>
 
-<tr class="table-dark">
-<th>
-<h5 class="h6">IGNITION</h5>
-</th>
-
-<th>
-<h5 class="h6 text-end">ECU</h5>
-</tr>
-
-<tr class="table-dark">
-<th>
-<h5 class="h6">TRANSMISSION	</h5>
-</th>
-
-<th>
-<h5 class="h6 text-end">6-speed</h5>
-</tr>
-
-<tr class="table-dark">
-<th>
-<h5 class="h6">FUEL SYSTEM</h5>
-</th>
-
-<th>
-<h5 class="h6 text-end">EFI</h5>
-</tr>
-
-<tr class="table-dark">
-<th>
-<h5 class="h6">CLUTCH TYPE</h5>
-</th>
-
-<th>
-<h5 class="h6 text-end">Wet multi plate</h5>
-</tr>
-
-<tr class="table-dark">
-<th>
-<h5 class="h6">LENGTH x WIDTH x HEIGHT</h5>
-</th>
-
-<th>
-<h5 class="h6 text-end">2010 × 750 × 1080 mm</h5>
-</tr>
-
-<tr class="table-dark">
-<th>
-<h5 class="h6">WHEELBASE</h5>
-</th>
-
-<th>
-<h5 class="h6 text-end">1360 mm</h5>
-</tr>
-
-<tr class="table-dark">
-<th>
-<h5 class="h6">SEAT HEIGHT</h5>
-</th>
-
-<th>
-<h5 class="h6 text-end">780 mm</h5>
-</tr>
-
-<tr class="table-dark">
-<th>
-<h5 class="h6">MINIMUM GROUND CLEARANCE</h5>
-</th>
-
-<th>
-<h5 class="h6 text-end">135 mm</h5>
-</tr>
-
-<tr class="table-dark">
-<th>
-<h5 class="h6">CURB WEIGHT</h5>
-</th>
-
-<th>
-<h5 class="h6 text-end">165 kg</h5>
-</tr>
-
-<tr class="table-dark">
-<th>
-<h5 class="h6">FUEL CAPACITY</h5>
-</th>
-
-<th>
-<h5 class="h6 text-end">12 L</h5>
-</tr>
-
-<tr class="table-dark">
-<th>
-<h5 class="h6">FRONT SUSPENSION</h5>
-</th>
-
-<th>
-<h5 class="h6 text-end">φ37 Telescopic upside down, hydraulic damping type</h5>
-</tr>
-
-<tr class="table-dark">
-<th>
-<h5 class="h6">REAR SUSPENSION	</h5>
-</th>
-
-<th>
-<h5 class="h6 text-end">Mono suspension, centre alligned</h5>
-</tr>
-
-<tr class="table-dark">
-<th>
-<h5 class="h6">FRONT BRAKE</h5>
-</th>
-
-<th>
-<h5 class="h6 text-end">Φ292mm single disc, opposite four-piston caliper</h5>
-</tr>
-
-<tr class="table-dark">
-<th>
-<h5 class="h6">REAR BRAKE</h5>
-</th>
-
-<th>
-<h5 class="h6 text-end">Φ220mm single disc, single-piston floating caliper</h5>
-</tr>
-
-<tr class="table-dark">
-<th>
-<h5 class="h6">RIM</h5>
-</th>
-
-<th>
-<h5 class="h6 text-end">Aluminum alloy</h5>
-</tr>
-
-<tr class="table-dark">
-<th>
-<h5 class="h6">TIRE</h5>
-</th>
-
-<th>
-<h5 class="h6 text-end">Front: 110/70 R17, Rear: 140/60 R17</h5>
-</tr>
-
-<tr class="table-dark">
-<th>
-<h5 class="h6">ABS</h5>
-</th>
-
-<th>
-<h5 class="h6 text-end">Continental AG, dual channel</h5>
-</tr>
-
-<tr class="table-dark">
-<th>
-<h5 class="h6">MODEL COLOR</h5>
-</th>
-
-<th>
-<h5 class="h6 text-end">Nebula Black / Turquoise Blue</h5>
-</tr>
+        <tr>
+            <th>
+                <h5 class="h6">IGNITION</h5>
+            </th>
+
+            <th>
+                <h5 class="h6 text-end">ECU</h5>
+            </th>
+        </tr>
+
+        <tr>
+            <th>
+                <h5 class="h6">TRANSMISSION	</h5>
+            </th>
+
+            <th>
+                <h5 class="h6 text-end">6-speed</h5>
+        </tr>
+
+        <tr>
+            <th>
+                <h5 class="h6">FUEL SYSTEM</h5>
+            </th>
+
+            <th>
+                <h5 class="h6 text-end">EFI</h5>
+            </th>
+        </tr>
+
+        <tr>
+            <th>
+                <h5 class="h6">CLUTCH TYPE</h5>
+            </th>
+
+            <th>
+                <h5 class="h6 text-end">Wet multi plate</h5>
+            </th>
+        </tr>
+
+        <tr>
+            <th>
+                <h5 class="h6">LENGTH x WIDTH x HEIGHT</h5>
+            </th>
+
+            <th>
+                <h5 class="h6 text-end">2010 × 750 × 1080 mm</h5>
+        </tr>
+
+        <tr>
+            <th>
+                <h5 class="h6">WHEELBASE</h5>
+            </th>
+
+            <th>
+                <h5 class="h6 text-end">1360 mm</h5>
+            </th>
+        </tr>
+
+        <tr>
+            <th>
+                <h5 class="h6">SEAT HEIGHT</h5>
+            </th>
+
+            <th>
+                <h5 class="h6 text-end">780 mm</h5>
+            </th>
+        </tr>
+
+        <tr>
+            <th>
+                <h5 class="h6">MINIMUM GROUND CLEARANCE</h5>
+            </th>
+
+            <th>
+                <h5 class="h6 text-end">135 mm</h5>
+            </th>
+        </tr>
+
+        <tr>
+            <th>
+                <h5 class="h6">CURB WEIGHT</h5>
+            </th>
+
+            <th>
+                <h5 class="h6 text-end">165 kg</h5>
+            </th>
+        </tr>
+
+        <tr>
+            <th>
+                <h5 class="h6">FUEL CAPACITY</h5>
+            </th>
+
+            <th>
+                <h5 class="h6 text-end">12 L</h5>
+            </th>
+        </tr>
+
+        <tr>
+            <th>
+                <h5 class="h6">FRONT SUSPENSION</h5>
+            </th>
+
+            <th>
+                <h5 class="h6 text-end">φ37 Telescopic upside down, hydraulic damping type</h5>
+            </th>
+        </tr>
+
+        <tr>
+            <th>
+                <h5 class="h6">REAR SUSPENSION	</h5>
+            </th>
+
+            <th>
+                <h5 class="h6 text-end">Mono suspension, centre alligned</h5>
+            </th>
+        </tr>
+
+        <tr>
+            <th>
+                <h5 class="h6">FRONT BRAKE</h5>
+            </th>
+
+            <th>
+                <h5 class="h6 text-end">Φ292mm single disc, opposite four-piston caliper</h5>
+            </th>
+        </tr>
+
+        <tr>
+            <th>
+                <h5 class="h6">REAR BRAKE</h5>
+            </th>
+
+            <th>
+                <h5 class="h6 text-end">Φ220mm single disc, single-piston floating caliper</h5>
+            </th>
+        </tr>
+
+    <tr>
+        <th>
+            <h5 class="h6">RIM</h5>
+        </th>
+
+        <th>
+            <h5 class="h6 text-end">Aluminum alloy</h5>
+        </th>
+    </tr>
+
+        <tr>
+            <th>
+                <h5 class="h6">TIRE</h5>
+            </th>
+
+            <th>
+                <h5 class="h6 text-end">Front: 110/70 R17, Rear: 140/60 R17</h5>
+        </tr>
+
+        <tr>
+            <th>
+                <h5 class="h6">ABS</h5>
+            </th>
+
+            <th>
+                <h5 class="h6 text-end">Continental AG, dual channel</h5>
+            </th>
+        </tr>
+
+        <tr>
+            <th>
+                <h5 class="h6">MODEL COLOR</h5>
+            </th>
+
+            <th>
+                <h5 class="h6 text-end">Nebula Black / Turquoise Blue</h5>
+            </th>
+        </tr>
 
 </table>
 

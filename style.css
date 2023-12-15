@@ -1,84 +1,3 @@
-body {
-    background-color: #F5F7F8;
-}
-
-nav{
-    background-color: #495E57;
-
-}
-
-.nav-link {
-    color:  #F5F7F8;
-}
-
-.navbar-nav .nav-item .active-link {
-    text-decoration: underline;
-    text-decoration-color: rgb(189, 157, 48);
-}
-
-.dropdown-menu {
-    border: 2px solid rgb(189, 157, 48);
-    box-shadow: 2px 2px 5px gray;
-    max-width: 50%;
-}
-
-.navbar_content a:hover{
-    opacity: 0.7;
-
-}
-
-.logo{
-    width: 135px;
-}
-
-.s-bar{
-    max-width: 100%;
-}
-
-.login{
-    border: none;
-    border-radius: 100px;
-    box-shadow: 2px 2px 10px #1f2327;
-    background: rgb(189, 157, 48);
-    color: #1f2327;
-    
-}
-
-.login:hover{
-    background-color: rgb(40, 40, 40);
-    color: rgb(189, 157, 48);
-    box-shadow: 2px 2px 10px whitesmoke;
-    
-
-}
-
-
-.logout {
-    border: none;
-    border-radius: 100px;
-    box-shadow: 2px 2px 10px #1f2327;
-    background: rgb(189, 157, 48);
-    color: #1f2327;
-}
-
-.logout:hover {
-
-    background-color: rgb(40, 40, 40);
-    color:  rgb(189, 157, 48);
-    box-shadow: 2px 2px 10px rgb(189, 157, 48);
-
-}
-
-
-@media screen and (max-width: 990px) {
-    .s-bar{
-        margin: 10px;
-    }
-    .navbar-nav{
-        margin-left: 10px;
-    }
-
-}
 
 .carousel1_btn {
 
@@ -92,22 +11,24 @@ nav{
     position: relative;
 }
 
-.button_services {
+.button_services, .button_financing {
+    border: 1px solid #F5F7F8;
+    box-shadow: 2px 2px 10px #F5F7F8;
     position: absolute;
     top: 80%;
     left: 50%;
     transform: translate(-50%, -50%);
+    background: #45474B;
+    color: #F5F7F8;
+}
+
+.button_services:hover, .button_financing:hover {
+    background-color: #F4CE14;
+    color: #1f2327;
 }
 
 .services_financing {
     position: relative;
-}
-
-.button_financing {
-    position: absolute;
-    top: 80%;
-    left: 50%;
-    transform: translate(-50%, -50%);
 }
 
 .mc_brands img:hover {
@@ -145,6 +66,8 @@ nav{
     }
   }
 
+
+
 /*Featured MC*/
 
 .mc_container a:hover{
@@ -152,50 +75,82 @@ nav{
 }
 
 .featured_text {
-    background: linear-gradient(45deg, #495E57, #F4CE14);
-    color: #1f2327;;
+    background: rgb(69,71,75);
+    background: linear-gradient(5deg, rgba(69,71,75,1) 65%, rgba(244,206,20,1) 100%);
+    color: #F5F7F8;
     margin-top: 150px;
 }
 
-
-
-
-
-
-/*FOOTER*/  
-
-.responsive-footer {
-    width: 100%;
-    background-color: #495E57;
-    color:  #F5F7F8;
-    text-align: left;
-   
-}
-
-.foothead {
-    font-weight: bold;
-}
-
-.footlist {
-    list-style-type: none;
-    padding: 0;
+.mc--honda {
     text-decoration: none;
-    color:  #F5F7F8;
-    
+    color: #1f2327;
 }
 
-.footlist li {
-    margin-bottom: 10px;
-}
+  /* Style for the promotional banner */
+  .promo-banner {
+    background-color: #45474B;
+    border: none;
+    box-shadow: 2px 2px 10px #495E57;
+    color: #F5F7F8;
+    text-align: center;
+    position: relative;
+    padding-bottom: 50px;
+  }
 
-.footlist li a {
-    color: #F5F7F8 !important;
+  /* Style for the button */
+  .explore-button {
+    background-color: #F4CE14;
+    color: #45474B;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    text-align: center;
     text-decoration: none;
-}
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 10px;
+    cursor: pointer;
+  }
 
-.footlist li a:hover {
-    opacity: 0.6;
-}
+  /* Style for the close button */
+  .clickMe {
+    display:flex;
+    justify-content:end;
+    align-items: end;
+    color: #F4CE14;
+    font-size: 50px;
+    text-decoration: none;
+    cursor: pointer;
+    margin-left: auto;
+
+  }
+
+  .clickMe:hover {
+    color: red;
+
+  }
+
+  .explore-button:hover {
+    color: #495E57;
+    background-color: #F5F7F8;
+  }
+
+   /* Animation keyframes */
+   @keyframes blink-animation {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
+  /* animation to the banner */
+  .exploreTxt {
+    animation: blink-animation 3s infinite;
+
+  }
 
 
 /*About Us*/
@@ -213,7 +168,8 @@ nav{
 
 .welcome {
     font-weight: bolder;
-    background-color: rgb(189, 157, 48);
+    background: linear-gradient(5deg, rgba(69,71,75,1) 65%, rgba(244,206,20,1) 100%);
+    color: #F5F7F8;
     padding-top: 10px;
     padding-bottom: 10px;
     width: 100%;
@@ -228,18 +184,13 @@ nav{
     
     
 }
-.throttleCarousel {
-    border: none;
-    box-shadow: 4px 4px 10px gray;
-    
-}
 
 .EstText {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    font-weight: bold;
+    font-weight: 700;
     
 
 }
@@ -253,7 +204,7 @@ nav{
     margin-top: 200px;
     margin-bottom: 150px;
     border: none;
-    box-shadow: 4px 4px 10px gray;
+   
     
 }
 
@@ -323,19 +274,52 @@ nav{
 .contactBtn {
     border: none;
     border-radius: 100px;
-    box-shadow: 2px 2px 10px #1f2327;
-    background: rgb(189, 157, 48);
-    color: #1f2327;
+    box-shadow: 2px 2px 10px #45474B;
+    background: #F4CE14;
+    color: #45474B;
     
 }
 
 .contactBtn:hover {
-    background-color: rgb(40, 40, 40);
-    color: rgb(189, 157, 48);
-    box-shadow: 2px 2px 10px whitesmoke;
+    background-color: #45474B;
+    color: #F4CE14;
+    box-shadow: 2px 2px 10px #F4CE14;
     
 
 }
+
+
+
+/*ANIMATIONS*/
+
+/* Initial hidden state for animation */
+.StoryCont {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  
+  /* Class to trigger animation */
+  .slide-in.animate {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  
+/*BOUNCING CARDS*/
+  .bounce-on-hover:hover {
+    animation: bounce 1s ease infinite;
+  }
+  
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+  
+
 
 
 
@@ -349,7 +333,8 @@ nav{
 .WhyChooseUs {
     font-weight: bolder;
     margin-top: 20px; 
-    background-color: rgb(189, 157, 48);
+    background: linear-gradient(5deg, rgba(69,71,75,1) 65%, rgba(244,206,20,1) 100%);
+    color: #F5F7F8;
     padding-top: 10px;
     padding-bottom: 10px;
 }
@@ -387,16 +372,15 @@ nav{
     margin-top: 200px;
     margin-bottom: 0;
     color: rgb(40, 40, 40);
-    border: none;
-    box-shadow: 4px 4px 10px rgb(40, 40, 40);
 
 }
 
 .visit {
     font-weight: bolder;
-    color: rgb(33, 37, 41);
-    background-color: rgb(189, 157, 48);
-    padding: 10px;
+    color: #F5F7F8;
+    background: rgb(69,71,75);
+    background: linear-gradient(5deg, rgba(69,71,75,1) 65%, rgba(244,206,20,1) 100%);
+    padding: 15px;
     width: 100%;
     box-shadow: 2px 2px 10px  rgb(33, 37, 41);
     
@@ -411,9 +395,10 @@ nav{
 }
 
 .limited {
+    background: rgb(69,71,75);
+    background: linear-gradient(5deg, rgba(69,71,75,1) 65%, rgba(244,206,20,1) 100%);
     font-weight: bolder;
-    color: rgb(40, 40, 40);
-    background-color: rgb(189, 157, 48);
+    color: #F5F7F8;
     width: 100%;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -437,6 +422,18 @@ nav{
     border-radius: 5px;
 }
 
+.click-cards {
+    margin-top: 100px;
+    background-color: #45474B;
+    color: #F5F7F8;
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+
+
+
+
 @media (max-width: 576px) {
     
     .promocards {
@@ -454,11 +451,11 @@ nav{
     transform: scale(1.5);
 }
 
-.badge.bg-warning.text-dark {
+.badge {
     position: absolute;
     top: 10px;
     right: 10px;
-    background-color: #ffc107;
+    background-color: #F4CE14;
     color: #333;
     font-size: 18px;
     padding: 4px 8px;
@@ -469,7 +466,7 @@ nav{
 }
 .duration-badge {
     text-align: center;
-    background-color: rgb(40, 40, 40);
+    background: #45474B;
     color: rgb(236, 237, 238);
     padding-top: 10px;
 }
@@ -480,7 +477,7 @@ nav{
 }
 
 .inquire {
-    background:  #ffc107;
+    background:  #F4CE14;
     font-weight: bolder;
     border: none;
     box-shadow: 2px 2px 5px rgb(40, 40, 40);
@@ -500,6 +497,20 @@ nav{
     font-size: small;
     text-decoration-color: rgb(209, 52, 52);
 }
+
+/* Promocards slide-in animation when intersecting */
+.promocards {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.promocards.slide-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
 
 /*ANIMATIONS*/
 
@@ -531,16 +542,6 @@ nav{
   }
   
 
-/*Service Inquiry Form*/
-
-.content{
-    background-color: white;
-    border-style: solid;
-    border-color: rgb(109, 109, 109);
-    box-shadow: -3px 10px 15px rgb(167, 166, 166);
-    padding: 60px;
-    border-radius: 20px;
-}
 
 /*Choose Model*/
 
@@ -559,4 +560,66 @@ nav{
 *{
     margin: 0;
     padding: 0;
+}
+
+
+/*SERVICE INQUIRY FORM */
+
+.serviceform-btn {
+    background-color: #F4CE14;
+    padding: 8px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px #45474B;
+    font-weight: 600;
+}
+
+.serviceform-btn:hover {
+    background-color: #45474B;
+    color: #F4CE14;
+    border: none;
+    box-shadow: 4px 4px 10px #F4CE14;
+}
+
+.inquiries {
+    padding: 30px;
+    background: #F5F7F8;
+    color: #45474B;
+}
+
+.inquiry--header {
+    background: rgb(69,71,75);
+    background: linear-gradient(5deg, rgba(69,71,75,1) 65%, rgba(244,206,20,1) 100%);
+    text-align: center;
+    color: #F5F7F8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin: 60px 0 50px 0;
+}
+
+.content{
+    background-color:#F5F7F8;
+    border-style: solid;
+    border-color:  #495E57;
+    box-shadow: 4px 4px 10px #45474B;
+    padding: 60px;
+    border-radius: 20px;
+}
+
+
+/*REMOVABLE ALERT */
+
+#removableMessage {
+    background-color: #F5F7F8;
+    padding: 10px;
+    color: #1f2327;
+    font-weight: 600;
+    font-size: 30px;
+    border-color: #F4CE14;
+    box-shadow: 2px 2px 10px #1f2327;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
