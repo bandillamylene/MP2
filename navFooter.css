@@ -151,3 +151,14 @@ footer .footlist li a:hover {
         max-width: unset; /* Clear the max-width set by Bootstrap */
     }
 }
+
+/* for the modal -- terms and conditions */
+
+.terms-list {
+    list-style: none;
+}
+
+.terms-list > div {
+    margin-bottom: 20px;
+}
+
