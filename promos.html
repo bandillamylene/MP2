@@ -13,11 +13,13 @@
 </head>
 <body>
     
+      
 <!--NAVIGATION BAR-->
+
 <nav class="navbar_content navbar navbar-expand-lg sticky-top">
     <div class="container-fluid">
 
-        <a class="navbar-brand text-white" href="./index.html">
+        <a class="navbar-brand " href="./index.html">
             <img src="./images/throttlelogo.png" class="logo ">
         </a>
 
@@ -26,7 +28,7 @@
             <ul class="navbar-nav">
 
                 <li class="nav-item dropdown pe-4">
-                    <a class="nav-link dropdown-toggle text-white" href="#" id="motorcyclesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" id="motorcyclesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       Motorcycles
                     </a>
                         <ul class="dropdown-menu bg-white" aria-labelledby="motorcyclesDropdown">
@@ -39,7 +41,7 @@
                   </li>
 
                   <li class="nav-item dropdown pe-4">
-                    <a class="nav-link dropdown-toggle text-white" href="#" id="services" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" id="services" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       Services
                     </a>
                         <ul class="dropdown-menu bg-white" aria-labelledby="motorcyclesDropdown">
@@ -49,7 +51,7 @@
                   </li>
 
                   <li class="nav-item dropdown pe-4">
-                    <a class="nav-link dropdown-toggle text-white active-link" href="./promos.html" id="Promos" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle active-link" href="./promos.html" id="Promos" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       Promos
                     </a>
                         <ul class="dropdown-menu bg-white" aria-labelledby="motorcyclesDropdown">
@@ -59,19 +61,19 @@
                   </li>
 
                 <li class="nav-item pe-4">
-                    <a class="nav-link text-white" href="./aboutUs.html">About Us</a>
+                    <a class="nav-link" href="./aboutUs.html">About Us</a>
 
 
                 </li>
 
                 <li class="nav-item pe-4">
-                    <a class="nav-link text-white" href="./contactUs.html">Contact Us</a>
+                    <a class="nav-link" href="./contactUs.html">Contact Us</a>
 
 
                 </li>
 
             </ul>
-         
+
             <form class="s-bar d-flex justify-content-lg-end justify-content-end align-items-end" onsubmit="redirectBasedOnSearch(); return false;">
                 <input class="form-control me-2 rounded-5" type="search" placeholder="Search" id="search">
                 <button class="s-button btn btn-outline-light btn-sm" type="submit">
@@ -79,14 +81,9 @@
                 </button>
             </form>
 
-
         </div>
 
-<br><br><br>
-
-
-
-    
+   
         <div class="row">
             <span id="profileName" class="text-white mx-3 d-flex justify-content-center align-items-center"></span>
         </div>
@@ -94,6 +91,7 @@
 
 
         <div class="d-lg-block d-flex justify-content-end">
+            
             
             <a href="./login.html" id="loginButton" class="login mx-3 btn btn-lg">
                 Login <i class="fas fa-sign-in-alt ms-1"></i>
@@ -109,20 +107,22 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
         </div>
+            
 
     </div>
 </nav>
 
 
+
 <!-- Image Section -->
 <div class="container-fluid p-0">
-    <img src="./images/PromoPageFinal.jpg" class="img-fluid" alt="Rev Up Your Ride">
+    <img src="./images/PromoPageFinal.jpg" class="img-fluid img-xxl" alt="Rev Up Your Ride">
 </div>
 
 <!-- Promo Content Section -->
 <div class="myPromo container-fluid mt-lg-5 mt-md-3 mb-lg-5 mb-md-3 mb-sm-4 position-relative">
     <div class="row mt-lg-5 mt-md-3">
-        <h1 class="limited mt-5 text-center">Limited Time Offers!</h1>
+        <h2 class="limited mt-5 text-center">Limited Time Offers!</h2>
         <div class="col px-3 d-flex align-items-center justify-content-center">
             <div class="text-center">
                 <br>
@@ -134,8 +134,22 @@
     </div>
 </div>
 
-<!--ITEMS-->
 
+
+        <!--BLINKING MESSAGE-->
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="click-cards mb-lg-5 mb-md-3">
+                    <button class="clickMe btn">&times;</button>
+                    <h2 id="blinkingText">Click Cards to see Specs!</h2>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!--ITEMS-->    
 
 <div class="container">
     
@@ -222,29 +236,8 @@
             </a>
 
         </div>
-    </div>
-</div>
 
-
-        <!--BLINKING MESSAGE-->
-
-<div class="container-fluid">
-    <div class="row">
-        <div class="click-cards mb-lg-5 mb-md-3">
-            <button class="clickMe btn">&times;</button>
-            <h2 id="blinkingText">Click Cards to see Specs!</h2>
-        </div>
-    </div>
-</div>
-    
-
-
-<!--CARDS SECOND ROW-->
-<div class="container">
-    
-
-    <div class="row px-sm-5 justify-content-center mb-lg-5 mb-sm-5">
-        
+<!--SECOND ROW-->
 
         <div class="col-lg-4 col-md-6 col-sm-8 col-8 mb-4 mb-xs-4 mt-sm-5 mb-md-5 mt-lg-5">
 
@@ -322,10 +315,9 @@
             
         </div>
 
-   </div>
+
+    </div>
 </div>
-
-
 
 
 

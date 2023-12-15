@@ -13,6 +13,8 @@ nav{
 
 .nav-link {
     color:  #F5F7F8;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 .nav-link:hover {
@@ -136,4 +138,16 @@ nav{
 footer .footlist li a:hover {
     color: #F4CE14 !important;
     opacity: 0.6;
+}
+
+
+/*FOR IMAGES*/
+
+
+@media (min-width: 2000px) {
+    .img-xxl {
+        width: 100%;
+        height: auto;
+        max-width: unset; /* Clear the max-width set by Bootstrap */
+    }
 }
