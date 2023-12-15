@@ -4,7 +4,7 @@ let mcSelect = document.getElementById("motorcycles");
 let srpInput = document.getElementById("srp");
 let dpinput = document.getElementById("downpayment");
 
-//Declarting MC datas
+//Declaring MC datas
 let mcData = {
     honda: ["Click 125", "Beat 125", "TMX Supremo", "PCX160", "CBR150R"],
     kawasaki: ["Barako II", "CT 125", "Rouser NS200fi", "Dominar 400"],

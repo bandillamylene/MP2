@@ -1,6 +1,6 @@
 document.querySelector('.clickMe').addEventListener('click', function() {
     // Hide the element with the class 'click-cards'
-    $('.click-cards').style.display = 'none';
+document.querySelector('.click-cards').style.display = 'none';
 });
 
 function startBlinking() {
