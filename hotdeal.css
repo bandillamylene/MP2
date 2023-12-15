@@ -24,3 +24,24 @@
 }
 
 
+
+
+/* Initially hide the content */
+.slide-top, .slide-bottom {
+    opacity: 0;
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+/* Slide in from top */
+.slide-top.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Slide in from bottom */
+.slide-bottom.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+

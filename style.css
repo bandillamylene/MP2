@@ -290,6 +290,39 @@
 
 
 
+/*ANIMATIONS*/
+
+/* Initial hidden state for animation */
+.StoryCont {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  
+  /* Class to trigger animation */
+  .slide-in.animate {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  
+/*BOUNCING CARDS*/
+  .bounce-on-hover:hover {
+    animation: bounce 1s ease infinite;
+  }
+  
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+  
+
+
+
+
 /*WHY CHOOSE US?*/
 
 
@@ -465,6 +498,19 @@
     text-decoration-color: rgb(209, 52, 52);
 }
 
+/* Promocards slide-in animation when intersecting */
+.promocards {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.promocards.slide-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
 
 /*ANIMATIONS*/
 
@@ -573,7 +619,6 @@
     font-size: 30px;
     border-color: #F4CE14;
     box-shadow: 2px 2px 10px #1f2327;
-    height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
