@@ -406,9 +406,10 @@
 
 
     
-<!--FOOTER-->
 
-<footer class="responsive-footer container-fluid mt-5 pt-5">
+  <!--FOOTER-->
+
+  <footer class="responsive-footer container-fluid mt-5 pt-5">
     <div class="row mx-3 px-2">
         <div class="col-lg-2 col-md-4 col-sm-6 my-3">
             <p class="foothead">Motorcycles</p>
@@ -464,7 +465,32 @@
         <div class="col-md-6 ">
             <p class="copy text-center mt-4">© 2023 Throttle Twist
                 <br>
-                <a class="footlist" href="#">Terms and Conditions</a>
+               
+
+                <!-- Link to open the Terms and Conditions modal -->
+
+                <a class="footlist" href="#" id="termsLink">Terms and Conditions</a>
+
+                <!-- Modal for Terms and Conditions -->
+
+                <div class="modal fade" id="termsModal" tabindex="-1" aria-labelledby="termsModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title text-black" id="termsModalLabel">Terms and Conditions</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body text-black p-5" id="termsModalBody" style="max-height: 400px; overflow-y: auto;">
+
+                                <!-- Content will be inserted here -->
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
             </p>
             
         </div>
@@ -518,6 +544,7 @@
 <script src="login.js"></script>
 <script src="index.js"></script>
 <script src="search_function.js"></script>
+<script src="terms&cond.js"></script>
 
 </body>
 </html>
