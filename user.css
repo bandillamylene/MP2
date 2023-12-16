@@ -84,9 +84,7 @@
 .saved-itemscard {
     background-color: #1f2327;
     color: whitesmoke;
-}
-.saved-items--card {
-    background-color: whitesmoke;
+    border: none;
 }
 
 #editBtn.clicked {
@@ -94,3 +92,15 @@
     color: #1f2327;
    
 }
+
+
+/* Custom CSS to remove background color from columns */
+.card-columns .col-lg-6,
+.card-columns .col-md-12 {
+    background-color: transparent !important;
+}
+
+
+
+
+
