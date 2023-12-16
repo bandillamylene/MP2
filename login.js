@@ -192,4 +192,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
     preventBackAfterLogout(); // Call preventBackAfterLogout function initially
 });
-
