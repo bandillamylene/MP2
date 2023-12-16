@@ -9,7 +9,7 @@
 
 
 .profSection, .personal-info, .myList.card, .list-group-item{
-    background-color: whitesmoke;
+    background-color: #F5F7F8;
     
 }
 
@@ -63,8 +63,8 @@
  }
 
  .list-group-item {
-    border: 4px 10px solid #1f2327;
-    box-shadow: 4px 4px 10px #1f2327;
+    border: 4px 10px solid #45474B;
+    box-shadow: 4px 4px 10px #45474B;
 
 }
 
@@ -82,8 +82,7 @@
     
 }
 .saved-itemscard {
-    background-color: #1f2327;
-    color: whitesmoke;
+    color: #1f2327;
     border: none;
 }
 
@@ -94,11 +93,7 @@
 }
 
 
-/* Custom CSS to remove background color from columns */
-.card-columns .col-lg-6,
-.card-columns .col-md-12 {
-    background-color: transparent !important;
-}
+
 
 
 

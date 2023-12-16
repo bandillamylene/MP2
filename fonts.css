@@ -75,10 +75,6 @@
 /* Large screens (desktops) */
 @media (min-width: 993px) and (max-width: 1200px) {
 
-* {
-    font-family: Verdana, Tahoma, sans-serif;
-}
-
 h1 {
     font-size: 3.5rem;
 }

@@ -1,52 +1,39 @@
-// Function to add an item to saved items
-function addToSavedItems(card) {
-    const savedItems = JSON.parse(localStorage.getItem('savedItems')) || [];
-    const item = card.outerHTML;
-    savedItems.push(item);
-    localStorage.setItem('savedItems', JSON.stringify(savedItems));
-    displaySavedItems(); // Update saved items display after adding a new item
-  }
-  
-  // Function to display saved items in the User Dashboard
-  function displaySavedItems() {
-    const savedItems = JSON.parse(localStorage.getItem('savedItems')) || [];
-    const savedItemsContainer = document.getElementById('savedItems');
-  
-    savedItemsContainer.innerHTML = '';
-  
-    if (savedItems.length === 0) {
+// Function to display saved items with product--card content
+function displaySavedItems() {
+  const savedItems = JSON.parse(localStorage.getItem('savedItems')) || [];
+  const savedItemsContainer = document.getElementById('savedItems');
+
+  savedItemsContainer.innerHTML = '';
+
+  if (savedItems.length === 0) {
       savedItemsContainer.innerHTML = '<p>No saved items yet.</p>';
-    } else {
-      savedItems.forEach(item => {
-        const cardWrapper = document.createElement('div');
-        cardWrapper.innerHTML = item;
-  
-        const saveIcon = cardWrapper.querySelector('.save-icon');
-        saveIcon.addEventListener('click', () => {
-          addToSavedItems(cardWrapper);
-        });
-  
-        savedItemsContainer.appendChild(cardWrapper);
+  } else {
+      let html = '';
+      const colClasses = {
+          xl: 'col-xl-4 d-flex justify-content-center',
+          lg: 'col-lg-4 d-flex justify-content-center',
+          md: 'col-md-6 d-flex justify-content-center',
+          sm: 'col-12 d-flex justify-content-center',
+      };
+
+      savedItems.forEach((item, index) => {
+          const breakpoint = window.innerWidth >= 1200 ? 'xl' : (window.innerWidth >= 992 ? 'lg' : (window.innerWidth >= 768 ? 'md' : 'sm'));
+          const colClass = colClasses[breakpoint];
+
+          html += `
+              <div class="${colClass} mb-4">
+                  <div class="smaller-card">${item}</div>
+              </div>`;
+
+          html += '<div class="w-100 d-block d-sm-none"></div>'; // Add a new row for SM and XS screens
       });
-    }
+
+      savedItemsContainer.innerHTML = html;
   }
-  
-  // Function to initialize the User Dashboard
-  function initializeDashboard() {
-    displaySavedItems();
-  }
-  
-  // Add event listeners or trigger functions as needed
-  document.addEventListener('DOMContentLoaded', () => {
-    initializeDashboard();
-  });
-  
-  // Add event listener for all save icons on the page
-  const saveIcons = document.querySelectorAll('.save-icon');
-  saveIcons.forEach(icon => {
-    icon.addEventListener('click', event => {
-      const card = event.target.closest('.mc_card');
-      addToSavedItems(card);
-    });
-  });
-  
+}
+
+// Initial call to display saved items when the page loads
+displaySavedItems();
+
+// Event listener to update card layout on window resize
+window.addEventListener('resize', displaySavedItems);

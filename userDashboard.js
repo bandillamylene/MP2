@@ -59,7 +59,7 @@ function logoutUser() {
 
 // Function to display specific dashboard section
 function showDashboardSection(sectionId) {
-    var dashboardSections = document.querySelectorAll(".col-md-8");
+    var dashboardSections = document.querySelectorAll(".col-lg-8");
 
     dashboardSections.forEach(function (section) {
         section.style.display = "none";
