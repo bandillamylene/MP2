@@ -118,49 +118,44 @@
 
 <!-- User Dashboard Content -->
 <div class="userDashboard container-fluid mt-5">
-
     <div class="row">
         <!-- Profile Section with Dashboard -->
-        <div class="col-lg-4 col-md-3 col-sm-12 col text-center">
-            <div class="profSection card mb-3">
-                <div class="card-body">
-                    <div class="position-relative">
-                        <img src="https://via.placeholder.com/150" alt="Profile Picture" class="profile_icon img-fluid rounded-circle mb-3">
+        <div class="col d-flex justify-content-center">
+            <div class="profSection mb-3">
+                <div class="position-relative">
+                    <img src="https://via.placeholder.com/150" alt="Profile Picture" class="profile_icon img-fluid rounded-circle mb-3">
 
-                       
-                        <div class="text-center mt-2">
+                    <div class="text-center mt-2">
+                        <div class="d-flex align-items-center justify-content-center">
                             <button class="btn btn-light btn-sm" id="editImageBtn">
                                 <span>Change Avatar</span>
-                                <i class="fas fa-edit"></i>
+                                <i class="fas fa-edit ms-2"></i>
                             </button>
+                            <div class="dashboard-toggle ms-2" id="dashboardToggle">
+                                <i class="fas fa-cog"></i>
+                            </div>
                         </div>
                     </div>
-
-                    <div class="myList card mt-3">
-                        <div class="myList2 card-body">
-                            <ul class="myList3 list-group">
-
-                                <li class="list-group-item"><a href="#mysaveditems" id="savedItemsLink">Saved Items</a></li>
-                                <li class="list-group-item"><a href="#myloans" id="loanTrackerLink">Loan Application</a></li>
-                                <li class="list-group-item"><a href="#mysettings" id="settingsLink">Settings</a></li>
-
-
-                            </ul>
-                        </div>
-                    </div>
+                    <ul class="myList3 list-group dashboard-items" id="dashboardItems">
+                        <li class="list-group-item"><a href="#mysaveditems" id="savedItemsLink">Saved Items</a></li>
+                        <li class="list-group-item"><a href="#myloans" id="loanTrackerLink">Loan Application</a></li>
+                        <li class="list-group-item"><a href="#mysettings" id="settingsLink">Settings</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
+    </div>
+</div>
 
-        <div class="settings col-lg-8 col-md-9 col-sm-12 col-sm-12 " id="mysettings">
-            <div class="col">
-                <!-- Personal Information with Form Fields -->
-                <div class="personal-info card mb-3">
-                    <div class="card-body">
+    <div class="row">
+       
+            <div class="settings col" id="mysettings">
+                <div class="personal-info mb-3">
+                    
                         <div class="d-flex justify-content-end mb-2">
                             <button class="btn btn-secondary" id="editBtn">Edit</button>
                         </div>
-                        <h2 class="card-title text-center">Personal Information</h2>
+                        <h2 class="text-center">Personal Information</h2>
 
                         <form id="personalInfoForm">
                             <div class="mb-3">
@@ -257,17 +252,13 @@
                         <div class="d-flex justify-content-end">
                             <button class="btn saveButton" id="saveBtn" style="display: none;">Save</button>
                         </div>
-                        
-                    </div>
                 </div>
-            </div>
         </div>
 
        <!-- This is the section where saved items will be displayed -->
-        <div class="savedItems col-lg-8 col-md-9 col-sm-12 col-sm-12" id="mysaveditems">
-            <div class="saved-itemscard card">
-                <div class="card-body">
-                    <h2 class="card-title text-center">Saved Items</h2>
+        <div class="savedItems col" id="mysaveditems">
+            <div class="saved-itemscard">
+                    <h2 class="text-center">Saved Items</h2>
 
                     <!-- Saved items will appear here -->
                     <div class="row" id="savedItems">
@@ -276,7 +267,6 @@
 
                         
                     </div>
-                </div>
             </div>
         </div>
         
@@ -284,12 +274,9 @@
 
 
 
-        <div class="loanTracker col-lg-8 col-md-9 col-sm-12 col-sm-12" style="display: none;" id="myloans">
-            <div class="loancard card">
-                <div class="card-body">
-                    <h2 class="card-title text-center">Loan Application</h2>
-                </div>
-                
+        <div class="loanTracker col" style="display: none;" id="myloans">
+            <div class="loancard">
+                    <h2 class="text-center">Loan Application</h2>                
             </div>
 
             <div class="row"><button class="btn btn-primary" id="applyLoanBtn">Apply for a Loan</button></div>
