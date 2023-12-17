@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="mc_brands.css">
+    <link rel="stylesheet" href="./fonts.css">
+    <link rel="stylesheet" href="./navFooter.css">
+    <title>Throttle Twist Motors - Honda</title>
+</head>
+<body>
+
+<!--NAVIGATION BAR-->
+<nav class="navbar_content navbar navbar-expand-lg sticky-top">
+    <div class="container-fluid">
+
+        <a class="navbar-brand" href="./index.html">
+            <img src="./images/throttlelogo.png" class="logo ">
+        </a>
+
+        <div class="collapse navbar-collapse justify-content-lg-around justify-content-md-around" id="navbar">
+
+            <ul class="navbar-nav">
+
+                <li class="nav-item dropdown pe-4">
+                    <a class="nav-link dropdown-toggle active-link" href="#" id="motorcyclesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Motorcycles
+                    </a>
+                        <ul class="dropdown-menu bg-white" aria-labelledby="motorcyclesDropdown">
+                            <li><a class="dropdown-item" href="./honda.html">Honda</a></li>
+                            <li><a class="dropdown-item" href="./kawasaki.html">Kawasaki</a></li>
+                            <li><a class="dropdown-item" href="./yamaha.html">Yamaha</a></li>
+                            <li><a class="dropdown-item" href="./motorstar.html">Motorstar</a></li>
+                            <li><a class="dropdown-item" href="./cfmoto.html">CFMoto</a></li>
+                        </ul>
+                  </li>
+
+                  <li class="nav-item dropdown pe-4">
+                    <a class="nav-link dropdown-toggle" href="#" id="services" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Services
+                    </a>
+                        <ul class="dropdown-menu bg-white" aria-labelledby="motorcyclesDropdown">
+                            <li><a class="dropdown-item" href="./serviceform.html">Service Inquiry</a></li>
+                            <li><a class="dropdown-item" href="./loancalculator.html">Loan Calculator</a></li>
+                        </ul>
+                  </li>
+
+                  <li class="nav-item dropdown pe-4">
+                    <a class="nav-link dropdown-toggle" href="./promos.html" id="Promos" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Promos
+                    </a>
+                        <ul class="dropdown-menu bg-white" aria-labelledby="motorcyclesDropdown">
+                            <li><a class="dropdown-item" href="./promos.html">Limited Time</a></li>
+                            <li><a class="dropdown-item" href="./promos_hotDeals.html">Hot Deals</a></li>
+                        </ul>
+                  </li>
+
+                <li class="nav-item pe-4">
+                    <a class="nav-link" href="./aboutUs.html">About Us</a>
+
+
+                </li>
+
+                <li class="nav-item pe-4">
+                    <a class="nav-link" href="./contactUs.html">Contact Us</a>
+
+
+                </li>
+
+            </ul>
+         
+            <form class="s-bar d-flex justify-content-lg-end justify-content-end align-items-end" onsubmit="redirectBasedOnSearch(); return false;">
+                <input class="form-control me-2 rounded-5" type="search" placeholder="Search" id="search">
+                <button class="s-button btn btn-outline-light btn-sm" type="submit">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+
+        </div>
+    
+        <div class="row">
+
+            <span id="profileName" class="d-flex justify-content-center align-items-center"></span>
+
+        </div>
+
+
+
+        <div class="d-lg-block d-flex justify-content-end">
+            
+            <button id="loginButton" class="login mx-3 btn btn-md">
+                Login <i class="fas fa-sign-in-alt ms-1"></i>
+              </button>
+        
+              <button id="logoutButton" class="logout mx-3 btn btn-md d-none">
+                  Logout <i class="fas fa-sign-out-alt ms-1"></i>
+              </button>
+
+
+            <button class="navbar-toggler bg-white ms-auto me-3" type="button" data-bs-target="#navbar" data-bs-toggle="collapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+        </div>
+        
+
+
+    </div>
+</nav>
+
+<!--Carousel-->
+        <div class="road1 col-md-12">
+
+            <img class="img-fluid" src="images/motorcycles/honda/main_page/road1.jpg">
+
+                <div class="mc carousel slide pb-3" id="carousel_img" data-bs-ride="carousel">
+
+                    <div class="carousel-inner">
+
+                        <div class="carousel-item active" data-bs-interval="4000">
+
+                            <img class="img-fluid" src="images/motorcycles/honda/main_page/click125.png">
+                
+                        </div>
+
+                        <div class="carousel-item" data-bs-interval="4000">
+
+                            <img class="img-fluid" src="images/motorcycles/honda/main_page/pcx160.png">
+                        
+                        </div>
+
+                        <div class="carousel-item" data-bs-interval="4000">
+
+                            <img class="img-fluid" src="images/motorcycles/honda/main_page/beat 125.png">
+                                
+                        </div>
+
+                        <div class="carousel-item" data-bs-interval="4000">
+
+                            <img class="img-fluid" src="images/motorcycles/honda/main_page/tmx supremo.png">
+                                        
+                        </div>
+
+                        <div class="carousel-item" data-bs-interval="4000">
+
+                            <img class="img-fluid" src="images/motorcycles/honda/main_page/cbr150.png">
+                                                
+                        </div>
+
+                    </div>
+            
+                
+                </div>
+                
+            </div>
+
+        </div>
+
+
+
+<!--MC Cards-->
+
+<div class="container">
+
+    <!--ROW 1-->
+    <div class="row">
+
+        <div class="mc_card col-md-4 p-4" id="item_click125">
+
+            <div class="product--card card" style="width: 20rem">
+
+            <div class="img-hover-zoom card-img-top">
+
+                <a href="click125.html">
+
+                    <img class="img-fluid" src="images/motorcycles/honda/main_page/click125.png">
+
+                </a>
+
+            </div>
+
+            <div class="card-body">
+
+                <div class="model-title card-title">
+
+                    <a href="click125.html">
+
+                        <h5 class="m-title" id="click125_title_brand">Honda Click 125</h5>
+
+                    </a>
+
+                </div>
+            
+                </div>
+
+                <div class="mc--footer card-footer">
+
+                    <a href="click125.html" class="mc--honda">
+
+                        <h4 class="h5" id="click125_modelSRP_brand">SRP: 80,900</h4>
+
+                        <h4 class="h6" id="click125_modelDP_brand">Downpayment: 5,500</h4>
+
+                        <h4 class="h6 pb-3" id="click125_modelmonthly_brand">Monthly: 3,229</h4>
+
+                    </a>
+
+                    <a href="click125.html" class="btn btn-outline-light btn-sm" role="button">See More</a>
+
+                    <a href="#" class="save-icon fa-lg" style="position: absolute; bottom: 10px; right: 15px; color: #FFFFFF;">
+
+                        <i class="far fa-bookmark"></i>
+    
+                    </a>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+        <div class="mc_card col-md-4 p-4" id="item_pcx160">
+
+            <div class="card" style="width: 20rem">
+    
+                <div class="img-hover-zoom card-img-top">
+
+                    <a href="pcx160.html">
+
+                        <img class="img-fluid" src="images/motorcycles/honda/main_page/pcx160.png">
+
+                    </a>
+                    
+                </div>
+    
+            <div class="card-body">
+            
+            <div class="model-title card-title">
+
+                <a href="pcx160.html">
+
+                    <h5 class="m-title">Honda PCX160</h5>
+
+                </a>
+
+            </div>
+             
+        </div>
+    
+        <div class="mc--footer card-footer">
+
+            <a href="pcx160.html" class="mc--honda">
+
+                <h4 class="h5">SRP: 152,890</h4>
+
+                <h4 class="h6">Downpayment: 18,000</h4>
+
+                <h4 class="h6 pb-3">Monthly: 5,901</h4>
+
+            </a>
+
+            <a href="pcx160.html" class="btn btn-outline-light btn-sm" role="button">See More</a>
+
+                <a href="#" class="save-icon fa-lg" style="position: absolute; bottom: 10px; right: 15px; color: #FFFFFF;">
+
+                    <i class="far fa-bookmark"></i>
+
+                </a>
+    
+        </div>
+    
+    </div>
+    
+</div>
+
+<div class="mc_card col-md-4 p-4" id="item_beat125">
+
+    <div class="card" style="width: 20rem">
+        
+        <div class="img-hover-zoom card-img-top">
+
+            <a href="beat125.html">
+
+                <img class="img-fluid" src="images/motorcycles/honda/main_page/beat 125.png">
+
+            </a>
+
+        </div>
+        
+        <div class="card-body">
+
+            <div class="model-title card-title">
+
+                <a href="beat125.html">
+
+                    <h5 class="m-title" id="beat125_title_brand">Honda Beat Fashion Sport</h5>
+                    
+                </a>
+
+            </div>
+                 
+        </div>
+        
+        <div class="mc--footer card-footer">
+
+            <a href="beat125.html" class="mc--honda">
+
+                <h4 class="h5" id="beat125_modelSRP_brand">SRP: 70,670</h4>
+
+                <h4 class="h6" id="beat125_modelDP_brand">Downpayment: 3,700</h4>
+
+                <h4 class="h6 pb-3" id="beat125_modelmonthly_brand">Monthly: 2,883</h4>
+
+            </a>
+
+            <a href="beat125.html" class="btn btn-outline-light btn-sm" role="button">See More</a>
+
+            <a href="#" class="save-icon fa-lg" style="position: absolute; bottom: 10px; right: 15px; color: #FFFFFF;">
+
+                <i class="far fa-bookmark"></i>
+
+            </a>
+        
+        </div>
+        
+    </div>
+        
+</div>
+</div>
+
+<!--ROW 2-->
+<div class="row">
+
+    <div class="mc_card col-md-4 p-4" id="item_supremo">
+
+        <div class="card" style="width: 20rem">
+
+            <div class="img-hover-zoom card-img-top">
+
+                <a href="tmxsupremo125.html">
+                    
+                    <img class="img-fluid" src="images/motorcycles/honda/main_page/tmx supremo.png">
+
+                </a>
+
+            </div>
+
+        <div class="card-body">
+
+            <div class="model-title card-title">
+
+                <a href="tmxsupremo125.html">
+
+                    <h5 class="m-title">Honda TMX Supremo</h5>
+
+                </a>
+
+            </div>
+         
+        </div>
+
+        <div class="mc--footer card-footer">
+
+            <a href="tmxsupremo125.html" class="mc--honda">
+
+                <h4 class="h5">SRP: 78,900</h4>
+
+                <h4 class="h6">Downpayment: 4,500</h4>
+
+                <h4 class="h6 pb-3">Monthly: 3,213</h4>
+
+            </a>
+
+            <a href="tmxsupremo125.html" class="btn btn-outline-light btn-sm" role="button">See More</a>
+
+            <a href="#" class="save-icon fa-lg" style="position: absolute; bottom: 10px; right: 15px; color: #FFFFFF;">
+
+                    <i class="far fa-bookmark"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="mc_card col-md-4 p-4" id="item_cbr150r">
+
+    <div class="card" style="width: 20rem">
+    
+        <div class="img-hover-zoom card-img-top">
+
+            <a href="cbr150r.html">
+
+                <img class="img-fluid" src="images/motorcycles/honda/main_page/cbr150.png">
+
+            </a>
+
+        </div>
+    
+        <div class="card-body">
+
+            <div class="model-title card-title">
+
+                <a href="cbr150r.html">
+
+                    <h5 class="m-title">Honda CBR150R</h5>
+
+                </a>
+
+            </div>
+             
+        </div>
+    
+        <div class="mc--footer card-footer">
+
+            <a href="cbr150r.html" class="mc--honda">
+
+                <h4 class="h5">SRP: 183,900</h4>
+
+                <h4 class="h6">Downpayment: 27,500</h4>
+
+                <h4 class="h6 pb-3">Monthly: 6,857</h4>
+
+            </a>
+
+            <a href="cbr150r.html" class="btn btn-outline-light btn-sm" role="button">See More</a>
+
+                <a href="#" class="save-icon fa-lg" style="position: absolute; bottom: 10px; right: 15px; color: #FFFFFF;">
+
+                    <i class="far fa-bookmark"></i>
+
+                </a>
+    
+        </div>
+    
+    </div>
+    
+</div>
+</div>
+</div>
+
+
+
+  <!--FOOTER-->
+
+  <footer class="responsive-footer container-fluid mt-5 pt-5">
+    <div class="row mx-3 px-2">
+        <div class="col-lg-2 col-md-4 col-sm-6 my-3">
+            <p class="foothead">Motorcycles</p>
+            <ul class="footlist" id="aboutuslist">
+                <li><a href="./honda.html">Honda</a></li>
+                <li><a href="./kawasaki.html">Kawasaki</a></li>
+                <li><a href="./yamaha.html">Yamaha</a></li>
+                <li><a href="./motorstar.html">Motorstar</a></li>
+                <li><a href="./cfmoto.html">CFMoto</a></li>
+            </ul>
+        </div>
+
+
+        <div class="col-lg-2 col-md-4 col-sm-6 my-3">
+            <p class="foothead">Services</p>
+            <ul class="footlist" id="srvcslist">
+                <li><a href="./serviceform.html">Service Inquiry Form</a></li>
+                <li><a href="./loancalculator.html">Loan Calculator</a></li>
+            </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-4 col-sm-6 my-3">
+            <p class="foothead">Connect To Us</p>
+            <ul class="footlist" id="srvcslist">
+                <li><a href="./aboutUs.html">About Us</a></li>
+                <li><a href="./contactUs.html">Contact Us</a></li>
+            </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-6 my-3">
+            <p class="foothead">Contact Details</p>
+            <ul class="footlist" id="srvcslist">
+                <li>Phone: +123 456 789</li>
+                <li>Email: bandillamylene.dev@gmail.com</li>
+            </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-12 my-3">
+            <p class="foothead">Location</p>
+            <ul class="footlist">
+                <li>Brgy. New Valencia, Tugbok District</li>
+                <li>Davao City, 8000, Philippines</li>
+            </ul>
+        </div>
+
+        
+    </div>
+</div>
+
+
+    <hr>
+    <div class="row align-items-center">
+        <div class="col-md-6 ">
+            <p class="copy text-center mt-4">© 2023 Throttle Twist
+                <br>
+               
+
+                <!-- Link to open the Terms and Conditions modal -->
+
+                <a class="footlist" href="#" id="termsLink">Terms and Conditions</a>
+
+                <!-- Modal for Terms and Conditions -->
+
+                <div class="modal fade" id="termsModal" tabindex="-1" aria-labelledby="termsModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title text-black" id="termsModalLabel">Terms and Conditions</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body text-black p-5" id="termsModalBody" style="max-height: 400px; overflow-y: auto;">
+
+                                <!-- Content will be inserted here -->
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </p>
+            
+        </div>
+        <div class="col-md-6 text-center">
+            <a class="footerLogo" href="./index.html">
+                <img src="./images/throttlelogo.png" class="logo">
+            </a>
+        </div>
+    </div>
+    
+  
+</footer>
+
+
+
+
+<!-- Messenger Chat Plugin Code -->
+<div id="fb-root"></div>
+
+<!-- Your Chat Plugin code -->
+<div id="fb-customer-chat" class="fb-customerchat">
+</div>
+
+<script>
+  var chatbox = document.getElementById('fb-customer-chat');
+  chatbox.setAttribute("page_id", "177270968805744");
+  chatbox.setAttribute("attribution", "biz_inbox");
+</script>
+
+<!-- Your SDK code -->
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      xfbml            : true,
+      version          : 'v18.0'
+    });
+  };
+
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+
+
+
+<script>
+   document.addEventListener('DOMContentLoaded', function() {
+    // Check localStorage for hidden products and hide them
+    const hiddenProducts = Object.keys(localStorage);
+    hiddenProducts.forEach(productId => {
+      const item = document.getElementById(`item_${productId}`);
+      if (item) {
+        item.style.display = 'none'; // Hide the product element
+      }
+    });
+  });
+</script>
+
+
+
+
+<script src="admin fash_functionalities/hide_products.js"></script>
+<script src="login.js"></script>
+<script src="loginBtn.js"></script>
+<script src="index.js"></script>
+<script src="search_function.js"></script>
+<script src="search_filter.js"></script>
+<script src="terms&cond.js"></script>
+
+</body>
+</html>
