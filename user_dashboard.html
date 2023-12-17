@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="user.css">
     <link rel="stylesheet" href="./fonts.css">
     <link rel="stylesheet" href="./navFooter.css">
+    <link rel="stylesheet" href="./mc_brands.css">
 </head>
 
 
@@ -260,12 +261,18 @@
             <div class="saved-itemscard">
                     <h2 class="text-center">Saved Items</h2>
 
+                    
+                    
                     <!-- Saved items will appear here -->
                     <div class="row" id="savedItems">
+
                         <!-- Saved items will be dynamically inserted here -->
 
 
                         
+                        <div id="deleteAllContainer" style="position: fixed; top: 10px; right: 10px; color: red;">
+                            <button id="deleteAllButton">Delete All</button>
+                        </div>
                     </div>
             </div>
         </div>
@@ -386,7 +393,6 @@
 
 
 
-
 <script src="userDashboard.js"></script>
 <script src="search_function.js"></script>
 <script src="login.js"></script>
@@ -394,8 +400,10 @@
 <script src="index.js"></script>
 <script src="terms&cond.js"></script>
 
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="bookmark.js"></script>
 
-<script src="bookMark.js"></script>
+
 
 
 </body>
