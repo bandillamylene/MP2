@@ -116,7 +116,8 @@
     </div>
 </nav>
 
-<div class="container-md pt-5 pb-5">
+<!--Admin Navbars-->
+<div class="container pt-5 pb-5">
 <div class="row">
 <div class="admin_navs col-md-4 border">
 <div class="row pb-5">
@@ -156,8 +157,17 @@
 
 <div class="row pb-4">
     <div class="col-md">
-       <a href="#" class="nav-link toggle-link">
+       <a href="#" class="nav-link toggle-link" onclick="showContent('manage_inquiry', event)">
         Inquiry Managements
+       </a>
+    </div>
+
+</div>
+
+<div class="row pb-4">
+    <div class="col-md">
+       <a href="#" class="nav-link toggle-link" onclick="showContent('manage_service', event)">
+        Service Inquiry Managements
        </a>
     </div>
 
@@ -170,12 +180,30 @@
 <div class="row">
 
 <div class="col-md-12 pt-3">
+
+<!--Displaying Accounts-->
 <div class="content container" id="manage_accounts">
-<h5 class="h4 fw-bold">Manage Accounts</h5>
+    <div class="row">
+
+        <div class="col-md-6">
+
+            <h5 class="h4 fw-bold">Manage Accounts</h5>
+
+        </div>
+
+        <div class="col-md-6">
+
+            <input type="search" class="form-control" placeholder="Search Users" oninput="userSearch()" id="search_user">
+
+        </div>
+
+        
+    </div>
+
 
 <button class="btn btn-light" data-bs-toggle="modal" data-bs-target="#add_user">Add User</button>
 
-<h5 class="h5 pt-5">Users:</h5>
+<h5 class="h5 pt-4">Users:</h5>
 
 <Table class="table table-light table-striped" id="userTable">
 
@@ -199,6 +227,7 @@
 </Table>
 
 
+</div>
 </div>
 
 
@@ -277,9 +306,25 @@
 </div>
 
 
+<!--Displaying Models-->
 <div class="content container" id="manage_models">
-    <h5 class="h4 fw-bold">Manage Models</h5>
-    <button class="btn btn-light">Add Product</button>
+    <div class="row">
+
+        <div class="col-md-6">
+
+            <h5 class="h4 fw-bold">Manage Models</h5>
+
+        </div>
+
+        <div class="col-md-6">
+
+            <input type="search" class="form-control" placeholder="Search Models" oninput="modelSearch()" id="search_model">
+
+        </div>
+
+        
+    </div>
+  
 
     <h5 class="h5 pt-5">Models:</h5>
 
@@ -304,53 +349,6 @@
             <td id="status_click125">Available</td>
             <td>
                 
-                    <!--Modal backup for edit product.-->
-                    <div class="modal fade" id="click125" tabindex="-1" >
-                    <div class="modal-dialog modal-lg modal-dialog-scrollable">
-                    <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-
-                    <div class="modal-body">
-
-                            <div class="container">
-                                <label class="form-label">Model Title</label>
-                                <input class="form-control" type="text" id="click125_title_input"  value="The All-New CLICK125">
-                                
-                                <label class="form-label">Model Details</label>
-                                <textarea class="form-control" id="model_details_click125_input" style="height: 40rem;">
-                                    Even a quick glance is enough to know that The All-New CLICK125 is unlike any other. This latest model features a new bold design with a more refined front and body image. Neat decals provide a nice touch and bring the look to life that everyone from the sporty to the stylish will definitely love.
-
-                                    ​A sporty-style muffler design with an aluminum end cap is sure to turn heads as you zoom past onlookers. They’ll also notice The All-New CLICK125’s new black cast wheel design that displays wider tubeless tires in front and rear that ensure comfort in every ride with better traction and greater stability. There’s also a new wavy disc brake on the front wheel that makes braking more responsive. Its wavy edge not only looks nice but effectively removes dirt and rainwater on brake pads as well.
-                                    
-                                    ​Finally, choose The All-New CLICK125 that fits your character as the model comes in five, sensational colors. These are Pearl Crimson Red, Pearl Sylvestris Gray, Stellar Blue Metallic, Pearl Arctic White, and Obsidian Black Metallic.
-
-                                </textarea>
-
-                                <label class="form-label">Model SRP</label>
-                                <input class="form-control" type="text" id="model_srp_click125_input" value="SRP: PHP 80,900">
-
-                                <label class="form-label">Model Downpayment</label>
-                                <input class="form-control" type="text" id="model_dp_click125_input" value="Downpayment: PHP 5,500">
-
-                                <label class="form-label">Model Monthly Payment</label>
-                                <input class="form-control" type="text" id="model_monthly_click125_input" value="Monthly: 3,229">
-                             </div>
-                    </div>
-
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-dark" onclick="saveChanges('click125')">Save Changes</button>
-                    </div>
-
-                    </div>
-
-                    </div>
-
-                    </div>
-    
-
-
                 <button type="submit" class="btn btn-dark btn-sm" onclick="hide('click125')">Hide Product</button>   
                 <button type="submit" class="btn btn-dark btn-sm" onclick="unhide('click125')">Unhide Product</button> 
             </td>
@@ -599,12 +597,27 @@
 
 
 </div>
-</div>
 
 
 <!--Displaying Sales and Orders-->
 <div class="content container" id="manage_sales_orders">
-    <h5 class="h4 fw-bold">Sales and Orders</h5>
+
+    <div class="row">
+
+        <div class="col-md-6">
+
+            <h5 class="h4 fw-bold">Sales And Orders</h5>
+
+        </div>
+
+        <div class="col-md-6">
+
+            <input type="search" class="form-control" placeholder="Search by Order Number" oninput="orderSearch()" id="search_orders">
+
+        </div>
+
+        
+    </div>
 
     <h5 class="h5 pt-5">Orders:</h5>
     
@@ -616,6 +629,7 @@
                 <Th>Order Number</Th>
                 <Th>Motorcycle Unit</Th>
                 <th>Order Date</th>
+                <th>Status</th>
                 <th>Operation</th>
             </tr>
         </thead>
@@ -632,22 +646,123 @@
     </div>
     
 
+<!--Displaying Inquiry Managemetns-->
+<div class="content container" id="manage_inquiry">
 
+    <div class="row">
+
+        <div class="col-md-6">
+
+            <h5 class="h4 fw-bold">Inquiry Managements</h5>
+
+        </div>
+
+        <div class="col-md-6">
+
+            <input type="search" class="form-control" placeholder="Search by Name/Last Name" oninput="inquirySearch()" id="search_inquiries">
+
+        </div>
+
+        
+    </div>
+
+    <h5 class="h5 pt-5">Inquiries:</h5>
+    
+    <table class="table table-light table-striped">
+    
+        <thead>
+            <tr>
+                <Th>First Name</Th>
+                <Th>Last Name</Th>
+                <Th>Email</Th>
+                <th>Status</th>
+                <Th>Operations</Th>
+              
+        </thead>
+    
+        <tbody id="inquiryData">
+        
+             <td>Clyde</td>
+             <td>Sumabat</td>
+             <td>clyde@gmail.com</td>
+             <td>
+                <button class="btn btn-dark btn-sm" data-bs-toggle="modal" data-bs-target="#inquiryModal">See Inquiry</button> 
+             </td>
+           
+        </tbody>
+    
+    </table>
+    
+    
+    </div>
+    
+
+<!--Displaying SERVICE Inquiry Managemetns-->
+<div class="content container" id="manage_service">
+
+    <div class="row">
+
+        <div class="col-md-6">
+
+            <h5 class="h4 fw-bold">Service Inquiry Managements</h5>
+
+        </div>
+
+        <div class="col-md-6">
+
+            <input type="search" class="form-control" placeholder="Search by Name/Last Name" oninput="serviceSearch()" id="search_service">
+
+        </div>
+
+        
+    </div>
+
+    <h5 class="h5 pt-5">Inquiries:</h5>
+    
+    <table class="table table-light table-striped">
+    
+        <thead>
+            <tr>
+                <Th>First Name</Th>
+                <Th>Last Name</Th>
+                <Th>Email</Th>
+                <th>Status</th>
+                <Th>Operations</Th>
+              
+        </thead>
+    
+        <tbody id="inquiryData">
+        
+             <td>Clyde</td>
+             <td>Sumabat</td>
+             <td>clyde@gmail.com</td>
+             <td>
+                <button class="btn btn-dark btn-sm" data-bs-toggle="modal" data-bs-target="#serviceModal">See Inquiry</button> 
+             </td>
+           
+        </tbody>
+    
+    </table>
+    
+    
+    </div>
 
 </div>
 
 
 </div>
 
+
 </div>
 
+</div>
 
-
-
-
+</div>
 
  <!--Modal to see sales and orders form-->
- <div class="modal fade" id="data_print" tabindex="-1" aria-labelledby="printform" aria-hidden="true">
+<div class="modal_orders container">
+
+ <div class="modal fade" id="data_print" tabindex="-1" aria-labelledby="dataform" aria-hidden="true">
     <Div class="modal-dialog">
 
         <div class="modal-content">
@@ -871,7 +986,7 @@
                     
                             </div>
 
-                        
+                            
                             <button class="btn btn-dark" type="button" data-bs-dismiss="modal">Close</button>
                  
                             </form>
@@ -895,7 +1010,251 @@
 
 </div>
 
+
 </div>
+
+<!--Modal to see inquiry form-->
+<div class="modal_inquiry container">
+
+
+<div class="modal fade" id="inquiryModal" tabindex="-1" aria-labelledby="inquiryForm" aria-hidden="true">
+    <div class="modal-dialog">
+
+        <div class="modal-content">
+            <div class="modal-header">
+                
+                <h5 class="modal-title">Inquiry Management</h5>
+        
+            </div>
+
+            <div class="modal-body">
+           
+                <div class="container-md">
+
+                    <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group" id="inquiryData_1">
+                            <label for="inquiryType"><h3 class="specific">What are you contacting us about?</h3></label>
+                            <span id="inquiryTypeWarning" class="warning-message" style="display: none;">*Please select an inquiry type.*</span>
+                            <select id="inquiry_type" name="inquiryType" onchange="enableSpecific()" class="form-control" disabled>
+                              <option value="" selected disabled>Select an Option</option>
+                              <option value="general">General Inquiry</option>
+                              <option value="support">Support</option>
+                              <option value="sales">Sales</option>
+                              <option value="feedback">Feedback</option>
+                              <!-- Add more options as needed -->
+                            </select>
+                         
+                            <br>
+                    
+                            <label for="specificInquiry"><h3 class="specific">Please be more specific:</h3></label>
+                            <span id="specificInquiryWarning" class="warning-message" style="display: none;">*Please specify your inquiry.*</span>
+                            <select id="inquiry_specific" name="specificInquiry" disabled class="form-control">
+                                
+                              <option value="" selected disabled>Select an Option</option>
+                              <option value="Product Inquiry">Product Inquiry</option>
+                              <option value="Service Inquiry">Service Inquiry</option>
+                              <option value="Financing Inquiry">Financing Inquiry</option>
+
+                              <option value="Technical Support">Technical Support</option>
+                              <option value="Troubleshooting Assistance">Troubleshooting Assistance</option>
+                              <option value="Account Help">Account Help</option>
+
+                              <option value="Model Availability">Model Availability</option>
+                              <option value="Pricing Information">Pricing Information</option>
+                              <option value="Purchase Assistance">Purchase Assistance</option>
+
+                              <option value="Suggestions">Suggestions</option>
+                              <option value="Complaints">Complaints</option>
+                              <option value="Improvement Ideas">Improvement Ideas</option>
+            
+                            </select>
+                            
+                            <br>
+                    
+                            <label for="additionalInfo"><h3 class="specific">Additional Information:</h3></label>
+                            <textarea id="inquiry_info" name="additionalInfo" class="form-control" rows="4" placeholder="Enter additional information" disabled></textarea>
+                            <br>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group" id="inquiryData_2">
+                            <label for="firstName"  class="specific">First Name:</label>
+                            <span id="firstNameWarning" class="warning-message" style="display: none;">*Please enter your first name.*</span>
+                            <input type="text" id="inquiry_firstName" name="firstName" class="form-control" placeholder="Enter First Name" disabled>
+                            <br>
+                    
+                            <label for="surname"  class="specific">Last Name:</label>
+                            <span id="surnameWarning" class="warning-message" style="display: none;">*Please enter your last name.*</span>
+                            <input type="text" id="inquiry_lastName" name="surname" class="form-control" placeholder="Enter Last Name" disabled>
+                            <br>
+                    
+                            <label for="email"  class="specific">Email:</label>
+                            <span id="emailWarning" class="warning-message" style="display: none;">*Please enter your email.*</span>
+                            <input type="email" id="inquiry_email" name="email" class="form-control" placeholder="sample.sample@gmail.com" autocomplete="email" disabled>
+                            <br>
+                    
+                            <label for="phone"  class="specific">Phone Number:</label>
+                            <span id="phoneWarning" class="warning-message" style="display: none;">*Please enter phone number.*</span>
+                            <input type="tel" id="inquiry_phone" name="phone" class="form-control" placeholder="+69" autocomplete="phone" disabled>
+                            <br>
+                    
+                            <label for="address"  class="specific">Address:</label>
+                            <span id="addressWarning" class="warning-message" style="display: none;">*Please enter your address.*</span>
+                            <input type="text" id="inquiry_address" name="address" class="form-control" placeholder="Enter Address" autocomplete="address-level1" disabled>
+                            <br>
+                          </div>
+                        </div>
+                      </div>
+
+                </div>
+    
+            </div>
+
+            <div class="modal-footer">
+
+                <button class="btn btn-dark" type="button" data-bs-dismiss="modal">Close</button>
+
+
+            </div>
+        
+          
+        </div>
+
+    </Div>
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+<!--Modal to see SERVICE inquiry form-->
+<div class="modal_inquiry container">
+
+
+    <div class="modal fade" id="serviceModal" tabindex="-1" aria-labelledby="serviceModal" aria-hidden="true">
+        <div class="modal-dialog">
+    
+            <div class="modal-content">
+                <div class="modal-header">
+                    
+                    <h5 class="modal-title">Service Inquiry Management</h5>
+            
+                </div>
+    
+                <div class="modal-body">
+               
+                    <div class="container-md">
+    
+                        <h4 class="h6 pb-4"><b>Customer Information:</b></h4>
+
+                        <form class="serviceinquiryForm needs-validation">
+                            <div class="row">
+                                <div class="col-md-4">
+                
+                
+                                        <label class="form-label">First Name:</label>
+                                        <input class="form-control" id="dataService_firstName" type="text" disabled>
+                                      
+                
+                                </div>
+                
+                                <div class="col-md-4">
+                
+                                
+                                        <label class="form-label">Middle Name:</label>
+                                        <input class="form-control" id="dataService_middleName" type="text" disabled>
+                                
+                
+                                </div>
+                
+                            <div class="col-md-4">
+                
+                
+                                    <label class="form-label">Last Name:</label>
+                                    <input class="form-control" id="dataService_lastName" type="text" disabled>
+                            
+                            </div>
+                
+                        </div>
+                
+                        <div class="row pt-3">
+                            <div class="col-md-8">
+                
+                                    <label class="form-label">Email Address:</label>
+                                    <input class="form-control" id="dataService_emailAddress" type="email" disabled>
+                                
+                            </div>
+                
+                            <div class="col-md-4">
+                
+                                    <label class="form-label">Mobile Number:</label>
+                                    <input class="form-control" type="number" id="dataService_phoneNumber" pattern="[0-9]{11}" disabled>
+                            
+                
+                            </div>
+                
+                        </div>
+                
+                
+                        <div class="row pt-3">
+                            <div class="col-md-8">
+                            
+                                    <label class="form-label">Address:</label>
+                                    <input class="form-control" id="dataService_address" type="text" disabled>
+   
+                            </div>
+                
+                            <div class="col-md-4">
+                
+                                <label class="form-label">Schedule Of Service:</label>
+                                <input class="form-control" id="dataService_schedule" type="datetime-local" disabled>
+
+                            </div>
+                
+                        </div>
+                
+                        <div class="row pt-3">
+                            <div class="col-md-12">
+                                
+                                <label class="form-label">Details Of Service Needed:</label>
+                                <textarea class="form-control p-5" id="dataService_message" disabled></textarea>
+     
+                            </div>
+                        </div>
+                
+                    
+                    </form>
+                       
+                    </div>
+        
+                </div>
+    
+                <div class="modal-footer">
+    
+                    <button class="btn btn-dark" type="button" data-bs-dismiss="modal">Close</button>
+    
+    
+                </div>
+            
+              
+            </div>
+    
+        </Div>
+    
+    </div>
+    
+    
+    
+    </div>
+    
+    
+    </div>
+
 
     <!--FOOTER-->
 
@@ -974,6 +1333,8 @@
 <script src="admin fash_functionalities/hide_products.js"></script>
 <script src="admin fash_functionalities/sales_orders.js"></script>
 <script src="admin fash_functionalities/manage_accounts.js"></script>
+<script src="admin fash_functionalities/inquiry_management.js"></script>
+<script src="admin fash_functionalities/service_inquiryManagement.js"></script>
 <script src="login.js"></script>
 <script src="index.js"></script>
 <script src="search_function.js"></script>

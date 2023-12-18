@@ -24,3 +24,22 @@ function hide(productId) {
   function updateStatus(productId, status) {
     document.getElementById(`status_${productId}`).textContent = status;
   }
+
+
+
+
+//Filter Search Function models
+function modelSearch() {
+  const searchText = document.getElementById("search_model").value.toLowerCase();
+  const modelRows = document.querySelectorAll('#hondaProducts tr, #kawasakiProducts tr, #yamahaProducts tr, #motorstarProducts tr, #cfmotoProducts tr');
+
+  modelRows.forEach(row => {
+      const modelName = row.querySelector('td:first-child').textContent.toLowerCase();
+
+      if (modelName.includes(searchText)) {
+          row.style.display = 'table-row';
+      } else {
+          row.style.display = 'none';
+      }
+  });
+}

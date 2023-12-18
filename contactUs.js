@@ -118,7 +118,10 @@ document.getElementById("contactForm").addEventListener("submit", function(event
   }
 
   if (!isValid) {
-    event.preventDefault(); // Prevent form submission
+    event.preventDefault();// Prevent form submission
+    
+  }else{
+    submitForm();
   }
 });
 
@@ -128,6 +131,33 @@ function validateEmail(email) {
 }
 
 
-
-
+//Function data to give data to admindashboard via local storage
+let INQUIRY_KEY = "inquirydata";
   
+function submitForm(){
+
+  let inquiryData = {
+
+    type: document.getElementById("inquiryType").value,
+    inquiry: document.getElementById("specificInquiry").value,
+    message: document.getElementById("additionalInfo").value,
+    firstname: document.getElementById("firstName").value,
+    surname: document.getElementById("surname").value,
+    emailAddress: document.getElementById("email").value,
+    phoneNumber: document.getElementById("phone").value,
+    addressLocation: document.getElementById("address").value,
+    status: "Not Yet Replied",
+
+
+  }
+
+  let existingData = JSON.parse(localStorage.getItem(INQUIRY_KEY)) || [];
+
+  existingData.push(inquiryData);
+
+  localStorage.setItem(INQUIRY_KEY, JSON.stringify(existingData));
+
+  alert("Inquiry Received, will send a reply on your provided email");
+  window.location.href = "index.html";
+
+}

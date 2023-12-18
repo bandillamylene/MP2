@@ -7,6 +7,8 @@ function showContent(id, event){
     let manage_accounts = document.getElementById('manage_accounts');
     let manage_models = document.getElementById('manage_models');
     let manage_sales = document.getElementById('manage_sales_orders');
+    let manage_inquiry = document.getElementById("manage_inquiry");
+    let manage_service = document.getElementById("manage_service");
 
     //Hide the manage_accounts contents 
     if (manage_accounts){
@@ -23,6 +25,15 @@ function showContent(id, event){
         manage_sales.style.display = 'none';
     }
 
+    if(manage_inquiry){
+
+        manage_inquiry.style.display = 'none';
+    }
+
+    if(manage_service){
+
+        manage_service.style.display = 'none';
+    }
 
     //Shows the selected contents
     let selectedContent = document.getElementById(id);
