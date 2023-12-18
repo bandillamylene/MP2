@@ -13,11 +13,13 @@
 </head>
 <body>
     
+      
 <!--NAVIGATION BAR-->
+
 <nav class="navbar_content navbar navbar-expand-lg sticky-top">
     <div class="container-fluid">
 
-        <a class="navbar-brand text-white" href="./index.html">
+        <a class="navbar-brand " href="./index.html">
             <img src="./images/throttlelogo.png" class="logo ">
         </a>
 
@@ -26,7 +28,7 @@
             <ul class="navbar-nav">
 
                 <li class="nav-item dropdown pe-4">
-                    <a class="nav-link dropdown-toggle text-white" href="#" id="motorcyclesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" id="motorcyclesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       Motorcycles
                     </a>
                         <ul class="dropdown-menu bg-white" aria-labelledby="motorcyclesDropdown">
@@ -39,7 +41,7 @@
                   </li>
 
                   <li class="nav-item dropdown pe-4">
-                    <a class="nav-link dropdown-toggle text-white" href="#" id="services" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" id="services" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       Services
                     </a>
                         <ul class="dropdown-menu bg-white" aria-labelledby="motorcyclesDropdown">
@@ -49,7 +51,7 @@
                   </li>
 
                   <li class="nav-item dropdown pe-4">
-                    <a class="nav-link dropdown-toggle text-white active-link" href="./promos.html" id="Promos" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle active-link" href="./promos.html" id="Promos" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       Promos
                     </a>
                         <ul class="dropdown-menu bg-white" aria-labelledby="motorcyclesDropdown">
@@ -59,19 +61,19 @@
                   </li>
 
                 <li class="nav-item pe-4">
-                    <a class="nav-link text-white" href="./aboutUs.html">About Us</a>
+                    <a class="nav-link" href="./aboutUs.html">About Us</a>
 
 
                 </li>
 
                 <li class="nav-item pe-4">
-                    <a class="nav-link text-white" href="./contactUs.html">Contact Us</a>
+                    <a class="nav-link" href="./contactUs.html">Contact Us</a>
 
 
                 </li>
 
             </ul>
-         
+
             <form class="s-bar d-flex justify-content-lg-end justify-content-end align-items-end" onsubmit="redirectBasedOnSearch(); return false;">
                 <input class="form-control me-2 rounded-5" type="search" placeholder="Search" id="search">
                 <button class="s-button btn btn-outline-light btn-sm" type="submit">
@@ -79,14 +81,9 @@
                 </button>
             </form>
 
-
         </div>
 
-<br><br><br>
-
-
-
-    
+   
         <div class="row">
             <span id="profileName" class="text-white mx-3 d-flex justify-content-center align-items-center"></span>
         </div>
@@ -95,34 +92,36 @@
 
         <div class="d-lg-block d-flex justify-content-end">
             
-            <a href="./login.html" id="loginButton" class="login mx-3 btn btn-lg">
-                Login <i class="fas fa-sign-in-alt ms-1"></i>
-            </a>
             
-
-            <a href="./logout.html" id="logoutButton" class="logout mx-3 btn btn-lg d-none">
-                Logout <i class="fas fa-sign-out-alt ms-1"></i>
-            </a>
+            <button id="loginButton" class="login mx-3 btn btn-md">
+                Login <i class="fas fa-sign-in-alt ms-1"></i>
+              </button>
+        
+              <button id="logoutButton" class="logout mx-3 btn btn-md d-none">
+                  Logout <i class="fas fa-sign-out-alt ms-1"></i>
+              </button>
 
 
             <button class="navbar-toggler bg-white ms-auto me-3" type="button" data-bs-target="#navbar" data-bs-toggle="collapse">
                 <span class="navbar-toggler-icon"></span>
             </button>
         </div>
+            
 
     </div>
 </nav>
 
 
+
 <!-- Image Section -->
 <div class="container-fluid p-0">
-    <img src="./images/PromoPageFinal.jpg" class="img-fluid" alt="Rev Up Your Ride">
+    <img src="./images/PromoPageFinal.jpg" class="img-fluid img-xxl" alt="Rev Up Your Ride">
 </div>
 
 <!-- Promo Content Section -->
 <div class="myPromo container-fluid mt-lg-5 mt-md-3 mb-lg-5 mb-md-3 mb-sm-4 position-relative">
     <div class="row mt-lg-5 mt-md-3">
-        <h1 class="limited mt-5 text-center">Limited Time Offers!</h1>
+        <h2 class="limited mt-5 text-center">Limited Time Offers!</h2>
         <div class="col px-3 d-flex align-items-center justify-content-center">
             <div class="text-center">
                 <br>
@@ -135,15 +134,21 @@
 </div>
 
 
-<!--BLINKING MESSAGE-->
 
-<div class="click-cards">
-    <button class="clickMe btn">&times;</button>
-    <h2 id="blinkingText">Click Cards to see Specs!</h2>
-</div>
+        <!--BLINKING MESSAGE-->
 
-<!--ITEMS-->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="click-cards mb-lg-5 mb-md-3">
+                    <button class="clickMe btn">&times;</button>
+                    <h2 id="blinkingText">Click Cards to see Specs!</h2>
+                </div>
+            </div>
+        </div>
 
+
+
+        <!--ITEMS-->    
 
 <div class="container">
     
@@ -151,24 +156,25 @@
 
     
     <div class="row px-sm-5 justify-content-center mb-lg-5 mb-sm-5">
-        <div class="col-lg-4 col-md-6 col-sm-8 col-8 mb-4 mb-xs-4 mt-sm-5 mb-md-5">
+
+        <div class="col-lg-4 col-md-6 col-sm-8 col-8 mb-4 mb-xs-4 mt-sm-5 mb-md-5 mt-lg-5">
             
             <a href="./rouserns200.html" class="specsLink">
 
                 <div class="promocards card">
                     <span class="badge">-15% off </span>
                     <img src="./images/index/featured_images/rouser_ns200.png" class="card-img-top" alt="Image 1">
-                    <div class="card-body">
-                        <h5 class="card-title">Rouser NS200</h5>
-                        <p class="card-text">
-                            <del class="custom-strike">Before: ₱129,800</del><br>
-                            <span class="discounted-price">Now: ₱110,330</span>
-                        </p>
-                        <a href="#" class="inquire btn inquire-btn">Inquire Now</a>
-                    </div>
-                    <div class="duration-badge">
-                        <p>Until December 30, 2023</p>
-                    </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Rouser NS200</h5>
+                            <p class="card-text">
+                                <del class="custom-strike">Before: ₱129,800</del><br>
+                                <span class="discounted-price">Now: ₱110,330</span>
+                            </p>
+                            <a href="#" class="inquire btn inquire-btn">Inquire Now</a>
+                        </div>
+                        <div class="duration-badge">
+                            <p>Until December 30, 2023</p>
+                        </div>
                 </div>
 
             </a>
@@ -183,17 +189,20 @@
                 <div class="promocards card">
                     <span class="badge">-15% off</span>
                     <img src="./images/index/featured_images/mt15.png" class="card-img-top" alt="Image 2">
-                    <div class="card-body">
-                        <h5 class="card-title">MT15</h5>
-                        <p class="card-text">
-                            <del class="custom-strike">Before: ₱159,000</del><br>
-                            <span class="discounted-price">Now: ₱135,150</span>
-                        </p>
-                        <a href="#" class="inquire btn inquire-btn">Inquire Now</a>
-                    </div>
+
+                        <div class="card-body">
+                            <h5 class="card-title">MT15</h5>
+                            <p class="card-text">
+                                <del class="custom-strike">Before: ₱159,000</del><br>
+                                <span class="discounted-price">Now: ₱135,150</span>
+                            </p>
+                            <a href="#" class="inquire btn inquire-btn">Inquire Now</a>
+                        </div>
+
                     <div class="duration-badge">
                         <p>Until December 30, 2023</p>
                     </div>
+
                 </div>
 
             </a>
@@ -208,46 +217,49 @@
                 <div class="promocards card">
                     <span class="badge">-15% off</span>
                     <img src="./images/motorcycles/honda/main_page/beat 125.png" class="card-img-top" alt="Image 3">
-                    <div class="card-body">
-                        <h5 class="card-title">Honda Beat 125</h5>
-                        <p class="card-text">
-                            <del class="custom-strike">Before: ₱70,670</del><br>
-                            <span class="discounted-price">Now: ₱60,070</span>
-                        </p>
-                        <a href="#" class="inquire btn inquire-btn">Inquire Now</a>
-                    </div>
-                    <div class="duration-badge">
-                        <p>Until December 30, 2023</p>
-                    </div>
+
+                        <div class="card-body">
+                                <h5 class="card-title">Honda Beat 125</h5>
+                                <p class="card-text">
+                                    <del class="custom-strike">Before: ₱70,670</del><br>
+                                    <span class="discounted-price">Now: ₱60,070</span>
+                                </p>
+                                <a href="#" class="inquire btn inquire-btn">Inquire Now</a>
+                        </div>
+
+                        <div class="duration-badge">
+                                <p>Until December 30, 2023</p>
+                        </div>
                 </div>
 
             </a>
 
         </div>
-    
-    <!--CARDS SECOND ROW-->
-        <div class="col-lg-4 col-md-6 col-sm-8 col-8 mb-4 mb-xs-4 mt-sm-5 mb-md-5">
+
+<!--SECOND ROW-->
+
+        <div class="col-lg-4 col-md-6 col-sm-8 col-8 mb-4 mb-xs-4 mt-sm-5 mb-md-5 mt-lg-5">
 
             <a href="./mioaerox.html" class="specsLink">
 
                 <div class="promocards card">
                     <span class="badge">-15% off </span>
                     <img src="./images/Promo/MioAerox.png" class="card-img-top mt-5 " alt="Image 1">
-                    <div class="card-body mt-sm-5">
-                        <h5 class="card-title">Mio Aerox</h5>
-                        <p class="card-text">
-                            <del class="custom-strike">Before: ₱124,000</del><br>
-                            <span class="discounted-price">Now: ₱105,400</span>
-                        </p>
-                        <a href="#" class="inquire btn inquire-btn">Inquire Now</a>
-                    </div>
-                    <div class="duration-badge">
-                        <p>Until December 30, 2023</p>
-                    </div>
+                        <div class="card-body mt-sm-5">
+                            <h5 class="card-title">Mio Aerox</h5>
+                                <p class="card-text">
+                                    <del class="custom-strike">Before: ₱124,000</del><br>
+                                    <span class="discounted-price">Now: ₱105,400</span>
+                                </p>
+                                <a href="#" class="inquire btn inquire-btn">Inquire Now</a>
+                        </div>
+
+                        <div class="duration-badge">
+                                <p>Until December 30, 2023</p>
+                        </div>
                 </div>
-
             </a>
-
+            
         </div>
 
 
@@ -258,17 +270,18 @@
                 <div class="promocards card">
                     <span class="badge">-15% off</span>
                     <img src="./images/Promo/miosouL.png" class="card-img-top mt-5" alt="Image 2">
-                    <div class="card-body mt-sm-5">
-                        <h5 class="card-title">Mio Soul</h5>
-                        <p class="card-text">
-                            <del class="custom-strike">Before: ₱79,900</del><br>
-                            <span class="discounted-price">Now: ₱67,915</span>
-                        </p>
-                        <a href="#" class="inquire btn inquire-btn">Inquire Now</a>
-                    </div>
-                    <div class="duration-badge">
-                        <p>Until December 30, 2023</p>
-                    </div>
+                        <div class="card-body mt-sm-5">
+                            <h5 class="card-title">Mio Soul</h5>
+                            <p class="card-text">
+                                <del class="custom-strike">Before: ₱79,900</del><br>
+                                <span class="discounted-price">Now: ₱67,915</span>
+                            </p>
+                            <a href="#" class="inquire btn inquire-btn">Inquire Now</a>
+                        </div>
+
+                        <div class="duration-badge">
+                            <p>Until December 30, 2023</p>
+                        </div>
                 </div>
 
             </a>
@@ -283,30 +296,35 @@
                 <div class="promocards card">
                     <span class="badge">-15% off</span>
                     <img src="./images/Promo/NK650.png" class="card-img-top mt-5" alt="Image 3">
-                    <div class="card-body mt-sm-5">
-                        <h5 class="card-title">NK650</h5>
-                        <p class="card-text">
-                            <del class="custom-strike">Before: ₱295,000</del><br>
-                            <span class="discounted-price">Now: ₱250,750</span>
-                        </p>
-                        <a href="#" class="inquire btn inquire-btn">Inquire Now</a>
-                    </div>
-                    <div class="duration-badge">
-                        <p>Until December 30, 2023</p>
-                    </div>
+                        <div class="card-body mt-sm-5">
+                            <h5 class="card-title">NK650</h5>
+                            <p class="card-text">
+                                <del class="custom-strike">Before: ₱295,000</del><br>
+                                <span class="discounted-price">Now: ₱250,750</span>
+                            </p>
+                            <a href="#" class="inquire btn inquire-btn">Inquire Now</a>
+                        </div>
+                        
+                        <div class="duration-badge">
+                            <p>Until December 30, 2023</p>
+                        </div>
                 </div>
 
             </a>
             
         </div>
-   </div>
+
+
+    </div>
 </div>
 
 
 
-<!--FOOTER-->
 
-<footer class="responsive-footer container-fluid mt-5 pt-5">
+
+  <!--FOOTER-->
+
+  <footer class="responsive-footer container-fluid mt-5 pt-5">
     <div class="row mx-3 px-2">
         <div class="col-lg-2 col-md-4 col-sm-6 my-3">
             <p class="foothead">Motorcycles</p>
@@ -362,7 +380,32 @@
         <div class="col-md-6 ">
             <p class="copy text-center mt-4">© 2023 Throttle Twist
                 <br>
-                <a class="footlist" href="#">Terms and Conditions</a>
+               
+
+                <!-- Link to open the Terms and Conditions modal -->
+
+                <a class="footlist" href="#" id="termsLink">Terms and Conditions</a>
+
+                <!-- Modal for Terms and Conditions -->
+
+                <div class="modal fade" id="termsModal" tabindex="-1" aria-labelledby="termsModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title text-black" id="termsModalLabel">Terms and Conditions</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body text-black p-5" id="termsModalBody" style="max-height: 400px; overflow-y: auto;">
+
+                                <!-- Content will be inserted here -->
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
             </p>
             
         </div>
@@ -413,8 +456,10 @@
 <script src="limited.js"></script>
 <script src="promo-removablemsg.js"></script>
 <script src="login.js"></script>
+<script src="loginBtn.js"></script>
 <script src="index.js"></script>
 <script src="search_function.js"></script>
+<script src="terms&cond.js"></script>
 
 </body>
 </html>

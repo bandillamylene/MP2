@@ -10,10 +10,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="user.css">
+    <link rel="stylesheet" href="./mc_brands.css">
+    <link rel="stylesheet" href="./user.css">
     <link rel="stylesheet" href="./fonts.css">
     <link rel="stylesheet" href="./navFooter.css">
-    <link rel="stylesheet" href="./mc_brands.css">
+    
 </head>
 
 
@@ -119,44 +120,49 @@
 
 <!-- User Dashboard Content -->
 <div class="userDashboard container-fluid mt-5">
+
     <div class="row">
         <!-- Profile Section with Dashboard -->
-        <div class="col d-flex justify-content-center">
-            <div class="profSection mb-3">
-                <div class="position-relative">
-                    <img src="https://via.placeholder.com/150" alt="Profile Picture" class="profile_icon img-fluid rounded-circle mb-3">
+        <div class="col col-md-4 text-center">
+            <div class="profSection card mb-3">
+                <div class="card-body">
+                    <div class="position-relative">
+                        <img src="https://via.placeholder.com/150" alt="Profile Picture" class="profile_icon img-fluid rounded-circle mb-3">
 
-                    <div class="text-center mt-2">
-                        <div class="d-flex align-items-center justify-content-center">
+                       
+                        <div class="text-center mt-2">
                             <button class="btn btn-light btn-sm" id="editImageBtn">
                                 <span>Change Avatar</span>
-                                <i class="fas fa-edit ms-2"></i>
+                                <i class="fas fa-edit"></i>
                             </button>
-                            <div class="dashboard-toggle ms-2" id="dashboardToggle">
-                                <i class="fas fa-cog"></i>
-                            </div>
                         </div>
                     </div>
-                    <ul class="myList3 list-group dashboard-items" id="dashboardItems">
-                        <li class="list-group-item"><a href="#mysaveditems" id="savedItemsLink">Saved Items</a></li>
-                        <li class="list-group-item"><a href="#myloans" id="loanTrackerLink">Loan Application</a></li>
-                        <li class="list-group-item"><a href="#mysettings" id="settingsLink">Settings</a></li>
-                    </ul>
+
+                    <div class="myList card mt-3">
+                        <div class="myList2 card-body">
+                            <ul class="myList3 list-group">
+
+                                <li class="list-group-item"><a href="#mysaveditems" id="savedItemsLink">Saved Items</a></li>
+                                <li class="list-group-item"><a href="#myloans" id="loanTrackerLink">Loan Application</a></li>
+                                <li class="list-group-item"><a href="#mysettings" id="settingsLink">Settings</a></li>
+
+
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
 
-    <div class="row">
-       
-            <div class="settings col" id="mysettings">
-                <div class="personal-info mb-3">
-                    
+        <div class="settings col-md-8" id="mysettings">
+            <div class="col">
+                <!-- Personal Information with Form Fields -->
+                <div class="personal-info card mb-3">
+                    <div class="card-body">
                         <div class="d-flex justify-content-end mb-2">
                             <button class="btn btn-secondary" id="editBtn">Edit</button>
                         </div>
-                        <h2 class="text-center">Personal Information</h2>
+                        <h2 class="card-title text-center">Personal Information</h2>
 
                         <form id="personalInfoForm">
                             <div class="mb-3">
@@ -253,27 +259,27 @@
                         <div class="d-flex justify-content-end">
                             <button class="btn saveButton" id="saveBtn" style="display: none;">Save</button>
                         </div>
+                        
+                    </div>
                 </div>
+            </div>
         </div>
 
        <!-- This is the section where saved items will be displayed -->
-        <div class="savedItems col" id="mysaveditems">
-            <div class="saved-itemscard">
-                    <h2 class="text-center">Saved Items</h2>
+        <div class="savedItems col-md-8" id="mysaveditems">
+            <div class="saved-itemscard card">
+                <div class="card-body container-fluid">
+                    <h2 class="card-title text-center">Saved Items</h2>
 
-                    
-                    
                     <!-- Saved items will appear here -->
-                    <div class="row" id="savedItems">
-
+                    <div class="container mt-4">
+                        <div class="row"  id="savedItems"  ></div>
                         <!-- Saved items will be dynamically inserted here -->
 
 
                         
-                        <div id="deleteAllContainer" style="position: fixed; top: 10px; right: 10px; color: red;">
-                            <button id="deleteAllButton">Delete All</button>
-                        </div>
                     </div>
+                </div>
             </div>
         </div>
         
@@ -281,9 +287,12 @@
 
 
 
-        <div class="loanTracker col" style="display: none;" id="myloans">
-            <div class="loancard">
-                    <h2 class="text-center">Loan Application</h2>                
+        <div class="loanTracker col-md-8" style="display: none;" id="myloans">
+            <div class="loancard card">
+                <div class="card-body">
+                    <h2 class="card-title text-center">Loan Application</h2>
+                </div>
+                
             </div>
 
             <div class="row"><button class="btn btn-primary" id="applyLoanBtn">Apply for a Loan</button></div>
@@ -393,21 +402,23 @@
 
 
 
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+<script src="cardClone.js"></script>
 <script src="userDashboard.js"></script>
 <script src="search_function.js"></script>
 <script src="login.js"></script>
 <script src="loginBtn.js"></script>
 <script src="index.js"></script>
 <script src="terms&cond.js"></script>
-
-<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-<script src="bookmark.js"></script>
-
-
+<script src="bookMark.js"></script>
 
 
 </body>
 
 </html>
-
 

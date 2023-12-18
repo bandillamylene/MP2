@@ -9,7 +9,7 @@
 
 
 .profSection, .personal-info, .myList.card, .list-group-item{
-    background-color: whitesmoke;
+    background-color: #F5F7F8;
     
 }
 
@@ -63,8 +63,8 @@
  }
 
  .list-group-item {
-    border: 4px 10px solid #1f2327;
-    box-shadow: 4px 4px 10px #1f2327;
+    border: 4px 10px solid #45474B;
+    box-shadow: 4px 4px 10px #45474B;
 
 }
 
@@ -82,11 +82,8 @@
     
 }
 .saved-itemscard {
-    background-color: #1f2327;
-    color: whitesmoke;
-}
-.saved-items--card {
-    background-color: whitesmoke;
+    color: #1f2327;
+    border: none;
 }
 
 #editBtn.clicked {
@@ -94,3 +91,14 @@
     color: #1f2327;
    
 }
+
+
+
+
+
+
+
+
+
+
+

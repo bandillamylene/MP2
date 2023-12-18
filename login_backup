@@ -1,8 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     const loginForm = document.querySelector("#login");
     const createAccountForm = document.querySelector("#CreateAccount");
-
-    let storedUsers = [];
     let isWarningsDisplayed = false;
 
     // Function to display messages in the form
@@ -13,17 +11,19 @@ document.addEventListener("DOMContentLoaded", () => {
         messageElement.classList.add(`form__message--${type}`);
     }
 
-    // Function to create a user and store their details
+    // Function to create a user and store their details in admin section
     function createUser(username, email, password) {
         const newUser = {
             username: username,
             email: email,
             password: password
         };
-        storedUsers.push(newUser);
-    }
 
-    
+        let adminUsers = JSON.parse(localStorage.getItem("adminUsers")) || [];
+        adminUsers.push(newUser);
+        localStorage.setItem("adminUsers", JSON.stringify(adminUsers));
+}
+
     // Function to display warnings for form fields
     function displayFieldWarning(inputElement, message) {
         const warningElement = document.createElement('div');
@@ -46,11 +46,15 @@ document.addEventListener("DOMContentLoaded", () => {
         return emailPattern.test(email);
     }
 
-    // Admin credentials
-    const adminCredentials = {
-        username: 'admin',
-        password: '12345'
-    };
+   
+       // Function to validate user login credentials against admin users
+       function validateCredentials(usernameInput, passwordInput) {
+        const adminUsers = JSON.parse(localStorage.getItem("adminUsers")) || [];
+        const user = adminUsers.find(
+            (user) => user.username === usernameInput && user.password === passwordInput
+        );
+        return user;
+    }
 
     // Event listener for login form submission
     loginForm.addEventListener("submit", (e) => {
@@ -59,15 +63,16 @@ document.addEventListener("DOMContentLoaded", () => {
         const usernameInput = document.querySelector('#username').value;
         const passwordInput = document.querySelector('#password').value;
 
-        const foundUser = storedUsers.find(user => user.username === usernameInput && user.password === passwordInput);
+        const foundUser = validateCredentials(usernameInput, passwordInput);
 
-        const isAdmin = usernameInput === adminCredentials.username && passwordInput === adminCredentials.password;
+        const isAdmin = usernameInput === 'admin'; // Assuming 'admin' is the admin username
 
         if (foundUser || isAdmin) {
             sessionStorage.setItem("loggedIn", "true");
             sessionStorage.setItem("username", usernameInput);
 
             if (isAdmin) {
+                localStorage.setItem("administrator", "admin");
                 sessionStorage.setItem("userRole", "admin");
                 window.location.href = "admindashboard.html";
             } else {
@@ -75,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 window.location.href = "user_dashboard.html";
             }
         } else {
-            setFormMessage(loginForm, "error", "Please Enter a valid Email/Password combination.");
+            setFormMessage(loginForm, "error", "Please Enter a valid Username/Password combination.");
         }
     });
 
@@ -187,5 +192,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
     preventBackAfterLogout(); // Call preventBackAfterLogout function initially
 });
-
-
