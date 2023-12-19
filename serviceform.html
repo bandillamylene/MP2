@@ -127,7 +127,7 @@
 
 
                         <label class="form-label">First Name:</label>
-                        <input class="form-control" type="text" required>
+                        <input class="form-control" id="service_firstName" type="text" required>
                         <div class="valid-feedback">Looks Good</div>
                         <div class="invalid-feedback">Please Input First Name</div>
 
@@ -138,7 +138,7 @@
 
                 
                         <label class="form-label">Middle Name:</label>
-                        <input class="form-control" type="text">
+                        <input class="form-control" id="service_middleName" type="text">
                 
 
                 </div>
@@ -147,7 +147,7 @@
 
 
                     <label class="form-label">Last Name:</label>
-                    <input class="form-control" type="text" required>
+                    <input class="form-control" id="service_lastName" type="text" required>
                     <div class="valid-feedback">Looks Good</div>
                     <div class="invalid-feedback">Please Input Last Name</div>
 
@@ -160,7 +160,7 @@
             <div class="col-md-8">
 
                     <label class="form-label">Email Address:</label>
-                    <input class="form-control" type="email" required>
+                    <input class="form-control" id="service_email" type="email" required>
                     <div class="valid-feedback">Looks Good</div>
                     <div class="invalid-feedback">Please Input Your Email</div>
 
@@ -170,7 +170,7 @@
             <div class="col-md-4">
 
                     <label class="form-label">Mobile Number:</label>
-                    <input class="form-control" type="number" pattern="[0-9]{11}" required>
+                    <input class="form-control" id="service_mobile" type="number" pattern="[0-9]{11}" required>
                     <div class="valid-feedback">Looks Good</div>
                     <div class="invalid-feedback">Please Input Your Mobile Number</div>
 
@@ -185,7 +185,7 @@
             <div class="col-md-8">
             
                     <label class="form-label">Address:</label>
-                    <input class="form-control" type="text" required>
+                    <input class="form-control" id="service_address" type="text" required>
                     <div class="valid-feedback">Looks Good</div>
                     <div class="invalid-feedback">Please Input Your Home Address</div>
 
@@ -196,7 +196,7 @@
             <div class="col-md-4">
 
                 <label class="form-label">Schedule Of Service:</label>
-                <input class="form-control" type="datetime-local" required>
+                <input class="form-control" id="service_schedule" type="datetime-local" required>
                 <div class="valid-feedback">Looks Good</div>
                 <div class="invalid-feedback">Please Choose Schedule Of service</div>
 
@@ -208,7 +208,7 @@
         <div class="row pt-3">
             <div class="col-md-12">
                 <label class="form-label">Details Of Service Needed:</label>
-                <textarea class="form-control p-5" required></textarea>
+                <textarea class="form-control p-5" id="service_message" required></textarea>
                 <div class="valid-feedback">Looks Good</div>
                 <div class="invalid-feedback">Please State Your Service</div>
 
@@ -218,18 +218,16 @@
         <div class="row pt-3">
             <div class="col-md-12 pt-3 text-center">
 
-                <input class="form-check-input" type="checkbox" required>
+                <input class="form-check-input" id="service_checkbox" type="checkbox" required>
                 <label class="form-label">By completing this form, I agree to the <a href="#"> Data Privacy Statement</a> of Throttle Twist Motors.</label>
-                <div class="valid-feedback">Looks Good</div>
-                <div class="invalid-feedback">Agree To Continue</div>
-
+           
             </div>
 
         </div>
 
         <div class="row pt-3">
             <div class="col-md-12 d-flex justify-content-center pt-4">
-                <button type="submit" class="serviceform-btn btn-lg" >Submit Form </button>
+                <button type="submit" class="serviceform-btn btn-lg">Submit Form </button>
             </div>
 
         </div>
@@ -374,36 +372,12 @@
 </script>
 
 
-
-
-<script>
-// Example starter JavaScript for disabling form submissions if there are invalid fields
-(() => {
-  'use strict'
-
-  // Fetch all the forms we want to apply custom Bootstrap validation styles to
-  const forms = document.querySelectorAll('.needs-validation')
-
-  // Loop over them and prevent submission
-  Array.from(forms).forEach(form => {
-    form.addEventListener('submit', event => {
-      if (!form.checkValidity()) {
-        event.preventDefault()
-        event.stopPropagation()
-      }
-
-      form.classList.add('was-validated')
-    }, false)
-  })
-})()
-
-</script>
-
 <script src="login.js"></script>
 <script src="loginBtn.js"></script>
 <script src="index.js"></script>
 <script src="search_function.js"></script>
 <script src="terms&cond.js"></script>
+<script src="servicesform.js"></script>
 
 </body>
 </html>

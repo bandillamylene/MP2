@@ -312,9 +312,13 @@ function printForm() {
 
 
 
+const ORDERS_KEY = "salesAndOrdersData";
+
 //Function data to give data to admindashboard via local storage
 function submit(){
 
+
+    
     let formData = {
         // Personal Details
         name: document.getElementById("app_name").value,
@@ -335,19 +339,23 @@ function submit(){
         paymentType: document.getElementById("app_payment").value,
         desiredModel: document.getElementById("app_desiredModel").value,
         modelSRP: document.getElementById("app_srp").value,
-        
+        status: 'On Progress',
+    
         ordernumber: document.getElementById("order_number").innerText,
         orderdate: document.getElementById("app_date").innerText,
+   
     };
 
+    
+
    // Retrieve existing orders from local storage or initialize an empty array
-   let existingOrders = JSON.parse(localStorage.getItem('orders')) || [];
+   let existingOrders = JSON.parse(localStorage.getItem(ORDERS_KEY)) || [];
 
    // Push the new order data into the array
    existingOrders.push(formData);
 
    // Save the updated array back to local storage
-   localStorage.setItem('orders', JSON.stringify(existingOrders));
+   localStorage.setItem(ORDERS_KEY, JSON.stringify(existingOrders));
 
    alert("Application Received! You'll be redirected back to homepage")
    window.location.href = "index.html";

@@ -1,37 +1,48 @@
+const ORDERS_KEY = "salesAndOrdersData";
+
 //Function to recieve customer details from every checkout transaction to sales and orders dashboard
 function updateOrderTable() {
+    let existingOrders = JSON.parse(localStorage.getItem(ORDERS_KEY)) || [];
+    let tableBody = document.querySelector('#manage_sales_orders tbody');
+    tableBody.innerHTML = '';
 
- // Retrieve existing orders from local storage
- let existingOrders = JSON.parse(localStorage.getItem('orders'));
-
- if (existingOrders && existingOrders.length > 0) {
-     let tableBody = document.querySelector('#manage_sales_orders tbody');
-
-     // Clear existing rows in the table
-     tableBody.innerHTML = '';
-
-     // Iterate through each order and create table rows
-     existingOrders.forEach((order, index) => {
-         let newRow = document.createElement('tr');
-         newRow.innerHTML = `
-             <td>${order.name}</td>
-             <td>${order.ordernumber}</td>
-             <td>${order.desiredModel}</td>
-             <td>${order.orderdate}</td>
-             <td>
-                 <button type="button" class="btn btn-dark btn-sm" data-bs-toggle="modal" data-bs-target="#data_print">
-                     See Order Details
-                 </button>
-             </td>
-         `;
-         tableBody.appendChild(newRow);
-     });
- }
+    existingOrders.forEach((order, orderIndex) => {
+        let newRow = document.createElement('tr');
+        newRow.innerHTML = `
+            <td>${order.name}</td>
+            <td>${order.ordernumber}</td>
+            <td>${order.desiredModel}</td>
+            <td>${order.orderdate}</td>
+            <td>
+                <select class="form-select" onchange="updateStatus(${orderIndex}, this)">
+                    <option value="On Progress" ${order.status === 'On Progress' ? 'selected' : ''}>On Progress</option>
+                    <option value="Loan Approved" ${order.status === 'Loan Approved' ? 'selected' : ''}>Loan Approved</option>
+                    <option value="On Hold" ${order.status === 'On Hold' ? 'selected' : ''}>On Hold</option>
+                    <option value="Transaction Completed" ${order.status === 'Transaction Completed' ? 'selected' : ''}>Transaction Completed</option>
+                </select>
+            </td>
+            <td>
+                <button type="button" class="btn btn-dark btn-sm" data-bs-toggle="modal" data-bs-target="#data_print" onclick="displayOrderDetails(${orderIndex})">
+                    See Order Details
+                </button>
+            </td>
+        `;
+        tableBody.appendChild(newRow);
+    });
 }
+
+//Function to update the status of select and option tags, then store it to Orders_key local storage
+function updateStatus(orderIndex, selectElement) {
+    let existingOrders = JSON.parse(localStorage.getItem(ORDERS_KEY)) || [];
+    existingOrders[orderIndex].status = selectElement.value;
+    localStorage.setItem(ORDERS_KEY, JSON.stringify(existingOrders));
+}
+
+
 
 //For displaying customer details per customer Modal
 function displayOrderDetails(index) {
-    let existingOrders = JSON.parse(localStorage.getItem('orders'));
+    let existingOrders = JSON.parse(localStorage.getItem(ORDERS_KEY));
 
     if (existingOrders && existingOrders.length > index) {
         let order = existingOrders[index];
@@ -61,7 +72,13 @@ function displayOrderDetails(index) {
     }
 }
 
-window.onload = function () {
+
+
+
+
+
+//function to update the order table when the document is ready
+document.addEventListener("DOMContentLoaded", function () {
     updateOrderTable();
 
     // Assign event listeners to dynamically created buttons
@@ -69,4 +86,39 @@ window.onload = function () {
         let index = $(this).closest('tr').index();
         displayOrderDetails(index);
     });
-};
+});
+
+
+
+
+
+
+
+  //For Search Order Function
+  function orderSearch() {
+    const searchText = document.getElementById("search_orders").value.toLowerCase().trim();
+
+    const userDataRows = document.querySelectorAll('#order_details tr');
+
+    userDataRows.forEach(row => {
+        const orders = row.querySelector('td:first-child').textContent.toLowerCase();
+
+        if (orders.includes(searchText)) {
+            row.style.display = 'table-row'; // Show the row if the username matches the search text
+        } else {
+            row.style.display = 'none'; // Hide the row if the username doesn't match the search text
+        }
+    });
+}
+
+
+//document.addEventListener("DOMContentLoaded", function () {
+    //updateOrderTable();
+//});
+
+
+
+
+
+
+
