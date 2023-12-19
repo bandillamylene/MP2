@@ -1,116 +1,31 @@
-jQuery(document).ready(function (jQuery) {
-
+jQuery(document).ready(function($) {
     // Load saved items from localStorage and apply "gold" class
     loadSavedItems();
 
-    // Function to create and show the modal
-    function showModal(message, buttonText, buttonCallback) {
-        var modalContainer = document.createElement('div');
-        modalContainer.className = 'modal-container';
+    function showModal() {
+        var modal = `
+            <div class="modal fade" id="duplicateModal" tabindex="-1" role="dialog" aria-labelledby="duplicateModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <p>This item is already saved.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal" id="closeModalBtn">OK</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
 
-        var modalContent = document.createElement('div');
-        modalContent.className = 'modal-content';
-
-        var closeButton = document.createElement('span');
-        closeButton.className = 'close-button';
-        closeButton.innerText = '×';
-
-        var messageParagraph = document.createElement('p');
-        messageParagraph.innerText = message;
-
-        var okButton = document.createElement('button');
-        okButton.className = 'ok-button';
-        okButton.innerText = buttonText;
-        okButton.addEventListener('click', buttonCallback);
-
-        modalContent.appendChild(closeButton);
-        modalContent.appendChild(messageParagraph);
-        modalContent.appendChild(okButton);
-
-        modalContainer.appendChild(modalContent);
-
-        document.body.appendChild(modalContainer);
-
-        modalContainer.style.display = 'flex';
-    }
-
-    // Event delegation for save icon click
-    jQuery(document).on("click", ".save-icon", function (e) {
-        e.preventDefault();
-
-        if (!isLoggedIn()) {
-            showModal("Please login first before you can save this item.", "OK", redirectToLoginPage);
-            return;
-        }
-
-        var itemId = jQuery(this).data("id");
-
-        if (jQuery(this).hasClass("gold")) {
-            // Remove the saved item from the user dashboard
-            removeSavedItem(itemId);
-
-            // Remove the saved item from local storage
-            removeSavedItemFromLocalStorage(itemId);
-        } else {
-            // Toggle the gold class on click
-            jQuery(this).addClass("gold");
-
-            // Save the entire card to local storage
-            saveToLocalStorage(jQuery(this).closest(".mc_card").clone());
-        }
-    });
-
-    // Event delegation for remove icon click
-    jQuery(document).on("click", ".remove-icon", function (e) {
-        e.preventDefault();
-
-        var itemId = jQuery(this).data("id");
-
-        // Remove the saved item from the user dashboard
-        removeSavedItem(itemId);
-
-        // Remove the saved item from local storage
-        removeSavedItemFromLocalStorage(itemId);
-    });
-
-    // Event delegation for delete all button click
-    jQuery(document).on("click", "#deleteAllButton", function (e) {
-        e.preventDefault();
-
-        // Delete all items in the savedItems section
-        deleteAllSavedItems();
-    });
-
-    function saveToLocalStorage(cardClone) {
-        // Save the entire card to local storage
-        var savedItems = JSON.parse(localStorage.getItem("savedItems")) || [];
-        savedItems.push(cardClone.prop('outerHTML'));
-        localStorage.setItem("savedItems", JSON.stringify(savedItems));
-
-        // Load the saved items
-        loadSavedItems();
-    }
-
-    function removeSavedItem(itemId) {
-        jQuery("#savedItems .save-icon[data-id='" + itemId + "']").closest(".mc_card").remove();
-    }
-
-    function removeSavedItemFromLocalStorage(itemId) {
-        var savedItems = JSON.parse(localStorage.getItem("savedItems")) || [];
-
-        savedItems = savedItems.filter(function (item) {
-            return jQuery(item).find(".save-icon").data("id") !== itemId;
+        $('body').append(modal);
+        $('#duplicateModal').modal('show');
+        $('#duplicateModal').on('hidden.bs.modal', function() {
+            $(this).remove();
         });
-
-        localStorage.setItem("savedItems", JSON.stringify(savedItems));
-    }
-
-    function deleteAllSavedItems() {
-        // Remove all items in the savedItems section
-        jQuery("#savedItems").empty();
-
-        // Clear the saved items in local storage
-        localStorage.removeItem("savedItems");
+        $('#closeModalBtn').on('click', function() {
+            $('#duplicateModal').modal('hide');
+        });
     }
 
     function isLoggedIn() {
@@ -121,24 +36,68 @@ jQuery(document).ready(function (jQuery) {
         window.location.href = "login.html";
     }
 
-    // Event delegation for close button
-    jQuery(document).on('click', '.close-button', function () {
-        jQuery('.modal-container').hide();
-    });
+    function saveToLocalStorage(cardClone) {
+        var itemId = cardClone.data("id");
+        console.log("Clicked Item ID:", itemId);
 
-    // Function to load and display saved items on the user dashboard
+        var savedItems = JSON.parse(localStorage.getItem("savedItems")) || [];
+
+        var isDuplicate = savedItems.some(function(item) {
+            return $(item).data("id") === itemId;
+        });
+
+        if (!isDuplicate) {
+            savedItems.push(cardClone[0].outerHTML);
+            localStorage.setItem("savedItems", JSON.stringify(savedItems));
+            loadSavedItems();
+        } else {
+            showModal();
+        }
+    }
+
+    function removeSavedItem(itemId) {
+        // Here, I'll just log the item ID to indicate the removal
+        console.log(`Removing item with ID: ${itemId}`);
+    }
+
     function loadSavedItems() {
         var savedItems = JSON.parse(localStorage.getItem("savedItems")) || [];
 
         if (isLoggedIn()) {
-            // Clear existing saved items
-            jQuery("#savedItems").empty();
+            $("#savedItems").empty();
 
-            savedItems.forEach(function (item) {
-                // Append the saved item to the user dashboard
-                jQuery("#savedItems").append(item);
+            savedItems.forEach(function(item) {
+                var $item = $(item);
+                $item.find('.save-icon').on('click', function(e) {
+                    e.preventDefault();
+                    removeSavedItem($item.data("id"));
+                    savedItems = savedItems.filter(function(savedItem) {
+                        return $(savedItem).data("id") !== $item.data("id");
+                    });
+                    localStorage.setItem("savedItems", JSON.stringify(savedItems));
+                    loadSavedItems();
+                });
+                $("#savedItems").append($item);
             });
         }
     }
-});
 
+    // Event delegation for save icon click
+    $(document).on("click", ".save-icon", function(e) {
+        e.preventDefault();
+
+        if (!isLoggedIn()) {
+            showModal();
+            return;
+        }
+
+        var itemId = $(this).closest('.mc_card').data("id");
+
+        if ($(this).hasClass("gold")) {
+            removeSavedItem(itemId);
+        } else {
+            $(this).addClass("gold");
+            saveToLocalStorage($(this).closest(".mc_card"));
+        }
+    });
+});

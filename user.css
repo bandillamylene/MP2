@@ -93,8 +93,16 @@
 }
 
 
+.loan--application {
+    background-color: #F4CE14;
+    padding: 20px;
+    font-weight: 550;
+}
 
-
+.loan--application:hover {
+    background-color: #45474B;
+    color: #F4CE14;
+}
 
 
 

@@ -95,11 +95,11 @@
         <div class="d-lg-block d-flex justify-content-end">
             
             
-            <button id="loginButton" class="login mx-3 btn btn-md">
+            <button id="loginButton" class="login btn btn-md">
                 Login <i class="fas fa-sign-in-alt ms-1"></i>
             </button>
 
-            <button id="logoutButton" class="logout mx-3 btn btn-md d-none">
+            <button id="logoutButton" class="logout btn btn-md d-none">
                 Logout <i class="fas fa-sign-out-alt ms-1"></i>
             </button>
 
@@ -269,10 +269,7 @@
                         <!-- Saved items will be dynamically inserted here -->
 
 
-                        
-                        <div id="deleteAllContainer" style="position: fixed; top: 10px; right: 10px; color: red;">
-                            <button id="deleteAllButton">Delete All</button>
-                        </div>
+                    
                     </div>
             </div>
         </div>
@@ -280,16 +277,28 @@
 
 
 
-
+          <!-- Loan Application Section -->
         <div class="loanTracker col" style="display: none;" id="myloans">
-            <div class="loancard">
-                    <h2 class="text-center">Loan Application</h2>                
+            <div class="loancard text-center">
+                <h2 class="text-center">Loan Application</h2>
             </div>
 
-            <div class="row"><button class="btn btn-primary" id="applyLoanBtn">Apply for a Loan</button></div>
+            <div class="loanStatus text-center" id="loanStatus">
+                <!-- Initially, the loan status will be empty -->
+            </div>
+
+            <div class="text-center" id="applyLoanContainer" style="display: none;">
+                <!-- Initially hidden, will be shown if no loans exist -->
+                <p id="noLoansMessage" style="display: none;">No loans yet. <button class="btn btn-primary" id="applyLoanBtn">Apply for a Loan</button></p>
+            </div>
         </div>
+                        
+        
     </div>
 </div>
+
+
+
 
 
 
@@ -399,9 +408,10 @@
 <script src="loginBtn.js"></script>
 <script src="index.js"></script>
 <script src="terms&cond.js"></script>
-
+<script src="user--personal.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script src="bookmark.js"></script>
+<script src="userLoan.js"></script>
 
 
 
