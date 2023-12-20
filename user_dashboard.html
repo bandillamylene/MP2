@@ -125,33 +125,49 @@
             <div class="profSection mb-3">
                 <div class="position-relative">
                     <img src="https://via.placeholder.com/150" alt="Profile Picture" class="profile_icon img-fluid rounded-circle mb-3">
-
+                
                     <div class="text-center mt-2">
                         <div class="d-flex align-items-center justify-content-center">
                             <button class="btn btn-light btn-sm" id="editImageBtn">
                                 <span>Change Avatar</span>
                                 <i class="fas fa-edit ms-2"></i>
                             </button>
+
+                            <i id="deleteAvatarIcon" class="fas fa-trash"></i>
+
                             <div class="dashboard-toggle ms-2" id="dashboardToggle">
                                 <i class="fas fa-cog"></i>
                             </div>
+                            
+                            
+                        </div>
+                        <div class="mt-2 d-flex justify-content-center">
+                            <button class="btn btn-success save-avatar-btn" id="saveAvatarBtn" style="display: none;">
+                                Save
+                            </button>
+                
+                            
                         </div>
                     </div>
+                
                     <ul class="myList3 list-group dashboard-items" id="dashboardItems">
                         <li class="list-group-item"><a href="#mysaveditems" id="savedItemsLink">Saved Items</a></li>
                         <li class="list-group-item"><a href="#myloans" id="loanTrackerLink">Loan Application</a></li>
                         <li class="list-group-item"><a href="#mysettings" id="settingsLink">Settings</a></li>
                     </ul>
                 </div>
+                
             </div>
         </div>
     </div>
 </div>
 
-    <div class="row">
+<div class="container-fluid p-5">
+
+    <div class="row px-2">
        
             <div class="settings col" id="mysettings">
-                <div class="personal-info mb-3">
+                <div class="personal-info mb-3 p-3">
                     
                         <div class="d-flex justify-content-end mb-2">
                             <button class="btn btn-secondary" id="editBtn">Edit</button>
@@ -257,20 +273,13 @@
         </div>
 
        <!-- This is the section where saved items will be displayed -->
-        <div class="savedItems col" id="mysaveditems">
+       <div class="savedItems col" id="mysaveditems">
             <div class="saved-itemscard">
-                    <h2 class="text-center">Saved Items</h2>
-
+                <h2 class="text-center">Saved Items</h2>
+                <div class="row" id="savedItems">
                     
-                    
-                    <!-- Saved items will appear here -->
-                    <div class="row" id="savedItems">
-
-                        <!-- Saved items will be dynamically inserted here -->
-
-
-                    
-                    </div>
+                    <!-- Saved items will be dynamically inserted here -->
+                </div>
             </div>
         </div>
         
@@ -280,7 +289,7 @@
           <!-- Loan Application Section -->
         <div class="loanTracker col" style="display: none;" id="myloans">
             <div class="loancard text-center">
-                <h2 class="text-center">Loan Application</h2>
+                <h2 class="text-center">Loan Tracker</h2>
             </div>
 
             <div class="loanStatus text-center" id="loanStatus">
@@ -289,12 +298,14 @@
 
             <div class="text-center" id="applyLoanContainer" style="display: none;">
                 <!-- Initially hidden, will be shown if no loans exist -->
-                <p id="noLoansMessage" style="display: none;">No loans yet. <button class="btn btn-primary" id="applyLoanBtn">Apply for a Loan</button></p>
+                <p id="noLoansMessage" style="display: none;">No existing loans. Apply for a loan?</p>
+                <button class="btn btn-primary" id="applyLoanBtn">Proceed</button>
             </div>
         </div>
                         
         
     </div>
+</div>
 </div>
 
 
@@ -402,6 +413,12 @@
 
 
 
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="bookmark.js"></script>
+<script src="userLoan.js"></script>
+<script src="userAvatar.js"></script>
+
 <script src="userDashboard.js"></script>
 <script src="search_function.js"></script>
 <script src="login.js"></script>
@@ -409,9 +426,7 @@
 <script src="index.js"></script>
 <script src="terms&cond.js"></script>
 <script src="user--personal.js"></script>
-<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-<script src="bookmark.js"></script>
-<script src="userLoan.js"></script>
+
 
 
 

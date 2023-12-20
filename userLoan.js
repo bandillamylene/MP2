@@ -4,11 +4,9 @@ document.addEventListener('DOMContentLoaded', function () {
     var applyLoanContainer = document.getElementById('applyLoanContainer');
     var loanTrackerLink = document.getElementById('loanTrackerLink');
 
-    // Simulated function to check if there are existing loans
+    //function to check if there are existing loans
     function checkExistingLoans() {
-        // Replace this with your actual logic to check for existing loans
-        // For example:
-        var existingLoans = false; // Assuming there are no existing loans initially
+        var existingLoans = false; 
         return existingLoans;
     }
 
@@ -32,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
         noLoansMessage.style.display = 'block'; // Show the no loans message
         applyLoanContainer.style.display = 'block'; // Show the no loans container
         applyLoanBtn.addEventListener('click', function () {
-            // Display a confirmation message before redirecting
+            //confirmation message before redirecting
             var isConfirmed = window.confirm("Please select a product before you can proceed to the next step. Press OK to proceed.");
 
             if (isConfirmed) {

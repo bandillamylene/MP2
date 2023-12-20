@@ -3,7 +3,7 @@ const setTermsAndConditions = () => {
         <h4>Terms and Conditions of Use</h4>
         <p>Welcome to Throttle Twist's website. By accessing or using this website, you agree to comply with and be bound by the following terms and conditions of use. If you disagree with any part of these terms, please do not use our website.</p>
         <ul>
-            <li>
+            <li class="text-left">
                 <h5>Use of the Website</h5>
                 <p>The content of this website is for general information and use only. It is subject to change without notice.</p>
                 <p>Your use of any information or materials on this website is entirely at your own risk. We are not liable for any inaccuracies, errors, or omissions in the content provided.</p>

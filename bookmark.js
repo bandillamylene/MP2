@@ -1,103 +1,156 @@
 jQuery(document).ready(function($) {
-    // Load saved items from localStorage and apply "gold" class
-    loadSavedItems();
-
-    function showModal() {
-        var modal = `
-            <div class="modal fade" id="duplicateModal" tabindex="-1" role="dialog" aria-labelledby="duplicateModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-body">
-                            <p>This item is already saved.</p>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-primary" data-dismiss="modal" id="closeModalBtn">OK</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        `;
-
-        $('body').append(modal);
-        $('#duplicateModal').modal('show');
-        $('#duplicateModal').on('hidden.bs.modal', function() {
-            $(this).remove();
-        });
-        $('#closeModalBtn').on('click', function() {
-            $('#duplicateModal').modal('hide');
-        });
-    }
-
     function isLoggedIn() {
         return sessionStorage.getItem("loggedIn") === "true";
     }
 
-    function redirectToLoginPage() {
-        window.location.href = "login.html";
+    function getUserId() {
+        return "user123";
     }
 
-    function saveToLocalStorage(cardClone) {
-        var itemId = cardClone.data("id");
-        console.log("Clicked Item ID:", itemId);
-
-        var savedItems = JSON.parse(localStorage.getItem("savedItems")) || [];
-
-        var isDuplicate = savedItems.some(function(item) {
+    function isItemAlreadySaved(userId, itemId) {
+        var userItems = JSON.parse(localStorage.getItem(userId)) || [];
+        return userItems.some(function(item) {
             return $(item).data("id") === itemId;
         });
+    }
 
-        if (!isDuplicate) {
-            savedItems.push(cardClone[0].outerHTML);
-            localStorage.setItem("savedItems", JSON.stringify(savedItems));
-            loadSavedItems();
-        } else {
-            showModal();
+    function saveToLocalStorage(userId, cardClone) {
+        var itemId = cardClone.data("id");
+
+        if (!isLoggedIn()) {
+            $('#loginModal').modal('show');
+            return;
+        }
+
+        if (isItemAlreadySaved(userId, itemId)) {
+            console.log("This item is already saved.");
+            return;
+        }
+
+        var itemHTML = cardClone.prop('outerHTML');
+
+        var userItems = JSON.parse(localStorage.getItem(userId)) || [];
+        userItems.push(itemHTML);
+        localStorage.setItem(userId, JSON.stringify(userItems));
+        loadSavedItems(userId);
+    }
+
+    function removeSavedItem(userId, itemId) {
+        var userItems = JSON.parse(localStorage.getItem(userId)) || [];
+        var updatedUserItems = userItems.filter(function(savedItem) {
+            return $(savedItem).data("id") !== itemId;
+        });
+
+        localStorage.setItem(userId, JSON.stringify(updatedUserItems));
+        loadSavedItems(userId);
+    }
+
+    function deleteAllSavedItems(userId) {
+        localStorage.removeItem(userId);
+        loadSavedItems(userId);
+    }
+
+    function checkGoldClass(userId) {
+        var userItems = JSON.parse(localStorage.getItem(userId)) || [];
+        var isHondaSaved = userItems.some(function(item) {
+            return $(item).data("id") === "hondaItemId";
+        });
+
+        if (!isHondaSaved) {
+            $('#bookmarkHonda').removeClass('gold');
         }
     }
 
-    function removeSavedItem(itemId) {
-        // Here, I'll just log the item ID to indicate the removal
-        console.log(`Removing item with ID: ${itemId}`);
-    }
+    function displaySavedItems(userId, savedItems) {
+        var savedItemsContainer = $('#savedItems');
+        savedItemsContainer.empty();
 
-    function loadSavedItems() {
-        var savedItems = JSON.parse(localStorage.getItem("savedItems")) || [];
+        if (savedItems.length === 0) {
+            var addButton = $('<button class="btn btn-primary">Add</button>');
+            var addText = $('<span class="text-center">No saved items. </span>');
+            savedItemsContainer.append(addText, addButton);
 
-        if (isLoggedIn()) {
-            $("#savedItems").empty();
-
+            // Event listener for the Add button
+            addButton.on('click', function() {
+                window.location.href = 'honda.html'; // Redirect to honda.html
+            });
+        } else {
             savedItems.forEach(function(item) {
                 var $item = $(item);
-                $item.find('.save-icon').on('click', function(e) {
+                var saveIcon = $item.find('.save-icon');
+                saveIcon.on('click', function(e) {
                     e.preventDefault();
-                    removeSavedItem($item.data("id"));
-                    savedItems = savedItems.filter(function(savedItem) {
-                        return $(savedItem).data("id") !== $item.data("id");
-                    });
-                    localStorage.setItem("savedItems", JSON.stringify(savedItems));
-                    loadSavedItems();
+                    removeSavedItem(userId, $item.data("id"));
+                    checkGoldClass(userId);
                 });
-                $("#savedItems").append($item);
+
+                savedItemsContainer.append($item);
             });
         }
     }
 
-    // Event delegation for save icon click
+    function loadSavedItems(userId) {
+        var savedItems = JSON.parse(localStorage.getItem(userId)) || [];
+        displaySavedItems(userId, savedItems);
+        checkGoldClass(userId);
+    }
+
     $(document).on("click", ".save-icon", function(e) {
         e.preventDefault();
+        var userId = getUserId();
 
         if (!isLoggedIn()) {
-            showModal();
+            $('#loginModal').modal('show');
             return;
         }
 
         var itemId = $(this).closest('.mc_card').data("id");
 
         if ($(this).hasClass("gold")) {
-            removeSavedItem(itemId);
+            removeSavedItem(userId, itemId);
+            checkGoldClass(userId);
         } else {
             $(this).addClass("gold");
-            saveToLocalStorage($(this).closest(".mc_card"));
+            saveToLocalStorage(userId, $(this).closest(".mc_card"));
         }
     });
+
+    $(document).on("click", "#deleteAll", function() {
+        var userId = getUserId();
+        deleteAllSavedItems(userId);
+    });
+
+    // Bootstrap Modal Template Literal
+    const loginModal = `
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content modal-content-login">
+                <div class="modal-body text-center">
+                    You need to be logged in to save items.
+                </div>
+                <div class="modal-footer d-flex justify-content-center">
+                    <button type="button" class="btn btn-primary mr-2" id="okModalBtn">OK</button>
+                    <button type="button" class="btn btn-secondary" id="closeModalBtn" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+`;
+
+$('body').append(loginModal);
+
+$('#okModalBtn').on('click', function() {
+    window.location.href = 'login.html';
+});
+
+$('#closeModalBtn').on('click', function() {
+    $('#loginModal').modal('hide');
+});
+
+
+
+
+
+    var userId = getUserId();
+    loadSavedItems(userId);
 });

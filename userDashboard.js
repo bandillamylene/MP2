@@ -1,4 +1,28 @@
 document.addEventListener("DOMContentLoaded", function () {
+    var dashboardItems = document.getElementById("dashboardItems");
+    var dashboardToggle = document.getElementById("dashboardToggle");
+    var dashboardLinks = document.querySelectorAll(".myList3.list-group.dashboard-items li");
+
+    // Initially hide dashboard links
+    dashboardItems.style.display = "none";
+
+    // Toggle display of dashboard links when the toggler is clicked
+    dashboardToggle.addEventListener("click", function () {
+        if (dashboardItems.style.display === "none") {
+            dashboardItems.style.display = "block";
+        } else {
+            dashboardItems.style.display = "none";
+        }
+    });
+
+    // Event listeners for dashboard links
+    dashboardLinks.forEach(function (link) {
+        link.addEventListener("click", function (event) {
+            var sectionId = event.target.getAttribute("href").substring(1);
+            hideAllExcept(sectionId);
+        });
+    });
+
     // Function to hide all dashboard sections except the given section
     function hideAllExcept(sectionId) {
         var dashboardSections = document.querySelectorAll(".col");
@@ -13,40 +37,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Initially show the Settings section
     hideAllExcept("mysettings");
-
-    // Event listeners for dashboard links
-    var savedItemsLink = document.getElementById("savedItemsLink");
-    if (savedItemsLink) {
-        savedItemsLink.addEventListener("click", function (event) {
-            hideAllExcept("mysaveditems");
-        });
-    }
-
-    var settingsLink = document.getElementById("settingsLink");
-    if (settingsLink) {
-        settingsLink.addEventListener("click", function (event) {
-            hideAllExcept("mysettings");
-        });
-    }
-
-    var loanTrackerLink = document.getElementById("loanTrackerLink");
-    if (loanTrackerLink) {
-        loanTrackerLink.addEventListener("click", function (event) {
-            hideAllExcept("myloans");
-        });
-    }
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-    var dashboardItems = document.getElementById("dashboardItems");
-    var dashboardToggle = document.getElementById("dashboardToggle");
-
-    dashboardToggle.addEventListener("click", function () {
-        if (dashboardItems.style.display === "none") {
-            dashboardItems.style.display = "block";
-        } else {
-            dashboardItems.style.display = "none";
-        }
-    });
-});
 
