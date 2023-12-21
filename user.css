@@ -104,6 +104,14 @@
     color: #F4CE14;
 }
 
+.edited-field.error {
+    border: 1px solid red;
+}
+
+.edited-field:focus {
+    outline: none !important;
+}
+
 
 
 
