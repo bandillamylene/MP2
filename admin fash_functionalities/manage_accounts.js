@@ -69,3 +69,24 @@ function addUser() {
 
 // Call the function to populate user data when the admin dashboard loads
 window.onload = populateUserData;
+
+
+
+
+
+ //For Search User Function
+ function userSearch() {
+  const searchText = document.getElementById("search_user").value.toLowerCase().trim();
+
+  const userDataRows = document.querySelectorAll('#userDataBody tr');
+
+  userDataRows.forEach(row => {
+      const orders = row.querySelector('td:first-child').textContent.toLowerCase();
+
+      if (orders.includes(searchText)) {
+          row.style.display = 'table-row'; // Show the row if the username matches the search text
+      } else {
+          row.style.display = 'none'; // Hide the row if the username doesn't match the search text
+      }
+  });
+}
