@@ -184,29 +184,30 @@
 <!--Step 1 Review Your Order-->
 <div class="step_1 container-md pt-5">
 
-<div class="row">
+        <div class="row">
 
-    <div class="main_product col-md-12">
+            <div class="main_product col-md-12">
 
-            <h3 class="h5 text-center">Chosen Model:</h3>
-            <img class="img-fluid pt-3" src="images/motorcycles/yamaha/mt15/pic_1.jpg" id="productImage">
-            <h3 class="h4 pt-3" id="modelName">Model Name</h3>
-            <p class="pt-2" id="productDetails">Details</p>
-            <h3 class="h4 pt-2 text-center" id="modelPrice">SRP: </h3>
-   
-</div>
+                    <h3 class="h5 text-center">Chosen Model:</h3>
+                    <img class="img-fluid pt-3" src="images/motorcycles/yamaha/mt15/pic_1.jpg" id="productImage">
+                    <h3 class="h4 pt-3" id="modelName">Model Name</h3>
+                    <p class="pt-2" id="productDetails">Details</p>
+                    <h3 class="h4 pt-2 text-center" id="modelPrice">SRP: </h3>
+        
+            </div>
 
 
-</div>
-
-<div class="row pt-5">
-
-    <p class="pt-2 text-center">Upon clicking proceed, you'll need to fill out the application form.</p>
-
-    <div class="col-md-12 d-flex justify-content-center">
-        <button type="button" class="btn btn-dark btn-lg" onclick="proceedButton()">Proceed</button>
         </div>
-</div>
+
+        <div class="row pt-5">
+
+            <p class="pt-2 text-center">Upon clicking proceed, you'll need to fill out the application form.</p>
+
+            <div class="col-md-12 d-flex justify-content-center">
+                <button type="button" class="btn btn-dark btn-lg" style="background-color: #45474B;" onclick="proceedButton()">Proceed</button>
+            </div>
+       
+        </div>
 
 </div>
 
@@ -217,7 +218,7 @@
 
     <h5 class="card-title p-4 text-center">Application Form</h5>
 
-    <form id="app_form" class="needs-validation" onsubmit="return handleFormSubmission()">
+    <form id="app_form" class="needs-validation" onsubmit="return handleFormSubmission()" novalidate>
 
 
         <div class="row">
@@ -228,6 +229,8 @@
 
                 <label class="form-label">Full Name:</label>
                 <input class="form-control" type="text" id="app_name" placeholder="Enter Full Name" required>
+                <div class="valid-feedback">Looks Good!</div>
+                <div class="invalid-feedback">Please Enter Full Name</div>
 
             </div>
 
@@ -235,6 +238,8 @@
 
                 <label class="form-label">Email:</label>
                 <input class="form-control" type="email" id="app_email" placeholder="Enter Email" required>
+                <div class="valid-feedback">Looks Good!</div>
+                <div class="invalid-feedback">Please Enter Email</div>
 
             </div>
 
@@ -255,13 +260,17 @@
 
                 <label class="form-label">Birthday:</label>
                 <input class="form-control" type="text" id="app_birthday" placeholder="MM/DD/YY" required>
+                <div class="valid-feedback">Looks Good!</div>
+                <div class="invalid-feedback">Please Enter Your Birthdate</div>
 
             </div>
 
             <div class="col-md-6 p-3">
 
                 <label class="form-label">Phone Number:</label>
-                <input class="form-control" type="number" id="app_phone" pattern="[09]{11}" placeholder="09" required>
+                <input class="form-control" type="tel" id="app_phone" pattern="[0-9]{11}" placeholder="09" required>
+                <div class="valid-feedback">Looks Good!</div>
+                <div class="invalid-feedback">Please Enter Phone Number</div>
 
             </div>
 
@@ -280,6 +289,8 @@
 
                 <label class="form-label">Street/Brgy:</label>
                 <input class="form-control" type="text" id="app_streetbrgy" placeholder="Enter Street/Brgy" required>
+                <div class="valid-feedback">Looks Good!</div>
+                <div class="invalid-feedback">Please Enter Street/Brgy</div>
 
             </div>
 
@@ -287,6 +298,8 @@
 
                 <label class="form-label">Municipality:</label>
                 <input class="form-control" type="text" id="app_mun" placeholder="Enter Municipality" required>
+                <div class="valid-feedback">Looks Good!</div>
+                <div class="invalid-feedback">Please Enter Municipality</div>
 
             </div>
 
@@ -300,6 +313,8 @@
 
                 <label class="form-label">Province:</label>
                 <input class="form-control" type="text" id="app_province" placeholder="Enter Province" required>
+                <div class="valid-feedback">Looks Good!</div>
+                <div class="invalid-feedback">Please Enter Province</div>
 
             </div>
 
@@ -307,6 +322,8 @@
 
                 <label class="form-label">Zip Code:</label>
                 <input class="form-control" type="number" id="app_zip" placeholder="Enter Zip Code" required>
+                <div class="valid-feedback">Looks Good!</div>
+                <div class="invalid-feedback">Please Enter Zip Code</div>
 
             </div>
 
@@ -323,14 +340,16 @@
 
                 <label class="form-label">Company Name:</label>
                 <input class="form-control" type="text" id="app_compName" placeholder="Name of Company or Business" required>
-
+                <div class="valid-feedback">Looks Good!</div>
+                <div class="invalid-feedback">Please Enter Company Name</div>
             </div>
 
             <div class="col-md-6 p-3">
 
                 <label class="form-label">Employment Type:</label>
                 <input class="form-control" type="text" id="app_empType" placeholder="Full Time / Part Time / Freelance" required>
-
+                <div class="valid-feedback">Looks Good!</div>
+                <div class="invalid-feedback">Please Enter Employment Type</div>
             </div>
 
 
@@ -343,13 +362,16 @@
 
                 <label class="form-label">Company / Business Phone:</label>
                 <input class="form-control" type="text" id="app_comNum" placeholder="Enter Company / Business Phone" required>
-
+                <div class="valid-feedback">Looks Good!</div>
+                <div class="invalid-feedback">Please Enter Company/Business Phone</div>
             </div>
 
             <div class="col-md-6 p-3">
 
                 <label class="form-label">Company / Business Address:</label>
                 <input class="form-control" type="text" id="app_compAdd" placeholder="Enter Company / Business Address" required>
+                <div class="valid-feedback">Looks Good!</div>
+                <div class="invalid-feedback">Please Enter Business Address</div>
 
             </div>
 
@@ -364,6 +386,8 @@
 
                 <label class="form-label">Monthly Income:</label>
                 <input class="form-control" type="number" id="app_monIncome" placeholder="Enter Monthly Income" required>
+                <div class="valid-feedback">Looks Good!</div>
+                <div class="invalid-feedback">Please Enter Monthly Income</div>
 
             </div>
 
@@ -371,6 +395,8 @@
 
                 <label class="form-label">Annual Income:</label>
                 <input class="form-control" type="number" id="app_annIncome" placeholder="Enter Annual Income" required>
+                <div class="valid-feedback">Looks Good!</div>
+                <div class="invalid-feedback">Please Enter Annual Income</div>
 
             </div>
 
@@ -388,7 +414,8 @@
 
                     <label class="form-label" for="cash_payment">Type Of Payment:</label>
                     <input type="text" id="app_payment" class="form-control" placeholder="Cash / Financing" required>
-                 
+                    <div class="valid-feedback">Looks Good!</div>
+                    <div class="invalid-feedback">Please Enter Type Of Payment</div>
                     
 
                 </div>
@@ -429,7 +456,9 @@
 
 
             <input type="checkbox" class="form-check-input" id="app_agree" required>
-            <label>Agree to <a href="">Terms and Conditions</a> </label>
+            <label>Agree to <a href="#" id="termsLink">Terms and Conditions</a> </label>
+            <div class="valid-feedback">Looks Good!</div>
+            <div class="invalid-feedback">You have to agree to our Terms and Conditions </div>
  
             <div class="row pt-5">
 
@@ -706,25 +735,28 @@
         <div class="col-md-12 border p-2">
 
             <div class="row">
-        <div class="col-6">
 
-        <h5 class="h6" style="font-weight: bold;">
-            Dear 
-            <label class="h6" style="font-weight: bold;" id="customer_name"> Name</label>
-        </h5>
+                <div class="col-6">
 
-        </div>
+                    <h5 class="h6" style="font-weight: bold;">
+                        Dear 
+                        <label class="h6" style="font-weight: bold;" id="customer_name"> Name</label>
+                    </h5>
 
-        <div class="col-6">
-            <h5 class="h6" style="font-weight: bold;"> Order Number: <h5 id="order_number"></h5></h5>
+                </div>
 
-         </div>
-    </div>
+                <div class="col-6">
+
+                    <h5 class="h6" style="font-weight: bold;"> Order Number: <h5 id="order_number"></h5></h5>
+
+                </div>
+
+            </div>
 
 
-            <p class="lead" style="font-size: medium;">
-                Thank you for applying to avail one of our motorcycles. We're thrilled to assist you through this process. To proceed, please follow the steps outlined below:
-            </p>
+                    <p class="lead" style="font-size: medium;">
+                        Thank you for applying to avail one of our motorcycles. We're thrilled to assist you through this process. To proceed, please follow the steps outlined below:
+                    </p>
 
             <ol  class="list-group list-group-numbered">
 
@@ -786,17 +818,17 @@
             </ol>
            
 
-            <p class="lead pt-2" style="font-size: medium;">
-                Please ensure all documents are clear and legible to facilitate the processing of your application. Once you have gathered these documents, you can submit them by visiting our nearest branch.            
-            </p>
+                <p class="lead pt-2" style="font-size: medium;">
+                    Please ensure all documents are clear and legible to facilitate the processing of your application. Once you have gathered these documents, you can submit them by visiting our nearest branch.            
+                </p>
 
-            <p class="lead" style="font-size: medium;">
-                We appreciate your interest in Throttle Twist Motors. We look forward to providing you with the best motorcycle options tailored to your needs.           
-             </p>
+                <p class="lead" style="font-size: medium;">
+                    We appreciate your interest in Throttle Twist Motors. We look forward to providing you with the best motorcycle options tailored to your needs.           
+                </p>
 
                 <p class="lead" style="font-size: medium;">
                     Please Click "Submit Button" To finish processing your application
-                 </p>
+                </p>
     
 
 
@@ -806,7 +838,7 @@
         
     </div>
 
-    <!--Application FOrm Printable-->
+    <!--Application FOrm Printable modal-->
            <div class="modal fade" id="form_print" tabindex="-1" aria-labelledby="printform" aria-hidden="true">
                 <Div class="modal-dialog">
 
@@ -1061,7 +1093,7 @@
 
             </div>
 
-        </div>
+</div>
 
   
 
@@ -1073,6 +1105,7 @@
             <button type="button" class="btn btn-dark btn-lg" onclick="submit()">Submit</button>
 
         </div>
+        
      </div>
 
      
@@ -1212,30 +1245,6 @@
 </script>
 
 
-
-<!--Validation forms bootstrap-->
-<script>
-// Example starter JavaScript for disabling form submissions if there are invalid fields
-(() => {
-  'use strict'
-
-  // Fetch all the forms we want to apply custom Bootstrap validation styles to
-  const forms = document.querySelectorAll('.needs-validation')
-
-  // Loop over them and prevent submission
-  Array.from(forms).forEach(form => {
-    form.addEventListener('submit', event => {
-      if (!form.checkValidity()) {
-        event.preventDefault()
-        event.stopPropagation()
-      }
-
-      form.classList.add('was-validated')
-    }, false)
-  })
-})()
-
-</script>
 
 
 <script src="login.js"></script>

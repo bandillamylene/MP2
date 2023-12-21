@@ -115,1021 +115,1058 @@
     </div>
 </nav>
 
-<!--Admin Navbars-->
+<!--Admin Display Container-->
 <div class="container pt-5 pb-5">
-<div class="row">
-<div class="admin_navs col-md-4 border">
-<div class="row pb-5">
-    <div class="col-md">
-        <h5 class="h4 fw-bold pt-4">Admin's Dashboard</h5>
-    </div>
 
-</div>
-
-<div class="row pb-4">
-    <div class="col-md">
-       <a href="#manage_accounts" class="nav-link toggle-link" onclick="showContent('manage_accounts', event)">
-        Manage Accounts
-       </a>
-    </div>
-
-</div>
-
-<div class="row pb-4">
-    <div class="col-md">
-       <a href="#manage_models" class="nav-link toggle-link" onclick="showContent('manage_models', event)">
-        Manage Models
-       </a>
-    </div>
-
-</div>
-
-<div class="row pb-4">
-    <div class="col-md">
-       <a href="#" class="nav-link toggle-link" onclick="showContent('manage_sales_orders', event)">
-        Sales and Orders
-       </a>
-    </div>
-
-</div>
-
-
-<div class="row pb-4">
-    <div class="col-md">
-       <a href="#" class="nav-link toggle-link" onclick="showContent('manage_inquiry', event)">
-        Inquiry Managements
-       </a>
-    </div>
-
-</div>
-
-<div class="row pb-4">
-    <div class="col-md">
-       <a href="#" class="nav-link toggle-link" onclick="showContent('manage_service', event)">
-        Service Inquiry Managements
-       </a>
-    </div>
-
-</div>
-
-</div>
-
-<!--Display Area-->
-<div class="admin_display col-md-8 border">
-<div class="row">
-
-<div class="col-md-12 pt-3">
-
-<!--Displaying Accounts-->
-<div class="content container" id="manage_accounts">
     <div class="row">
 
-        <div class="col-md-6">
+        <!--Admin Navbars-->
+        <div class="admin_navs col-md-4 border">
+            <div class="row pb-5">
+                <div class="col-md">
+                     <h5 class="h4 fw-bold pt-4">Admin's Dashboard</h5>
+                </div>
 
-            <h5 class="h4 fw-bold">Manage Accounts</h5>
-
-        </div>
-
-        <div class="col-md-6">
-
-            <input type="search" class="form-control" placeholder="Search Users" oninput="userSearch()" id="search_user">
-
-        </div>
-
-        
-    </div>
-
-
-<button class="btn btn-light" data-bs-toggle="modal" data-bs-target="#add_user">Add User</button>
-
-<h5 class="h5 pt-4">Users:</h5>
-
-<Table class="table table-light table-striped" id="userTable">
-
-    <thead>
-        <tr>
-            <Th>Name</Th>
-            <Th>Role</Th>
-            <th>Operations</th>
-        </tr>
-    </thead>
-
-    <tbody id="userDataBody">
-     <td>Clyde</td>
-     <td>User</td>
-     <td>
-        <button class="btn btn-danger" onclick="deleteUser()"></button>
-     </td>
- 
-    </tbody>
-
-</Table>
-
-
-</div>
-</div>
-
-
-<!--Modal to see Add User form-->
-<div class="modal fade" id="add_user" tabindex="-1" aria-labelledby="adduser" aria-hidden="true">
-    <Div class="modal-dialog">
-
-        <div class="modal-content">
-            <div class="modal-header">
-                
-                <h5 class="modal-title text-dark">Add User</h5>
-        
             </div>
 
-            <div class="modal-body">
-                <div class="container-md">
+            <div class="row pb-4">
 
-                    <div class="row">
+                <div class="col-md">
+                    <a href="#manage_accounts" class="nav-link toggle-link" onclick="showContent('manage_accounts', event)">
+                            Manage Accounts
+                        </a>
+                </div>
 
-                        <form>
+            </div>
 
-                            <div class="row">
-                    
-    
-                    
-                                <div class="col-md-12 p-3">
-                    
-                                    <label class="form-label text-dark">Name:</label>
-                                    <input class="form-control" type="text" id="addUser_name">
-                    
-                                </div>
+            <div class="row pb-4">
 
-                                <div class="col-md-12 p-3">
-                    
-                                    <label class="form-label text-dark">Role:</label>
-                                    <input class="form-control" type="text" id="addUser_role">
-                    
-                                </div>
-                    
-                                <div class="col-md-12 p-3">
-                    
-                                    <label class="form-label text-dark">Password:</label>
-                                    <input class="form-control" type="text" id="addUser_password">
-                    
-                                </div>
+                <div class="col-md">
+                    <a href="#manage_models" class="nav-link toggle-link" onclick="showContent('manage_models', event)">
+                    Manage Models
+                        </a>
+                    </div>
 
-                    
+            </div>
+
+            <div class="row pb-4">
+
+                <div class="col-md">
+                    <a href="#" class="nav-link toggle-link" onclick="showContent('manage_sales_orders', event)">
+                        Sales and Orders
+                        </a>
+                </div>
+
+            </div>
+
+
+            <div class="row pb-4">
+
+                <div class="col-md">
+                    <a href="#" class="nav-link toggle-link" onclick="showContent('manage_inquiry', event)">
+                        Inquiry Managements
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="row pb-4">
+
+                <div class="col-md">
+                    <a href="#" class="nav-link toggle-link" onclick="showContent('manage_service', event)">
+                    Service Inquiry Managements
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!--Display Area-->
+        <div class="admin_display col-md-8 border">
+
+            <div class="row">
+
+                <div class="col-md-12 pt-3">
+
+                    <!--Displaying Accounts-->
+                    <div class="content container" id="manage_accounts">
+
+                        <div class="row">
+
+                            <div class="col-md-6">
+
+                                <h5 class="h4 fw-bold">Manage Accounts</h5>
+
                             </div>
+
+                            <div class="col-md-6">
+
+                                <input type="search" class="form-control" placeholder="Search Users" oninput="userSearch()" id="search_user">
+
+                            </div>
+
+                
+                        </div>
+
+
+                        <button class="btn btn-light" data-bs-toggle="modal" data-bs-target="#add_user">Add User</button>
+
+                        <h5 class="h5 pt-4">Users:</h5>
+
+                        <div class="table-responsive">
+
+                            <Table class="table table-light table-striped" id="userTable">
+
+                                <thead>
+                                    <tr>
+                                        <Th>Name</Th>
+                                        <Th>Role</Th>
+                                        <th>Operations</th>
+                                    </tr>
+                                </thead>
+            
+                                <tbody id="userDataBody">
+                                <td>Clyde</td>
+                                <td>User</td>
+                                <td>
+                                    <button class="btn btn-danger" onclick="deleteUser()"></button>
+                                </td>
+                            
+                                </tbody>
+            
+                            </Table>
+
+                        </div>
                         
-                            <div class="modal-footer">
+                    </div>
 
-                                <button class="btn btn-dark" type="button" data-bs-dismiss="modal">Close</button>
-                                <button class="btn btn-light" onclick="addUser()">Add User</button>
-    
+                </div>
+
+
+                    <!--Displaying Models-->
+                    <div class="content container" id="manage_models">
+
+                        <div class="row">
+
+                            <div class="col-md-6">
+
+                                <h5 class="h4 fw-bold">Manage Models</h5>
+
                             </div>
 
-                            </form>
+                            <div class="col-md-6">
 
-                           
+                                <input type="search" class="form-control" placeholder="Search Models" oninput="modelSearch()" id="search_model">
+
+                            </div>
+
+                        </div>
+                    
+                        <div class="row">
+
+                            <div class="col-md-12">
+
+                                <h5 class="h5 pt-5">Models:</h5>
+
+                    
+
+                                <!--Displaying the models-->
+                                <Div class="table-responsive">
+
+                                        <Table class="table table-light table-striped">
+
+                                    <thead>
+                                        <tr>
+                                            
+                                            <Th scope="col">Model Name</Th>
+                                            <Th scope="col">Brand</Th>
+                                            <Th scope="col">Status</th>
+                                            <Th scope="col">Operations</Th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody id="hondaProducts">
+                                        <tr>
+
+                                            <td>Click 125</td>
+                                            <td>Honda</td>
+                                            <td id="status_click125">Available</td>
+                                            <td>
+                                                
+                                                <button type="submit" class="btn btn-dark btn-sm" onclick="hide('click125')">Hide Product</button>   
+                                                <button type="submit" class="btn btn-dark btn-sm" onclick="unhide('click125')">Unhide Product</button> 
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+
+                                            <td>Beat 125</td>
+                                            <td>Honda</td>
+                                            <td id="status_beat125">Available</td>
+                                            <td>
+
+                                                <button type="submit" class="btn btn-dark btn-sm" onclick="hide('beat125')">Hide Product</button>   
+                                                <button type="submit" class="btn btn-dark btn-sm" onclick="unhide('beat125')">Unhide Product</button> 
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+
+                                            <td>TMX Supremo</td>
+                                            <td>Honda</td>
+                                            <td id="status_supremo">Available</td>
+                                            <td>
+                                                <button type="submit" class="btn btn-dark btn-sm" onclick="hide('supremo')">Hide Product</button>   
+                                                <button type="submit" class="btn btn-dark btn-sm" onclick="unhide('supremo')">Unhide Product</button> 
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+
+                                            <td>PCX 160</td>
+                                            <td>Honda</td>
+                                            <td id="status_pcx160">Available</td>
+                                            <td>
+                                                <button type="submit" class="btn btn-dark btn-sm" onclick="hide('pcx160')">Hide Product</button>   
+                                                <button type="submit" class="btn btn-dark btn-sm" onclick="unhide('pcx160')">Unhide Product</button> 
+
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+
+                                            <td>CBR150R</td>
+                                            <td>Honda</td>
+                                            <td id="status_cbr150r">Available</td>
+                                            <td>
+                                                <button type="submit" class="btn btn-dark btn-sm" onclick="hide('cbr150r')">Hide Product</button>   
+                                                <button type="submit" class="btn btn-dark btn-sm" onclick="unhide('cbr150r')">Unhide Product</button> 
+
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+
+
+                                    <tbody id="kawasakiProducts">
+
+                                        <tr>
+
+                                            <td>Barako II</td>
+                                            <td>Kawasaki</td>
+                                            <td id="status_barako2">Available</td>
+                                            <td>
+                                                <button type="submit" class="btn btn-dark btn-sm" onclick="hide('barako2')">Hide Product</button>   
+                                                <button type="submit" class="btn btn-dark btn-sm" onclick="unhide('barako2')">Unhide Product</button> 
+                                
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+
+                                            <td>CT 125</td>
+                                            <td>Kawasaki</td>
+                                            <td id="status_ct125">Available</td>
+                                            <td>
+                                                <button type="submit" class="btn btn-dark btn-sm" onclick="hide('ct125')">Hide Product</button>   
+                                                <button type="submit" class="btn btn-dark btn-sm" onclick="unhide('ct125')">Unhide Product</button> 
+
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+
+                                            <td>Rouser NS200fi</td>
+                                            <td>Kawasaki</td>
+                                            <td id="status_rouser">Available</td>
+                                            <td>
+                                                <button type="submit" class="btn btn-dark btn-sm" onclick="hide('rouser')">Hide Product</button>   
+                                                <button type="submit" class="btn btn-dark btn-sm" onclick="unhide('rouser')">Unhide Product</button> 
+
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+
+                                            <td>Dominar 400</td>
+                                            <td>Kawasaki</td>
+                                            <td id="status_dominar400">Available</td>
+                                            <td>
+                                                <button type="submit" class="btn btn-dark btn-sm" onclick="hide('dominar400')">Hide Product</button>   
+                                                <button type="submit" class="btn btn-dark btn-sm" onclick="unhide('dominar400')">Unhide Product</button> 
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+
+                                    <tbody id="yamahaProducts">
+
+                                        <tr>
+
+                                            <td>XSR 155</td>
+                                            <td>Yamaha</td>
+                                            <td id="status_xsr155">Available</td>
+                                            <td>
+                                                <button type="submit" class="btn btn-dark btn-sm" onclick="hide('xsr155')">Hide Product</button>   
+                                                <button type="submit" class="btn btn-dark btn-sm" onclick="unhide('xsr155')">Unhide Product</button> 
+
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+
+                                            <td>Sniper 155</td>
+                                            <td>Yamaha</td>
+                                            <td id="status_sniper155">Available</td>
+                                            <td>
+                                                <button type="submit" class="btn btn-dark btn-sm" onclick="hide('sniper155')">Hide Product</button>   
+                                                <button type="submit" class="btn btn-dark btn-sm" onclick="unhide('sniper155')">Unhide Product</button> 
+
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+
+                                            <td>Mio Aerox</td>
+                                            <td>Yamaha</td>
+                                            <td id="status_aerox">Available</td>
+                                            <td>
+                                                <button type="submit" class="btn btn-dark btn-sm" onclick="hide('aerox')">Hide Product</button>   
+                                                <button type="submit" class="btn btn-dark btn-sm" onclick="unhide('aerox')">Unhide Product</button> 
+
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+
+                                            <td>Mio Soul 125i</td>
+                                            <td>Yamaha</td>
+                                            <td id="status_mio">Available</td>
+                                            <td>
+                                                <button type="submit" class="btn btn-dark btn-sm" onclick="hide('mio')">Hide Product</button>   
+                                                <button type="submit" class="btn btn-dark btn-sm" onclick="unhide('mio')">Unhide Product</button> 
+
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+
+                                            <td>MT15</td>
+                                            <td>Yamaha</td>
+                                            <td id="status_mt15">Available</td>
+                                            <td>
+                                                <button type="submit" class="btn btn-dark btn-sm" onclick="hide('mt15')">Hide Product</button>   
+                                                <button type="submit" class="btn btn-dark btn-sm" onclick="unhide('mt15')">Unhide Product</button> 
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+
+                                    <tbody id="motorstarProducts">
+
+                                        <tr>
+
+                                            <td>Cafe 150</td>
+                                            <td>Motorstar</td>
+                                            <td id="status_cafe150">Available</td>
+                                            <td>
+                                                <button type="submit" class="btn btn-dark btn-sm" onclick="hide('cafe150')">Hide Product</button>   
+                                                <button type="submit" class="btn btn-dark btn-sm" onclick="unhide('cafe150')">Unhide Product</button> 
+
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+
+                                            <td>Cafe 400</td>
+                                            <td>Motorstar</td>
+                                            <td id="status_cafe400">Available</td>
+                                            <td>
+                                                <button class="btn btn-dark btn-sm" onclick="hide('cafe400')">Hide Product</button>   
+                                                <button class="btn btn-dark btn-sm" onclick="unhide('cafe400')">Unhide Product</button> 
+                                            </td>
+                                        </tr>
+
+                                        
+                                        </tr>
+                                    </tbody>
+
+                                    <tbody id="cfmotoProducts">
+
+                                        <tr>
+
+                                            <td>300sr</td>
+                                            <td>CFMoto</td>
+                                            <td id="status_300sr">Available</td>
+                                            <td>
+                                                <button type="submit" class="btn btn-dark btn-sm" onclick="hide('300sr')">Hide Product</button>   
+                                                <button type="submit" class="btn btn-dark btn-sm" onclick="unhide('300sr')">Unhide Product</button> 
+
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+
+                                            <td>NK 400</td>
+                                            <td>CFMoto</td>
+                                            <td id="status_nk400">Available</td>
+                                            <td>
+                                                <button type="submit" class="btn btn-dark btn-sm" onclick="hide('nk400')">Hide Product</button>   
+                                                <button type="submit" class="btn btn-dark btn-sm" onclick="unhide('nk400')">Unhide Product</button> 
+
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+
+                                            <td>NK 650</td>
+                                            <td>CFMoto</td>
+                                            <td id="status_nk650">Available</td>
+                                            <td>
+                                                <button type="submit" class="btn btn-dark btn-sm" onclick="hide('nk650')">Hide Product</button>   
+                                                <button type="submit" class="btn btn-dark btn-sm" onclick="unhide('nk650')">Unhide Product</button> 
+
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+
+                                        </Table>
+
+                                    </Div>
+
+                            </div>
+
+
+                        </div>
+                    
+
 
                     </div>
 
-
-
-                </div>
-         
-               
-    
-            </div>
         
-          
-        </div>
 
-    </Div>
+                    <!--Displaying Sales and Orders-->
+                    <div class="content container" id="manage_sales_orders">
 
-</div>
+                        <div class="row">
 
+                            <div class="col-md-6">
 
-<!--Displaying Models-->
-<div class="content container" id="manage_models">
-    <div class="row">
+                                <h5 class="h4 fw-bold">Sales And Orders</h5>
 
-        <div class="col-md-6">
+                            </div>
 
-            <h5 class="h4 fw-bold">Manage Models</h5>
+                            <div class="col-md-6">
 
-        </div>
+                                <input type="search" class="form-control" placeholder="Search by Order Number" oninput="orderSearch()" id="search_orders">
 
-        <div class="col-md-6">
+                            </div>
 
-            <input type="search" class="form-control" placeholder="Search Models" oninput="modelSearch()" id="search_model">
+                            
+                        </div>
 
-        </div>
+                        <h5 class="h5 pt-5">Orders:</h5>
 
-        
-    </div>
-  
+                        <div class="table-responsive">
 
-    <h5 class="h5 pt-5">Models:</h5>
+                            <table class="table table-light table-striped">
+                        
+                                <thead>
+                                    <tr>
+                                        <Th>Full Name</Th>
+                                        <Th>Order Number</Th>
+                                        <Th>Motorcycle Unit</Th>
+                                        <th>Order Date</th>
+                                        <th>Status</th>
+                                        <th>Operation</th>
+                                    </tr>
+                                </thead>
+                            
+                                <tbody>
+                                
+                                    
+                                
+                                </tbody>
+                            
+                            </table>
+                            
 
-    <!--Displaying the models-->
-    <Table class="table table-light table-striped">
-
-    <thead>
-        <tr>
+                        </div>
+                       
+                        
+                    </div>
             
-            <Th>Model Name</Th>
-            <Th>Brand</Th>
-            <th>Status</th>
-            <Th>Operations</Th>
-        </tr>
-    </thead>
 
-    <tbody id="hondaProducts">
-        <tr>
+                    <!--Displaying Inquiry Managemetns-->
+                    <div class="content container" id="manage_inquiry">
 
-            <td>Click 125</td>
-            <td>Honda</td>
-            <td id="status_click125">Available</td>
-            <td>
+                        <div class="row">
+
+                            <div class="col-md-6">
+
+                                <h5 class="h4 fw-bold">Inquiry Managements</h5>
+
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <input type="search" class="form-control" placeholder="Search by Name/Last Name" oninput="inquirySearch()" id="search_inquiries">
+
+                            </div>
+
+                            
+                        </div>
+
+                        <h5 class="h5 pt-5">Inquiries:</h5>
+                        
+                        <div class="table-responsive">
+
+                            <table class="table table-light table-striped">
+                        
+                                <thead>
+                                    <tr>
+                                        <Th>First Name</Th>
+                                        <Th>Last Name</Th>
+                                        <Th>Email</Th>
+                                        <th>Status</th>
+                                        <Th>Operations</Th>
+                                    
+                                </thead>
+                            
+                                <tbody id="inquiryData">
+                                
+                                    <td>Clyde</td>
+                                    <td>Sumabat</td>
+                                    <td>clyde@gmail.com</td>
+                                    <td>
+                                        <button class="btn btn-dark btn-sm" data-bs-toggle="modal" data-bs-target="#inquiryModal">See Inquiry</button> 
+                                    </td>
+                                
+                                </tbody>
+                            
+                            </table>
+
+                        </div>
+
+                    </div>
+                        
+
+                    <!--Displaying SERVICE Inquiry Managemetns-->
+                    <div class="content container" id="manage_service">
+
+                        <div class="row">
+
+                            <div class="col-md-6">
+
+                                <h5 class="h4 fw-bold">Service Inquiry Managements</h5>
+
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <input type="search" class="form-control" placeholder="Search by Name/Last Name" oninput="serviceSearch()" id="search_service">
+
+                            </div>
+
+                            
+                        </div>
+
+                        <h5 class="h5 pt-5">Inquiries:</h5>
+                        
+                        <div class="table-responsive">
+
+                            <table class="table table-light table-striped">
+                        
+                                <thead>
+                                    <tr>
+                                        <Th>First Name</Th>
+                                        <Th>Last Name</Th>
+                                        <Th>Email</Th>
+                                        <th>Status</th>
+                                        <Th>Operations</Th>
+                                    
+                                </thead>
+                            
+                                <tbody id="inquiryData">
+                                
+                                    <td>Clyde</td>
+                                    <td>Sumabat</td>
+                                    <td>clyde@gmail.com</td>
+                                    <td>
+                                        <button class="btn btn-dark btn-sm" data-bs-toggle="modal" data-bs-target="#serviceModal">See Inquiry</button> 
+                                    </td>
+                                
+                                </tbody>
+                            
+                            </table>
+
+                        </div>
+        
+                    </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!--Modal to see Add User form-->
+<div class="modal_accounts container">
+
+    <div class="modal fade" id="add_user" tabindex="-1" aria-labelledby="adduser" aria-hidden="true">
+        <Div class="modal-dialog">
+    
+            <div class="modal-content">
+                <div class="modal-header">
+                    
+                    <h5 class="modal-title text-dark">Add User</h5>
+            
+                </div>
+    
+                <div class="modal-body">
+
+                    <div class="container-md">
+    
+                        <div class="row">
+    
+                            <form>
+    
+                                <div class="row">
+                        
+        
+                        
+                                    <div class="col-md-12 p-3">
+                        
+                                        <label class="form-label text-dark">Name:</label>
+                                        <input class="form-control" type="text" id="addUser_name">
+                        
+                                    </div>
+    
+                                    <div class="col-md-12 p-3">
+                        
+                                        <label class="form-label text-dark">Role:</label>
+                                        <input class="form-control" type="text" id="addUser_role">
+                        
+                                    </div>
+                        
+                                    <div class="col-md-12 p-3">
+                        
+                                        <label class="form-label text-dark">Password:</label>
+                                        <input class="form-control" type="text" id="addUser_password">
+                        
+                                    </div>
+    
+                        
+                                </div>
+                            
+                                <div class="modal-footer">
+    
+                                    <button class="btn btn-dark" type="button" data-bs-dismiss="modal">Close</button>
+                                    <button class="btn btn-light" onclick="addUser()">Add User</button>
+        
+                                </div>
+    
+                                </form>
+    
+                            
+    
+                        </div>
+    
+    
+    
+                    </div>
+            
                 
-                <button type="submit" class="btn btn-dark btn-sm" onclick="hide('click125')">Hide Product</button>   
-                <button type="submit" class="btn btn-dark btn-sm" onclick="unhide('click125')">Unhide Product</button> 
-            </td>
-        </tr>
-
-        <tr>
-
-            <td>Beat 125</td>
-            <td>Honda</td>
-            <td id="status_beat125">Available</td>
-            <td>
-
-                <button type="submit" class="btn btn-dark btn-sm" onclick="hide('beat125')">Hide Product</button>   
-                <button type="submit" class="btn btn-dark btn-sm" onclick="unhide('beat125')">Unhide Product</button> 
-            </td>
-        </tr>
-
-        <tr>
-
-            <td>TMX Supremo</td>
-            <td>Honda</td>
-            <td id="status_supremo">Available</td>
-            <td>
-                <button type="submit" class="btn btn-dark btn-sm" onclick="hide('supremo')">Hide Product</button>   
-                <button type="submit" class="btn btn-dark btn-sm" onclick="unhide('supremo')">Unhide Product</button> 
-            </td>
-        </tr>
-
-        <tr>
-
-            <td>PCX 160</td>
-            <td>Honda</td>
-            <td id="status_pcx160">Available</td>
-            <td>
-                <button type="submit" class="btn btn-dark btn-sm" onclick="hide('pcx160')">Hide Product</button>   
-                <button type="submit" class="btn btn-dark btn-sm" onclick="unhide('pcx160')">Unhide Product</button> 
-
-            </td>
-        </tr>
-
-        <tr>
-
-            <td>CBR150R</td>
-            <td>Honda</td>
-            <td id="status_cbr150r">Available</td>
-            <td>
-                <button type="submit" class="btn btn-dark btn-sm" onclick="hide('cbr150r')">Hide Product</button>   
-                <button type="submit" class="btn btn-dark btn-sm" onclick="unhide('cbr150r')">Unhide Product</button> 
-
-            </td>
-        </tr>
-
-    </tbody>
-
-
-    <tbody id="kawasakiProducts">
-
-        <tr>
-
-            <td>Barako II</td>
-            <td>Kawasaki</td>
-            <td id="status_barako2">Available</td>
-            <td>
-                <button type="submit" class="btn btn-dark btn-sm" onclick="hide('barako2')">Hide Product</button>   
-                <button type="submit" class="btn btn-dark btn-sm" onclick="unhide('barako2')">Unhide Product</button> 
- 
-            </td>
-        </tr>
-
-        <tr>
-
-            <td>CT 125</td>
-            <td>Kawasaki</td>
-            <td id="status_ct125">Available</td>
-            <td>
-                <button type="submit" class="btn btn-dark btn-sm" onclick="hide('ct125')">Hide Product</button>   
-                <button type="submit" class="btn btn-dark btn-sm" onclick="unhide('ct125')">Unhide Product</button> 
-
-            </td>
-        </tr>
-
-        <tr>
-
-            <td>Rouser NS200fi</td>
-            <td>Kawasaki</td>
-            <td id="status_rouser">Available</td>
-            <td>
-                <button type="submit" class="btn btn-dark btn-sm" onclick="hide('rouser')">Hide Product</button>   
-                <button type="submit" class="btn btn-dark btn-sm" onclick="unhide('rouser')">Unhide Product</button> 
-
-            </td>
-        </tr>
-
-        <tr>
-
-            <td>Dominar 400</td>
-            <td>Kawasaki</td>
-            <td id="status_dominar400">Available</td>
-            <td>
-                <button type="submit" class="btn btn-dark btn-sm" onclick="hide('dominar400')">Hide Product</button>   
-                <button type="submit" class="btn btn-dark btn-sm" onclick="unhide('dominar400')">Unhide Product</button> 
-
-            </td>
-        </tr>
-    </tbody>
-
-    <tbody id="yamahaProducts">
-
-        <tr>
-
-            <td>XSR 155</td>
-            <td>Yamaha</td>
-            <td id="status_xsr155">Available</td>
-            <td>
-                <button type="submit" class="btn btn-dark btn-sm" onclick="hide('xsr155')">Hide Product</button>   
-                <button type="submit" class="btn btn-dark btn-sm" onclick="unhide('xsr155')">Unhide Product</button> 
-
-            </td>
-        </tr>
-
-        <tr>
-
-            <td>Sniper 155</td>
-            <td>Yamaha</td>
-            <td id="status_sniper155">Available</td>
-            <td>
-                <button type="submit" class="btn btn-dark btn-sm" onclick="hide('sniper155')">Hide Product</button>   
-                <button type="submit" class="btn btn-dark btn-sm" onclick="unhide('sniper155')">Unhide Product</button> 
-
-            </td>
-        </tr>
-
-        <tr>
-
-            <td>Mio Aerox</td>
-            <td>Yamaha</td>
-            <td id="status_aerox">Available</td>
-            <td>
-                <button type="submit" class="btn btn-dark btn-sm" onclick="hide('aerox')">Hide Product</button>   
-                <button type="submit" class="btn btn-dark btn-sm" onclick="unhide('aerox')">Unhide Product</button> 
-
-            </td>
-        </tr>
-
-        <tr>
-
-            <td>Mio Soul 125i</td>
-            <td>Yamaha</td>
-            <td id="status_mio">Available</td>
-            <td>
-                <button type="submit" class="btn btn-dark btn-sm" onclick="hide('mio')">Hide Product</button>   
-                <button type="submit" class="btn btn-dark btn-sm" onclick="unhide('mio')">Unhide Product</button> 
-
-            </td>
-        </tr>
-
-        <tr>
-
-            <td>MT15</td>
-            <td>Yamaha</td>
-            <td id="status_mt15">Available</td>
-            <td>
-                <button type="submit" class="btn btn-dark btn-sm" onclick="hide('mt15')">Hide Product</button>   
-                <button type="submit" class="btn btn-dark btn-sm" onclick="unhide('mt15')">Unhide Product</button> 
-
-            </td>
-        </tr>
-    </tbody>
-
-    <tbody id="motorstarProducts">
-
-        <tr>
-
-            <td>Cafe 150</td>
-            <td>Motorstar</td>
-            <td id="status_cafe150">Available</td>
-            <td>
-                <button type="submit" class="btn btn-dark btn-sm" onclick="hide('cafe150')">Hide Product</button>   
-                <button type="submit" class="btn btn-dark btn-sm" onclick="unhide('cafe150')">Unhide Product</button> 
-
-            </td>
-        </tr>
-
-        <tr>
-
-            <td>Cafe 400</td>
-            <td>Motorstar</td>
-            <td id="status_cafe400">Available</td>
-            <td>
-                <button class="btn btn-dark btn-sm" onclick="hide('cafe400')">Hide Product</button>   
-                <button class="btn btn-dark btn-sm" onclick="unhide('cafe400')">Unhide Product</button> 
-            </td>
-        </tr>
-
         
-        </tr>
-    </tbody>
-
-    <tbody id="cfmotoProducts">
-
-        <tr>
-
-            <td>300sr</td>
-            <td>CFMoto</td>
-            <td id="status_300sr">Available</td>
-            <td>
-                <button type="submit" class="btn btn-dark btn-sm" onclick="hide('300sr')">Hide Product</button>   
-                <button type="submit" class="btn btn-dark btn-sm" onclick="unhide('300sr')">Unhide Product</button> 
-
-            </td>
-        </tr>
-
-        <tr>
-
-            <td>NK 400</td>
-            <td>CFMoto</td>
-            <td id="status_nk400">Available</td>
-            <td>
-                <button type="submit" class="btn btn-dark btn-sm" onclick="hide('nk400')">Hide Product</button>   
-                <button type="submit" class="btn btn-dark btn-sm" onclick="unhide('nk400')">Unhide Product</button> 
-
-            </td>
-        </tr>
-
-        <tr>
-
-            <td>NK 650</td>
-            <td>CFMoto</td>
-            <td id="status_nk650">Available</td>
-            <td>
-                <button type="submit" class="btn btn-dark btn-sm" onclick="hide('nk650')">Hide Product</button>   
-                <button type="submit" class="btn btn-dark btn-sm" onclick="unhide('nk650')">Unhide Product</button> 
-
-            </td>
-        </tr>
-
-        
-        </tr>
-    </tbody>
-
-</Table>
-
-
-
-</div>
-
-
-</div>
-
-
-<!--Displaying Sales and Orders-->
-<div class="content container" id="manage_sales_orders">
-
-    <div class="row">
-
-        <div class="col-md-6">
-
-            <h5 class="h4 fw-bold">Sales And Orders</h5>
-
-        </div>
-
-        <div class="col-md-6">
-
-            <input type="search" class="form-control" placeholder="Search by Order Number" oninput="orderSearch()" id="search_orders">
-
-        </div>
-
-        
-    </div>
-
-    <h5 class="h5 pt-5">Orders:</h5>
+                </div>
+            
+            
+            </div>
     
-    <table class="table table-light table-striped">
-    
-        <thead>
-            <tr>
-                <Th>Full Name</Th>
-                <Th>Order Number</Th>
-                <Th>Motorcycle Unit</Th>
-                <th>Order Date</th>
-                <th>Status</th>
-                <th>Operation</th>
-            </tr>
-        </thead>
-    
-        <tbody>
-        
-             
-           
-        </tbody>
-    
-    </table>
-    
+        </Div>
     
     </div>
-    
-
-<!--Displaying Inquiry Managemetns-->
-<div class="content container" id="manage_inquiry">
-
-    <div class="row">
-
-        <div class="col-md-6">
-
-            <h5 class="h4 fw-bold">Inquiry Managements</h5>
-
-        </div>
-
-        <div class="col-md-6">
-
-            <input type="search" class="form-control" placeholder="Search by Name/Last Name" oninput="inquirySearch()" id="search_inquiries">
-
-        </div>
-
-        
-    </div>
-
-    <h5 class="h5 pt-5">Inquiries:</h5>
-    
-    <table class="table table-light table-striped">
-    
-        <thead>
-            <tr>
-                <Th>First Name</Th>
-                <Th>Last Name</Th>
-                <Th>Email</Th>
-                <th>Status</th>
-                <Th>Operations</Th>
-              
-        </thead>
-    
-        <tbody id="inquiryData">
-        
-             <td>Clyde</td>
-             <td>Sumabat</td>
-             <td>clyde@gmail.com</td>
-             <td>
-                <button class="btn btn-dark btn-sm" data-bs-toggle="modal" data-bs-target="#inquiryModal">See Inquiry</button> 
-             </td>
-           
-        </tbody>
-    
-    </table>
-    
-    
-    </div>
-    
-
-<!--Displaying SERVICE Inquiry Managemetns-->
-<div class="content container" id="manage_service">
-
-    <div class="row">
-
-        <div class="col-md-6">
-
-            <h5 class="h4 fw-bold">Service Inquiry Managements</h5>
-
-        </div>
-
-        <div class="col-md-6">
-
-            <input type="search" class="form-control" placeholder="Search by Name/Last Name" oninput="serviceSearch()" id="search_service">
-
-        </div>
-
-        
-    </div>
-
-    <h5 class="h5 pt-5">Inquiries:</h5>
-    
-    <table class="table table-light table-striped">
-    
-        <thead>
-            <tr>
-                <Th>First Name</Th>
-                <Th>Last Name</Th>
-                <Th>Email</Th>
-                <th>Status</th>
-                <Th>Operations</Th>
-              
-        </thead>
-    
-        <tbody id="inquiryData">
-        
-             <td>Clyde</td>
-             <td>Sumabat</td>
-             <td>clyde@gmail.com</td>
-             <td>
-                <button class="btn btn-dark btn-sm" data-bs-toggle="modal" data-bs-target="#serviceModal">See Inquiry</button> 
-             </td>
-           
-        </tbody>
-    
-    </table>
-    
-    
-    </div>
-
-</div>
-
-
-</div>
-
-
-</div>
-
-</div>
 
 </div>
 
  <!--Modal to see sales and orders form-->
 <div class="modal_orders container">
 
- <div class="modal fade" id="data_print" tabindex="-1" aria-labelledby="dataform" aria-hidden="true">
-    <Div class="modal-dialog">
+    <div class="modal fade" id="data_print" tabindex="-1" aria-labelledby="dataform" aria-hidden="true">
+       
+        <Div class="modal-dialog">
 
-        <div class="modal-content">
-            <div class="modal-header">
-                
-                <h5 class="modal-title">Application Form </h5>
-        
-            </div>
+            <div class="modal-content">
+                <div class="modal-header">
+                    
+                    <h5 class="modal-title">Application Form </h5>
+            
+                </div>
 
-            <div class="modal-body">
-                <div class="container-md">
+                <div class="modal-body">
+                    <div class="container-md">
 
-                    <div class="row">
+                        <div class="row">
 
-                        <form id="databaseform">
+                            <form id="databaseform">
 
-                            <div class="row">
-                    
-                                <label class="card-title p-3">Customer Details:</label>
-                    
-                                <div class="col-md-4 p-3">
-                    
-                                    <label class="form-label">Full Name:</label>
-                                    <input class="form-control" type="text" id="data_name" disabled>
-                    
-                                </div>
-                    
-                                <div class="col-md-4 p-3">
-                    
-                                    <label class="form-label">Email:</label>
-                                    <input class="form-control" type="email" id="data_email" disabled>
-                    
-                                </div>
-
-                                <div class="col-md-4 p-3">
-
-                                    <label class="form-label">Application Date:</label>
-                                    <p class="lead" id="data_date"></p>
-                    
-                                </div>
-                    
-                    
-                            </div>
-                    
-                            <div class="row">
-                    
-                    
-                                <div class="col-md-6 p-3">
-                    
-                                    <label class="form-label">Birthday:</label>
-                                    <input class="form-control" type="text" id="data_birthday" disabled>
-                    
-                                </div>
-                    
-                                <div class="col-md-6 p-3">
-                    
-                                    <label class="form-label">Phone Number:</label>
-                                    <input class="form-control" type="numer" id="data_phone" disabled
-                    
-                                </div>
-                    
-                    
-                            </div>
-                    
-                    
-                    
-                    
-                            <div class="row">
-                    
-                                
-                                <label class="card-title p-3">Address:</label>
-                    
-                                <div class="col-md-6 p-3">
-                    
-                                    <label class="form-label">Street/Brgy:</label>
-                                    <input class="form-control" type="text" id="data_streetbrgy" disabled>
-                    
-                                </div>
-                    
-                                <div class="col-md-6 p-3">
-                    
-                                    <label class="form-label">Municipality:</label>
-                                    <input class="form-control" type="text" id="data_mun" disabled>
-                    
-                                </div>
-                    
-                    
-                            </div>
-                    
-                    
-                            <div class="row">
-                    
-                                <div class="col-md-6 p-3">
-                    
-                                    <label class="form-label">Province:</label>
-                                    <input class="form-control" type="text" id="data_province" disabled>
-                    
-                                </div>
-                    
-                                <div class="col-md-6 p-3">
-                    
-                                    <label class="form-label">Zip Code:</label>
-                                    <input class="form-control" type="text" id="data_zip" disabled>
-                    
-                                </div>
-                    
-                    
-                            </div>
-                    
-                    
-                            <div class="row">
-                    
-                                
-                                <label class="card-title p-3">Employment Details:</label>
-                    
-                                <div class="col-md-6 p-3">
-                    
-                                    <label class="form-label">Company Name:</label>
-                                    <input class="form-control" type="text" id="data_compName"  placeholder="Name of Company or Business" disabled>
-                    
-                                </div>
-                    
-                                <div class="col-md-6 p-3">
-                    
-                                    <label class="form-label">Employment Type:</label>
-                                    <input class="form-control" type="text" id="data_empType"  placeholder="Full Time / Part Time / Freelance" disabled> 
-                    
-                                </div>
-                    
-                    
-                            </div>
-                    
-                    
-                            <div class="row">
-                    
-                                <div class="col-md-6 p-3">
-                    
-                                    <label class="form-label">Company / Business Phone:</label>
-                                    <input class="form-control" type="text" id="data_comNum" disabled> 
-                    
-                                </div>
-                    
-                                <div class="col-md-6 p-3">
-                    
-                                    <label class="form-label">Company / Business Address:</label>
-                                    <input class="form-control" type="text" id="data_compAdd" disabled>
-                    
-                                </div>
-                    
-                    
-                            </div>
-                    
-                    
-                    
-                            <div class="row">
-                    
-                                <div class="col-md-6 p-3">
-                    
-                                    <label class="form-label">Monthly Income:</label>
-                                    <input class="form-control" type="number" id="data_monIncome" placeholder="Enter Monthly Income" disabled>
-                    
-                                </div>
-                    
-                                <div class="col-md-6 p-3">
-                    
-                                    <label class="form-label">Annual Income:</label>
-                                    <input class="form-control" type="number" id="data_annIncome" placeholder="Enter Annual Income" disabled>
-                    
-                                </div>
-                    
-                    
-                            </div>
-                    
-                    
-                            <div class="row">
-
-
-                                <label class="card-title p-3">Payment:</label>
-                    
-                                    <div class="col-md-6 p-3">
-                    
-                                        <label class="form-label" for="cash_payment">Type Of Payment:</label>
-                                        <input type="text" id="data_payment" class="form-control" placeholder="Cash / Financing" disabled required>
-                                     
-                                        
-                    
+                                <div class="row">
+                        
+                                    <label class="card-title p-3">Customer Details:</label>
+                        
+                                    <div class="col-md-4 p-3">
+                        
+                                        <label class="form-label">Full Name:</label>
+                                        <input class="form-control" type="text" id="data_name" disabled>
+                        
                                     </div>
-                    
-                                    <div class="col-md-6 p-3">
-                    
-                                        <p class="lead text-danger"><small>* Please be advised that irrespective of the chosen payment method—whether cash basis or financing—all applicants must personally visit one of our branch locations. This mandatory visit is crucial for security measures and validation purposes in ensuring the accuracy and authenticity of your payment selection.</small></p>
-                    
-                                        
+                        
+                                    <div class="col-md-4 p-3">
+                        
+                                        <label class="form-label">Email:</label>
+                                        <input class="form-control" type="email" id="data_email" disabled>
+                        
                                     </div>
-                    
-                    
-                            </div>
-                    
-                    
-                    
-                    
-                            <div class="row pb-4">
-                    
+
+                                    <div class="col-md-4 p-3">
+
+                                        <label class="form-label">Application Date:</label>
+                                        <p class="lead" id="data_date"></p>
+                        
+                                    </div>
+                        
+                        
+                                </div>
+                        
+                                <div class="row">
+                        
+                        
+                                    <div class="col-md-6 p-3">
+                        
+                                        <label class="form-label">Birthday:</label>
+                                        <input class="form-control" type="text" id="data_birthday" disabled>
+                        
+                                    </div>
+                        
+                                    <div class="col-md-6 p-3">
+                        
+                                        <label class="form-label">Phone Number:</label>
+                                        <input class="form-control" type="numer" id="data_phone" disabled
+                        
+                                    </div>
+                        
+                        
+                                </div>
+                        
+                        
+                        
+                        
+                                <div class="row">
+                        
+                                    
+                                    <label class="card-title p-3">Address:</label>
+                        
+                                    <div class="col-md-6 p-3">
+                        
+                                        <label class="form-label">Street/Brgy:</label>
+                                        <input class="form-control" type="text" id="data_streetbrgy" disabled>
+                        
+                                    </div>
+                        
+                                    <div class="col-md-6 p-3">
+                        
+                                        <label class="form-label">Municipality:</label>
+                                        <input class="form-control" type="text" id="data_mun" disabled>
+                        
+                                    </div>
+                        
+                        
+                                </div>
+                        
+                        
+                                <div class="row">
+                        
+                                    <div class="col-md-6 p-3">
+                        
+                                        <label class="form-label">Province:</label>
+                                        <input class="form-control" type="text" id="data_province" disabled>
+                        
+                                    </div>
+                        
+                                    <div class="col-md-6 p-3">
+                        
+                                        <label class="form-label">Zip Code:</label>
+                                        <input class="form-control" type="text" id="data_zip" disabled>
+                        
+                                    </div>
+                        
+                        
+                                </div>
+                        
+                        
+                                <div class="row">
+                        
+                                    
+                                    <label class="card-title p-3">Employment Details:</label>
+                        
+                                    <div class="col-md-6 p-3">
+                        
+                                        <label class="form-label">Company Name:</label>
+                                        <input class="form-control" type="text" id="data_compName"  placeholder="Name of Company or Business" disabled>
+                        
+                                    </div>
+                        
+                                    <div class="col-md-6 p-3">
+                        
+                                        <label class="form-label">Employment Type:</label>
+                                        <input class="form-control" type="text" id="data_empType"  placeholder="Full Time / Part Time / Freelance" disabled> 
+                        
+                                    </div>
+                        
+                        
+                                </div>
+                        
+                        
+                                <div class="row">
+                        
+                                    <div class="col-md-6 p-3">
+                        
+                                        <label class="form-label">Company / Business Phone:</label>
+                                        <input class="form-control" type="text" id="data_comNum" disabled> 
+                        
+                                    </div>
+                        
+                                    <div class="col-md-6 p-3">
+                        
+                                        <label class="form-label">Company / Business Address:</label>
+                                        <input class="form-control" type="text" id="data_compAdd" disabled>
+                        
+                                    </div>
+                        
+                        
+                                </div>
+                        
+                        
+                        
+                                <div class="row">
+                        
+                                    <div class="col-md-6 p-3">
+                        
+                                        <label class="form-label">Monthly Income:</label>
+                                        <input class="form-control" type="number" id="data_monIncome" placeholder="Enter Monthly Income" disabled>
+                        
+                                    </div>
+                        
+                                    <div class="col-md-6 p-3">
+                        
+                                        <label class="form-label">Annual Income:</label>
+                                        <input class="form-control" type="number" id="data_annIncome" placeholder="Enter Annual Income" disabled>
+                        
+                                    </div>
+                        
+                        
+                                </div>
+                        
+                        
+                                <div class="row">
+
+
+                                    <label class="card-title p-3">Payment:</label>
+                        
+                                        <div class="col-md-6 p-3">
+                        
+                                            <label class="form-label" for="cash_payment">Type Of Payment:</label>
+                                            <input type="text" id="data_payment" class="form-control" placeholder="Cash / Financing" disabled required>
+                                            
+                                            
+                        
+                                        </div>
+                        
+                                        <div class="col-md-6 p-3">
+                        
+                                            <p class="lead text-danger"><small>* Please be advised that irrespective of the chosen payment method—whether cash basis or financing—all applicants must personally visit one of our branch locations. This mandatory visit is crucial for security measures and validation purposes in ensuring the accuracy and authenticity of your payment selection.</small></p>
+                        
+                                            
+                                        </div>
+                        
+                        
+                                </div>
+                        
+                        
+                        
+                        
+                                <div class="row pb-4">
+                        
+                                    
+                                    <label class="card-title p-3">Vehicle Information:</label>
+                        
+                                    <div class="col-md-6 p-3">
+                        
+                                        <label class="form-label">Desired Model:</label>
+                                        <input class="form-control" type="text" id="data_desiredModel" disabled>
+                        
+                                    </div>
+                        
+                                    <div class="col-md-6 p-3">
+                        
+                                        <label class="form-label">Model SRP:</label>
+                                        <input class="form-control" type="text" id="data_srp" disabled>
+                        
+                                    </div>
+                        
+                        
+                                </div>
+
                                 
-                                <label class="card-title p-3">Vehicle Information:</label>
-                    
-                                <div class="col-md-6 p-3">
-                    
-                                    <label class="form-label">Desired Model:</label>
-                                    <input class="form-control" type="text" id="data_desiredModel" disabled>
-                    
-                                </div>
-                    
-                                <div class="col-md-6 p-3">
-                    
-                                    <label class="form-label">Model SRP:</label>
-                                    <input class="form-control" type="text" id="data_srp" disabled>
-                    
-                                </div>
-                    
-                    
-                            </div>
+                                <button class="btn btn-dark" type="button" data-bs-dismiss="modal">Close</button>
+                        
+                                </form>
 
-                            
-                            <button class="btn btn-dark" type="button" data-bs-dismiss="modal">Close</button>
-                 
-                            </form>
+                                
 
-                           
+                        </div>
+
+
 
                     </div>
-
-
+                
+                    
 
                 </div>
-         
-               
-    
+            
+                
             </div>
-        
-          
-        </div>
 
-    </Div>
+        </Div>
 
-</div>
-
+    </div>
 
 </div>
+
 
 <!--Modal to see inquiry form-->
 <div class="modal_inquiry container">
 
 
-<div class="modal fade" id="inquiryModal" tabindex="-1" aria-labelledby="inquiryForm" aria-hidden="true">
-    <div class="modal-dialog">
-
-        <div class="modal-content">
-            <div class="modal-header">
-                
-                <h5 class="modal-title">Inquiry Management</h5>
+    <div class="modal fade" id="inquiryModal" tabindex="-1" aria-labelledby="inquiryForm" aria-hidden="true">
         
-            </div>
+        <div class="modal-dialog">
 
-            <div class="modal-body">
-           
-                <div class="container-md">
-
-                    <div class="row">
-                        <div class="col-md-6">
-                          <div class="form-group" id="inquiryData_1">
-                            <label for="inquiryType"><h3 class="specific">What are you contacting us about?</h3></label>
-                            <span id="inquiryTypeWarning" class="warning-message" style="display: none;">*Please select an inquiry type.*</span>
-                            <select id="inquiry_type" name="inquiryType" onchange="enableSpecific()" class="form-control" disabled>
-                              <option value="" selected disabled>Select an Option</option>
-                              <option value="general">General Inquiry</option>
-                              <option value="support">Support</option>
-                              <option value="sales">Sales</option>
-                              <option value="feedback">Feedback</option>
-                              <!-- Add more options as needed -->
-                            </select>
-                         
-                            <br>
+            <div class="modal-content">
+                <div class="modal-header">
                     
-                            <label for="specificInquiry"><h3 class="specific">Please be more specific:</h3></label>
-                            <span id="specificInquiryWarning" class="warning-message" style="display: none;">*Please specify your inquiry.*</span>
-                            <select id="inquiry_specific" name="specificInquiry" disabled class="form-control">
-                                
-                              <option value="" selected disabled>Select an Option</option>
-                              <option value="Product Inquiry">Product Inquiry</option>
-                              <option value="Service Inquiry">Service Inquiry</option>
-                              <option value="Financing Inquiry">Financing Inquiry</option>
-
-                              <option value="Technical Support">Technical Support</option>
-                              <option value="Troubleshooting Assistance">Troubleshooting Assistance</option>
-                              <option value="Account Help">Account Help</option>
-
-                              <option value="Model Availability">Model Availability</option>
-                              <option value="Pricing Information">Pricing Information</option>
-                              <option value="Purchase Assistance">Purchase Assistance</option>
-
-                              <option value="Suggestions">Suggestions</option>
-                              <option value="Complaints">Complaints</option>
-                              <option value="Improvement Ideas">Improvement Ideas</option>
+                    <h5 class="modal-title">Inquiry Management</h5>
             
-                            </select>
+                </div>
+
+                <div class="modal-body">
+            
+                    <div class="container-md">
+
+                        <div class="row">
+                            <div class="col-md-6">
+                            <div class="form-group" id="inquiryData_1">
+                                <label for="inquiryType"><h3 class="specific">What are you contacting us about?</h3></label>
+                                <span id="inquiryTypeWarning" class="warning-message" style="display: none;">*Please select an inquiry type.*</span>
+                                <select id="inquiry_type" name="inquiryType" onchange="enableSpecific()" class="form-control" disabled>
+                                <option value="" selected disabled>Select an Option</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="support">Support</option>
+                                <option value="sales">Sales</option>
+                                <option value="feedback">Feedback</option>
+                                <!-- Add more options as needed -->
+                                </select>
                             
-                            <br>
-                    
-                            <label for="additionalInfo"><h3 class="specific">Additional Information:</h3></label>
-                            <textarea id="inquiry_info" name="additionalInfo" class="form-control" rows="4" placeholder="Enter additional information" disabled></textarea>
-                            <br>
-                          </div>
+                                <br>
+                        
+                                <label for="specificInquiry"><h3 class="specific">Please be more specific:</h3></label>
+                                <span id="specificInquiryWarning" class="warning-message" style="display: none;">*Please specify your inquiry.*</span>
+                                <select id="inquiry_specific" name="specificInquiry" disabled class="form-control">
+                                    
+                                <option value="" selected disabled>Select an Option</option>
+                                <option value="Product Inquiry">Product Inquiry</option>
+                                <option value="Service Inquiry">Service Inquiry</option>
+                                <option value="Financing Inquiry">Financing Inquiry</option>
+
+                                <option value="Technical Support">Technical Support</option>
+                                <option value="Troubleshooting Assistance">Troubleshooting Assistance</option>
+                                <option value="Account Help">Account Help</option>
+
+                                <option value="Model Availability">Model Availability</option>
+                                <option value="Pricing Information">Pricing Information</option>
+                                <option value="Purchase Assistance">Purchase Assistance</option>
+
+                                <option value="Suggestions">Suggestions</option>
+                                <option value="Complaints">Complaints</option>
+                                <option value="Improvement Ideas">Improvement Ideas</option>
+                
+                                </select>
+                                
+                                <br>
+                        
+                                <label for="additionalInfo"><h3 class="specific">Additional Information:</h3></label>
+                                <textarea id="inquiry_info" name="additionalInfo" class="form-control" rows="4" placeholder="Enter additional information" disabled></textarea>
+                                <br>
+                            </div>
+                            </div>
+                            <div class="col-md-6">
+                            <div class="form-group" id="inquiryData_2">
+                                <label for="firstName"  class="specific">First Name:</label>
+                                <span id="firstNameWarning" class="warning-message" style="display: none;">*Please enter your first name.*</span>
+                                <input type="text" id="inquiry_firstName" name="firstName" class="form-control" placeholder="Enter First Name" disabled>
+                                <br>
+                        
+                                <label for="surname"  class="specific">Last Name:</label>
+                                <span id="surnameWarning" class="warning-message" style="display: none;">*Please enter your last name.*</span>
+                                <input type="text" id="inquiry_lastName" name="surname" class="form-control" placeholder="Enter Last Name" disabled>
+                                <br>
+                        
+                                <label for="email"  class="specific">Email:</label>
+                                <span id="emailWarning" class="warning-message" style="display: none;">*Please enter your email.*</span>
+                                <input type="email" id="inquiry_email" name="email" class="form-control" placeholder="sample.sample@gmail.com" autocomplete="email" disabled>
+                                <br>
+                        
+                                <label for="phone"  class="specific">Phone Number:</label>
+                                <span id="phoneWarning" class="warning-message" style="display: none;">*Please enter phone number.*</span>
+                                <input type="tel" id="inquiry_phone" name="phone" class="form-control" placeholder="+69" autocomplete="phone" disabled>
+                                <br>
+                        
+                                <label for="address"  class="specific">Address:</label>
+                                <span id="addressWarning" class="warning-message" style="display: none;">*Please enter your address.*</span>
+                                <input type="text" id="inquiry_address" name="address" class="form-control" placeholder="Enter Address" autocomplete="address-level1" disabled>
+                                <br>
+                            </div>
+                            </div>
                         </div>
-                        <div class="col-md-6">
-                          <div class="form-group" id="inquiryData_2">
-                            <label for="firstName"  class="specific">First Name:</label>
-                            <span id="firstNameWarning" class="warning-message" style="display: none;">*Please enter your first name.*</span>
-                            <input type="text" id="inquiry_firstName" name="firstName" class="form-control" placeholder="Enter First Name" disabled>
-                            <br>
-                    
-                            <label for="surname"  class="specific">Last Name:</label>
-                            <span id="surnameWarning" class="warning-message" style="display: none;">*Please enter your last name.*</span>
-                            <input type="text" id="inquiry_lastName" name="surname" class="form-control" placeholder="Enter Last Name" disabled>
-                            <br>
-                    
-                            <label for="email"  class="specific">Email:</label>
-                            <span id="emailWarning" class="warning-message" style="display: none;">*Please enter your email.*</span>
-                            <input type="email" id="inquiry_email" name="email" class="form-control" placeholder="sample.sample@gmail.com" autocomplete="email" disabled>
-                            <br>
-                    
-                            <label for="phone"  class="specific">Phone Number:</label>
-                            <span id="phoneWarning" class="warning-message" style="display: none;">*Please enter phone number.*</span>
-                            <input type="tel" id="inquiry_phone" name="phone" class="form-control" placeholder="+69" autocomplete="phone" disabled>
-                            <br>
-                    
-                            <label for="address"  class="specific">Address:</label>
-                            <span id="addressWarning" class="warning-message" style="display: none;">*Please enter your address.*</span>
-                            <input type="text" id="inquiry_address" name="address" class="form-control" placeholder="Enter Address" autocomplete="address-level1" disabled>
-                            <br>
-                          </div>
-                        </div>
-                      </div>
+
+                    </div>
+        
+                </div>
+
+                <div class="modal-footer">
+
+                    <button class="btn btn-dark" type="button" data-bs-dismiss="modal">Close</button>
+
 
                 </div>
-    
+            
+            
             </div>
 
-            <div class="modal-footer">
+        </Div>
 
-                <button class="btn btn-dark" type="button" data-bs-dismiss="modal">Close</button>
-
-
-            </div>
-        
-          
-        </div>
-
-    </Div>
-
-</div>
+    </div>
 
 
 
 </div>
 
 
-</div>
 
 <!--Modal to see SERVICE inquiry form-->
 <div class="modal_inquiry container">
@@ -1249,13 +1286,12 @@
     
     
     
-    </div>
+</div>
     
-    
-    </div>
+</div>
 
 
-    <!--FOOTER-->
+<!--FOOTER-->
 
 <footer class="responsive-footer container-fluid mt-5 pt-5">
     <div class="row mx-3 px-2">
