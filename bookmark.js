@@ -1,144 +1,156 @@
-jQuery(document).ready(function (jQuery) {
-
-    // Load saved items from localStorage and apply "gold" class
-    loadSavedItems();
-
-    // Function to create and show the modal
-    function showModal(message, buttonText, buttonCallback) {
-        var modalContainer = document.createElement('div');
-        modalContainer.className = 'modal-container';
-
-        var modalContent = document.createElement('div');
-        modalContent.className = 'modal-content';
-
-        var closeButton = document.createElement('span');
-        closeButton.className = 'close-button';
-        closeButton.innerText = '×';
-
-        var messageParagraph = document.createElement('p');
-        messageParagraph.innerText = message;
-
-        var okButton = document.createElement('button');
-        okButton.className = 'ok-button';
-        okButton.innerText = buttonText;
-        okButton.addEventListener('click', buttonCallback);
-
-        modalContent.appendChild(closeButton);
-        modalContent.appendChild(messageParagraph);
-        modalContent.appendChild(okButton);
-
-        modalContainer.appendChild(modalContent);
-
-        document.body.appendChild(modalContainer);
-
-        modalContainer.style.display = 'flex';
-    }
-
-    // Event delegation for save icon click
-    jQuery(document).on("click", ".save-icon", function (e) {
-        e.preventDefault();
-
-        if (!isLoggedIn()) {
-            showModal("Please login first before you can save this item.", "OK", redirectToLoginPage);
-            return;
-        }
-
-        var itemId = jQuery(this).data("id");
-
-        if (jQuery(this).hasClass("gold")) {
-            // Remove the saved item from the user dashboard
-            removeSavedItem(itemId);
-
-            // Remove the saved item from local storage
-            removeSavedItemFromLocalStorage(itemId);
-        } else {
-            // Toggle the gold class on click
-            jQuery(this).addClass("gold");
-
-            // Save the entire card to local storage
-            saveToLocalStorage(jQuery(this).closest(".mc_card").clone());
-        }
-    });
-
-    // Event delegation for remove icon click
-    jQuery(document).on("click", ".remove-icon", function (e) {
-        e.preventDefault();
-
-        var itemId = jQuery(this).data("id");
-
-        // Remove the saved item from the user dashboard
-        removeSavedItem(itemId);
-
-        // Remove the saved item from local storage
-        removeSavedItemFromLocalStorage(itemId);
-    });
-
-    // Event delegation for delete all button click
-    jQuery(document).on("click", "#deleteAllButton", function (e) {
-        e.preventDefault();
-
-        // Delete all items in the savedItems section
-        deleteAllSavedItems();
-    });
-
-    function saveToLocalStorage(cardClone) {
-        // Save the entire card to local storage
-        var savedItems = JSON.parse(localStorage.getItem("savedItems")) || [];
-        savedItems.push(cardClone.prop('outerHTML'));
-        localStorage.setItem("savedItems", JSON.stringify(savedItems));
-
-        // Load the saved items
-        loadSavedItems();
-    }
-
-    function removeSavedItem(itemId) {
-        jQuery("#savedItems .save-icon[data-id='" + itemId + "']").closest(".mc_card").remove();
-    }
-
-    function removeSavedItemFromLocalStorage(itemId) {
-        var savedItems = JSON.parse(localStorage.getItem("savedItems")) || [];
-
-        savedItems = savedItems.filter(function (item) {
-            return jQuery(item).find(".save-icon").data("id") !== itemId;
-        });
-
-        localStorage.setItem("savedItems", JSON.stringify(savedItems));
-    }
-
-    function deleteAllSavedItems() {
-        // Remove all items in the savedItems section
-        jQuery("#savedItems").empty();
-
-        // Clear the saved items in local storage
-        localStorage.removeItem("savedItems");
-    }
-
+jQuery(document).ready(function($) {
     function isLoggedIn() {
         return sessionStorage.getItem("loggedIn") === "true";
     }
 
-    function redirectToLoginPage() {
-        window.location.href = "login.html";
+    function getUserId() {
+        return "user123";
     }
 
-    // Event delegation for close button
-    jQuery(document).on('click', '.close-button', function () {
-        jQuery('.modal-container').hide();
-    });
+    function isItemAlreadySaved(userId, itemId) {
+        var userItems = JSON.parse(localStorage.getItem(userId)) || [];
+        return userItems.some(function(item) {
+            return $(item).data("id") === itemId;
+        });
+    }
 
-    // Function to load and display saved items on the user dashboard
-    function loadSavedItems() {
-        var savedItems = JSON.parse(localStorage.getItem("savedItems")) || [];
+    function saveToLocalStorage(userId, cardClone) {
+        var itemId = cardClone.data("id");
 
-        if (isLoggedIn()) {
-            // Clear existing saved items
-            jQuery("#savedItems").empty();
+        if (!isLoggedIn()) {
+            $('#loginModal').modal('show');
+            return;
+        }
 
-            savedItems.forEach(function (item) {
-                // Append the saved item to the user dashboard
-                jQuery("#savedItems").append(item);
+        if (isItemAlreadySaved(userId, itemId)) {
+            console.log("This item is already saved.");
+            return;
+        }
+
+        var itemHTML = cardClone.prop('outerHTML');
+
+        var userItems = JSON.parse(localStorage.getItem(userId)) || [];
+        userItems.push(itemHTML);
+        localStorage.setItem(userId, JSON.stringify(userItems));
+        loadSavedItems(userId);
+    }
+
+    function removeSavedItem(userId, itemId) {
+        var userItems = JSON.parse(localStorage.getItem(userId)) || [];
+        var updatedUserItems = userItems.filter(function(savedItem) {
+            return $(savedItem).data("id") !== itemId;
+        });
+
+        localStorage.setItem(userId, JSON.stringify(updatedUserItems));
+        loadSavedItems(userId);
+    }
+
+    function deleteAllSavedItems(userId) {
+        localStorage.removeItem(userId);
+        loadSavedItems(userId);
+    }
+
+    function checkGoldClass(userId) {
+        var userItems = JSON.parse(localStorage.getItem(userId)) || [];
+        var isHondaSaved = userItems.some(function(item) {
+            return $(item).data("id") === "hondaItemId";
+        });
+
+        if (!isHondaSaved) {
+            $('#bookmarkHonda').removeClass('gold');
+        }
+    }
+
+    function displaySavedItems(userId, savedItems) {
+        var savedItemsContainer = $('#savedItems');
+        savedItemsContainer.empty();
+
+        if (savedItems.length === 0) {
+            var addButton = $('<button class="btn btn-primary">Add</button>');
+            var addText = $('<span class="text-center">No saved items. </span>');
+            savedItemsContainer.append(addText, addButton);
+
+            // Event listener for the Add button
+            addButton.on('click', function() {
+                window.location.href = 'honda.html'; // Redirect to honda.html
+            });
+        } else {
+            savedItems.forEach(function(item) {
+                var $item = $(item);
+                var saveIcon = $item.find('.save-icon');
+                saveIcon.on('click', function(e) {
+                    e.preventDefault();
+                    removeSavedItem(userId, $item.data("id"));
+                    checkGoldClass(userId);
+                });
+
+                savedItemsContainer.append($item);
             });
         }
     }
+
+    function loadSavedItems(userId) {
+        var savedItems = JSON.parse(localStorage.getItem(userId)) || [];
+        displaySavedItems(userId, savedItems);
+        checkGoldClass(userId);
+    }
+
+    $(document).on("click", ".save-icon", function(e) {
+        e.preventDefault();
+        var userId = getUserId();
+
+        if (!isLoggedIn()) {
+            $('#loginModal').modal('show');
+            return;
+        }
+
+        var itemId = $(this).closest('.mc_card').data("id");
+
+        if ($(this).hasClass("gold")) {
+            removeSavedItem(userId, itemId);
+            checkGoldClass(userId);
+        } else {
+            $(this).addClass("gold");
+            saveToLocalStorage(userId, $(this).closest(".mc_card"));
+        }
+    });
+
+    $(document).on("click", "#deleteAll", function() {
+        var userId = getUserId();
+        deleteAllSavedItems(userId);
+    });
+
+    // Bootstrap Modal Template Literal
+    const loginModal = `
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content modal-content-login">
+                <div class="modal-body text-center">
+                    You need to be logged in to save items.
+                </div>
+                <div class="modal-footer d-flex justify-content-center">
+                    <button type="button" class="btn btn-primary mr-2" id="okModalBtn">OK</button>
+                    <button type="button" class="btn btn-secondary" id="closeModalBtn" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+`;
+
+$('body').append(loginModal);
+
+$('#okModalBtn').on('click', function() {
+    window.location.href = 'login.html';
 });
 
+$('#closeModalBtn').on('click', function() {
+    $('#loginModal').modal('hide');
+});
+
+
+
+
+
+    var userId = getUserId();
+    loadSavedItems(userId);
+});
