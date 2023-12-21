@@ -157,7 +157,8 @@ function submitForm(){
 
   localStorage.setItem(INQUIRY_KEY, JSON.stringify(existingData));
 
+
   alert("Inquiry Received, will send a reply on your provided email");
-  window.location.href = "index.html";
+  window.location.href = './index.html';
 
 }
