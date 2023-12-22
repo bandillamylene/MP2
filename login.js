@@ -61,11 +61,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
        // Function to validate user login credentials against admin users
        function validateCredentials(usernameInput, passwordInput) {
-        const adminUsers = JSON.parse(localStorage.getItem("adminUsers")) || [];
-        const user = adminUsers.find(
-            (user) => user.username === usernameInput && user.password === passwordInput
-        );
-        return user;
+        
+            const adminUsers = JSON.parse(localStorage.getItem("adminUsers")) || [];
+            const user = adminUsers.find(
+                (user) => user.username === usernameInput && user.password === passwordInput
+            );
+            return user;
     }
 
 
@@ -73,100 +74,112 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     // Event listener for login form submission
-    loginForm.addEventListener("submit", (e) => {
-        e.preventDefault();
 
-        const usernameInput = document.querySelector('#username').value;
-        const passwordInput = document.querySelector('#password').value;
+    if(loginForm){
 
-        const foundUser = validateCredentials(usernameInput, passwordInput);
+        loginForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+    
+            const usernameInput = document.querySelector('#username').value;
+            const passwordInput = document.querySelector('#password').value;
+    
+            const foundUser = validateCredentials(usernameInput, passwordInput);
+    
+            const isAdmin = usernameInput === 'admin' && passwordInput === '12345'; //Admin credentials declaration
 
-        const isAdmin = usernameInput === 'admin' && passwordInput === '12345'; // Assuming 'admin' is the admin username and password
-
-        if (foundUser || isAdmin) {
-            sessionStorage.setItem("loggedIn", "true");
-            sessionStorage.setItem("username", usernameInput);
-
-            if (isAdmin) {
-                localStorage.setItem("administrator", "admin");
-                sessionStorage.setItem("userRole", "admin");
-                window.location.href = "admindashboard.html";
+            if (foundUser || isAdmin) {
+                sessionStorage.setItem("loggedIn", "true");
+                sessionStorage.setItem("username", usernameInput);
+    
+                if (isAdmin) {
+                    localStorage.setItem("administrator", "admin");
+                    sessionStorage.setItem("userRole", "admin");
+                    window.location.href = "admindashboard.html";
+                } else {
+                    sessionStorage.setItem("userRole", "user");
+                    window.location.href = "user_dashboard.html";
+                }
             } else {
-                sessionStorage.setItem("userRole", "user");
-                window.location.href = "user_dashboard.html";
+                setFormMessage(loginForm, "error", "Please Enter a valid Username/Password combination.");
             }
-        } else {
-            setFormMessage(loginForm, "error", "Please Enter a valid Username/Password combination.");
-        }
-    });
+        });
+
+    }
+
 
 
 
 
     // Event listener for create account form submission
-    createAccountForm.addEventListener("submit", (e) => {
-        e.preventDefault();
 
-        const newUsername = document.querySelector('#signUpUsername');
-        const newEmail = document.querySelector('#signUpEmail');
-        const newPassword = document.querySelector('#SignUpPassword');
-        const confirmPassword = document.querySelector('#confirmPassword');
+    if(createAccountForm){
 
-        if (isWarningsDisplayed) {
-            const warnings = createAccountForm.querySelectorAll('.field-warning');
-            warnings.forEach(warning => warning.remove());
-            isWarningsDisplayed = false;
-        }
+        createAccountForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+    
+            const newUsername = document.querySelector('#signUpUsername');
+            const newEmail = document.querySelector('#signUpEmail');
+            const newPassword = document.querySelector('#SignUpPassword');
+            const confirmPassword = document.querySelector('#confirmPassword');
+    
+            if (isWarningsDisplayed) {
+                const warnings = createAccountForm.querySelectorAll('.field-warning');
+                warnings.forEach(warning => warning.remove());
+                isWarningsDisplayed = false;
+            }
+    
+            let hasWarnings = false;
+    
+            if (newUsername.value.trim() === '') {
+                displayFieldWarning(newUsername, "Please enter a username");
+                hasWarnings = true;
+            }
+    
+            if (newEmail.value.trim() === '') {
+                displayFieldWarning(newEmail, "Please enter an email");
+                hasWarnings = true;
+            } else if (!isValidEmail(newEmail.value.trim())) {
+                displayFieldWarning(newEmail, "Please enter a valid email");
+                hasWarnings = true;
+            }
+    
+            const passwordValue = newPassword.value.trim();
+            const hasCapitalLetter = /[A-Z]/.test(passwordValue);
+            const hasNumber = /[0-9]/.test(passwordValue);
+            const hasSpecialChar = /[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]/.test(passwordValue);
+    
+            if (passwordValue === '') {
+                displayFieldWarning(newPassword, "Please enter a password");
+                hasWarnings = true;
+            } else if (passwordValue.length < 8) {
+                displayFieldWarning(newPassword, "Password must be at least 8 characters");
+                hasWarnings = true;
+            } else if (!hasCapitalLetter || !hasNumber || !hasSpecialChar) {
+                displayFieldWarning(newPassword, "Password must contain at least one capital letter, one number, and one special character");
+                hasWarnings = true;
+            }
+    
+            if (confirmPassword.value.trim() === '') {
+                displayFieldWarning(confirmPassword, "Please confirm your password");
+                hasWarnings = true;
+            } else if (confirmPassword.value.trim() !== newPassword.value.trim()) {
+                displayFieldWarning(confirmPassword, "Passwords do not match");
+                hasWarnings = true;
+            }
+    
+            if (!hasWarnings) {
+                createUser(newUsername.value, newEmail.value, newPassword.value);
+                createAccountForm.reset();
+                loginForm.classList.remove("form--hidden");
+                createAccountForm.classList.add("form--hidden");
+                setFormMessage(loginForm, "success", "Account created successfully! Please log in.");
+            } else {
+                isWarningsDisplayed = true;
+            }
+        });
+    
 
-        let hasWarnings = false;
-
-        if (newUsername.value.trim() === '') {
-            displayFieldWarning(newUsername, "Please enter a username");
-            hasWarnings = true;
-        }
-
-        if (newEmail.value.trim() === '') {
-            displayFieldWarning(newEmail, "Please enter an email");
-            hasWarnings = true;
-        } else if (!isValidEmail(newEmail.value.trim())) {
-            displayFieldWarning(newEmail, "Please enter a valid email");
-            hasWarnings = true;
-        }
-
-        const passwordValue = newPassword.value.trim();
-        const hasCapitalLetter = /[A-Z]/.test(passwordValue);
-        const hasNumber = /[0-9]/.test(passwordValue);
-        const hasSpecialChar = /[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]/.test(passwordValue);
-
-        if (passwordValue === '') {
-            displayFieldWarning(newPassword, "Please enter a password");
-            hasWarnings = true;
-        } else if (passwordValue.length < 8) {
-            displayFieldWarning(newPassword, "Password must be at least 8 characters");
-            hasWarnings = true;
-        } else if (!hasCapitalLetter || !hasNumber || !hasSpecialChar) {
-            displayFieldWarning(newPassword, "Password must contain at least one capital letter, one number, and one special character");
-            hasWarnings = true;
-        }
-
-        if (confirmPassword.value.trim() === '') {
-            displayFieldWarning(confirmPassword, "Please confirm your password");
-            hasWarnings = true;
-        } else if (confirmPassword.value.trim() !== newPassword.value.trim()) {
-            displayFieldWarning(confirmPassword, "Passwords do not match");
-            hasWarnings = true;
-        }
-
-        if (!hasWarnings) {
-            createUser(newUsername.value, newEmail.value, newPassword.value);
-            createAccountForm.reset();
-            loginForm.classList.remove("form--hidden");
-            createAccountForm.classList.add("form--hidden");
-            setFormMessage(loginForm, "success", "Account created successfully! Please log in.");
-        } else {
-            isWarningsDisplayed = true;
-        }
-    });
+    }
 
 
 
@@ -174,30 +187,34 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Event listener for switching to create account form
     const signUpLink = document.querySelector("#linkCreateAccount");
-    signUpLink.addEventListener("click", (e) => {
-        e.preventDefault();
-        loginForm.classList.add("form--hidden");
-        createAccountForm.classList.remove("form--hidden");
-    });
 
-    // Event listener for switching to login form
-    const loginLink = document.querySelector("#linkLogin");
-    loginLink.addEventListener("click", (e) => {
-        e.preventDefault();
-        loginForm.classList.remove("form--hidden");
-        createAccountForm.classList.add("form--hidden");
-    });
+    if(signUpLink){
 
-    // Function to prevent going back after logout
-    function preventBackAfterLogout() {
-        if (sessionStorage.getItem("loggedIn") === "true") {
-            history.pushState(null, null, location.href);
-            window.onpopstate = function () {
-                history.go(1);
-            };
+        signUpLink.addEventListener("click", (e) => {
+            e.preventDefault();
+            loginForm.classList.add("form--hidden");
+            createAccountForm.classList.remove("form--hidden");
+        });
+    
+        // Event listener for switching to login form
+        const loginLink = document.querySelector("#linkLogin");
+        loginLink.addEventListener("click", (e) => {
+            e.preventDefault();
+            loginForm.classList.remove("form--hidden");
+            createAccountForm.classList.add("form--hidden");
+        });
+    
+        // Function to prevent going back after logout
+        function preventBackAfterLogout() {
+            if (sessionStorage.getItem("loggedIn") === "true") {
+                history.pushState(null, null, location.href);
+                window.onpopstate = function () {
+                    history.go(1);
+                };
+            }
         }
+    
     }
-
 
 
     // Function to log out the user
@@ -209,13 +226,17 @@ document.addEventListener("DOMContentLoaded", () => {
         window.history.back(); // Redirect to previous page after logout
     }
 
+
+
     // Event listener for logout button
     const logoutButton = document.querySelector("#logoutButton");
-    logoutButton.addEventListener('click', () => {
-        logoutUser();
+
+    if(logoutButton){
+
+        logoutButton.addEventListener('click', () => {
+            logoutUser();
     });
 
+    }
 
-
-    preventBackAfterLogout(); // Call preventBackAfterLogout function initially
 });

@@ -44,7 +44,7 @@ function showContent(id, event){
 
 }
 
-// admin_dashboard.js preventing to go back when logged in
+// admin_dashboard.js preventing to go back when logged out
 document.addEventListener("DOMContentLoaded", () => {
     const loggedIn = sessionStorage.getItem("loggedIn");
 
