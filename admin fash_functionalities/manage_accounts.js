@@ -42,6 +42,7 @@ function populateUserData() {
 
 
 
+//For delete function
 function deleteUserData(username) {
   let adminUsers = JSON.parse(localStorage.getItem("adminUsers")) || [];
   adminUsers = adminUsers.filter((user) => user.username !== username);

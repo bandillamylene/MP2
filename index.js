@@ -8,6 +8,8 @@ function isInViewport(element) {
       rect.right <= (window.innerWidth || document.documentElement.clientWidth)
     );
   }
+
+  
   
   // Function to handle scroll events
   function handleScrollAnimation() {

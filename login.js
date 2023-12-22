@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const createAccountForm = document.querySelector("#CreateAccount");
     let isWarningsDisplayed = false;
 
+
     // Function to display messages in the form
     function setFormMessage(formElement, type, message) {
         const messageElement = formElement.querySelector(".form__message");
@@ -10,6 +11,8 @@ document.addEventListener("DOMContentLoaded", () => {
         messageElement.classList.remove("form__message--success", "form__message--error");
         messageElement.classList.add(`form__message--${type}`);
     }
+
+
 
     // Function to create a user and store their details in admin section
     function createUser(username, email, password) {
@@ -25,6 +28,8 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.setItem("adminUsers", JSON.stringify(adminUsers));
 }
 
+
+
     // Function to display warnings for form fields
     function displayFieldWarning(inputElement, message) {
         const warningElement = document.createElement('div');
@@ -32,6 +37,8 @@ document.addEventListener("DOMContentLoaded", () => {
         warningElement.textContent = message;
         inputElement.parentNode.insertBefore(warningElement, inputElement.nextSibling);
     }
+
+
 
     // Function to remove warnings for form fields
     function removeFieldWarning(inputElement) {
@@ -41,6 +48,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+
+
     // Function to validate email format
     function isValidEmail(email) {
         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -48,6 +57,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
    
+
+
        // Function to validate user login credentials against admin users
        function validateCredentials(usernameInput, passwordInput) {
         const adminUsers = JSON.parse(localStorage.getItem("adminUsers")) || [];
@@ -56,6 +67,10 @@ document.addEventListener("DOMContentLoaded", () => {
         );
         return user;
     }
+
+
+
+
 
     // Event listener for login form submission
     loginForm.addEventListener("submit", (e) => {
@@ -66,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const foundUser = validateCredentials(usernameInput, passwordInput);
 
-        const isAdmin = usernameInput === 'admin'; // Assuming 'admin' is the admin username
+        const isAdmin = usernameInput === 'admin' && passwordInput === '12345'; // Assuming 'admin' is the admin username and password
 
         if (foundUser || isAdmin) {
             sessionStorage.setItem("loggedIn", "true");
@@ -84,6 +99,9 @@ document.addEventListener("DOMContentLoaded", () => {
             setFormMessage(loginForm, "error", "Please Enter a valid Username/Password combination.");
         }
     });
+
+
+
 
     // Event listener for create account form submission
     createAccountForm.addEventListener("submit", (e) => {
@@ -150,6 +168,10 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+
+
+
+
     // Event listener for switching to create account form
     const signUpLink = document.querySelector("#linkCreateAccount");
     signUpLink.addEventListener("click", (e) => {
@@ -176,6 +198,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+
+
     // Function to log out the user
     function logoutUser() {
         sessionStorage.removeItem("loggedIn");
@@ -190,6 +214,8 @@ document.addEventListener("DOMContentLoaded", () => {
     logoutButton.addEventListener('click', () => {
         logoutUser();
     });
+
+
 
     preventBackAfterLogout(); // Call preventBackAfterLogout function initially
 });
