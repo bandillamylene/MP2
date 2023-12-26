@@ -159,6 +159,5 @@ function submitForm(){
 
 
   alert("Inquiry Received, will send a reply on your provided email");
-  window.location.href = './index.html';
-
+  location.reload();
 }
