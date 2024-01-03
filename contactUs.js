@@ -1,3 +1,4 @@
+// Function to enable specific inquiry options based on the selected inquiry type
 function enableSpecific() {
   var inquiryType = document.getElementById("inquiryType");
   var specificInquiry = document.getElementById("specificInquiry");
@@ -7,157 +8,113 @@ function enableSpecific() {
   specificInquiry.innerHTML = ''; // Clear previous options
 
   if (inquiryType.value === "general") {
-    var options = ["Product Inquiry", "Service Inquiry", "Financing Inquiry"];
-    addOptions(options);
+      var options = ["Product Inquiry", "Service Inquiry", "Financing Inquiry"];
+      addOptions(options);
   } else if (inquiryType.value === "support") {
-    var options = ["Technical Support", "Troubleshooting Assistance", "Account Help"];
-    addOptions(options);
+      var options = ["Technical Support", "Troubleshooting Assistance", "Account Help"];
+      addOptions(options);
   } else if (inquiryType.value === "sales") {
-    var options = ["Model Availability", "Pricing Information", "Purchase Assistance"];
-    addOptions(options);
+      var options = ["Model Availability", "Pricing Information", "Purchase Assistance"];
+      addOptions(options);
   } else if (inquiryType.value === "feedback") {
-    var options = ["Suggestions", "Complaints", "Improvement Ideas"];
-    addOptions(options);
+      var options = ["Suggestions", "Complaints", "Improvement Ideas"];
+      addOptions(options);
   }
 }
 
+// Function to add options to the specific inquiry dropdown
 function addOptions(options) {
   var specificInquiry = document.getElementById("specificInquiry");
 
-  options.forEach(function(option) {
-    var opt = document.createElement("option");
-    opt.value = option;
-    opt.textContent = option;
-    specificInquiry.appendChild(opt);
+  options.forEach(function (option) {
+      var opt = document.createElement("option");
+      opt.value = option;
+      opt.textContent = option;
+      specificInquiry.appendChild(opt);
   });
 }
 
+// Function to validate phone number format
 function validatePhone(phone) {
   // Check if the phone number is empty
   if (phone.trim() === '') {
-    return 'empty';
+      return 'empty';
   }
 
   // Check if the phone number matches the expected format and length
   var phoneRegex = /^\+639\d{9}$/;
   if (!phoneRegex.test(phone)) {
-    return 'invalidFormat';
+      return 'invalidFormat';
   }
 
   return 'valid';
 }
 
-document.getElementById("contactForm").addEventListener("submit", function(event) {
-  var inquiryType = document.getElementById("inquiryType");
-  var specificInquiry = document.getElementById("specificInquiry");
-  var inquiryTypeWarning = document.getElementById("inquiryTypeWarning");
-  var specificInquiryWarning = document.getElementById("specificInquiryWarning");
-  var firstName = document.getElementById("firstName");
-  var surname = document.getElementById("surname");
-  var email = document.getElementById("email");
-  var phone = document.getElementById("phone");
-  var address = document.getElementById("address");
-  var firstNameWarning = document.getElementById("firstNameWarning");
-  var surnameWarning = document.getElementById("surnameWarning");
-  var emailWarning = document.getElementById("emailWarning");
-  var phoneWarning = document.getElementById("phoneWarning");
-  var addressWarning = document.getElementById("addressWarning");
-
-  // Reset all existing warning messages
-  inquiryTypeWarning.style.display = "none";
-  specificInquiryWarning.style.display = "none";
-  firstNameWarning.style.display = "none";
-  surnameWarning.style.display = "none";
-  emailWarning.style.display = "none";
-  phoneWarning.style.display = "none";
-  addressWarning.style.display = "none";
-
-  // Validation logic for each field
-  var isValid = true;
-
-  if (!inquiryType.value) {
-    inquiryTypeWarning.style.display = "block";
-    isValid = false;
-  }
-
-  if (!specificInquiry.value) {
-    specificInquiryWarning.style.display = "block";
-    isValid = false;
-  }
-
-  if (!firstName.value) {
-    firstNameWarning.style.display = "block";
-    isValid = false;
-  }
-
-  if (!surname.value) {
-    surnameWarning.style.display = "block";
-    isValid = false;
-  }
-
-  if (!email.value || !validateEmail(email.value)) {
-    emailWarning.style.display = "block";
-    isValid = false;
-  }
-
-  var phoneValidation = validatePhone(phone.value);
-
-  if (phoneValidation === 'empty') {
-    phoneWarning.textContent = "*Please enter phone number.*";
-    phoneWarning.style.display = "block";
-    isValid = false;
-  } else if (phoneValidation === 'invalidFormat') {
-    phoneWarning.textContent = "Please enter a valid phone number starting with +639 followed by 9 digits.";
-    phoneWarning.style.display = "block";
-    isValid = false;
-  }
-
-  if (!address.value) {
-    addressWarning.style.display = "block";
-    isValid = false;
-  }
-
-  if (!isValid) {
-    event.preventDefault();// Prevent form submission
-    
-  }else{
-    submitForm();
-  }
-});
-
+// Function to validate email format
 function validateEmail(email) {
   var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return emailRegex.test(email);
 }
 
+document.getElementById("contactForm").addEventListener("submit", function (event) {
+  var fieldsToCheck = ["inquiryType", "specificInquiry", "firstName", "surname", "email", "phone", "address"];
+  var isValid = true;
 
-//Function data to give data to admindashboard via local storage
-let INQUIRY_KEY = "inquirydata";
-  
-function submitForm(){
+  fieldsToCheck.forEach(function (fieldId) {
+    var field = document.getElementById(fieldId);
+    var warning = document.getElementById(fieldId + "Warning");
 
-  let inquiryData = {
+    // Reset previous styles
+    field.style.border = "1px solid #ced4da"; // Reset to the default border color
+    warning.style.display = "none";
 
-    type: document.getElementById("inquiryType").value,
-    inquiry: document.getElementById("specificInquiry").value,
-    message: document.getElementById("additionalInfo").value,
-    firstname: document.getElementById("firstName").value,
-    surname: document.getElementById("surname").value,
-    emailAddress: document.getElementById("email").value,
-    phoneNumber: document.getElementById("phone").value,
-    addressLocation: document.getElementById("address").value,
-    status: "Not Yet Replied",
+    // Validation logic for each field
+    if (field.value.trim() === '') {
+      field.style.border = "1px solid red"; // Set red border
+      warning.style.display = "block";
+      isValid = false;
+    } else if (fieldId === "email" && !validateEmail(field.value)) {
+      field.style.border = "1px solid red"; // Set red border
+      warning.style.display = "block";
+      isValid = false;
+    } else if (fieldId === "phone") {
+      var phoneValidation = validatePhone(field.value);
+      if (phoneValidation === 'empty' || phoneValidation === 'invalidFormat') {
+        field.style.border = "1px solid red"; // Set red border
+        warning.textContent = (phoneValidation === 'empty') ? "*Please enter phone number.*" : "Please enter a valid phone number starting with +639 followed by 9 digits.";
+        warning.style.display = "block";
+        isValid = false;
+      }
+    }
+  });
 
+  if (!isValid) {
+    event.preventDefault(); // Prevent form submission
+  } else {
+    submitForm();
+  }
+});
 
+// Function to submit the form and store data in local storage
+function submitForm() {
+  var INQUIRY_KEY = "inquirydata";
+
+  var inquiryData = {
+      type: document.getElementById("inquiryType").value,
+      inquiry: document.getElementById("specificInquiry").value,
+      message: document.getElementById("additionalInfo").value,
+      firstname: document.getElementById("firstName").value,
+      surname: document.getElementById("surname").value,
+      emailAddress: document.getElementById("email").value,
+      phoneNumber: document.getElementById("phone").value,
+      addressLocation: document.getElementById("address").value,
+      status: "Not Yet Replied",
   }
 
-  let existingData = JSON.parse(localStorage.getItem(INQUIRY_KEY)) || [];
-
+  var existingData = JSON.parse(localStorage.getItem(INQUIRY_KEY)) || [];
   existingData.push(inquiryData);
-
   localStorage.setItem(INQUIRY_KEY, JSON.stringify(existingData));
 
-
-  alert("Inquiry Received, will send a reply on your provided email");
+  alert("Inquiry Received, will send a reply to your provided email");
   location.reload();
 }

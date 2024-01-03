@@ -129,8 +129,8 @@ jQuery(document).ready(function($) {
                     You need to be logged in to save items.
                 </div>
                 <div class="modal-footer d-flex justify-content-center">
-                    <button type="button" class="btn btn-primary mr-2" id="okModalBtn">OK</button>
-                    <button type="button" class="btn btn-secondary" id="closeModalBtn" data-dismiss="modal">Close</button>
+                    <button type="button" class="okayBtn btn mr-2" id="okModalBtn">OK</button>
+                    <button type="button" class="cancelBtn btn" id="closeModalBtn" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
