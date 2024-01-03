@@ -118,3 +118,47 @@ function submitForm() {
   alert("Inquiry Received, will send a reply to your provided email");
   location.reload();
 }
+
+
+
+
+
+
+
+// Add this code to your contactUs.js file
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Get the form element
+  var contactForm = document.getElementById("contactForm");
+
+  // Attach a submit event listener to the form
+  contactForm.addEventListener("submit", function (event) {
+    // Prevent the default form submission
+    event.preventDefault();
+
+    // Collect form data
+    var formData = new FormData(contactForm);
+
+    // Send form data to the admin page using AJAX
+    sendFormData(formData);
+  });
+});
+
+function sendFormData(formData) {
+  // Create a new XMLHttpRequest object
+  var xhr = new XMLHttpRequest();
+
+  // Configure it to send a POST request to the admin page
+  xhr.open("POST", "admin.php", true);
+
+  // Set up the callback function to handle the response
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+      // Handle the response (if needed)
+      console.log(xhr.responseText);
+    }
+  };
+
+  // Send the form data
+  xhr.send(formData);
+}
