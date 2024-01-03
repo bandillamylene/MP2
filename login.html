@@ -26,58 +26,86 @@
     <div class="container-fluid">
 
         <form action="#" class="form" id="login">
-        <h1 class="form__title">Login</h1>
-        <div class="form__message form__message--error"></div>
-        <div class="form__input-group">
-            <input type="text" id="username" class="form__input" autofocus placeholder="Username or Email" autocomplete="username or email">
-            <div class="form__input--error-message"></div>
-        </div>
+            <h1 class="form__title">Login</h1>
+            <div class="form__message form__message--error"></div>
+            <div class="form__input-group">
+                <input type="text" id="username" class="form__input" autofocus placeholder="Username or Email" autocomplete="username or email">
+                <div class="form__input--error-message"></div>
+            </div>
 
-        <div class="form__input-group">
-            <input type="password" id="password" class="form__input" placeholder="Password">
-            <div class="form__input--error-message"></div>
-        </div>
+            <div class="form__input-group">
+                <input type="password" id="password" class="form__input" placeholder="Password">
+                <div class="form__input--error-message"></div>
+            </div>
 
-        <button class="form__button" type="submit">Login</button>
+            <button class="form__button" type="submit">Login</button>
 
-        <p class="form__text">
-            <a href="#" class="form__link">Forgot your password?</a>
-        </p>
-        <p class="form__text mt-0">
-            <a class="form__link" id="linkCreateAccount" >Don't have an account? Sign Up</a>
-        </p>
-    </form>
+            <p class="form__text">
+                <a class="form__link" id="linkForgotPassword">Forgot your password?</a>
+            </p>
 
-    <form action="#" class="form form--hidden" id="CreateAccount">
-        <h1 class="form__title">Sign Up</h1>
-        <div class="form__message for__message--error"></div>
-        <div class="form__input-group">
-            <input type="text" id="signUpUsername" class="form__input" autofocus placeholder="Username" autocomplete="username">
-            <div class="form__input--error-message"></div>
-        </div>
+            <p class="form__text mt-0">
+                <a class="form__link" id="linkCreateAccount" >Don't have an account? Sign Up</a>
+            </p>
+        </form>
 
-        <div class="form__input-group">
-            <input type="text" name="inputEmail" id="signUpEmail" class="form__input" autofocus placeholder="Email" autocomplete="email">
-            <div class="form__input--error-message"></div>
-        </div>
+        <form action="#" class="form form--hidden" id="CreateAccount">
+            <h1 class="form__title">Sign Up</h1>
+            <div class="form__message for__message--error"></div>
+            <div class="form__input-group">
+                <input type="text" id="signUpUsername" class="form__input" autofocus placeholder="Username" autocomplete="username">
+                <div class="form__input--error-message"></div>
+            </div>
 
-        <div class="form__input-group">
-            <input type="Password" id="SignUpPassword" class="form__input" autofocus placeholder="password" autocomplete="new-password">
-            <div class="form__input--error-message"></div>
-        </div>
+            <div class="form__input-group">
+                <input type="text" name="inputEmail" id="signUpEmail" class="form__input" autofocus placeholder="Email" autocomplete="email">
+                <div class="form__input--error-message"></div>
+            </div>
 
-        
-        <div class="form__input-group">
-            <input type="Password" id="confirmPassword" class="form__input" autofocus placeholder="Confirm Password" autocomplete="new-password">
-            <div class="form__input--error-message"></div>
-        </div>
+            <div class="form__input-group">
+                <input type="Password" id="SignUpPassword" class="form__input" autofocus placeholder="password" autocomplete="new-password">
+                <div class="form__input--error-message"></div>
+            </div>
 
-        <button class="form__button" type="submit">Continue</button>
+            
+            <div class="form__input-group">
+                <input type="Password" id="confirmPassword" class="form__input" autofocus placeholder="Confirm Password" autocomplete="new-password">
+                <div class="form__input--error-message"></div>
+            </div>
 
-        <p class="form__text">
-            <a class="form__link" id="linkLogin" >Already have an account? Login</a>
-        </p>
-    </form>
+            <button class="form__button" type="submit">Continue</button>
+
+            <p class="form__text">
+                <a class="form__link" id="linkLogin" >Already have an account? Login</a>
+            </p>
+        </form>
+
+
+        <form action="#" class="form form--hidden" id="forgotPassword">
+            <h1 class="form__title">Forgot Password</h1>
+
+            <div class="form__input-group">
+
+                <div class="form__input--error-message"></div>
+                
+                <input type="text" id="forgotPasswordUsername" class="form__input" autofocus placeholder="Username or Email" autocomplete="username or email">
+           
+            </div>
+
+            <button class="form__button" type="submit" id="resetPassword">Reset Password</button>
+
+            <p class="form__text">
+                <a class="form__link" id="linkLoginFromForgot">Remembered your password? Login</a>
+            </p>
+
+            <p class="form__text mt-0">
+                <a class="form__link" id="linkCreateAccount" >Don't have an account? Sign Up</a>
+            </p>
+
+        </form>
+
+
+
 
     </div>
 </div>
@@ -86,6 +114,7 @@
 
 
 <script src="./login.js"></script>
+<script src="./loginReset.js"></script>
 
 
 </body>

@@ -147,7 +147,7 @@ transition: 0.3s ease;
 
 
 .table-striped-columns tbody tr:nth-child(odd) {
-    background-color: red; /* Change this to the color you prefer */
+    background-color: red;
 }
 
 
@@ -176,3 +176,25 @@ transition: 0.3s ease;
 .gold {
     color: gold !important;
   }
+
+
+  
+.okayBtn {
+    background-color: #F4CE14;
+    color: #45474B;
+}
+
+.okayBtn:hover {
+    background-color: #495E57;
+    color: #F5F7F8;
+}
+
+.cancelBtn {
+    background-color: #45474B;
+    color: #F4CE14;
+}
+
+.cancelBtn:hover{
+    background-color: rgb(209, 23, 23);
+    color: #F5F7F8;
+}
