@@ -125,13 +125,13 @@ function submitForm() {
 
 
 
-//SERVER
 
+//Prevention of 405 error
 document.addEventListener("DOMContentLoaded", function () {
   // Get the form element
   var contactForm = document.getElementById("contactForm");
 
-  // Attach a submit event listener to the form
+  //Event listener to the form
   contactForm.addEventListener("submit", function (event) {
     // Prevent the default form submission
     event.preventDefault();

@@ -96,21 +96,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
   //For Search Order Function
   function orderSearch() {
-    const searchText = document.getElementById("search_orders").value.toLowerCase().trim();
+    const searchText = document.getElementById("search_orders").value.toLowerCase();
+    const tableRows = document.querySelectorAll('#manage_sales_orders tbody tr');
 
-    const userDataRows = document.querySelectorAll('#order_details tr');
+    tableRows.forEach(row => {
+        const orderNumber = row.querySelector('td:nth-child(2)').textContent.toLowerCase();
 
-    userDataRows.forEach(row => {
-        const orders = row.querySelector('td:first-child').textContent.toLowerCase();
-
-        if (orders.includes(searchText)) {
-            row.style.display = 'table-row'; // Show the row if the username matches the search text
+        if (orderNumber.includes(searchText)) {
+            row.style.display = 'table-row'; // Show the row if the order number matches the search text
         } else {
-            row.style.display = 'none'; // Hide the row if the username doesn't match the search text
+            row.style.display = 'none'; // Hide the row if the order number doesn't match the search text
         }
     });
 }
-
 
 //document.addEventListener("DOMContentLoaded", function () {
     //updateOrderTable();

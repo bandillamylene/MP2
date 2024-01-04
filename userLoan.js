@@ -10,6 +10,9 @@ document.addEventListener('DOMContentLoaded', function () {
         return existingLoans;
     }
 
+
+if(loanTrackerLink){
+
     loanTrackerLink.addEventListener('click', function (event) {
         event.preventDefault(); // Prevent default link behavior
 
@@ -21,6 +24,10 @@ document.addEventListener('DOMContentLoaded', function () {
             displayNoLoansMessage();
         }
     });
+
+}
+
+    
 
     function displayPendingLoanStatus() {
         applyLoanContainer.style.display = 'none'; // Hide the no loans container
