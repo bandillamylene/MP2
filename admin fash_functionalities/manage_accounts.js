@@ -44,10 +44,21 @@ function populateUserData() {
 
 //For delete function
 function deleteUserData(username) {
+
+if(confirm("Do you really want to delete this user?") == true){
+
   let adminUsers = JSON.parse(localStorage.getItem("adminUsers")) || [];
   adminUsers = adminUsers.filter((user) => user.username !== username);
   localStorage.setItem("adminUsers", JSON.stringify(adminUsers));
   populateUserData(); // Refresh the table after deletion
+
+}else{
+
+  confirm("Delete user operation cancelled!");
+
+}
+
+ 
 }
 
 
