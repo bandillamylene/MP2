@@ -125,7 +125,7 @@ function submitForm() {
 
 
 
-// Add this code to your contactUs.js file
+//SERVER
 
 document.addEventListener("DOMContentLoaded", function () {
   // Get the form element
