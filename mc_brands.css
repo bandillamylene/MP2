@@ -153,7 +153,7 @@ transition: 0.3s ease;
 
 
 
- /* Add your styles here */
+ /* modal*/
  .modal-container {
     display: none;
     position: fixed;
@@ -200,50 +200,7 @@ transition: 0.3s ease;
 }
 
 
-
-
-/*pagination*/
-
-.pagination {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #F5F7F8;
-    color: #495E57;
-    padding: 10px 40px;
-    border-radius: 6px;
-}
-
-.pagesLink {
-    margin: 20px 30px;
-}
-
-.link {
-    display: inline-block;
-    margin: 0 10px;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    text-align: center;
-    font-size: 22px;
-    font-weight: 500;
-    line-height: 45px;
-    cursor: pointer;
-}
-
-.btn1, .btn2 {
-    display: inline-flex;
-    align-items: center;
-    font-size: 22px;
-    font-weight: 500;
-    color: #45474B;
-    background-color: transparent;
-    border: none;
-    outline: none;
-    cursor: pointer;
-}
-
-.active-btn {
-    background-color: #F4CE14;
-    color: #45474B;
+*{
+    margin: 0;
+    padding: 0;
 }

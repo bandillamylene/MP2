@@ -12,9 +12,15 @@ document.querySelector('.profSection').appendChild(avatarInput);
 // Placeholder avatar image URL
 const placeholderImage = 'https://via.placeholder.com/150';
 
+// Get the profile icon element
+const profileIcon = document.querySelector('.profile_icon');
+// Set fixed size styles for the profile icon
+profileIcon.style.width = '200px'; // fixed width for avatar
+profileIcon.style.height = '200px'; // fixed height for avatar
+profileIcon.style.objectFit = 'cover'; // to maintain aspect ratio and cover the container
+
 // Function to update the profile picture
 function updateProfilePicture(src) {
-    const profileIcon = document.querySelector('.profile_icon');
     profileIcon.src = src;
 }
 
@@ -40,19 +46,19 @@ function loadAvatarFromStorage(username) {
 saveAvatarBtn.style.display = 'none';
 
 // Trigger image upload on button click
-editImageBtn.addEventListener('click', function() {
+editImageBtn.addEventListener('click', function () {
     avatarInput.click();
 });
 
 // Change profile picture on file selection
-avatarInput.addEventListener('change', function(event) {
+avatarInput.addEventListener('change', function (event) {
     const file = event.target.files[0];
     if (file) {
         const reader = new FileReader();
-        reader.onload = function(e) {
+        reader.onload = function (e) {
             const newAvatarSrc = e.target.result;
             updateProfilePicture(newAvatarSrc);
-            
+
             // Save avatar to localStorage with the specific username
             saveAvatarToStorage(newAvatarSrc, username);
 
@@ -65,14 +71,14 @@ avatarInput.addEventListener('change', function(event) {
 });
 
 // Save button functionality
-saveAvatarBtn.addEventListener('click', function() {
+saveAvatarBtn.addEventListener('click', function () {
     // hide the button after clicking "Save"
     saveAvatarBtn.style.display = 'none';
     alert('Avatar saved successfully.');
 });
 
 // Delete button functionality
-deleteAvatarIcon.addEventListener('click', function() {
+deleteAvatarIcon.addEventListener('click', function () {
     //delete the avatar
     localStorage.removeItem(`avatar_${username}`);
     alert('Avatar deleted successfully.');
@@ -82,6 +88,7 @@ deleteAvatarIcon.addEventListener('click', function() {
 });
 
 // Load the avatar when the page loads
-window.addEventListener('load', function() {
+window.addEventListener('load', function () {
     loadAvatarFromStorage(username);
 });
+
