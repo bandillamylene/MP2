@@ -1,4 +1,6 @@
+// Wait for the DOM content to load before executing the code
 document.addEventListener('DOMContentLoaded', function () {
+    // Selecting elements from the DOM
     var editBtn = document.getElementById('editBtn');
     var saveBtn = document.getElementById('saveBtn');
     var formFields = document.querySelectorAll('.edited-field');
@@ -11,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     var savedData = localStorage.getItem(userDataKey);
     if (savedData) {
+        // Parse and populate form fields with saved data
         savedData = JSON.parse(savedData);
         formFields.forEach(function (field) {
             if (savedData[field.id]) {
@@ -21,15 +24,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Add click event listener to the edit button
     editBtn.addEventListener('click', function () {
+        // Enable form fields for editing
         toggleFormFields(true);
     });
 
     // Add click event listener to the save button
     saveBtn.addEventListener('click', function () {
+        // Validate form data and save if valid
         var isValid = validateForm();
 
         if (isValid) {
             saveFormData(loggedInUser);
+            // Disable form fields after saving
             toggleFormFields(false);
         }
     });
@@ -37,6 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Add focus event listener to form fields
     formFields.forEach(function (field, index) {
         field.addEventListener('focus', function () {
+            // Store the focused field for error handling
             focusedField = field;
             // Remove the error class and error message
             this.classList.remove('error');
@@ -75,6 +82,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
+    // Function to toggle form fields for editing
     function toggleFormFields(isEditing) {
         formFields.forEach(function (field, index) {
             field.disabled = !isEditing;
@@ -83,9 +91,11 @@ document.addEventListener('DOMContentLoaded', function () {
             field.classList.remove('error');
             errorMessages[index].textContent = '';
         });
+        // Show or hide the save button based on the editing state
         saveBtn.style.display = isEditing ? 'block' : 'none';
     }
 
+    // Function to validate the form data
     function validateForm() {
         var isValid = true;
 
@@ -112,12 +122,13 @@ document.addEventListener('DOMContentLoaded', function () {
         return isValid;
     }
 
+    // Function to check if the provided email is in a valid format
     function isValidEmail(email) {
-        // Use a regular expression to check for a valid email format
         var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return emailRegex.test(email);
     }
 
+    // Function to save form data to local storage
     function saveFormData(user) {
         var formData = {};
 
@@ -129,8 +140,10 @@ document.addEventListener('DOMContentLoaded', function () {
         var userDataKey = 'userData_' + user;
         localStorage.setItem(userDataKey, JSON.stringify(formData));
 
-        alert('Form saved successfully!');
+        // Alert user about successful form save
+        alert('Personal Information iupdated successfully!');
     }
 });
+
 
 

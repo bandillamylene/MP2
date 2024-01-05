@@ -1,4 +1,6 @@
+// Wait for the DOM content to load before executing the code
 document.addEventListener("DOMContentLoaded", function () {
+    // Selecting elements from the DOM
     var dashboardItems = document.getElementById("dashboardItems");
     var dashboardToggle = document.getElementById("dashboardToggle");
     var dashboardLinks = document.querySelectorAll(".myList3.list-group.dashboard-items li");
@@ -8,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Toggle display of dashboard links when the toggler is clicked
     dashboardToggle.addEventListener("click", function () {
+        // Toggle the display property of dashboardItems
         if (dashboardItems.style.display === "none") {
             dashboardItems.style.display = "block";
         } else {
@@ -18,7 +21,9 @@ document.addEventListener("DOMContentLoaded", function () {
     // Event listeners for dashboard links
     dashboardLinks.forEach(function (link) {
         link.addEventListener("click", function (event) {
+            // Get the section ID from the clicked link's href attribute
             var sectionId = event.target.getAttribute("href").substring(1);
+            // Hide all sections except the clicked one
             hideAllExcept(sectionId);
         });
     });
@@ -39,11 +44,12 @@ document.addEventListener("DOMContentLoaded", function () {
     hideAllExcept("mysettings");
 });
 
-
-// user_dashboard.js preventing to go back when logged out
+// user_dashboard.js preventing going back when logged out
 document.addEventListener("DOMContentLoaded", () => {
+    // Check if the user is logged in
     const loggedIn = sessionStorage.getItem("loggedIn");
 
+    // Redirect to login page if not logged in
     if (loggedIn !== "true") {
         window.location.href = "login.html";
     }
