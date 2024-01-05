@@ -4,7 +4,7 @@ jQuery(document).ready(function($) {
     }
 
     function getUserId() {
-        return "user123";
+        return sessionStorage.getItem("username") || ""; // Using the username as the unique identifier for the user
     }
 
     function isItemAlreadySaved(userId, itemId) {
