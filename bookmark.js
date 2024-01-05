@@ -64,12 +64,15 @@ jQuery(document).ready(function($) {
     function displaySavedItems(userId, savedItems) {
         var savedItemsContainer = $('#savedItems');
         savedItemsContainer.empty();
-
+    
         if (savedItems.length === 0) {
-            var addButton = $('<button class="btn btn-primary">Add</button>');
-            var addText = $('<span class="text-center">No saved items. </span>');
-            savedItemsContainer.append(addText, addButton);
-
+            var addButtonContainer = $('<div class="text-center mb-3"></div>'); // Container for centering
+            var addButton = $('<button class="btn btn-lg user--btn">Add Items</button>');
+            var addText = $('<p class="text-center">No saved items. </p>');
+            
+            addButtonContainer.append(addButton);
+            savedItemsContainer.append(addText, addButtonContainer);
+    
             // Event listener for the Add button
             addButton.on('click', function() {
                 window.location.href = 'honda.html'; // Redirect to honda.html
@@ -83,11 +86,12 @@ jQuery(document).ready(function($) {
                     removeSavedItem(userId, $item.data("id"));
                     checkGoldClass(userId);
                 });
-
+    
                 savedItemsContainer.append($item);
             });
         }
     }
+    
 
     function loadSavedItems(userId) {
         var savedItems = JSON.parse(localStorage.getItem(userId)) || [];

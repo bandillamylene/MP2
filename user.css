@@ -112,7 +112,15 @@
     outline: none !important;
 }
 
+.user--btn {
+    background-color: #F4CE14;
+    color: #45474B;
+}
 
+.user--btn:hover {
+    background-color: #45474B;
+    color: #F4CE14;
+}
 
 
 *{
