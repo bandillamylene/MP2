@@ -1,11 +1,18 @@
+// Wait for the DOM content to load before executing the code
 document.addEventListener("DOMContentLoaded", () => {
+
+    // Selecting the login and create account forms
     const loginForm = document.querySelector("#login");
     const createAccountForm = document.querySelector("#CreateAccount");
-    let isWarningsDisplayed = false;
+
+    let isWarningsDisplayed = false; // Variable to track if warnings are displayed
+
 
 
     // Function to display messages in the form
     function setFormMessage(formElement, type, message) {
+
+        // Select the message element in the form, update its content and classes
         const messageElement = formElement.querySelector(".form__message");
         messageElement.textContent = message;
         messageElement.classList.remove("form__message--success", "form__message--error");
@@ -16,7 +23,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Function to create a user and store their details in admin section
     function createUser(username, email, password) {
-        
+
+        // Create a new user object and store it in local storage
         const newUser = {
             username: username,
             email: email,
@@ -33,6 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Function to display warnings for form fields
     function displayFieldWarning(inputElement, message) {
+        // Create a warning element, add a message, and insert it before the input
         const warningElement = document.createElement('div');
         warningElement.classList.add('field-warning');
         warningElement.textContent = message;
@@ -43,6 +52,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Function to validate email format
     function isValidEmail(email) {
+
+        // Regular expression to validate email format
         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return emailPattern.test(email);
     }
@@ -52,6 +63,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Function to validate user login credentials against admin users
     function validateCredentials(input, passwordInput) {
+
+        // Retrieve admin users from local storage and check if input matches any user
         const adminUsers = JSON.parse(localStorage.getItem("adminUsers")) || [];
         const user = adminUsers.find(
             (user) => (user.username === input || user.email === input) && user.password === passwordInput
@@ -62,19 +75,25 @@ document.addEventListener("DOMContentLoaded", () => {
     // Event listener for login form submission
     if (loginForm) {
         loginForm.addEventListener("submit", (e) => {
-            e.preventDefault();
+            e.preventDefault();// Prevent default form submission behavior
 
+            // Get input values
             const usernameInput = document.querySelector('#username').value;
             const emailInput = document.querySelector('#signUpEmail').value; 
             const passwordInput = document.querySelector('#password').value;
 
+            // Validate user credentials and redirect based on user/admin status
             const user = validateCredentials(usernameInput || emailInput, passwordInput);
             const isAdmin = usernameInput === 'admin' && passwordInput === '12345';
 
+            // Handle successful login or display error message
             if (user || isAdmin) {
+
+                 // Set session and local storage values for the logged-in user
                 sessionStorage.setItem("loggedIn", "true");
                 sessionStorage.setItem("username", usernameInput);
 
+                // Redirect to appropriate dashboard based on user role
                 if (isAdmin) {
                     localStorage.setItem("administrator", "admin");
                     sessionStorage.setItem("userRole", "admin");
@@ -84,6 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     window.location.href = "user_dashboard.html";
                 }
             } else {
+                 // Display error message for invalid login attempt
                 setFormMessage(loginForm, "error", "Please enter a valid Username/Email and Password combination.");
             }
         });
@@ -98,13 +118,15 @@ document.addEventListener("DOMContentLoaded", () => {
     if(createAccountForm){
 
         createAccountForm.addEventListener("submit", (e) => {
-            e.preventDefault();
+            e.preventDefault(); // Prevent default form submission behavior
     
+            // Get input values for creating a new account
             const newUsername = document.querySelector('#signUpUsername');
             const newEmail = document.querySelector('#signUpEmail');
             const newPassword = document.querySelector('#SignUpPassword');
             const confirmPassword = document.querySelector('#confirmPassword');
     
+            // Clear any displayed warnings
             if (isWarningsDisplayed) {
                 const warnings = createAccountForm.querySelectorAll('.field-warning');
                 warnings.forEach(warning => warning.remove());
@@ -113,6 +135,8 @@ document.addEventListener("DOMContentLoaded", () => {
     
             let hasWarnings = false;
     
+            // Validate form input fields for creating a new account
+            // Display warnings if validation fails
             if (newUsername.value.trim() === '') {
                 displayFieldWarning(newUsername, "Please enter a username");
                 hasWarnings = true;
@@ -150,6 +174,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 hasWarnings = true;
             }
     
+            // If no validation warnings, create the user, reset form, and show success message
             if (!hasWarnings) {
                 createUser(newUsername.value, newEmail.value, newPassword.value);
                 createAccountForm.reset();
@@ -175,6 +200,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         signUpLink.addEventListener("click", (e) => {
             e.preventDefault();
+            
+            // Show create account form and hide login form
             loginForm.classList.add("form--hidden");
             createAccountForm.classList.remove("form--hidden");
         });
@@ -183,12 +210,15 @@ document.addEventListener("DOMContentLoaded", () => {
         const loginLink = document.querySelector("#linkLogin");
         loginLink.addEventListener("click", (e) => {
             e.preventDefault();
+
+            // Show login form and hide create account form
             loginForm.classList.remove("form--hidden");
             createAccountForm.classList.add("form--hidden");
         });
     
         // Function to prevent going back after logout
         function preventBackAfterLogout() {
+            // Prevent going back in history if logged in
             if (sessionStorage.getItem("loggedIn") === "true") {
                 history.pushState(null, null, location.href);
                 window.onpopstate = function () {
@@ -202,6 +232,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Function to log out the user
     function logoutUser() {
+        
+        // Remove session items and prevent going back after logout
         sessionStorage.removeItem("loggedIn");
         sessionStorage.removeItem("username");
         sessionStorage.removeItem("userRole");

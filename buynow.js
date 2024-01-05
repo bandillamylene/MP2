@@ -302,6 +302,7 @@ function updateProduct(event){
 
     
     //////////////////////////////////////////////////////////////////////
+     //Function data to give data to printpage.html via local storage
     const PRINT_DATA = "printDatas";
 
     function printDetails(){
@@ -332,10 +333,13 @@ function updateProduct(event){
 
         }
 
+        // Retrieve existing print data from local storage or initialize an empty array
         let existingPrintData = JSON.parse(localStorage.getItem(PRINT_DATA)) || [];
 
+        // Push new print data into the array
         existingPrintData.push(print_data);
 
+        // Save the updated array back to local storage
         localStorage.setItem(PRINT_DATA, JSON.stringify(existingPrintData));
 
         window.open("printpage.html", "_blank")
