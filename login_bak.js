@@ -40,7 +40,15 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
+    // Function to remove warnings for form fields
+    function removeFieldWarning(inputElement) {
+        const warningElement = inputElement.parentNode.querySelector('.field-warning');
+        if (warningElement) {
+            warningElement.remove();
+        }
+    }
 
+    
     // Function to validate email format
     function isValidEmail(email) {
         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;

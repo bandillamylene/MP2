@@ -194,7 +194,14 @@ function updateProduct(event){
     
         return false;
     }
-    
+    //////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+    //////////////////////////////////////////////////////////////////////
     // Function to handle the 'Back' button click
     function backButton() {
         if (currentStep > 1) {
@@ -208,8 +215,15 @@ function updateProduct(event){
             }
         }
     }
-    
-    
+    //////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+    //////////////////////////////////////////////////////////////////////
     // Function to handle form submission
     function handleFormSubmission() {
         const form = document.getElementById('app_form');
@@ -224,9 +238,15 @@ function updateProduct(event){
         form.classList.add('was-validated'); // Add validation styles
         return false; // Prevent the default form submission
     }
+    //////////////////////////////////////////////////////////////////////
     
     
-    
+
+
+
+
+
+    //////////////////////////////////////////////////////////////////////
     //Fetching datas from input fields
     function populateReviewForm() {
         
@@ -273,109 +293,64 @@ function updateProduct(event){
     // Initially display only the first step
     manageCheckoutSteps();
     //////////////////////////////////////////////////////////////////////
+            
     
-    
-    
-    
-    
-    
+
+
+
+
+
     
     //////////////////////////////////////////////////////////////////////
+    const PRINT_DATA = "printDatas";
+
     function printDetails(){
-    
-    
-        // Customer Details
-         document.getElementById("print_name").value = document.getElementById("app_name").value;
-         document.getElementById("print_email").value = document.getElementById("app_email").value;
-         document.getElementById("print_birthday").value = document.getElementById("app_birthday").value;
-         document.getElementById("print_phone").value = document.getElementById("app_phone").value;
-         document.getElementById("print_date").innerHTML = document.getElementById("app_date").innerHTML;
-     
-         // Address
-         document.getElementById("print_streetbrgy").value = document.getElementById("app_streetbrgy").value;
-         document.getElementById("print_mun").value = document.getElementById("app_mun").value;
-         document.getElementById("print_province").value = document.getElementById("app_province").value;
-         document.getElementById("print_zip").value = document.getElementById("app_zip").value;
-     
-         // Employment Details
-         document.getElementById("print_compName").value = document.getElementById("app_compName").value;
-         document.getElementById("print_empType").value = document.getElementById("app_empType").value;
-         document.getElementById("print_comNum").value = document.getElementById("app_comNum").value;
-         document.getElementById("print_compAdd").value = document.getElementById("app_compAdd").value;
-         document.getElementById("print_monIncome").value = document.getElementById("app_monIncome").value;
-         document.getElementById("print_annIncome").value = document.getElementById("app_annIncome").value;
-     
-         //payment
-         document.getElementById("print_payment").value = document.getElementById("app_payment").value;
-    
-     
-         // Vehicle Information
-         document.getElementById("print_desiredModel").value = document.getElementById("app_desiredModel").value;
-         document.getElementById("print_srp").value = document.getElementById("app_srp").value;
-     
-     
-     }
-     //////////////////////////////////////////////////////////////////////
-    
-    
-    
-    
-    
-    
-    //////////////////////////////////////////////////////////////////////
-    //To make the form modal printable
-    function printForm() {
-        // Clone the form content
-        let printableContent = document.getElementById('printableform').cloneNode(true);
-     
-        // Remove buttons from the cloned content
-        let buttons = printableContent.querySelectorAll('button');
-        buttons.forEach(button => button.remove());
-     
-        // Update the form values in the cloned content
-        let formFields = printableContent.querySelectorAll('input, select, textarea');
-        formFields.forEach(field => {
-            let id = field.id.replace('print_', 'app_');
-            let originalField = document.getElementById(id);
-            if (originalField) {
-                if (field.tagName === 'INPUT' || field.tagName === 'TEXTAREA') {
-                    field.setAttribute('value', originalField.value);
-                } else {
-                    field.innerHTML = originalField.value;
-                }
-            }
-        });
-     
-        // Create a new window
-        let printWindow = window.open('', '_blank');
-     
-        // Include Bootstrap CSS in the new window
-        printWindow.document.head.innerHTML = `
-            <title>Print</title>
-            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-            <style>
-                /* Include any specific styles for print formatting if needed */
-            </style>
-        `;
-     
-        // Set the print content in the new window
-        printWindow.document.body.innerHTML = `
-            <div class="container-md">
-                ${printableContent.outerHTML}
-            </div>
-        `;
-    
-        // Trigger the print function after a slight delay
-        setTimeout(function () {
-            // Perform the print action and close the window
-            printWindow.print();
-            printWindow.close();
-        }, 1000);
+
+        let print_data = {
+
+            printName: document.getElementById("app_name").value,
+            printEmail: document.getElementById("app_email").value,
+            printBday: document.getElementById("app_birthday").value,
+            printPhone: document.getElementById("app_phone").value,
+            printStreet: document.getElementById("app_streetbrgy").value,
+            printMunicipality: document.getElementById("app_mun").value,
+            printProvince: document.getElementById("app_province").value,
+            printZip: document.getElementById("app_zip").value,
+            printCompanyName: document.getElementById("app_compName").value,
+            printEmploymentType: document.getElementById("app_empType").value,
+            printCompanyPhone: document.getElementById("app_comNum").value,
+            printBusinessAdd: document.getElementById("app_compAdd").value,
+            printMonthlyIncome: document.getElementById("app_monIncome").value,
+            printAnnualIncome: document.getElementById("app_annIncome").value,
+            printEmploymentType: document.getElementById("app_empType").value,
+            printPaymentType: document.getElementById("app_payment").value,
+            printDesiredModel: document.getElementById("app_desiredModel").value,
+            printModelSRP: document.getElementById("app_srp").value,
+        
+            printOrdernumber: document.getElementById("order_number").innerText,
+            printOrderdate: document.getElementById("app_date").innerText,
+
+        }
+
+        let existingPrintData = JSON.parse(localStorage.getItem(PRINT_DATA)) || [];
+
+        existingPrintData.push(print_data);
+
+        localStorage.setItem(PRINT_DATA, JSON.stringify(existingPrintData));
+
+        window.open("printpage.html", "_blank")
+
+
     }
     //////////////////////////////////////////////////////////////////////
+
+
+
+
     
-    
-    
+
+      
+    //////////////////////////////////////////////////////////////////////
     const ORDERS_KEY = "salesAndOrdersData";
     
     //Function data to give data to admindashboard via local storage
@@ -425,3 +400,4 @@ function updateProduct(event){
        window.location.href = "index.html";
     
     }
+    //////////////////////////////////////////////////////////////////////

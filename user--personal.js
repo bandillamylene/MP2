@@ -6,7 +6,10 @@ document.addEventListener('DOMContentLoaded', function () {
     var focusedField = null;
 
     // Load saved data from local storage on page load
-    var savedData = localStorage.getItem('userData');
+    var loggedInUser = sessionStorage.getItem('username');
+    var userDataKey = 'userData_' + loggedInUser;
+
+    var savedData = localStorage.getItem(userDataKey);
     if (savedData) {
         savedData = JSON.parse(savedData);
         formFields.forEach(function (field) {
@@ -26,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
         var isValid = validateForm();
 
         if (isValid) {
-            saveFormData();
+            saveFormData(loggedInUser);
             toggleFormFields(false);
         }
     });
@@ -115,15 +118,16 @@ document.addEventListener('DOMContentLoaded', function () {
         return emailRegex.test(email);
     }
 
-    function saveFormData() {
+    function saveFormData(user) {
         var formData = {};
 
         formFields.forEach(function (field) {
             formData[field.id] = field.value;
         });
 
-        // Store the data in local storage
-        localStorage.setItem('userData', JSON.stringify(formData));
+        // Store the data in local storage associated with the logged-in user
+        var userDataKey = 'userData_' + user;
+        localStorage.setItem(userDataKey, JSON.stringify(formData));
 
         alert('Form saved successfully!');
     }

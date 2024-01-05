@@ -3,6 +3,7 @@ const deleteAvatarIcon = document.getElementById('deleteAvatarIcon');
 const saveAvatarBtn = document.getElementById('saveAvatarBtn');
 const editImageBtn = document.getElementById('editImageBtn');
 const avatarInput = document.createElement('input');
+const username = sessionStorage.getItem('username');
 avatarInput.setAttribute('type', 'file');
 avatarInput.setAttribute('accept', '.png, .jpg, .jpeg');
 avatarInput.style.display = 'none';
@@ -18,13 +19,13 @@ function updateProfilePicture(src) {
 }
 
 // Function to save the avatar to localStorage
-function saveAvatarToStorage(src) {
-    localStorage.setItem('avatar', src);
+function saveAvatarToStorage(src, username) {
+    localStorage.setItem(`avatar_${username}`, src);
 }
 
 // Function to load the avatar from localStorage
-function loadAvatarFromStorage() {
-    const storedAvatar = localStorage.getItem('avatar');
+function loadAvatarFromStorage(username) {
+    const storedAvatar = localStorage.getItem(`avatar_${username}`);
     if (storedAvatar) {
         updateProfilePicture(storedAvatar);
         // Show delete icon when avatar is loaded
@@ -51,7 +52,9 @@ avatarInput.addEventListener('change', function(event) {
         reader.onload = function(e) {
             const newAvatarSrc = e.target.result;
             updateProfilePicture(newAvatarSrc);
-            saveAvatarToStorage(newAvatarSrc);
+            
+            // Save avatar to localStorage with the specific username
+            saveAvatarToStorage(newAvatarSrc, username);
 
             // Show delete icon after image selection
             deleteAvatarIcon.style.display = 'inline-block';
@@ -71,7 +74,7 @@ saveAvatarBtn.addEventListener('click', function() {
 // Delete button functionality
 deleteAvatarIcon.addEventListener('click', function() {
     //delete the avatar
-    localStorage.removeItem('avatar');
+    localStorage.removeItem(`avatar_${username}`);
     alert('Avatar deleted successfully.');
     deleteAvatarIcon.style.display = 'none';
     saveAvatarBtn.style.display = 'none';
@@ -79,4 +82,6 @@ deleteAvatarIcon.addEventListener('click', function() {
 });
 
 // Load the avatar when the page loads
-window.addEventListener('load', loadAvatarFromStorage);
+window.addEventListener('load', function() {
+    loadAvatarFromStorage(username);
+});
